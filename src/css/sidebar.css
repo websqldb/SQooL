@@ -1,0 +1,29 @@
+:root {
+    font-size: 62.5%;
+}
+.la-wrap {
+    display: flex;
+    width: 1257px;
+    margin: 0 auto;
+}
+.side-bar {
+    flex-basis: 313px;
+    margin-right: 55px;
+    /* 튜토리얼, 치트시트에선 상단 padding이 더 큽니다 */
+    padding: 56px 35px;
+    border: 0.5px solid #D9D9D9;
+    box-sizing: border-box;
+}
+.list-wrap > li {
+    /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
+    margin-bottom: 76px;
+}
+.list-title {
+    font-family: 'Pretendard';
+    /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 2.2rem;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #999A99;
+}
