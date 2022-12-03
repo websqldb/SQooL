@@ -16,11 +16,21 @@
     border: 0.5px solid #D9D9D9;
     box-sizing: border-box;
 }
+
+.side-bar-cheatsheet {
+    padding-top: 121px;
+}
+
 .list-wrap > li {
     /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
     margin-bottom: 76px;
 }
-.list-title {
+
+.list-wrap-cheatsheet > li{
+    margin-bottom: 131px;
+}
+
+.list-title, .list-cheatsheet-title {
     font-family: 'Pretendard';
     /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
     margin-bottom: 16px;
@@ -30,10 +40,58 @@
     border-bottom: 1px solid #999A99;
 }
 
-.list-item {
+.list-cheatsheet-title {
+    margin-bottom: 62px;
+}
+
+.list-item, .list-cheatsheet-item {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.list-cheatsheet-item {
+    font-family: 'Pretendard';
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-cheatsheet-item > li, .cheatsheet-pdf {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #434343;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.cheatsheet-pdf{
+    padding-top: 17px;
+    padding-bottom: 10px;
+}
+
+
+.list-cheatsheet-item > li:hover {
+    color: #5966EC;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.cheatsheet-download {
+    float: right;
+    background: url('../assets/images/sprites-nomal.png') -5px -5px;
+    background-size: 611px 78px;
+    width: 15px;
+    height: 15px;
+    margin-right: 13px;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+}
+
+.cheatsheet-download:hover{
+    background-position: -30px -5px;
+    cursor: pointer;
 }
 
 .list-content {
@@ -48,3 +106,4 @@
     line-height: 19px;
     text-align: left;
 }
+
