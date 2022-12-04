@@ -8,24 +8,52 @@
     <link rel="stylesheet" href="../src/css/reset.css" />
     <link rel="stylesheet" href="../src/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="../src/css/sidebar.css" />
-    <link rel="stylesheet" href="../src/css/pagetutorial.css">
+    <link rel="stylesheet" href="../src/css/pagetutorial.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
   </head>
   <body>
+    <header class="global-header">
+      <div class="global-header-inner">
+        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+        <nav class="gnb">
+          <a href="/">Try it</a>
+          <a href="/pagecheatsheet">Cheatsheet</a>
+          <a class="is-active" href="/pagetutorial">Tutorial</a>
+        </nav>
+        <article class="global-util-wrap">
+          <div class="search">
+            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn-search">
+              <span class="screen-out">검색하기</span>
+            </button>
+          </div>
+          <button class="btn-darkmode">
+            <span class="screen-out">다크 모드</span>
+          </button>
+        </article>
+      </div>
+    </header>
     <!-- 공통 에셋 사이드바 작성 중입니다. -->
     <div class="la-wrap">
       <aside class="side-bar">
         <ul class="list-wrap">
-            <li>
-                <h3 class="list-title">SQL Tutorial</h3>
-                <ul class="list-item">
-                    <li class="high-light">Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                    <li>Content</li>
-                </ul>
-            </li>
+          <li>
+            <h3 class="list-title">SQL Tutorial</h3>
+            <ul class="list-item">
+              <li class="high-light">Content</li>
+              <li>Content</li>
+              <li>Content</li>
+              <li>Content</li>
+              <li>Content</li>
+              <li>Content</li>
+            </ul>
+          </li>
         </ul>
       </aside>
       <main>
