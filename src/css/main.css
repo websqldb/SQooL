@@ -42,10 +42,10 @@
     cursor: pointer;
 }
 
-#sqlSelet {
+#sqlSelect {
     padding: 0 28px 0 12px;
     appearance: none;
-    background: url(../assets/images/select-arrow-drop-down.png);
+    background: url(../assets/images/select-arrow-drop-down.png) no-repeat right 9px center;
     width: 176px;
     height: 31px;
     background-color: #EFEFEF;

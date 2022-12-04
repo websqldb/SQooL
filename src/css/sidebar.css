@@ -30,7 +30,7 @@
     margin-bottom: 131px;
 }
 
-.list-title, .list-cheatsheet-title {
+.list-title, .main-side-title, .list-cheatsheet-title {
     font-family: 'Pretendard';
     /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
     margin-bottom: 16px;
@@ -44,7 +44,7 @@
     margin-bottom: 62px;
 }
 
-.list-item, .list-cheatsheet-item {
+.list-item, .sql-btn-item, .list-cheatsheet-item {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
