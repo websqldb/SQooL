@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="./src/css/sidebar.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
   </head>
   <body>
     <!-- 공통 에셋 사이드바 작성 중입니다. -->
@@ -50,26 +51,110 @@
         </ul>
       </aside>
       <main>
+        <!-- main 파트 수정중입니다. -->
         <section class="sec-statement">
           <form>
             <div class="state-header">
               <h3>SQL Statement</h3>
               <!-- 가상요소 추가 -->
-              <button class="btn-copy"></button>
-              <button class="btn-delete"></button>
+              <button class="btn-copy">
+                <!-- css sprite 기법 -->
+              </button>
+              <button class="btn-delete">
+                <!-- css sprite 기법 -->
+              </button>
             </div>
             <div class="state-area">
               <pre>
-                        <span class="code row">1</span>
-                        <span class="code row">2</span>
-                        <span class="code row">3</span>
-                        <span class="code row">4</span>
-                        <span class="code row">5</span>
-                        <span class="code row">6</span>
-                        </pre>
+                  <span class="code row">1</span>
+                  <span class="code row">2</span>
+                  <span class="code row">3</span>
+                  <span class="code row">4</span>
+                  <span class="code row">5</span>
+                  <span class="code row">6</span>
+                </pre>
             </div>
             <button class="btn-run">Run SQL</button>
           </form>
+        </section>
+        <section class="sec-result">
+          <h3>Result</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>emp_no</th>
+                <th>birth_date</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>gender</th>
+                <th>hire_date</th>
+              </tr>
+              <tr>
+                <td>10001</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10002</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10003</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10004</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10005</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10006</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10007</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10008</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </main>
     </div>
