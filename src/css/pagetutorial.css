@@ -2,21 +2,3 @@
 .side-bar {
     padding-top: 112px;
 }
-.list-title {
-    margin-bottom: 55px;
-}
-.list-item li {
-    width: 250px;
-    padding: 8px 0 16px 0;
-    font-size: 1.6rem;
-    border-bottom: 1px solid #EDEDED;
-    color: #434343;
-    box-sizing: border-box;
-}
-.list-item li + li {
-    margin-bottom: 4px;
-}
-.list-item .high-light {
-    color: #5966EC;
-    font-weight: 700;
-}

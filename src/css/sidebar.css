@@ -30,7 +30,7 @@
     margin-bottom: 131px;
 }
 
-.list-title, .main-side-title, .list-cheatsheet-title {
+.list-title, .main-side-title {
     font-family: 'Pretendard';
     /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
     margin-bottom: 16px;
@@ -40,23 +40,21 @@
     border-bottom: 1px solid #999A99;
 }
 
-.list-cheatsheet-title {
-    margin-bottom: 62px;
-}
-
-.list-item, .sql-btn-item, .list-cheatsheet-item {
+.list-item, .sql-btn-item {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.list-cheatsheet-item {
+.list-item {
+    margin-top: 62px;
     font-family: 'Pretendard';
     flex-direction: column;
     gap: 15px;
 }
 
-.list-cheatsheet-item > li, .cheatsheet-pdf {
+.list-item > li, .cheatsheet-pdf {
+    width: 250px;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -70,8 +68,7 @@
     padding-bottom: 10px;
 }
 
-
-.list-cheatsheet-item > li:hover {
+.list-item > li:hover, .list-item > li:active {
     color: #5966EC;
     cursor: pointer;
     font-weight: 700;
