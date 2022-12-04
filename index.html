@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQooL</title>
-    <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/assets/fonts/fonts.css">
-    <link rel="stylesheet" href="./src/css/sidebar.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./src/css/sidebar.css" />
+  </head>
+  <body>
     <!-- 공통 에셋 사이드바 작성 중입니다. -->
     <div class="la-wrap">
-        <aside class="side-bar">
-            <ul class="list-wrap">
-                <li>
-                    <h3 class="list-title">List title</h3>
-                    <ul class="list-item">
-                        <li>Content</li>
-                        <li>Content</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3 class="list-title">List title</h3>
-                    <ul class="list-item">
-                        <li>Content</li>
-                        <li>Content</li>
-                    </ul>
-                </li>
+      <aside class="side-bar">
+        <ul class="list-wrap">
+          <li>
+            <h3 class="list-title">List title</h3>
+            <ul class="list-item">
+              <li>Content</li>
+              <li>Content</li>
             </ul>
-        </aside>
-        <main>
-            <section class="sec-statement">
-                <form>
-                    <div class="state-header">
-                        <h3>SQL Statement</h3>
-                        <!-- 가상요소 추가 -->
-                        <button class="btn-copy"></button>
-                        <button class="btn-delete"></button>
-                    </div>
-                    <div class="state-area">
-                        <pre>
+          </li>
+          <li>
+            <!-- 메인 사이드바 수정 중입니다. -->
+            <h3 class="list-title">Database</h3>
+            <ul class="list-database-item">
+              <!-- 리스트 형태 모달 -->
+              <li>
+                departsments
+                <button class="downloadBtn">
+                  <ul class="hide list-download-item">
+                    <li><a href="#" download="a.csv">.csv로 다운로드</a></li>
+                    <li>
+                      <a href="#" download="a.json">.json으로 다운로드</a>
+                    </li>
+                  </ul>
+                </button>
+              </li>
+              <!-- css sprite 기법 -->
+              <li>departsments</li>
+              <li>departsments</li>
+            </ul>
+          </li>
+          <!-- download modal -->
+          <div class="hide download-modal">
+            <a href="#" download="a.csv">.csv로 다운로드</a>
+            <a href="#" download="a.csv">.json으로 다운로드</a>
+          </div>
+        </ul>
+      </aside>
+      <main>
+        <section class="sec-statement">
+          <form>
+            <div class="state-header">
+              <h3>SQL Statement</h3>
+              <!-- 가상요소 추가 -->
+              <button class="btn-copy"></button>
+              <button class="btn-delete"></button>
+            </div>
+            <div class="state-area">
+              <pre>
                         <span class="code row">1</span>
                         <span class="code row">2</span>
                         <span class="code row">3</span>
@@ -48,11 +67,11 @@
                         <span class="code row">5</span>
                         <span class="code row">6</span>
                         </pre>
-                    </div>
-                    <button class="btn-run">Run SQL</button>
-                </form>
-            </section>
-        </main>
+            </div>
+            <button class="btn-run">Run SQL</button>
+          </form>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
 </html>
