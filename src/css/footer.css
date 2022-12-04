@@ -1,0 +1,65 @@
+:root {
+    --color: #bcbcbc
+}
+
+.sql-footer {
+    background: #F9F9FA;
+}
+
+.footer-wrap {
+    box-sizing: border-box;
+    padding-left: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1257px;
+    height: 169px;
+    margin: 0 auto;
+    font-family: Pretendard;
+}
+
+.foot-logo-link {
+    text-decoration-line: none;
+    margin-right: 193px;
+}
+
+.footer-logo {
+    font-weight: 700;
+    font-size: 36px;
+    color: #bcbcbc;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 11px;
+    color: #bcbcbc;
+}
+
+.footer-content {
+    color: #666666;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 19px;
+
+}
+
+.copyright-text {
+    font-weight: 300;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.git-hub {
+    margin-left: 280px;
+}
+
+.git-hub::before {
+    display: block;
+    content: "";
+    background: url(../assets/images/sprites-nomal.png) no-repeat -483px -5px;
+    background-size: 612px 78px;
+    width: 124px;
+    height: 45px;
+}
