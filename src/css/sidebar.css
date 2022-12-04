@@ -17,17 +17,9 @@
     box-sizing: border-box;
 }
 
-.side-bar-cheatsheet {
-    padding-top: 121px;
-}
-
 .list-wrap > li {
     /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
     margin-bottom: 76px;
-}
-
-.list-wrap-cheatsheet > li{
-    margin-bottom: 131px;
 }
 
 .list-title, .main-side-title {
@@ -53,6 +45,21 @@
     gap: 15px;
 }
 
+.list-item > li:hover, .list-item > li:active {
+    color: #5966EC;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* 치트 시트 사이드바 Section */
+.side-bar-cheatsheet {
+    padding-top: 121px;
+}
+
+.list-wrap-cheatsheet > li{
+    margin-bottom: 131px;
+}
+
 .list-item > li, .cheatsheet-pdf {
     width: 250px;
     font-weight: 400;
@@ -66,12 +73,6 @@
 .cheatsheet-pdf{
     padding-top: 17px;
     padding-bottom: 10px;
-}
-
-.list-item > li:hover, .list-item > li:active {
-    color: #5966EC;
-    cursor: pointer;
-    font-weight: 700;
 }
 
 .cheatsheet-download {
@@ -89,18 +90,5 @@
 .cheatsheet-download:hover{
     background-position: -30px -5px;
     cursor: pointer;
-}
-
-.list-content {
-    border: 1px solid #E9EBFC;
-    border-radius: 41px;
-    padding: 6px 12px;
-    color: #8085B0;
-    background-color: #F7F7FF;
-    font-family: 'Pretendard';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    text-align: left;
 }
 
