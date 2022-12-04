@@ -1,4 +1,4 @@
-.sql-btn-wrap > button {
+.sql-btn-wrap>button {
   margin-bottom: 76px;
 }
 
@@ -67,6 +67,7 @@
 .modal-wrap * {
   box-sizing: border-box;
 }
+
 .modal-wrap {
   display: none;
   position: absolute;
@@ -122,6 +123,7 @@
   margin-bottom: 12px;
   padding: 0;
 }
+
 .ir {
   width: 0;
   height: 0;
@@ -133,11 +135,13 @@
 .hint1 {
   display: none;
 }
+
 .hint2 {
   display: none;
   top: 220px;
   width: 352px;
 }
+
 .hint3 {
   display: none;
   top: 400px;
