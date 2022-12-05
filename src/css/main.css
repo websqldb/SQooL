@@ -1,4 +1,6 @@
 .sql-btn-item {
+  width: 250px;
+  margin-top: 30px;
   margin-bottom: 12px;
 }
 
@@ -206,4 +208,8 @@
 .hint3 {
   display: none;
   top: 400px;
+}
+
+.sec-statement {
+  margin-top: 70px;
 }

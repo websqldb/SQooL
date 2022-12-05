@@ -1,65 +1,63 @@
 :root {
-    --color: #bcbcbc
+  --color: #bcbcbc;
 }
 
 .sql-footer {
-    background: #F9F9FA;
+  background: #f9f9fa;
 }
 
 .footer-wrap {
-    box-sizing: border-box;
-    padding-left: 33px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 1257px;
-    height: 169px;
-    margin: 0 auto;
-    font-family: Pretendard;
+  box-sizing: border-box;
+  padding-left: 33px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 169px;
+  margin: 0 auto;
+  font-family: Pretendard;
 }
 
 .foot-logo-link {
-    text-decoration-line: none;
-    margin-right: 193px;
+  text-decoration-line: none;
+  margin-right: 193px;
 }
 
 .footer-logo {
-    font-weight: 700;
-    font-size: 36px;
-    color: #bcbcbc;
+  font-weight: 700;
+  font-size: 36px;
+  color: #bcbcbc;
 }
 
 .footer-title {
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 11px;
-    color: #bcbcbc;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 11px;
+  color: #bcbcbc;
 }
 
 .footer-content {
-    color: #666666;
-    font-weight: 300;
-    font-size: 14px;
-    margin-bottom: 19px;
-
+  color: #909090;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 19px;
 }
 
 .copyright-text {
-    font-weight: 300;
-    font-size: 14px;
-    color: #C4C4C4;
+  font-weight: 300;
+  font-size: 14px;
+  color: #c4c4c4;
 }
 
 .git-hub {
-    margin-left: 280px;
+  margin-left: 280px;
 }
 
 .git-hub::before {
-    display: block;
-    content: "";
-    background: url(../assets/images/sprites-nomal.png) no-repeat -483px -5px;
-    background-size: 612px 78px;
-    width: 124px;
-    height: 45px;
+  display: block;
+  content: "";
+  background: url(../assets/images/sprites-nomal.png) no-repeat -483px -5px;
+  background-size: 612px 78px;
+  width: 124px;
+  height: 45px;
 }
