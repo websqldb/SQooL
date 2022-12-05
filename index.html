@@ -41,7 +41,12 @@
   </header>
   <!-- 공통 에셋 사이드바 작성 중입니다. -->
   <div class="la-wrap">
-    <aside class="side-bar">
+    <aside class="side-bar main-side-bar">
+      <!-- 날개 접기 버튼 -->
+      <div class="fold-btn-modal">
+        <button class="fold-btn"></button>
+      </div>
+      <!-- sql문 선택 버튼 -->
       <section class="sql-btn-wrap">
         <h3 class="main-side-title">SQL</h3>
         <section class="sql-btn-item">
@@ -56,7 +61,7 @@
           <button class="sql-btn">INSERT INTO SELECT</button>
         </section>
         <button class="more-btn">MORE</button>
-        <!-- sql문 선택 -->
+        <!-- sql문 선택 박스 -->
         <select name="sql select" id="sqlSelect">
           <option value="">--- SQL 문 선택 ---</option>
           <option value=""></option>

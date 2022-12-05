@@ -1,3 +1,23 @@
+.main-side-bar {
+  position: relative;
+}
+
+.fold-btn-modal {
+  position: absolute;
+  top: 23px;
+  right: -27px;
+  background-color: #FFFFFF;
+}
+
+.fold-btn {
+  width: 44px;
+  height: 44px;
+  border: 0.5px solid #D9D9D9;
+  border-radius: 7px;
+  background: url(../assets/images/main-fold-btn-arrow.png) no-repeat center;
+  cursor: pointer;
+}
+
 .sql-btn-item {
   width: 250px;
   margin-top: 30px;
