@@ -1,113 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQooL</title>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./src/css/sidebar.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
+    <link rel="stylesheet" href="./src/css/footer.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQooL</title>
-  <link rel="stylesheet" href="./src/css/reset.css" />
-  <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="./src/css/sidebar.css" />
-  <link rel="stylesheet" href="./src/css/main.css" />
-  <link rel="stylesheet" href="./src/css/header.css" />
-  <link rel="stylesheet" href="./src/css/footer.css">
-</head>
-
-<body>
-  <header class="global-header">
-    <div class="global-header-inner">
-      <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
-      <nav class="gnb">
-        <a class="is-active" href="/">Try it</a>
-        <a href="/pagecheatsheet">Cheatsheet</a>
-        <a href="/pagetutorial">Tutorial</a>
-      </nav>
-      <article class="global-util-wrap">
-        <div class="search">
-          <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-          <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
-          <button class="btn-search">
-            <span class="screen-out">검색하기</span>
-          </button>
-        </div>
-        <button class="btn-darkmode">
-          <span class="screen-out">다크 모드</span>
-        </button>
-      </article>
-    </div>
-  </header>
-  <!-- 공통 에셋 사이드바 작성 중입니다. -->
-  <div class="la-wrap">
-    <aside class="side-bar">
-      <section class="sql-btn-wrap">
-        <h3 class="main-side-title">SQL</h3>
-        <section class="sql-btn-item">
-          <button class="sql-btn">SELECT</button>
-          <button class="sql-btn">GROUP BY</button>
-          <button class="sql-btn">ORDER BY</button>
-          <button class="sql-btn">UPDATE</button>
-          <button class="sql-btn">INSERT INTO</button>
-          <button class="sql-btn">WHERE</button>
-          <button class="sql-btn">DELETE</button>
-          <button class="sql-btn">INNER JOIN</button>
-          <button class="sql-btn">INSERT INTO SELECT</button>
-        </section>
-        <button class="more-btn">MORE</button>
-        <!-- sql문 선택 -->
-        <select name="sql select" id="sqlSelect">
-          <option value="">--- SQL 문 선택 ---</option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </section>
-      <section>
-        <!-- 메인 사이드바 수정 중입니다. -->
-        <h3 class="list-title">Database</h3>
-        <ul class="list-database-item">
-          <!-- 리스트 형태 모달 -->
-          <li>
-            departsments
-            <button class="downloadBtn">
-              <ul class="hide list-download-item">
-                <li><a href="#" download="a.csv">.csv로 다운로드</a></li>
-                <li>
-                  <a href="#" download="a.json">.json으로 다운로드</a>
-                </li>
-              </ul>
-            </button>
-          </li>
-          <!-- css sprite 기법 -->
-          <li>departsments</li>
-          <li>departsments</li>
-        </ul>
-      </section>
-      <!-- download modal -->
-      <div class="hide download-modal">
-        <a href="#" download="a.csv">.csv로 다운로드</a>
-        <a href="#" download="a.csv">.json으로 다운로드</a>
-      </div>
-    </aside>
-    <main>
-      <!-- main 파트 수정중입니다. -->
-      <section class="sec-statement">
-        <form>
-          <div class="state-header">
-            <h3>SQL Statement</h3>
-            <!-- 가상요소 추가 -->
-            <button class="btn-copy">
-              <!-- css sprite 기법 -->
-            </button>
-            <button class="btn-delete">
-              <!-- css sprite 기법 -->
+  <body>
+    <header class="global-header">
+      <div class="global-header-inner">
+        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+        <nav class="gnb">
+          <a class="is-active" href="/">Try it</a>
+          <a href="/pagecheatsheet">Cheatsheet</a>
+          <a href="/pagetutorial">Tutorial</a>
+        </nav>
+        <article class="global-util-wrap">
+          <div class="search">
+            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn-search">
+              <span class="screen-out">검색하기</span>
             </button>
           </div>
-          <div class="state-area">
-            <pre>
+          <button class="btn-darkmode">
+            <span class="screen-out">다크 모드</span>
+          </button>
+        </article>
+      </div>
+    </header>
+    <!-- 공통 에셋 사이드바 작성 중입니다. -->
+    <div class="la-wrap">
+      <aside class="side-bar">
+        <section class="sql-btn-wrap">
+          <h3 class="main-side-title">SQL</h3>
+          <section class="sql-btn-item">
+            <button class="sql-btn">SELECT</button>
+            <button class="sql-btn">GROUP BY</button>
+            <button class="sql-btn">ORDER BY</button>
+            <button class="sql-btn">UPDATE</button>
+            <button class="sql-btn">INSERT INTO</button>
+            <button class="sql-btn">WHERE</button>
+            <button class="sql-btn">DELETE</button>
+            <button class="sql-btn">INNER JOIN</button>
+            <button class="sql-btn">INSERT INTO SELECT</button>
+          </section>
+          <button class="more-btn">MORE</button>
+          <!-- sql문 선택 -->
+          <select name="sql select" id="sqlSelect">
+            <option value="">--- SQL 문 선택 ---</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </section>
+        <section class="database-download-wrap">
+          <!-- 메인 사이드바 수정 중입니다. -->
+          <h3 class="list-title">Database</h3>
+          <ul class="list-database-download-item">
+            <li>
+              departsments
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="#" download="a.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              departsments
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="#" download="a.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              departsments
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="#" download="a.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <main>
+        <!-- main 파트 수정중입니다. -->
+        <section class="sec-statement">
+          <form>
+            <div class="state-header">
+              <h3>SQL Statement</h3>
+              <!-- 가상요소 추가 -->
+              <button class="btn-copy">
+                <!-- css sprite 기법 -->
+              </button>
+              <button class="btn-delete">
+                <!-- css sprite 기법 -->
+              </button>
+            </div>
+            <div class="state-area">
+              <pre>
                   <span class="code row">1</span>
                   <span class="code row">2</span>
                   <span class="code row">3</span>
@@ -115,147 +141,146 @@
                   <span class="code row">5</span>
                   <span class="code row">6</span>
                 </pre>
+            </div>
+            <button class="btn-run">Run SQL</button>
+          </form>
+        </section>
+        <section class="sec-result">
+          <h3>Result</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>emp_no</th>
+                <th>birth_date</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>gender</th>
+                <th>hire_date</th>
+              </tr>
+              <tr>
+                <td>10001</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10002</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10003</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10004</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10005</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10006</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10007</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+              <tr>
+                <td>10008</td>
+                <td>1953-09-02</td>
+                <td>Georgi</td>
+                <td>Facello</td>
+                <td>M</td>
+                <td>1986-06-26</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      <!-- 기능 설명 모달 -->
+      <div class="modal-wrap" style="display: none">
+        <section class="modal-main hint1">
+          <h2 class="ir">SQL Statement 사용 방법</h2>
+          <p>
+            좌측 구문이 담긴 버튼을 클릭하면 예시 구문을 불러올 수 있습니다.
+          </p>
+
+          <div class="modal-content">
+            <span>1/3</span>
+            <button class="btn-next" type="button">다음</button>
           </div>
-          <button class="btn-run">Run SQL</button>
-        </form>
-      </section>
-      <section class="sec-result">
-        <h3>Result</h3>
-        <table>
-          <tbody>
-            <tr>
-              <th>emp_no</th>
-              <th>birth_date</th>
-              <th>first_name</th>
-              <th>last_name</th>
-              <th>gender</th>
-              <th>hire_date</th>
-            </tr>
-            <tr>
-              <td>10001</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10002</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10003</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10004</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10005</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10006</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10007</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-            <tr>
-              <td>10008</td>
-              <td>1953-09-02</td>
-              <td>Georgi</td>
-              <td>Facello</td>
-              <td>M</td>
-              <td>1986-06-26</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
+        </section>
 
-    <!-- 기능 설명 모달 -->
-    <div class="modal-wrap" style="display: none">
-      <section class="modal-main hint1">
-        <h2 class="ir">SQL Statement 사용 방법</h2>
-        <p>
-          좌측 구문이 담긴 버튼을 클릭하면 예시 구문을 불러올 수 있습니다.
-        </p>
+        <section class="modal-main hint2">
+          <h2 class="ir">Run SQL 버튼에 대한 설명</h2>
+          <p>
+            에디터에 SQL 구문을 입력하고 Run SQL 버튼을 클릭하면 하단에 결과가
+            나타납니다.
+          </p>
 
-        <div class="modal-content">
-          <span>1/3</span>
-          <button class="btn-next" type="button">다음</button>
-        </div>
-      </section>
+          <div class="modal-content">
+            <span>2/3</span>
+            <button class="btn-next" type="button">다음</button>
+          </div>
+        </section>
 
-      <section class="modal-main hint2">
-        <h2 class="ir">Run SQL 버튼에 대한 설명</h2>
-        <p>
-          에디터에 SQL 구문을 입력하고 Run SQL 버튼을 클릭하면 하단에 결과가
-          나타납니다.
-        </p>
+        <section class="modal-main hint3">
+          <h2 class="ir">Database 다운로드에 대한 설명</h2>
+          <p>데이터를 .csv나 .json 파일로 다운로드하여 사용할 수 있습니다.</p>
 
-        <div class="modal-content">
-          <span>2/3</span>
-          <button class="btn-next" type="button">다음</button>
-        </div>
-      </section>
-
-      <section class="modal-main hint3">
-        <h2 class="ir">Database 다운로드에 대한 설명</h2>
-        <p>데이터를 .csv나 .json 파일로 다운로드하여 사용할 수 있습니다.</p>
-
-        <div class="modal-content">
-          <span>3/3</span>
-          <button class="btn-next" type="button">튜토리얼 끝내기</button>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <footer class="sql-footer">
-
-    <div class="footer-wrap">
-      <a href="#" class="foot-logo-link">
-        <h2 class="footer-logo">SQool</h2>
-      </a>
-
-      <section>
-        <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
-        <p class="footer-content">이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이 사용할 수있는 공공재입니다.</p>
-        <small class="copyright-text">© 2022, All Rights
-          Reserved</small>
-      </section>
-      <a href="#" class="git-hub"></a>
+          <div class="modal-content">
+            <span>3/3</span>
+            <button class="btn-next" type="button">튜토리얼 끝내기</button>
+          </div>
+        </section>
+      </div>
     </div>
 
-  </footer>
-</body>
+    <footer class="sql-footer">
+      <div class="footer-wrap">
+        <a href="#" class="foot-logo-link">
+          <h2 class="footer-logo">SQool</h2>
+        </a>
 
+        <section>
+          <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
+          <p class="footer-content">
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
+            사용할 수있는 공공재입니다.
+          </p>
+          <small class="copyright-text">© 2022, All Rights Reserved</small>
+        </section>
+        <a href="#" class="git-hub"></a>
+      </div>
+    </footer>
+  </body>
 </html>
