@@ -8,7 +8,7 @@
 
 ## 콘텐츠
 
-- 웹 서비스 : [바로가기](https://flexngrid.com/)
+- 웹 서비스 : [바로가기](https://sqlschool.co.kr/)
 - Notion :
 
 ## 기여하기
