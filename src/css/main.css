@@ -44,8 +44,7 @@
 #sqlSelect {
   padding: 0 28px 0 12px;
   appearance: none;
-  background: url(../assets/images/select-arrow-drop-down.png) no-repeat right
-    9px center;
+  background: url(../assets/images/select-arrow-drop-down.png) no-repeat right 9px center;
   width: 176px;
   height: 31px;
   background-color: #efefef;
@@ -132,7 +131,7 @@
 }
 
 .modal-wrap {
-  display: none;
+  /* display: none; */
   position: absolute;
   font-family: "Pretendard";
   top: 0;
@@ -150,7 +149,7 @@
   font-size: 20px;
   line-height: 24px;
   padding: 24px 40px;
-  width: 348px;
+  width: 372px;
   border: 2px solid #5966ec;
   border-radius: 10px;
   text-align: left;
@@ -196,18 +195,53 @@
 }
 
 .hint1 {
-  display: none;
+  position: relative;
+  top: 178px;
+  left: 303px;
+}
+
+.hint1::before {
+  content: "";
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat url(../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: -23px;
+  top: 66px;
 }
 
 .hint2 {
-  display: none;
-  top: 220px;
-  width: 352px;
+  position: relative;
+  top: 230px;
+}
+
+.hint2::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat url(../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: 371px;
+  top: 77px;
+  transform: rotate(180deg);
 }
 
 .hint3 {
-  display: none;
+  position: relative;
   top: 400px;
+}
+
+.hint3::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat url(../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: 165px;
+  top: -21px;
+  transform: rotate(90deg);
 }
 
 .sec-statement {
