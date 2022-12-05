@@ -237,6 +237,63 @@
         </ul>
       </section>
       <!-- // section-3 -->
+
+      <!-- section-4 -->
+      <section class="cheatsheet-wrapper">
+        <h3>보기 관리</h3>
+        <ul class="cheatsheet-list">
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">CREATE VIEW</strong> v(c1, c2) <br>
+              <strong class="cheatsheet-sql-statement">AS</strong> <br>
+              <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2 <br>
+              <strong class="cheatsheet-sql-statement">FROM</strong> t; <br>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Create a new view that consists of c1 and c2
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">CREATE VIEW</strong> v(c1, c2) <br>
+              <strong class="cheatsheet-sql-statement">AS</strong> <br>
+              <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2 <br>
+              <strong class="cheatsheet-sql-statement">FROM</strong> t; <br>
+              <strong class="cheatsheet-sql-statement">WITH [</strong>
+              <strong class="cheatsheet-sql-sorted">CASCADED &#124; LOCAL</strong>
+              <strong class="cheatsheet-sql-statement">] CHECK OPTION</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Create a new View with check option
+            </p>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">CREATE</strong>
+              <strong class="cheatsheet-sql-sorted">RECURSIVE</strong>
+              <strong class="cheatsheet-sql-statement">VIEW</strong> v <br>
+              <strong class="cheatsheet-sql-statement">AS</strong> <br>
+              <strong class="cheatsheet-sql-select-state">select-statement</strong>
+              <strong class="cheatsheet-sql-additional ">-- anchor part</strong>  <br>
+              <strong class="cheatsheet-sql-statement">UNION [ALL]</strong> <br>
+              <strong class="cheatsheet-sql-select-state">select-statement;</strong>
+              <strong class="cheatsheet-sql-additional">-- anchor part</strong> <br>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Create a recursive view
+            </p>
+          </li>
+        </ul>
+      <!-- // section-4 -->
+      
     </main>
   </div>
 
