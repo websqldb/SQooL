@@ -80,6 +80,7 @@
             />
           </button>
         </div>
+        <!-- section-1 -->
         <section class="cheatsheet-wrapper">
           <h3>테이블에서 데이터 가져오기</h3>
           <ul class="cheatsheet-list">
@@ -123,10 +124,65 @@
             </li>
           </ul>
         </section>
+        <!-- // section-1 -->
+
+        <!-- section-2 -->
+        <section class="cheatsheet-wrapper">
+          <h3>다중 테이블에서 데이터 가져오기</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br>
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br>
+                <strong class="cheatsheet-sql-statement">INNER JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Inner join t1 and t2
+              </p>
+            </li>
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br>
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br>
+                <strong class="cheatsheet-sql-statement">LEFT JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Left join t1 and t2
+              </p>
+            </li>
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br>
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br>
+                <strong class="cheatsheet-sql-statement">RIGHT JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Right join t1 and t2
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-2 -->
+
       </main>
     </div>
-    <footer class="sql-footer">
 
+    <footer class="sql-footer">
         <div class="footer-wrap">
             <a href="#" class="foot-logo-link">
                 <h2 class="footer-logo">SQool</h2>
