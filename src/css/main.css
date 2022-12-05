@@ -1,4 +1,4 @@
-.sql-btn-wrap>button {
+.sql-btn-wrap > button {
   margin-bottom: 76px;
 }
 
@@ -46,7 +46,8 @@
 #sqlSelect {
   padding: 0 28px 0 12px;
   appearance: none;
-  background: url(../assets/images/select-arrow-drop-down.png) no-repeat right 9px center;
+  background: url(../assets/images/select-arrow-drop-down.png) no-repeat right
+    9px center;
   width: 176px;
   height: 31px;
   background-color: #efefef;
@@ -61,6 +62,70 @@
 
 .hide {
   display: none;
+}
+
+/* database */
+.list-database-download-item > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 20px;
+  font-size: 16px;
+  border-top: 1px solid #ededed;
+  color: #434343;
+}
+
+.list-database-download-item li:first-child {
+  border: none;
+}
+
+.list-database-download-item > li:hover {
+  background-color: #f7f7ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.download-modal {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  bottom: 11px;
+  left: 18px;
+  background-color: #f7f7ff;
+  width: 129px;
+  font-size: 16px;
+}
+
+.download-modal li {
+  color: #000;
+  background-color: inherit;
+  border: none;
+  border-top: 1px solid #ededed;
+  padding: 10px 0px 10px 4px;
+  cursor: pointer;
+}
+
+.download-modal li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.database-download-btn {
+  background: url("../assets/images/sprites-nomal.png") -4px -6px;
+  background-size: 500px 78px;
+  width: 13px;
+  height: 13px;
+  border: none;
+}
+
+.list-database-download-item > li:hover .database-download-btn {
+  background-position: -24px -6px;
+  cursor: pointer;
+}
+
+.database-download-btn:hover .download-modal {
+  display: flex;
 }
 
 /* 메인 모달 부분 */
