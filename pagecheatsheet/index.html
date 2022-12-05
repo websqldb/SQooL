@@ -1,73 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQooL</title>
-    <link rel="stylesheet" href="../src/css/reset.css">
-    <link rel="stylesheet" href="../src/assets/fonts/fonts.css">
-    <link rel="stylesheet" href="../src/css/sidebar.css">
+    <link rel="stylesheet" href="../src/css/reset.css" />
+    <link rel="stylesheet" href="../src/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="../src/css/sidebar.css" />
     <link rel="stylesheet" href="../src/css/header.css" />
     <link rel="stylesheet" href="../src/css/footer.css">
+    <link rel="stylesheet" href="../src/css/pagecheatsheet.css" />
 </head>
-
+  
 <body>
     <header class="global-header">
-        <div class="global-header-inner">
-            <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
-            <nav class="gnb">
-                <a href="/">Try it</a>
-                <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
-                <a href="/pagetutorial">Tutorial</a>
-            </nav>
-            <article class="global-util-wrap">
-                <div class="search">
-                    <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-                    <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
-                    <button class="btn-search">
-                        <span class="screen-out">검색하기</span>
-                    </button>
-                </div>
-                <button class="btn-darkmode">
-                    <span class="screen-out">다크 모드</span>
-                </button>
-            </article>
-        </div>
+      <div class="global-header-inner">
+        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+        <nav class="gnb">
+          <a href="/">Try it</a>
+          <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
+          <a href="/pagetutorial">Tutorial</a>
+        </nav>
+        <article class="global-util-wrap">
+          <div class="search">
+            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn-search">
+              <span class="screen-out">검색하기</span>
+            </button>
+          </div>
+          <button class="btn-darkmode">
+            <span class="screen-out">다크 모드</span>
+          </button>
+        </article>
+      </div>
     </header>
     <!-- 공통 에셋 사이드바 작성 중입니다. -->
     <div class="la-wrap">
-        <aside class="side-bar side-bar-cheatsheet">
-            <ul class="list-wrap-cheatsheet">
-                <li>
-                    <h3 class="list-title">SQL CheatSheet</h3>
-                    <ul class="list-item">
-                        <li>테이블에서 데이터 쿼리</li>
-                        <li>다중 테이블에서 데이터 쿼리</li>
-                        <li>SQL 연산자 사용</li>
-                        <li>보기 관리</li>
-                        <li>인덱스 관리</li>
-                        <li>SQL 집계 함수</li>
-                        <li>트리거 관리</li>
-                        <li>테이블 관리</li>
-                        <li>SQL 제약 조건 사용</li>
-                        <li>데이터 수정</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3 class="list-title">CheatSheet PDF</h3>
-                    <ul class="cheatsheet-pdf">
-                        <li>CheatSheet
-                            <button class="cheatsheet-download"></button>
-                        </li>
-                    </ul>
-                </li>
+      <aside class="side-bar side-bar-cheatsheet">
+        <ul class="list-wrap-cheatsheet">
+          <li>
+            <h3 class="list-title">SQL CheatSheet</h3>
+            <ul class="list-item">
+              <li>테이블에서 데이터 쿼리</li>
+              <li>다중 테이블에서 데이터 쿼리</li>
+              <li>SQL 연산자 사용</li>
+              <li>보기 관리</li>
+              <li>인덱스 관리</li>
+              <li>SQL 집계 함수</li>
+              <li>트리거 관리</li>
+              <li>테이블 관리</li>
+              <li>SQL 제약 조건 사용</li>
+              <li>데이터 수정</li>
             </ul>
-        </aside>
-        <main>
-            <!-- 각 페이지의 내용을 넣으세요 -->
-        </main>
+          </li>
+          <li>
+            <h3 class="list-title">CheatSheet PDF</h3>
+            <ul class="cheatsheet-pdf">
+              <li>
+                CheatSheet
+                <button class="cheatsheet-download"></button>
+              </li>
+        </ul>
+      </aside>
+      <main>
+        <!-- 각 페이지의 내용을 넣으세요 -->
+        <div class="cheatsheet-title-box">
+          <h2>SQL CheatSheet</h2>
+          <button class="cheatsheet-modal-btn">
+            <img
+              src="../src/assets/images/cheatsheet-modal-btn.png"
+              alt="modal-button"
+            />
+          </button>
+        </div>
+        <section class="cheatsheet-wrapper">
+          <h3>테이블에서 데이터 가져오기</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT * FROM</strong>
+                t;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Query data in columns c1, c2 from a table
+              </p>
+            </li>
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t
+              </p>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ORDER BY</strong> c1
+                <strong class="cheatsheet-sql-sorted">ASC [DESC]</strong>;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Sort the result set in ascending or descending order
+              </p>
+            </li>
+            <li>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1,
+                <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2)
+              </p>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">FROM</strong> t
+              </p>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">GROUP BY</strong> c1;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Group rows using an aggregate function
+              </p>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
     <footer class="sql-footer">
 
