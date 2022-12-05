@@ -78,6 +78,9 @@
         <h3>테이블에서 데이터 가져오기</h3>
         <ul class="cheatsheet-list">
           <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
             <p class="cheatsheet-sql">
               <strong class="cheatsheet-sql-statement">SELECT * FROM</strong>
               t;
@@ -87,12 +90,14 @@
             </p>
           </li>
           <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
             <p class="cheatsheet-sql">
               <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
               <strong class="cheatsheet-sql-statement">FROM</strong>
               t
-            </p>
-            <p class="cheatsheet-sql">
+              <br />
               <strong class="cheatsheet-sql-statement">ORDER BY</strong> c1
               <strong class="cheatsheet-sql-sorted">ASC [DESC]</strong>;
             </p>
@@ -101,14 +106,14 @@
             </p>
           </li>
           <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
             <p class="cheatsheet-sql">
               <strong class="cheatsheet-sql-statement">SELECT</strong> c1,
-              <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2)
-            </p>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">FROM</strong> t
-            </p>
-            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2) 
+              <br/>
+              <strong class="cheatsheet-sql-statement">FROM</strong> t <br/>
               <strong class="cheatsheet-sql-statement">GROUP BY</strong> c1;
             </p>
             <p class="cheatsheet-sql-explanation">
