@@ -1,8 +1,3 @@
-/* 튜토리얼 페이지 사이드바 추가속성*/
-.side-bar {
-  padding-top: 56px;
-}
-
 :root {
   --dark-bg-color: #3f3f45;
   --dark-accent-white: #ffffff;
@@ -11,7 +6,16 @@
   --dark-accent-yellow: #ffd66c;
 }
 
-body.dark-mode {
+body.dark-mode,
+.side-bar.dakr-mode {
   background-color: var(--dark-bg-color);
   color: var(--dark-accent-white);
+}
+
+.side-bar.dakr-mode {
+  color: var(--dark-accent-white);
+}
+
+.side-bar.dakr-mode:active {
+  color: var(--dark-accent-yellow);
 }
