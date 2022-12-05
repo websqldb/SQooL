@@ -5,13 +5,22 @@
   padding-top: 56px;
 }
 
+body {
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  color: #444444;
+}
+
+main {
+  padding-top: 105px;
+}
+
 .tuto-title {
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 30px;
-  letter-spacing: -0.3px;
   color: #212121;
 }
 
@@ -19,58 +28,56 @@
   display: flex;
   flex-direction: column;
   gap: 65px;
+  margin-top: 251px;
+  padding-top: 105px;
+}
+
+main :nth-child(2) {
+  margin-top: 0;
+}
+
+/* 일단 레이아웃 맞추려고 해둔 부분 - 더 깔끔한 표현 있을지  논의필요 */
+main :nth-child(2) {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .tuto-sec-title {
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 600;
   font-size: 28px;
   line-height: 30px;
-  letter-spacing: -0.3px;
-  color: #5966EC;
+  color: #5966ec;
 }
 
 .tuto-sec-cont {
-  background: #EFEEEE;
-  border: 1px solid #D9D9D9;
+  background: #efeeee;
+  border: 1px solid #d9d9d9;
   border-radius: 15px;
 }
 
-.tuto-sec-cont>strong {
-  font-family: 'Pretendard';
-  font-style: normal;
+.tuto-sec-cont > strong {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   color: #212121;
 }
 
-.tuto-sec-cont>p {
-  font-family: 'Pretendard';
-  font-style: normal;
+.tuto-sec-cont > p {
   font-weight: 400;
-  font-size: 16px;
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
-  color: #444444;
 }
 
 .tuto-sec-subtitle {
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   color: #212121;
 }
 
-.tuto-sec-para>p {
-  font-family: 'Pretendard';
-  font-style: normal;
+.tuto-sec-para > p {
   font-weight: 400;
-  font-size: 16px;
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
@@ -78,47 +85,40 @@
 }
 
 .tuto-sec-example-query {
-  background: #F9F9FA;
-  border: 1px solid #B4B4B4;
+  background: #f9f9fa;
+  border: 1px solid #b4b4b4;
   border-radius: 16px;
 }
 
 .tuto-sec-example-query a {
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .tuto-sec-example-query-para {
-  font-family: 'D2Coding';
-  font-style: normal;
-  font-weight: 400;
+  font-family: "D2Coding";
   font-size: 14px;
   line-height: 180%;
-  color: #5966EC;
+  color: #5966ec;
 }
 
 .tuto-sec-result-para {
-  background: #F9F9FA;
+  background: #f9f9fa;
   border-radius: 15px;
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
   line-height: 30px;
-  letter-spacing: -0.3px;
   color: #212121;
 }
 
-.tuto-sec-result-para>strong {
-  font-family: 'Pretendard';
-  font-style: normal;
+.tuto-sec-result-para > strong {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  letter-spacing: -0.3px;
   color: #212121;
+}
+
+.sql-footer {
+  margin-top: 243px;
 }
