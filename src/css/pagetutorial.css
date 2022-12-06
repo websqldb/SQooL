@@ -104,6 +104,46 @@ main :nth-child(2) {
   color: #5966ec;
 }
 
+/* 섹션2 표 작업  */
+
+table {
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-radius: 4px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #e5e5e5;
+}
+
+th,
+td {
+  width: 148.33px;
+  padding: 10px 18.54px 12px;
+}
+
+th {
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #f9f9fa;
+}
+
+.tuto-sec-result-subtitle {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.tuto-sec-result-table {
+  border-radius: 4px;
+}
+
+.tuto-sec-result-table thead {
+  font-weight: 700;
+  background-color: #e5e5e5;
+}
+
 .tuto-sec-result-para {
   background: #f9f9fa;
   border-radius: 15px;
@@ -123,37 +163,37 @@ main :nth-child(2) {
   margin-top: 243px;
 }
 
-.btn-go{
+.btn-go {
   width: 165px;
   height: 37px;
   left: 1447px;
   top: 1873px;
-  background: #5966EC;
+  background: #5966ec;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 80px;
 
-  font-family: 'Pretendard';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 21px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
 
-color: #FFFFFF;
-padding: 8px 16px;
+  color: #ffffff;
+  padding: 8px 16px;
 }
 
-.tuto-sec-para{
+.tuto-sec-para {
   font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 27px;
-/* or 169% */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  /* or 169% */
 
-text-align: justify;
-letter-spacing: -0.2px;
+  text-align: justify;
+  letter-spacing: -0.2px;
 
-color: #444444;
+  color: #444444;
 
-mix-blend-mode: normal;
-opacity: 0.7;
+  mix-blend-mode: normal;
+  opacity: 0.7;
 }
