@@ -1,5 +1,7 @@
 :root {
   --dark-bg-color: #3f3f45;
+  --dark-border-color: #333338;
+  --dark-box-color: #323237;
   --dark-accent-white: #ffffff;
   --dark-accent-orange: #ffbb56;
   --dark-accent-blue: #5966ec;
@@ -33,4 +35,31 @@ body.dark-mode,
 
 .global-header.dark-mode .gnb a.is-active  {
   color: var( --dark-accent-orange);
+}
+
+.global-header.dark-mode .global-util-wrap .search .ipt-search {
+  color: #B4B4B4;
+  background-color: #2D2D2D;
+}
+
+.global-header.dark-mode .global-util-wrap .btn-darkmode {
+
+}
+
+main.dark-mode .tuto-title{
+  color: var(--dark-accent-white);
+}
+
+main.dark-mode .tuto-sec-title {
+ color: var(--dark-accent-yellow) 
+}
+
+main.dark-mode .tuto-sec-cont strong {
+  color: var(--dark-accent-white);
+}
+
+main.dark-mode .tuto-sec-cont {
+  color: #E0E0E0;
+  background-color: var(--dark-box-color);
+  border: 1px solid var(--dark-border-color);
 }
