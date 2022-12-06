@@ -336,11 +336,149 @@
             </p>
           </li>
         </ul>
-
-        <!-- SQL 집계관리 -->
-
       </section>
       <!-- // section-5 -->
+      
+      <!-- section-6 -->
+      <section class="cheatsheet-wrapper">
+        <h3>SQL 집계 함수</h3>
+        <ul class="cheatsheet-list">
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">AVG</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              returns the average of a list
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">COUNT</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              returns the number of elements of a list
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">SUM</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              returns the total of a list
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">MAX</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              returns the maximum value in a list
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">MIN</strong>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              returns the minimum value in a list
+            </p>
+          </li>
+        </ul>
+      </section>
+      <!-- // section-6 -->
+
+      <!-- section-7 -->
+      <section class="cheatsheet-wrapper">
+        <h3>트리거 관리</h3>
+        <ul class="cheatsheet-list">
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">CREATE OR MODIFY TRIGGER</strong> trigger_name <br>
+              <strong class="cheatsheet-sql-sorted">WHEN EVENT</strong> <br>
+              <strong class="cheatsheet-sql-statement">ON</strong> table_name <br> <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong> <br>
+              <strong class="cheatsheet-sql-statement">EXECUTE</strong> stored_procedure; <br>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Create or modify a trigger
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-sorted">WHEN</strong><br>
+              <strong class="cheatsheet-sql-statement">BEFORE</strong><p class="cheatsheet-sql-explanation">- invoke before the event occurs</p>
+              <strong class="cheatsheet-sql-statement">AFTER</strong><p class="cheatsheet-sql-explanation">- invoke after the event occurs</p>
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-sorted">EVENT</strong><br>
+              <strong class="cheatsheet-sql-statement">INSRET</strong><p class="cheatsheet-sql-explanation">- invoke for INSERT</p>
+              <strong class="cheatsheet-sql-statement">UPDATE</strong><p class="cheatsheet-sql-explanation">- invoke for UPDATE</p>
+              <strong class="cheatsheet-sql-statement">DELETE</strong><p class="cheatsheet-sql-explanation">- invoke for DELETE</p>
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong><br>
+              <strong class="cheatsheet-sql-statement">FOR EACH ROW</strong>
+              <strong class="cheatsheet-sql-statement">FOR EACH STATEMENT</strong>
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">CREATE TRIGGER</strong> before_insert_person<br>
+              <strong class="cheatsheet-sql-sorted">BEFORE INSERT</strong>
+              <strong class="cheatsheet-sql-statement">ON</strong> person <br><strong class="cheatsheet-sql-sorted">FOR EACH ROW</strong>
+              <strong class="cheatsheet-sql-statement">EXECUTE</strong> sorted_procedure;<br>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Create a trigger invoked before a new row is inserted into the person table
+            </p>
+          </li>
+          <li>
+            <button class="cheatsheet-clipboard-btn">
+              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button">
+            </button>
+            <p class="cheatsheet-sql">
+              <strong class="cheatsheet-sql-statement">DROP TRIGGER</strong> trigger_name<br>
+            </p>
+            <p class="cheatsheet-sql-explanation">
+              Delete a specific trigger
+            </p>
+          </li>
+        </ul>
+      </section>
+      <!-- // section-7 -->
 
     </main>
   </div>
