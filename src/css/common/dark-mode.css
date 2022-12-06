@@ -34,3 +34,13 @@ body.dark-mode,
 .global-header.dark-mode .gnb a.is-active  {
   color: var( --dark-accent-orange);
 }
+
+.global-header.dark-mode .global-util-wrap .search .ipt-search {
+  color: #B4B4B4;
+  background-color: #2D2D2D;
+}
+
+.global-header.dark-mode .global-util-wrap .btn-darkmode {
+
+}
+
