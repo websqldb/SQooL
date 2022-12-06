@@ -74,7 +74,7 @@ main :nth-child(2) {
   color: #777777;
 }
 
-.tuto-sec-subtitle{
+.tuto-sec-subtitle {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -111,7 +111,16 @@ main :nth-child(2) {
 
 /* 섹션2 표 작업  */
 
-table {
+.tuto-sec-result {
+  color: #000;
+}
+
+.tuto-sec-result .tuto-sec-subtitle {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.tuto-sec-result-table {
   margin: 0;
   border-collapse: collapse;
   font-size: 14px;
@@ -120,24 +129,19 @@ table {
   box-shadow: 0 0 0 1px #e5e5e5;
 }
 
-th,
-td {
+.tuto-sec-result-table th,
+.tuto-sec-result-table td {
   width: 148.33px;
   padding: 10px 18.54px 12px;
 }
 
-th {
+.tuto-sec-result-table th {
   border: 1px solid #e5e5e5;
   text-align: left;
 }
 
-td {
+.tuto-sec-result-table td {
   border: 1px solid #f9f9fa;
-}
-
-.tuto-sec-result-subtitle {
-  font-size: 20px;
-  margin-bottom: 15px;
 }
 
 .tuto-sec-result-table {
