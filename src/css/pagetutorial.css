@@ -39,7 +39,7 @@ main :nth-child(2) {
 /* 일단 레이아웃 맞추려고 해둔 부분 - 더 깔끔한 표현 있을지  논의필요 */
 main :nth-child(2) {
   margin-top: 0;
-  padding-top: 0;
+  /* padding-top: 0; */
 }
 
 .tuto-sec-title {
@@ -47,12 +47,14 @@ main :nth-child(2) {
   font-size: 28px;
   line-height: 30px;
   color: #5966ec;
+  margin-bottom: -40px;
 }
 
 .tuto-sec-cont {
   background: #efeeee;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
+  padding: 34px;
 }
 
 .tuto-sec-cont > strong {
@@ -60,6 +62,7 @@ main :nth-child(2) {
   font-size: 20px;
   line-height: 24px;
   color: #212121;
+  padding-top: 34px;
 }
 
 .tuto-sec-cont > p {
@@ -67,13 +70,15 @@ main :nth-child(2) {
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
+  padding-top: 25px;
+  color: #777777;
 }
 
-.tuto-sec-subtitle {
+.tuto-sec-subtitle{
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #212121;
+  color: #303030;
 }
 
 .tuto-sec-para > p {
@@ -110,6 +115,7 @@ main :nth-child(2) {
   font-weight: 500;
   line-height: 30px;
   color: #212121;
+  padding: 30px;
 }
 
 .tuto-sec-result-para > strong {
@@ -117,6 +123,7 @@ main :nth-child(2) {
   font-size: 20px;
   line-height: 30px;
   color: #212121;
+  margin-right: 27px;
 }
 
 .sql-footer {
