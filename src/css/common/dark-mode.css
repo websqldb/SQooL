@@ -6,16 +6,31 @@
   --dark-accent-yellow: #ffd66c;
 }
 
+/* 바디 */
 body.dark-mode,
-.side-bar.dakr-mode {
+.side-bar.dark-mode {
   background-color: var(--dark-bg-color);
   color: var(--dark-accent-white);
 }
 
-.side-bar.dakr-mode {
+/* 사이드바 */
+.side-bar.dark-mode {
   color: var(--dark-accent-white);
 }
 
-.side-bar.dakr-mode:active {
+.side-bar.dark-mode:active {
   color: var(--dark-accent-yellow);
+}
+
+/* 헤더 */
+.global-header.dark-mode .logo a{
+  color: var( --dark-accent-orange);
+}
+
+.global-header.dark-mode .logo span {
+  color: var(--dark-accent-blue);
+}
+
+.global-header.dark-mode .gnb a.is-active  {
+  color: var( --dark-accent-orange);
 }
