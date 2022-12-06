@@ -122,3 +122,38 @@ main :nth-child(2) {
 .sql-footer {
   margin-top: 243px;
 }
+
+.btn-go{
+  width: 165px;
+  height: 37px;
+  left: 1447px;
+  top: 1873px;
+  background: #5966EC;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 80px;
+
+  font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+
+color: #FFFFFF;
+padding: 8px 16px;
+}
+
+.tuto-sec-para{
+  font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 27px;
+/* or 169% */
+
+text-align: justify;
+letter-spacing: -0.2px;
+
+color: #444444;
+
+mix-blend-mode: normal;
+opacity: 0.7;
+}
