@@ -1,3 +1,7 @@
+.list-wrap-cheatsheet {
+  margin-top: 70px;
+}
+
 main {
   width: 100%;
   margin-left: 27px;
@@ -89,9 +93,9 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
 }
 
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-sorted {
-    color: #ffbb56;
+  color: #ffbb56;
 }
 
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-aggregate {
-    color: #ff8080;
+  color: #ff8080;
 }

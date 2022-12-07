@@ -12,7 +12,7 @@
   flex-basis: 313px;
   margin-right: 55px;
   /* 튜토리얼, 치트시트에선 상단 padding이 더 큽니다 */
-  padding: 56px 35px;
+  padding: 45px 35px;
   border-left: 0.5px solid #e8e7e7;
   border-right: 0.5px solid #e8e7e7;
   box-sizing: border-box;
@@ -28,6 +28,7 @@
 .main-side-title {
   font-family: "Pretendard";
   /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
+  margin-top: 70px;
   margin-bottom: 16px;
   font-weight: 600;
   font-size: 2.2rem;
