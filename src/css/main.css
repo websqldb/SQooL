@@ -87,7 +87,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 3px 10px 20px;
   font-size: 16px;
   border-top: 1px solid #ededed;
   color: #434343;
@@ -108,8 +108,8 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  bottom: 11px;
-  left: 18px;
+  bottom: 12px;
+  left: 21px;
   background-color: #f7f7ff;
   width: 129px;
   font-size: 16px;
@@ -132,9 +132,10 @@
 .database-download-btn {
   background: url("../assets/images/sprites-nomal.png") -4px -6px;
   background-size: 500px 78px;
-  width: 13px;
+  width: 20px;
   height: 13px;
   border: none;
+  padding: 0;
 }
 
 .list-database-download-item > li:hover .database-download-btn {
@@ -285,7 +286,7 @@ main h3 {
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
   height: 289px;
- /* left right 1px씩 조정 */
+  /* left right 1px씩 조정 */
   padding: 20px 19px 20px 19px;
 }
 
