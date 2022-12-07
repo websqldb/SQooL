@@ -16,6 +16,8 @@ main {
   font-weight: 600;
   font-size: 40px;
   line-height: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eeedec;
 }
 
 .tuto-sec {
@@ -24,6 +26,8 @@ main {
   gap: 65px;
   margin-top: 251px;
   padding-top: 105px;
+  padding-bottom: 240px;
+  border-bottom: 1px solid #eeedec;
 }
 
 main :nth-child(2) {
