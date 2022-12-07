@@ -329,16 +329,15 @@ main h3 {
 }
 
 .btn-delete {
-  background: url("../assets/images/sprites-nomal.png") -198px -5px;
-  background-size: 611px 78px;
+  background: url("../assets/images/sprites-nomal.png") -217.5px -7px;
+  background-size: 672px 88px;
   margin: 0 7px 0 25px;
 }
 
 .btn-delete:hover {
-  background: url("../assets/images/sprites-nomal.png") -168px -5px;
-  background-size: 611px 78px;
+  background: url("../assets/images/sprites-nomal.png") -184.5px -7px;
+  background-size: 672px 88px;
 }
-
 .state-area {
   font-family: "D2Coding";
   display: flex;
