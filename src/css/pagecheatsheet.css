@@ -2,8 +2,29 @@ main {
   width: 100%;
   margin-left: 27px;
 }
+
 main .cheatsheet-title-box {
   position: relative;
   margin-top: 104px;
   padding-bottom: 10px;
+}
+
+main .cheatsheet-title-box h2 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  display: inline-block;
+  color: #6d79ee;
+}
+
+main .cheatsheet-title-box .cheatsheet-modal-btn {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  vertical-align: top;
+  padding: 0;
+  margin-left: 10px;
 }
