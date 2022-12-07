@@ -285,7 +285,8 @@ main h3 {
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
   height: 289px;
-  padding: 20px;
+ /* left right 1px씩 조정 */
+  padding: 20px 19px 20px 19px;
 }
 
 .sec-statement .state-header {
@@ -406,7 +407,8 @@ main h3 {
   margin-bottom: 241px;
   background: #f9f9fa;
   box-sizing: border-box;
-  padding: 20px;
+  /* left right 1px씩 조정 */
+  padding: 0 11px 20px 11px;
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
 }

@@ -14,7 +14,7 @@
 }
 .side-bar {
   flex-basis: 313px;
-  margin-right: 55px;
+  margin-right: 45px;
   /* 튜토리얼, 치트시트에선 상단 padding이 더 큽니다 */
   padding: 45px 35px;
   border-left: 0.5px solid #e8e7e7;
