@@ -59,3 +59,20 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   position: absolute;
   left: -26px;
 }
+.cheatsheet-wrapper .cheatsheet-list {
+  background: #f9f9fa;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  padding: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.cheatsheet-wrapper .cheatsheet-list li {
+  width: 100%;
+  background: #ffffff;
+  padding: 31px 55px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
