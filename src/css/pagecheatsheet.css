@@ -38,3 +38,24 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   padding: 72px 0 119px 0;
   border-top: 1px solid #eeedec;
 }
+
+.cheatsheet-wrapper h3 {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #212121;
+  position: relative;
+
+  margin-bottom: 22px;
+}
+
+.cheatsheet-wrapper h3::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 29px;
+  background: #ffd66c;
+  position: absolute;
+  left: -26px;
+}
