@@ -265,61 +265,6 @@
 }
 
 /* main 파트 */
-.sec-result h3 {
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  padding: 20px 0 20px 6px;
-}
-
-.sec-result {
-  margin-top: 60px;
-  padding: 0 12px 20px 12px;
-  background: #f9f9fa;
-  box-sizing: border-box;
-  border: 1px solid rgba(232, 232, 232, 0.5);
-  border-radius: 16px;
-}
-
-.sec-result table {
-  color: #434343;
-  border: 1px solid #ebebeb;
-  border-radius: 4px 4px 4px 4px;
-  table-layout: fixed;
-  width: 144.17px;
-}
-
-.sec-result .table-cell {
-  width: 144.17px;
-}
-
-.sec-result th,
-.sec-result td {
-  border: 1px solid #ebebeb;
-  padding: 9.76px 18.02px 11.72px 18.02px;
-}
-
-.sec-result th {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17.58px;
-  background: #e7e9ff;
-  text-align: left;
-}
-
-.sec-result td {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17.58px;
-  background: #ffffff;
-}
-/* main 파트 */
 /* main-statement 파트 */
 main * {
   box-sizing: border-box;
@@ -339,9 +284,8 @@ main h3 {
   background: #f9f9fa;
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
-  width: 889px;
   height: 289px;
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .sec-statement .state-header {
@@ -455,15 +399,15 @@ main h3 {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  padding: 20px 0 20px 6px;
+  padding: 0px 0 20px 0px;
 }
 
 .sec-result {
   margin-top: 100px;
   margin-bottom: 241px;
-  padding: 0 12px 20px 12px;
   background: #f9f9fa;
   box-sizing: border-box;
+  padding: 20px;
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
 }
