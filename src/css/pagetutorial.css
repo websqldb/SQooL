@@ -75,18 +75,29 @@ main :nth-child(2) {
 }
 
 .tuto-sec-subtitle {
+  padding-bottom: 15px;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #303030;
+  color: #212121;
 }
 
 .tuto-sec-para > p {
+  padding-bottom: 20px;
   font-weight: 400;
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
   color: #444444;
+}
+
+.tuto-sec-para > p code {
+  display: inline-block;
+  line-height: 1;
+  padding: 2px 5px;
+  color: #5966EC;
+  background: #EFEFEF;
+  border-radius: 3px;
 }
 
 .tuto-sec-example-query {
