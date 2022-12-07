@@ -55,7 +55,6 @@ main :nth-child(2) {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #212121;
   padding-top: 34px;
 }
 
@@ -66,7 +65,6 @@ p.tuto-sec-para {
   text-align: justify;
   letter-spacing: -0.2px;
   padding-top: 25px;
-  color: #444444;
   opacity: 0.7;
 }
 
@@ -75,7 +73,6 @@ p.tuto-sec-para {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #212121;
 }
 
 .tuto-sec-para > p {
@@ -83,7 +80,6 @@ p.tuto-sec-para {
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
-  color: #444444;
   opacity: 0.7;
 }
 
@@ -118,9 +114,9 @@ p.tuto-sec-para {
 
 /* 섹션2 표 작업  */
 
-.tuto-sec-result {
+/* .tuto-sec-result {
   color: #000;
-}
+} */
 
 .tuto-sec-result .tuto-sec-subtitle {
   font-size: 20px;
@@ -165,7 +161,6 @@ p.tuto-sec-para {
   border-radius: 15px;
   font-weight: 500;
   line-height: 30px;
-  color: #212121;
   padding: 30px;
 }
 
@@ -173,7 +168,6 @@ p.tuto-sec-para {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  color: #212121;
   margin-right: 27px;
 }
 
