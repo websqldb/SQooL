@@ -290,22 +290,22 @@ main h3 {
 
 .sec-statement .state-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 18px;
 }
+
 .state-header h3 {
-  flex-grow: 1;
+  display: inline-block;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
 }
-.state-header h3::after {
+
+.btn-question {
   display: inline-block;
-  content: "";
-  background: url("../assets/images/sprites-nomal.png") -258px -5px;
+  background: url("../assets/images/sprites-nomal.png") -261px -4.5px;
   background-size: 611px 70px;
-  vertical-align: middle;
   width: 24px;
   height: 24px;
   margin-left: 8px;
