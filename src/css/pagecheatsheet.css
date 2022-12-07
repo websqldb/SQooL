@@ -28,3 +28,13 @@ main .cheatsheet-title-box .cheatsheet-modal-btn {
   padding: 0;
   margin-left: 10px;
 }
+
+main .cheatsheet-title-box .cheatsheet-modal-btn img {
+  width: 32px;
+  vertical-align: middle;
+}
+
+.cheatsheet-wrapper {
+  padding: 72px 0 119px 0;
+  border-top: 1px solid #eeedec;
+}
