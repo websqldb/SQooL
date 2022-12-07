@@ -76,3 +76,14 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
 }
+
+.cheatsheet-wrapper .cheatsheet-list li .cheatsheet-sql {
+  font-family: "D2Coding";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement {
+  color: #5966ec;
+}
