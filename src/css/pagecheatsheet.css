@@ -87,3 +87,11 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement {
   color: #5966ec;
 }
+
+.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-sorted {
+    color: #ffbb56;
+}
+
+.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-aggregate {
+    color: #ff8080;
+}
