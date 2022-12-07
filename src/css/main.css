@@ -5,17 +5,19 @@
 .fold-btn-modal {
   position: absolute;
   top: 23px;
-  right: -27px;
+  right: -25px;
   background-color: #ffffff;
 }
 
 .fold-btn {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border: 0.5px solid #d9d9d9;
   border-radius: 7px;
   background: url(../assets/images/main-fold-btn-arrow.png) no-repeat center;
+  background-size: 10px;
   cursor: pointer;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.05);
 }
 
 .sql-btn-item {
