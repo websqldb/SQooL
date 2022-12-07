@@ -1,3 +1,7 @@
+* {
+  color: #4e4d4d;
+}
+
 .list-wrap-cheatsheet {
   margin-top: 70px;
 }
@@ -48,7 +52,7 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  color: #212121;
+  color: #444444;
   position: relative;
 
   margin-bottom: 22px;

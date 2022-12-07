@@ -1,3 +1,7 @@
+* {
+  color: #444444;
+}
+
 .main-side-bar {
   position: relative;
 }
@@ -341,7 +345,7 @@ main h3 {
   border-radius: 16px;
   width: 889px;
   height: 289px;
-  padding: 20px 33px;
+  padding: 20px 20px;
 }
 
 .sec-statement .state-header {
@@ -352,6 +356,9 @@ main h3 {
 }
 .state-header h3 {
   flex-grow: 1;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 .state-header h3::after {
   display: inline-block;
@@ -413,6 +420,11 @@ main h3 {
   margin-right: 6px;
   color: #7d7e7d;
 }
+
+.code-numbers p {
+  color: #7d7e7d;
+}
+
 .code {
   cursor: text;
   flex-grow: 1;
@@ -445,8 +457,6 @@ main h3 {
 
 /* main-result 파트 */
 .sec-result h3 {
-  font-family: "Pretendard";
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
