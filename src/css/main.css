@@ -207,14 +207,6 @@
   padding: 0;
 }
 
-.ir {
-  width: 0;
-  height: 0;
-  font-size: 1px;
-  clip-path: circle(50%);
-  text-indent: -999px;
-}
-
 .hint1 {
   position: relative;
   top: 178px;
@@ -337,14 +329,14 @@ main {
   padding-top: 58px;
 }
 
-main h3{
+main h3 {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
 }
 
 .sec-statement form {
-  background: #F9F9FA;
+  background: #f9f9fa;
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
   width: 889px;
@@ -352,21 +344,19 @@ main h3{
   padding: 20px 33px;
 }
 
-.sec-statement .state-header{
+.sec-statement .state-header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 18px;
-
 }
-.state-header h3{
-
+.state-header h3 {
   flex-grow: 1;
 }
-.state-header h3::after{
+.state-header h3::after {
   display: inline-block;
-  content:'';
-  background:url("../assets/images/sprites-nomal.png") -258px -5px;
+  content: "";
+  background: url("../assets/images/sprites-nomal.png") -258px -5px;
   background-size: 611px 70px;
   vertical-align: middle;
   width: 24px;
@@ -376,76 +366,79 @@ main h3{
 
 .state-header button {
   background-color: inherit;
-  border:none;
+  border: none;
   width: 20px;
   height: 20px;
 }
 
-.btn-copy{
-  background: url('../assets/images/sprites-nomal.png') -80px -3px ;
+.btn-copy {
+  background: url("../assets/images/sprites-nomal.png") -80px -3px;
   background-size: 611px 78px;
-
 }
 
 .btn-copy:hover {
-  background: url('../assets/images/sprites-nomal.png') -54px -3px ;
+  background: url("../assets/images/sprites-nomal.png") -54px -3px;
   background-size: 611px 78px;
-
 }
 
 .btn-delete {
-  background: url('../assets/images/sprites-nomal.png')  -198px -5px;
+  background: url("../assets/images/sprites-nomal.png") -198px -5px;
   background-size: 611px 78px;
   margin: 0 7px 0 25px;
 }
 
-.btn-delete:hover{
-  background: url('../assets/images/sprites-nomal.png')  -168px -5px;
+.btn-delete:hover {
+  background: url("../assets/images/sprites-nomal.png") -168px -5px;
   background-size: 611px 78px;
 }
 
-.state-area{
-  font-family: 'D2Coding';
+.state-area {
+  font-family: "D2Coding";
   display: flex;
-  overflow: scroll ;
+  overflow: scroll;
   height: 224px;
-  border-top: 1px solid #E8E8E8;
+  border-top: 1px solid #e8e8e8;
   padding: 10px 0 20px 0;
   font-size: 18px;
   line-height: 180%;
 }
-.code-numbers{
+
+.state-area::-webkit-scrollbar {
+  display: none;
+}
+
+.code-numbers {
   width: 25px;
   text-align: left;
   margin-right: 6px;
-  color: #7D7E7D;
+  color: #7d7e7d;
 }
-.code{
+.code {
   cursor: text;
   flex-grow: 1;
 }
-.code-line{
+.code-line {
   word-wrap: break-word;
   word-break: break-all;
   white-space: normal;
   font-weight: 400;
-  color:#636363;
+  color: #636363;
 }
-.code-highlight{
-  color:#5966EC;
+.code-highlight {
+  color: #5966ec;
   font-weight: 700;
 }
-.btn-run{
+.btn-run {
   display: block;
   margin-top: 20px;
   margin-left: auto;
   padding: 8px 16px;
   font-weight: 700;
   font-size: 18px;
-  color: #FFFFFF;
-  background-color: #5966EC;
+  color: #ffffff;
+  background-color: #5966ec;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  border:none;
+  border: none;
   border-radius: 80px;
   cursor: pointer;
 }
@@ -461,7 +454,7 @@ main h3{
 }
 
 .sec-result {
-  margin-top: 60px;
+  margin-top: 100px;
   margin-bottom: 241px;
   padding: 0 12px 20px 12px;
   background: #f9f9fa;
