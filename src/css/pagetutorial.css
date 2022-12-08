@@ -1,20 +1,20 @@
 @import url("../assets/fonts/fonts.css");
 
 main {
+  padding-top: 110px;
+  color: #444444;
   font-family: "Pretendard";
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.3px;
-  color: #444444;
-  padding-top: 110px;
 }
 
 .tuto-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eeedec;
   font-weight: 600;
   font-size: 40px;
   line-height: 30px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eeedec;
 }
 
 .tuto-sec {
@@ -23,6 +23,9 @@ main {
   gap: 65px;
   margin-top: 105px;
   padding-bottom: 240px;
+}
+
+.tuto-sec+.tuto-sec{
   border-bottom: 1px solid #eeedec;
 }
 
@@ -32,33 +35,33 @@ main {
 }
 
 .tuto-sec-title {
+  margin-bottom: -40px;
+  color: #5966ec;
   font-weight: 600;
   font-size: 28px;
-  line-height: 30px;
-  color: #5966ec;
-  margin-bottom: -40px;
+  line-height: 30px;  
 }
 
 .tuto-sec-cont {
-  background: #efeeee;
+  padding: 34px;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
-  padding: 34px;
+  background: #efeeee;
 }
 
 .tuto-sec-cont > strong {
+  padding-top: 34px;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  padding-top: 34px;
 }
 
 .tuto-sec-cont > p {
+  padding-top: 25px;
   font-weight: 400;
   line-height: 27px;
   text-align: justify;
   letter-spacing: -0.2px;
-  padding-top: 25px;
   opacity: 0.7;
 }
 
@@ -71,13 +74,13 @@ main {
 }
 
 .tuto-sec-subtitle::before {
-  content: "";
   display: block;
+  position: absolute;
+  left: -26px;
   width: 5px;
   height: 29px;
   background: #ffd66c;
-  position: absolute;
-  left: -26px;
+  content: "";
 }
 
 .tuto-sec-para > p {
@@ -90,31 +93,31 @@ main {
 
 .tuto-sec-para > p code {
   display: inline-block;
-  line-height: 1;
   padding: 2px 5px;
-  color: #5966ec;
   background: #efefef;
   border-radius: 3px;
+  color: #5966ec;
+  line-height: 1;
 }
 
 .tuto-sec-example-query-para {
+  color: #5966ec;
   font-family: "D2Coding";
   font-size: 14px;
   line-height: 180%;
-  color: #5966ec;
 }
 
 .btn-go {
   float: right;
   margin-top: 15px;
   padding: 8px 16px;
-  line-height: 1.3;
-  background: #5966ec;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 80px;
+  background: #5966ec;
+  color: #ffffff;
+  line-height: 1.3;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
   font-weight: 700;
   font-size: 18px;
-  color: #ffffff;
   cursor: pointer;
 }
 
@@ -125,17 +128,17 @@ main {
 
 .tuto-sec-example-query {
   margin-top: 20px;
-  background: #f9f9fa;
   padding: 20px 18px;
+  background: #f9f9fa;
   border: 1px solid #b4b4b4;
   border-radius: 16px;
 }
 
 .tuto-sec-example-query a {
+  color: #ffffff;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  color: #ffffff;
 }
 
 .tuto-sec-example-query-para {
@@ -164,16 +167,16 @@ main {
 } */
 
 .tuto-sec-result .tuto-sec-subtitle {
-  font-size: 20px;
   margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .tuto-sec-result-table {
   margin: 0;
   border-collapse: collapse;
-  font-size: 14px;
   border-radius: 4px;
   border-style: hidden;
+  font-size: 14px;
   box-shadow: 0 0 0 1px #e5e5e5;
 }
 
@@ -197,41 +200,26 @@ main {
 }
 
 .tuto-sec-result-table thead {
-  font-weight: 700;
   background-color: #e5e5e5;
+  font-weight: 700;
 }
 
 .tuto-sec-result-para {
+  padding: 30px;
+  margin-top: 20px;
   background: #f9f9fa;
   border-radius: 15px;
   font-weight: 500;
   line-height: 30px;
-  padding: 30px;
-  margin-top: 20px;
 }
 
 .tuto-sec-result-para > strong {
+  margin-right: 27px;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  margin-right: 27px;
 }
 
 .sql-footer {
   margin-top: 243px;
-}
-
-.btn-go {
-  float: right;
-  margin-top: 15px;
-  padding: 8px 16px;
-  line-height: 1.3;
-  background: #5966ec;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 80px;
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  color: #ffffff;
-  padding: 8px 16px;
 }
