@@ -1,14 +1,11 @@
 @import url("../assets/fonts/fonts.css");
 
-body {
+main {
   font-family: "Pretendard";
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.3px;
   color: #444444;
-}
-
-main {
   padding-top: 110px;
 }
 
@@ -30,9 +27,6 @@ main {
   border-bottom: 1px solid #eeedec;
 }
 
-main :nth-child(2) {
-  margin-top: 0;
-}
 
 /* 일단 레이아웃 맞추려고 해둔 부분 - 더 깔끔한 표현 있을지  논의필요 */
 main :nth-child(2) {
