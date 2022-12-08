@@ -43,7 +43,9 @@ body.dark-mode,
 }
 
 .global-header.dark-mode .global-util-wrap .btn-darkmode {
-
+  width: 40px;
+  height: 43px;
+  background: url("../../assets/images/sprites-darkmode.png") -10px -10px;
 }
 
 main.dark-mode .tuto-title{
