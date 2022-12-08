@@ -77,6 +77,17 @@ p.tuto-sec-para {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  position: relative;
+}
+
+.tuto-sec-subtitle::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 29px;
+  background: #ffd66c;
+  position: absolute;
+  left: -26px;
 }
 
 .tuto-sec-para > p {
@@ -116,16 +127,16 @@ p.tuto-sec-para {
   line-height: 180%;
 }
 
-.query-para-line{
-  margin-left:27px;
+.query-para-line {
+  margin-left: 27px;
 }
 
-.query-para-blue{
+.query-para-blue {
   color: #5966ec;
 }
 
-.query-para-yellow{
-  color: #FFBB56;
+.query-para-yellow {
+  color: #ffbb56;
   margin-left: 27px;
 }
 /* 섹션2 표 작업  */
