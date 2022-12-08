@@ -98,6 +98,7 @@ p.tuto-sec-para {
 
 .tuto-sec-example-query {
   background: #f9f9fa;
+  padding: 20px 18px;
   border: 1px solid #b4b4b4;
   border-radius: 16px;
 }
@@ -113,9 +114,20 @@ p.tuto-sec-para {
   font-family: "D2Coding";
   font-size: 14px;
   line-height: 180%;
+}
+
+.query-para-line{
+  margin-left:27px;
+}
+
+.query-para-blue{
   color: #5966ec;
 }
 
+.query-para-yellow{
+  color: #FFBB56;
+  margin-left: 27px;
+}
 /* 섹션2 표 작업  */
 
 /* .tuto-sec-result {
