@@ -83,6 +83,7 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   padding: 31px 55px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
+  position: relative;
 }
 
 .cheatsheet-wrapper .cheatsheet-list li .cheatsheet-sql {
@@ -90,6 +91,18 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   font-weight: 700;
   font-size: 26px;
   line-height: 30px;
+}
+
+.cheatsheet-wrapper .cheatsheet-list li .cheatsheet-clipboard-btn {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 40px;
+  top: 31px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement {
@@ -102,4 +115,20 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
 
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-aggregate {
   color: #ff8080;
+}
+.cheatsheet-list li .cheatsheet-sql-explanation {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 20px;
+}
+.cheatsheet-list li .cheatsheet-sql-select-state,
+.cheatsheet-list li .cheatsheet-sql-additional {
+  font-family: "Pretendard";
+  font-weight: 400;
+}
+
+.cheatsheet-list li .cheatsheet-sql-additional {
+  color: #ababab;
 }
