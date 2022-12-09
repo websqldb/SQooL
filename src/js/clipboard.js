@@ -4,7 +4,7 @@ const $mainStatementCodeLine =
   $mainStatementClipboard.querySelector(".code-line");
 
 const $cheatStatementClipboard = document.querySelector(".cheatsheet-list");
-const $cheatStatementBtn = $cheatStatementClipboard.querySelectorAll(".cheatsheet-clipboard-btn");
+const $cheatStatementBtn = document.querySelectorAll(".cheatsheet-clipboard-btn");
 
 $mainStatementBtn.addEventListener("click", () => {
   window.navigator.clipboard
