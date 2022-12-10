@@ -25,7 +25,7 @@ main {
   padding-bottom: 240px;
 }
 
-.tuto-sec+.tuto-sec{
+.tuto-sec + .tuto-sec {
   border-bottom: 1px solid #eeedec;
 }
 
@@ -39,7 +39,7 @@ main {
   color: #5966ec;
   font-weight: 600;
   font-size: 28px;
-  line-height: 30px;  
+  line-height: 30px;
 }
 
 .tuto-sec-cont {
@@ -159,12 +159,6 @@ main {
   color: #ffbb56;
 }
 
-/* 섹션2 표 작업  */
-
-/* .tuto-sec-result {
-  color: #000;
-} */
-
 .tuto-sec-result .tuto-sec-subtitle {
   margin-bottom: 15px;
   font-size: 20px;
@@ -217,8 +211,4 @@ main {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-}
-
-.sql-footer {
-  margin-top: 243px;
 }
