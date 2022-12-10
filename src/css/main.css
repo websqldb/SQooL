@@ -1,5 +1,9 @@
 .main-side-bar {
   position: relative;
+  margin-right: 0;
+  left: 0;
+  transition: all 1s;
+  background-color: #ffffff;
 }
 
 .fold-btn-modal {
@@ -149,6 +153,22 @@
   display: flex;
 }
 
+/* 사이드바 토글 */
+.foldActive {
+  position: fixed;
+  left: -300px;
+  transition: all 1s;
+}
+
+.foldActive-wrap {
+  width: 100%;
+}
+
+.fold-btn-toggle {
+  background: url(../assets/images/main-unfold-btn-arrow.png) no-repeat center /
+    10px;
+}
+
 /* 메인 모달 부분 */
 .modal-wrap * {
   box-sizing: border-box;
@@ -275,6 +295,7 @@ main * {
 
 main {
   padding-top: 58px;
+  margin-left: 45px;
 }
 
 main h3 {
