@@ -16,6 +16,7 @@
     <script src="./src/js/dark-mode.js" defer></script>
     <script src="./src/js/modal.js" defer></script>
     <script src="./src/js/clipboard.js" defer></script>
+    <script src="./src/js/sqlBaseStatement.js" defer></script>
   </head>
 
   <body>
@@ -57,15 +58,17 @@
         <section class="sql-btn-wrap">
           <h3 class="main-side-title">SQL</h3>
           <section class="sql-btn-item">
-            <button class="sql-btn">SELECT</button>
-            <button class="sql-btn">GROUP BY</button>
-            <button class="sql-btn">ORDER BY</button>
-            <button class="sql-btn">UPDATE</button>
-            <button class="sql-btn">INSERT INTO</button>
-            <button class="sql-btn">WHERE</button>
-            <button class="sql-btn">DELETE</button>
-            <button class="sql-btn">INNER JOIN</button>
-            <button class="sql-btn">INSERT INTO SELECT</button>
+            <button class="sql-btn" data-sql="SELECT">SELECT</button>
+            <button class="sql-btn" data-sql="GROUP_BY">GROUP BY</button>
+            <button class="sql-btn" data-sql="ORDER_BY">ORDER BY</button>
+            <button class="sql-btn" data-sql="UPDATE">UPDATE</button>
+            <button class="sql-btn" data-sql="INSERT_INTO">INSERT INTO</button>
+            <button class="sql-btn" data-sql="WHERE">WHERE</button>
+            <button class="sql-btn" data-sql="DELETE">DELETE</button>
+            <button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
+            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">
+              INSERT INTO SELECT
+            </button>
           </section>
           <button class="more-btn">MORE</button>
           <!-- sql문 선택 박스 -->
@@ -152,10 +155,11 @@
               </div>
               <div class="code">
                 <pre class="code-line">
-                  <span class="code-highlight">SELECT</span>
+                  <!-- sqlBaseStatement.js에서 사이드 버튼 클릭 시 입력되도록 변경 -->
+                  <!-- <span class="code-highlight">SELECT</span>
                   <span>*</span>
                   <span class="code-highlight">FROM</span>
-                  <span>employee</span>
+                  <span>employee</span> -->
                 </pre>
               </div>
             </div>
