@@ -5,9 +5,9 @@ const codeLine = document.querySelector('.code-line');
 codeLine.style.whiteSpace = 'pre-wrap';
 
 // 등록된 모든 사이드 sql 버튼에 대한 sql 기본 입력 구문 작성(sql 구문이 고정되면 추가 예정, 현재 기능만 )
-const addStatement = (sqlBtn) => {
+const addStatement = (sqlSyntax) => {
   let statement = '';
-  switch (sqlBtn.dataset.sql) {
+  switch (sqlSyntax) {
     case 'SELECT':
       statement = `SELECT * FROM table_name;`;
       break;
@@ -56,5 +56,12 @@ WHERE condition;`;
 
 // 사이드 버튼에 이벤트 추가
 sqlBtns.forEach((sqlBtn) => {
-  sqlBtn.addEventListener('click', () => addStatement(sqlBtn));
+  sqlBtn.addEventListener('click', () => addStatement(sqlBtn.dataset.sql));
+});
+
+// 사이드 select option 선택 시 sql statement에 기본 구문 출력
+const sqlSelect = document.querySelector('#sqlSelect');
+sqlSelect.addEventListener('change', (e) => {
+  // console.log(e.target.value);
+  addStatement(e.target.value);
 });
