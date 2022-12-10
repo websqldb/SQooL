@@ -423,7 +423,7 @@ main h3 {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  padding: 0px 0 20px 0px;
+  padding: 20px 0 20px 0px;
 }
 
 .sec-result {
@@ -460,7 +460,7 @@ main h3 {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17.58px;
+  line-height: 17.6px;
   background: #e7e9ff;
   text-align: left;
 }
@@ -470,6 +470,6 @@ main h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17.58px;
+  line-height: 17.6px;
   background: #ffffff;
 }
