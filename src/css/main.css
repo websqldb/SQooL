@@ -1,5 +1,9 @@
 .main-side-bar {
   position: relative;
+  margin-right: 0;
+  left: 0;
+  transition: all 1s;
+  background-color: #ffffff;
 }
 
 .fold-btn-modal {
@@ -149,6 +153,22 @@
   display: flex;
 }
 
+/* 사이드바 토글 */
+.foldActive {
+  position: fixed;
+  left: -300px;
+  transition: all 1s;
+}
+
+.foldActive-wrap {
+  width: 100%;
+}
+
+.fold-btn-toggle {
+  background: url(../assets/images/main-unfold-btn-arrow.png) no-repeat center /
+    10px;
+}
+
 /* 메인 모달 부분 */
 .modal-wrap * {
   box-sizing: border-box;
@@ -275,6 +295,7 @@ main * {
 
 main {
   padding-top: 58px;
+  margin-left: 45px;
 }
 
 main h3 {
@@ -402,7 +423,7 @@ main h3 {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  padding: 0px 0 20px 0px;
+  padding: 20px 0 20px 0px;
 }
 
 .sec-result {
@@ -421,7 +442,6 @@ main h3 {
   border: 1px solid #ebebeb;
   border-radius: 4px 4px 4px 4px;
   table-layout: fixed;
-  width: 144.17px;
 }
 
 .sec-result .table-cell {
@@ -439,7 +459,7 @@ main h3 {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17.58px;
+  line-height: 17.6px;
   background: #e7e9ff;
   text-align: left;
 }
@@ -449,6 +469,6 @@ main h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17.58px;
+  line-height: 17.6px;
   background: #ffffff;
 }

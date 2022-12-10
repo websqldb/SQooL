@@ -22,13 +22,14 @@
   text-decoration-line: none;
   margin-right: 193px;
 }
-
+.footer-section-info{
+  min-width: 520px;
+}
 .footer-logo {
   font-weight: 700;
   font-size: 36px;
   color: #bcbcbc;
 }
-
 .footer-title {
   font-weight: 700;
   font-size: 22px;

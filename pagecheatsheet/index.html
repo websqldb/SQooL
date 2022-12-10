@@ -1,746 +1,905 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQooL</title>
+    <link rel="stylesheet" href="../src/css/reset.css" />
+    <link rel="stylesheet" href="../src/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="../src/css/sidebar.css" />
+    <link rel="stylesheet" href="../src/css/header.css" />
+    <link rel="stylesheet" href="../src/css/footer.css" />
+    <link rel="stylesheet" href="../src/css/pagecheatsheet.css" />
+    <link rel="stylesheet" href="../src/css/common/dark-mode.css" />
+    <script src="../src/js/dark-mode.js" defer></script>
+    <script src="../src/js/cheatsheetClipboard.js" defer></script>
+    <script src="../src/js/sidebarScroll.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQooL</title>
-  <link rel="stylesheet" href="../src/css/reset.css" />
-  <link rel="stylesheet" href="../src/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="../src/css/sidebar.css" />
-  <link rel="stylesheet" href="../src/css/header.css" />
-  <link rel="stylesheet" href="../src/css/footer.css" />
-  <link rel="stylesheet" href="../src/css/pagecheatsheet.css" />
-  <link rel="stylesheet" href="../src/css/common/dark-mode.css" />
-  <script src="../src/js/dark-mode.js" defer></script>
-</head>
-
-<body>
-  <header class="global-header">
-    <div class="global-header-inner">
-      <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
-      <nav class="gnb">
-        <a href="/">Try it</a>
-        <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
-        <a href="/pagetutorial">Tutorial</a>
-      </nav>
-      <article class="global-util-wrap">
-        <div class="search">
-          <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-          <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
-          <button class="btn-search">
-            <span class="screen-out">검색하기</span>
+  <body>
+    <header class="global-header">
+      <div class="global-header-inner">
+        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+        <nav class="gnb">
+          <a href="/">Try it</a>
+          <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
+          <a href="/pagetutorial">Tutorial</a>
+        </nav>
+        <article class="global-util-wrap">
+          <div class="search">
+            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn-search">
+              <span class="screen-out">검색하기</span>
+            </button>
+          </div>
+          <button class="btn-darkmode">
+            <span class="screen-out">다크 모드</span>
+          </button>
+        </article>
+      </div>
+    </header>
+    <!-- 공통 에셋 사이드바 작성 중입니다. -->
+    <div class="la-wrap">
+      <aside class="side-bar side-bar-cheatsheet">
+        <!-- <ul class="list-wrap-cheatsheet"> -->
+        <div class="list-wrap-cheatsheet">
+          <h3 class="list-title">SQL CheatSheet</h3>
+          <ul class="list-item">
+            <li>테이블에서 데이터 쿼리</li>
+            <li>다중 테이블에서 데이터 쿼리</li>
+            <li>SQL 연산자 사용</li>
+            <li>보기 관리</li>
+            <li>인덱스 관리</li>
+            <li>SQL 집계 함수</li>
+            <li>트리거 관리</li>
+            <li>테이블 관리</li>
+            <li>SQL 제약 조건 사용</li>
+            <li>데이터 수정</li>
+          </ul>
+        </div>
+        <div class="cheatsheet-pdf">
+          <h3 class="list-title">CheatSheet PDF</h3>
+          <ul class="cheatsheet-pdf-list">
+            <li>
+              <span>CheatSheet</span>
+              <button class="cheatsheet-download">
+                <!-- 다운로드 버튼-->
+              </button>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <!-- 각 페이지의 내용을 넣으세요 -->
+        <div class="cheatsheet-title-box">
+          <h2>SQL CheatSheet</h2>
+          <button class="cheatsheet-modal-btn">
+            <img
+              src="../src/assets/images/cheatsheet-modal-btn.png"
+              alt="modal-button"
+            />
           </button>
         </div>
-        <button class="btn-darkmode">
-          <span class="screen-out">다크 모드</span>
-        </button>
-      </article>
+        <!-- section-1 -->
+        <section class="cheatsheet-wrapper">
+          <h3>테이블에서 데이터 가져오기</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT * FROM</strong>
+                t;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Query data in columns c1, c2 from a table
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t
+                <br />
+                <strong class="cheatsheet-sql-statement">ORDER BY</strong> c1
+                <strong class="cheatsheet-sql-sorted">ASC [DESC]</strong>;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Sort the result set in ascending or descending order
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1,
+                <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2)
+                <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong> t <br />
+                <strong class="cheatsheet-sql-statement">GROUP BY</strong> c1;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Group rows using an aggregate function
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-1 -->
+
+        <!-- section-2 -->
+        <section class="cheatsheet-wrapper">
+          <h3>다중 테이블에서 데이터 가져오기</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br />
+                <strong class="cheatsheet-sql-statement">INNER JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">Inner join t1 and t2</p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br />
+                <strong class="cheatsheet-sql-statement">LEFT JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">Left join t1 and t2</p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2 <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t1 <br />
+                <strong class="cheatsheet-sql-statement">RIGHT JOIN</strong>
+                t2
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                condition;
+              </p>
+              <p class="cheatsheet-sql-explanation">Right join t1 and t2</p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-2 -->
+
+        <!-- section-3 -->
+        <section class="cheatsheet-wrapper">
+          <h3>SQL 연산자 사용하기</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
+                <strong class="cheatsheet-sql-sorted">UNION [ALL]</strong><br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Combine rows from two queries
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
+                <strong class="cheatsheet-sql-sorted">INTERSECT</strong><br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Return the intersection of two queries
+              </p>
+            </li>
+
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
+                <strong class="cheatsheet-sql-sorted">MINUS</strong><br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
+                <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Subtract a result set from another result set
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-3 -->
+
+        <!-- section-4 -->
+        <section class="cheatsheet-wrapper">
+          <h3>보기 관리</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
+                v(c1, c2) <br />
+                <strong class="cheatsheet-sql-statement">AS</strong> <br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create a new view that consists of c1 and c2
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
+                v(c1, c2) <br />
+                <strong class="cheatsheet-sql-statement">AS</strong> <br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
+                <strong class="cheatsheet-sql-statement">WITH [</strong>
+                <strong class="cheatsheet-sql-sorted"
+                  >CASCADED &#124; LOCAL</strong
+                >
+                <strong class="cheatsheet-sql-statement">] CHECK OPTION</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create a new View with check option
+              </p>
+            </li>
+
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE</strong>
+                <strong class="cheatsheet-sql-sorted">RECURSIVE</strong>
+                <strong class="cheatsheet-sql-statement">VIEW</strong> v <br />
+                <strong class="cheatsheet-sql-statement">AS</strong> <br />
+                <strong class="cheatsheet-sql-select-state"
+                  >select-statement</strong
+                >
+                <strong class="cheatsheet-sql-additional"
+                  >-- anchor part</strong
+                >
+                <br />
+                <strong class="cheatsheet-sql-statement">UNION [ALL]</strong>
+                <br />
+                <strong class="cheatsheet-sql-select-state"
+                  >select-statement;</strong
+                >
+                <strong class="cheatsheet-sql-additional"
+                  >-- anchor part</strong
+                >
+                <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">Create a recursive view</p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-4 -->
+
+        <!-- section-5 -->
+        <section class="cheatsheet-wrapper">
+          <h3>인덱스 관리</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE INDEX</strong>
+                idx_name <br />
+                <strong class="cheatsheet-sql-statement">ON</strong> t(c1, c2);
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create an index on c1 and c2 of the table t
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement"
+                  >CREATE UNIQUE INDEX</strong
+                >
+                idx_name <br />
+                <strong class="cheatsheet-sql-statement">ON</strong> t(c3, c4);
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create unique index on c3, c4 of the table t
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">DROP INDEX</strong>
+                idx_name; <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">Drop an index</p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-5 -->
+
+        <!-- section-6 -->
+        <section class="cheatsheet-wrapper">
+          <h3>SQL 집계 함수</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">AVG</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                returns the average of a list
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">COUNT</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                returns the number of elements of a list
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">SUM</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                returns the total of a list
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">MAX</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                returns the maximum value in a list
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">MIN</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                returns the minimum value in a list
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-6 -->
+
+        <!-- section-7 -->
+        <section class="cheatsheet-wrapper">
+          <h3>트리거 관리</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement"
+                  >CREATE OR MODIFY TRIGGER</strong
+                >
+                trigger_name <br />
+                <strong class="cheatsheet-sql-sorted">WHEN EVENT</strong> <br />
+                <strong class="cheatsheet-sql-statement">ON</strong> table_name
+                <br />
+                <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong>
+                <br />
+                <strong class="cheatsheet-sql-statement">EXECUTE</strong>
+                stored_procedure; <br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create or modify a trigger
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-sorted">WHEN</strong><br />
+                <strong class="cheatsheet-sql-statement">BEFORE</strong
+                ><span class="cheatsheet-sql-explanation"
+                  >- invoke before the event occurs</span
+                >
+                <strong class="cheatsheet-sql-statement">AFTER</strong
+                ><span class="cheatsheet-sql-explanation"
+                  >- invoke after the event occurs</span
+                >
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-sorted">EVENT</strong><br />
+                <strong class="cheatsheet-sql-statement">INSRET</strong
+                ><span class="cheatsheet-sql-explanation"
+                  >- invoke for INSERT</span
+                >
+                <strong class="cheatsheet-sql-statement">UPDATE</strong
+                ><span class="cheatsheet-sql-explanation"
+                  >- invoke for UPDATE</span
+                >
+                <strong class="cheatsheet-sql-statement">DELETE</strong
+                ><span class="cheatsheet-sql-explanation"
+                  >- invoke for DELETE</span
+                >
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong
+                ><br />
+                <strong class="cheatsheet-sql-statement">FOR EACH ROW</strong>
+                <strong class="cheatsheet-sql-statement"
+                  >FOR EACH STATEMENT</strong
+                >
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TRIGGER</strong>
+                before_insert_person<br />
+                <strong class="cheatsheet-sql-sorted">BEFORE INSERT</strong>
+                <strong class="cheatsheet-sql-statement">ON</strong> person
+                <br /><strong class="cheatsheet-sql-sorted"
+                  >FOR EACH ROW</strong
+                >
+                <strong class="cheatsheet-sql-statement">EXECUTE</strong>
+                sorted_procedure;<br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create a trigger invoked before a new row is inserted into the
+                person table
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">DROP TRIGGER</strong>
+                trigger_name<br />
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Delete a specific trigger
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-7 -->
+        <!-- section-8 -->
+        <section class="cheatsheet-wrapper">
+          <h3>테이블 관리</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE </strong>t
+                <strong class="cheatsheet-sql-statement">(</strong><br />
+                id <strong class="cheatsheet-sql-statement">INT</strong>
+                <strong class="cheatsheet-sql-sorted">PRIMARY KEY,</strong
+                ><br />
+                name <strong class="cheatsheet-sql-statement">VARCHAR</strong>
+                <strong class="cheatsheet-sql-sorted">NOT NULL,</strong><br />
+                price <strong class="cheatsheet-sql-statement">INT</strong>
+                <strong class="cheatsheet-sql-sorted">DEFAULT 0 <br /> </strong>
+                <strong class="cheatsheet-sql-statement">);</strong>
+                <strong class=""></strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Create a new table with three columns
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">DROP TABLE </strong>t;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Delete the table from the database
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t <strong class="cheatsheet-sql-statement">ADD</strong>
+                columns;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Add a new column to the table
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t <strong class="cheatsheet-sql-statement">DROP COLUMN</strong>
+                c;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Drop column c from the table
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t <strong class="cheatsheet-sql-statement">ADD</strong>
+                constraint;
+              </p>
+              <p class="cheatsheet-sql-explanation">Add a constraint</p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t
+                <strong class="cheatsheet-sql-statement">DROP </strong
+                >constraint;
+              </p>
+              <p class="cheatsheet-sql-explanation">Drop a constraint</p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t1
+                <strong class="cheatsheet-sql-statement">RENAME TO </strong>t2;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Rename a table from t1 to t2
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
+                t1
+                <strong class="cheatsheet-sql-statement">RENAME</strong> c1
+                <strong class="cheatsheet-sql-statement">TO </strong>c2;
+              </p>
+              <p class="cheatsheet-sql-explanation">Rename column c1 to c2</p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">TRUNCATE TABLE</strong>
+                t;
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Remove all data in a table
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section8 -->
+        <!-- section-9 -->
+        <section class="cheatsheet-wrapper">
+          <h3>SQL 제약 조건 사용</h3>
+          <ul class="cheatsheet-list">
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
+                t<strong class="cheatsheet-sql-statement">(</strong><br />c1
+                <strong class="cheatsheet-sql-statement">INT,</strong>c2
+                <strong class="cheatsheet-sql-statement">INT,</strong>c3
+                <strong class="cheatsheet-sql-statement">VARCHAR,</strong><br />
+                <strong class="cheatsheet-sql-sorted">PRIMARY KEY (</strong>c1,
+                c2<strong class="cheatsheet-sql-sorted">)</strong><br />
+                <strong class="cheatsheet-sql-statement">);</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Set c1 and c2 as a primary key
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
+                t1<strong class="cheatsheet-sql-statement">(</strong><br />c1
+                <strong class="cheatsheet-sql-statement">INT </strong>
+                <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong
+                ><strong class="cheatsheet-sql-statement">,</strong><br />
+                c2 <strong class="cheatsheet-sql-statement">INT,</strong><br />
+                <strong class="cheatsheet-sql-sorted">FOREIGN KEY</strong> (c2)
+                <strong class="cheatsheet-sql-sorted">REFERENCES</strong>
+                t2(c2)<br /><strong class="cheatsheet-sql-statement">);</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Set c2 column as a foreign key
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
+                t<strong class="cheatsheet-sql-statement">(</strong> <br />
+                c1 <strong class="cheatsheet-sql-statement">INT, </strong> c1
+                <strong class="cheatsheet-sql-statement">INT, </strong> <br />
+                <strong class="cheatsheet-sql-sorted">UNIQUE (</strong
+                >c2,c3<strong class="cheatsheet-sql-sorted">)</strong> <br />
+                <strong class="cheatsheet-sql-statement">);</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Make the values in c1 and c2 unique
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
+                t<strong class="cheatsheet-sql-statement">(</strong> <br />
+                c1 <strong class="cheatsheet-sql-statement">INT, </strong> c2
+                <strong class="cheatsheet-sql-statement">INT, </strong> <br />
+                <strong class="cheatsheet-sql-sorted">CHECK (</strong>c1 > 0 AND
+                c1 >= c2<strong class="cheatsheet-sql-sorted">)</strong> <br />
+                <strong class="cheatsheet-sql-statement">);</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Ensure c1 > 0 and values in c1 >= c2
+              </p>
+            </li>
+            <li>
+              <button class="cheatsheet-clipboard-btn">
+                <img
+                  src="../src/assets/images/cheatsheet-clipboard-btn.png"
+                  alt="clipboard-button"
+                />
+              </button>
+              <p class="cheatsheet-sql">
+                <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
+                t<strong class="cheatsheet-sql-statement">(</strong> <br />
+                c1 <strong class="cheatsheet-sql-statement">INT </strong>
+                <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong
+                ><strong class="cheatsheet-sql-statement">,</strong> <br />
+                c2 <strong class="cheatsheet-sql-statement">VARCHAR </strong>
+                <strong class="cheatsheet-sql-sorted">NOT NULL</strong> <br />
+                <strong class="cheatsheet-sql-statement">);</strong>
+              </p>
+              <p class="cheatsheet-sql-explanation">
+                Set values in c2 column not NULL
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!-- // section-9 -->
+      </main>
     </div>
-  </header>
-  <!-- 공통 에셋 사이드바 작성 중입니다. -->
-  <div class="la-wrap">
-    <aside class="side-bar side-bar-cheatsheet">
-      <!-- <ul class="list-wrap-cheatsheet"> -->
-      <div class="list-wrap-cheatsheet">
-        <h3 class="list-title">SQL CheatSheet</h3>
-        <ul class="list-item">
-          <li>테이블에서 데이터 쿼리</li>
-          <li>다중 테이블에서 데이터 쿼리</li>
-          <li>SQL 연산자 사용</li>
-          <li>보기 관리</li>
-          <li>인덱스 관리</li>
-          <li>SQL 집계 함수</li>
-          <li>트리거 관리</li>
-          <li>테이블 관리</li>
-          <li>SQL 제약 조건 사용</li>
-          <li>데이터 수정</li>
-        </ul>
+
+    <footer class="sql-footer">
+      <div class="footer-wrap">
+        <a href="#" class="foot-logo-link">
+          <h2 class="footer-logo">SQooL</h2>
+        </a>
+
+        <section class="footer-section-info">
+          <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
+          <p class="footer-content">
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
+            사용할 수있는 공공재입니다.
+          </p>
+          <small class="copyright-text">© 2022, All Rights Reserved</small>
+        </section>
+        <a href="#" class="git-hub"></a>
       </div>
-      <div class="cheatsheet-pdf">
-        <h3 class="list-title">CheatSheet PDF</h3>
-        <ul class="cheatsheet-pdf-list">
-          <li>
-            <span>CheatSheet</span>
-            <button class="cheatsheet-download">
-              <!-- 다운로드 버튼-->
-            </button>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <main>
-      <!-- 각 페이지의 내용을 넣으세요 -->
-      <div class="cheatsheet-title-box">
-        <h2>SQL CheatSheet</h2>
-        <button class="cheatsheet-modal-btn">
-          <img src="../src/assets/images/cheatsheet-modal-btn.png" alt="modal-button" />
-        </button>
-      </div>
-      <!-- section-1 -->
-      <section class="cheatsheet-wrapper">
-        <h3>테이블에서 데이터 가져오기</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT * FROM</strong>
-              t;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Query data in columns c1, c2 from a table
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>
-              t
-              <br />
-              <strong class="cheatsheet-sql-statement">ORDER BY</strong> c1
-              <strong class="cheatsheet-sql-sorted">ASC [DESC]</strong>;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Sort the result set in ascending or descending order
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong> c1,
-              <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2)
-              <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong> t <br />
-              <strong class="cheatsheet-sql-statement">GROUP BY</strong> c1;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Group rows using an aggregate function
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-1 -->
-
-      <!-- section-2 -->
-      <section class="cheatsheet-wrapper">
-        <h3>다중 테이블에서 데이터 가져오기</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>
-              c1, c2 <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong>
-              t1 <br />
-              <strong class="cheatsheet-sql-statement">INNER JOIN</strong>
-              t2
-              <strong class="cheatsheet-sql-statement">ON</strong>
-              condition;
-            </p>
-            <p class="cheatsheet-sql-explanation">Inner join t1 and t2</p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>
-              c1, c2 <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong>
-              t1 <br />
-              <strong class="cheatsheet-sql-statement">LEFT JOIN</strong>
-              t2
-              <strong class="cheatsheet-sql-statement">ON</strong>
-              condition;
-            </p>
-            <p class="cheatsheet-sql-explanation">Left join t1 and t2</p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>
-              c1, c2 <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong>
-              t1 <br />
-              <strong class="cheatsheet-sql-statement">RIGHT JOIN</strong>
-              t2
-              <strong class="cheatsheet-sql-statement">ON</strong>
-              condition;
-            </p>
-            <p class="cheatsheet-sql-explanation">Right join t1 and t2</p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-2 -->
-
-      <!-- section-3 -->
-      <section class="cheatsheet-wrapper">
-        <h3>SQL 연산자 사용하기</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
-              <strong class="cheatsheet-sql-sorted">UNION [ALL]</strong><br />
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Combine rows from two queries
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
-              <strong class="cheatsheet-sql-sorted">INTERSECT</strong><br />
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Return the intersection of two queries
-            </p>
-          </li>
-
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t1 <br />
-              <strong class="cheatsheet-sql-sorted">MINUS</strong><br />
-              <strong class="cheatsheet-sql-statement">SELECT</strong>c1, c2
-              <strong class="cheatsheet-sql-statement">FROM</strong>t2 <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Subtract a result set from another result set
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-3 -->
-
-      <!-- section-4 -->
-      <section class="cheatsheet-wrapper">
-        <h3>보기 관리</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
-              v(c1, c2) <br />
-              <strong class="cheatsheet-sql-statement">AS</strong> <br />
-              <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
-              <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create a new view that consists of c1 and c2
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
-              v(c1, c2) <br />
-              <strong class="cheatsheet-sql-statement">AS</strong> <br />
-              <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
-              <br />
-              <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
-              <strong class="cheatsheet-sql-statement">WITH [</strong>
-              <strong class="cheatsheet-sql-sorted">CASCADED &#124; LOCAL</strong>
-              <strong class="cheatsheet-sql-statement">] CHECK OPTION</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create a new View with check option
-            </p>
-          </li>
-
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE</strong>
-              <strong class="cheatsheet-sql-sorted">RECURSIVE</strong>
-              <strong class="cheatsheet-sql-statement">VIEW</strong> v <br />
-              <strong class="cheatsheet-sql-statement">AS</strong> <br />
-              <strong class="cheatsheet-sql-select-state">select-statement</strong>
-              <strong class="cheatsheet-sql-additional">-- anchor part</strong>
-              <br />
-              <strong class="cheatsheet-sql-statement">UNION [ALL]</strong>
-              <br />
-              <strong class="cheatsheet-sql-select-state">select-statement;</strong>
-              <strong class="cheatsheet-sql-additional">-- anchor part</strong>
-              <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">Create a recursive view</p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-4 -->
-
-      <!-- section-5 -->
-      <section class="cheatsheet-wrapper">
-        <h3>인덱스 관리</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE INDEX</strong>
-              idx_name <br />
-              <strong class="cheatsheet-sql-statement">ON</strong> t(c1, c2);
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create an index on c1 and c2 of the table t
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE UNIQUE INDEX</strong>
-              idx_name <br />
-              <strong class="cheatsheet-sql-statement">ON</strong> t(c3, c4);
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create unique index on c3, c4 of the table t
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">DROP INDEX</strong>
-              idx_name; <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">Drop an index</p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-5 -->
-
-      <!-- section-6 -->
-      <section class="cheatsheet-wrapper">
-        <h3>SQL 집계 함수</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">AVG</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              returns the average of a list
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">COUNT</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              returns the number of elements of a list
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">SUM</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              returns the total of a list
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">MAX</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              returns the maximum value in a list
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">MIN</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              returns the minimum value in a list
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-6 -->
-
-      <!-- section-7 -->
-      <section class="cheatsheet-wrapper">
-        <h3>트리거 관리</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE OR MODIFY TRIGGER</strong>
-              trigger_name <br />
-              <strong class="cheatsheet-sql-sorted">WHEN EVENT</strong> <br />
-              <strong class="cheatsheet-sql-statement">ON</strong> table_name
-              <br />
-              <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong>
-              <br />
-              <strong class="cheatsheet-sql-statement">EXECUTE</strong>
-              stored_procedure; <br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create or modify a trigger
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-sorted">WHEN</strong><br />
-              <strong class="cheatsheet-sql-statement">BEFORE</strong><span class="cheatsheet-sql-explanation">- invoke
-                before the event occurs</span>
-              <strong class="cheatsheet-sql-statement">AFTER</strong><span class="cheatsheet-sql-explanation">- invoke
-                after the event occurs</span>
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-sorted">EVENT</strong><br />
-              <strong class="cheatsheet-sql-statement">INSRET</strong><span class="cheatsheet-sql-explanation">- invoke
-                for INSERT</span>
-              <strong class="cheatsheet-sql-statement">UPDATE</strong><span class="cheatsheet-sql-explanation">- invoke
-                for UPDATE</span>
-              <strong class="cheatsheet-sql-statement">DELETE</strong><span class="cheatsheet-sql-explanation">- invoke
-                for DELETE</span>
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong><br />
-              <strong class="cheatsheet-sql-statement">FOR EACH ROW</strong>
-              <strong class="cheatsheet-sql-statement">FOR EACH STATEMENT</strong>
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TRIGGER</strong>
-              before_insert_person<br />
-              <strong class="cheatsheet-sql-sorted">BEFORE INSERT</strong>
-              <strong class="cheatsheet-sql-statement">ON</strong> person
-              <br /><strong class="cheatsheet-sql-sorted">FOR EACH ROW</strong>
-              <strong class="cheatsheet-sql-statement">EXECUTE</strong>
-              sorted_procedure;<br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create a trigger invoked before a new row is inserted into the
-              person table
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">DROP TRIGGER</strong>
-              trigger_name<br />
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Delete a specific trigger
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-7 -->
-      <!-- section-8 -->
-      <section class="cheatsheet-wrapper">
-        <h3>테이블 관리</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE </strong>t
-              <strong class="cheatsheet-sql-statement">(</strong><br />
-              id <strong class="cheatsheet-sql-statement">INT</strong>
-              <strong class="cheatsheet-sql-sorted">PRIMARY KEY,</strong><br />
-              name <strong class="cheatsheet-sql-statement">VARCHAR</strong>
-              <strong class="cheatsheet-sql-sorted">NOT NULL,</strong><br />
-              price <strong class="cheatsheet-sql-statement">INT</strong>
-              <strong class="cheatsheet-sql-sorted">DEFAULT 0 <br /> </strong>
-              <strong class="cheatsheet-sql-statement">);</strong>
-              <strong class=""></strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Create a new table with three columns
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">DROP TABLE </strong>t;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Delete the table from the database
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t <strong class="cheatsheet-sql-statement">ADD</strong>
-              columns;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Add a new column to the table
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t <strong class="cheatsheet-sql-statement">DROP COLUMN</strong>
-              c;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Drop column c from the table
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t <strong class="cheatsheet-sql-statement">ADD</strong>
-              constraint;
-            </p>
-            <p class="cheatsheet-sql-explanation">Add a constraint</p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t
-              <strong class="cheatsheet-sql-statement">DROP </strong>constraint;
-            </p>
-            <p class="cheatsheet-sql-explanation">Drop a constraint</p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t1
-              <strong class="cheatsheet-sql-statement">RENAME TO </strong>t2;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Rename a table from t1 to t2
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-              t1
-              <strong class="cheatsheet-sql-statement">RENAME</strong> c1
-              <strong class="cheatsheet-sql-statement">TO </strong>c2;
-            </p>
-            <p class="cheatsheet-sql-explanation">Rename column c1 to c2</p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">TRUNCATE TABLE</strong>
-              t;
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Remove all data in a table
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section8 -->
-      <!-- section-9 -->
-      <section class="cheatsheet-wrapper">
-        <h3>SQL 제약 조건 사용</h3>
-        <ul class="cheatsheet-list">
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-              t<strong class="cheatsheet-sql-statement">(</strong><br />c1
-              <strong class="cheatsheet-sql-statement">INT,</strong>c2
-              <strong class="cheatsheet-sql-statement">INT,</strong>c3
-              <strong class="cheatsheet-sql-statement">VARCHAR,</strong><br />
-              <strong class="cheatsheet-sql-sorted">PRIMARY KEY (</strong>c1,
-              c2<strong class="cheatsheet-sql-sorted">)</strong><br />
-              <strong class="cheatsheet-sql-statement">);</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Set c1 and c2 as a primary key
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-              t1<strong class="cheatsheet-sql-statement">(</strong><br />c1
-              <strong class="cheatsheet-sql-statement">INT </strong>
-              <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong><strong
-                class="cheatsheet-sql-statement">,</strong><br />
-              c2 <strong class="cheatsheet-sql-statement">INT,</strong><br />
-              <strong class="cheatsheet-sql-sorted">FOREIGN KEY</strong> (c2)
-              <strong class="cheatsheet-sql-sorted">REFERENCES</strong>
-              t2(c2)<br /><strong class="cheatsheet-sql-statement">);</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Set c2 column as a foreign key
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-              t<strong class="cheatsheet-sql-statement">(</strong> <br />
-              c1 <strong class="cheatsheet-sql-statement">INT, </strong> c1
-              <strong class="cheatsheet-sql-statement">INT, </strong> <br />
-              <strong class="cheatsheet-sql-sorted">UNIQUE (</strong>c2,c3<strong
-                class="cheatsheet-sql-sorted">)</strong> <br />
-              <strong class="cheatsheet-sql-statement">);</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Make the values in c1 and c2 unique
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-              t<strong class="cheatsheet-sql-statement">(</strong> <br />
-              c1 <strong class="cheatsheet-sql-statement">INT, </strong> c2
-              <strong class="cheatsheet-sql-statement">INT, </strong> <br />
-              <strong class="cheatsheet-sql-sorted">CHECK (</strong>c1 > 0 AND
-              c1 >= c2<strong class="cheatsheet-sql-sorted">)</strong> <br />
-              <strong class="cheatsheet-sql-statement">);</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Ensure c1 > 0 and values in c1 >= c2
-            </p>
-          </li>
-          <li>
-            <button class="cheatsheet-clipboard-btn">
-              <img src="../src/assets/images/cheatsheet-clipboard-btn.png" alt="clipboard-button" />
-            </button>
-            <p class="cheatsheet-sql">
-              <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-              t<strong class="cheatsheet-sql-statement">(</strong> <br />
-              c1 <strong class="cheatsheet-sql-statement">INT </strong>
-              <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong><strong
-                class="cheatsheet-sql-statement">,</strong> <br />
-              c2 <strong class="cheatsheet-sql-statement">VARCHAR </strong>
-              <strong class="cheatsheet-sql-sorted">NOT NULL</strong> <br />
-              <strong class="cheatsheet-sql-statement">);</strong>
-            </p>
-            <p class="cheatsheet-sql-explanation">
-              Set values in c2 column not NULL
-            </p>
-          </li>
-        </ul>
-      </section>
-      <!-- // section-9 -->
-    </main>
-  </div>
-
-  <footer class="sql-footer">
-    <div class="footer-wrap">
-      <a href="#" class="foot-logo-link">
-        <h2 class="footer-logo">SQooL</h2>
-      </a>
-
-      <section>
-        <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
-        <p class="footer-content">
-          이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
-          사용할 수있는 공공재입니다.
-        </p>
-        <small class="copyright-text">© 2022, All Rights Reserved</small>
-      </section>
-      <a href="#" class="git-hub"></a>
-    </div>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
