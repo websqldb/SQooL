@@ -13,12 +13,26 @@
     <link rel="stylesheet" href="./src/css/footer.css" />
     <link rel="stylesheet" href="./src/css/common/global.css" />
     <link rel="stylesheet" href="./src/css/common/dark-mode.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
+      integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+      integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./src/js/dark-mode.js" defer></script>
     <script src="./src/js/modal.js" defer></script>
     <script src="./src/js/clipboard.js" defer></script>
     <script src="./src/js/sqlBaseStatement.js" defer></script>
     <script src="./src/js/sqlSideButton.js" defer></script>
     <script src="./src/js/mainSideBar.js" defer></script>
+    <script src="./src/js/editor.js" defer></script>
   </head>
 
   <body>
@@ -169,6 +183,11 @@
                 <button class="btn-delete"></button>
               </div>
             </div>
+            <!-- 에디터 -->
+            <div
+              id="codeeditor"
+              style="width: 100%; font-size: 18px; line-height: 180%"
+            ></div>
             <div class="state-area">
               <div class="code-numbers">
                 <p>1</p>
