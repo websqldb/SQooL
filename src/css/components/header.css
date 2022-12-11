@@ -134,13 +134,13 @@
   transform: translate3d(0, -50%, 0);
   width: 21px;
   height: 21px;
-  background: url("../assets/images/sprites-nomal.png") no-repeat -221px -5px /
+  background: url("../../assets/images/sprites-nomal.png") no-repeat -221px -5px /
     auto 76px;
 }
 
 .global-util-wrap .btn-darkmode {
   width: 24px;
   height: 24px;
-  background: url("../assets/images/sprites-nomal.png") no-repeat -97px -3px /
+  background: url("../../assets/images/sprites-nomal.png") no-repeat -97px -3px /
     auto 74px;
 }

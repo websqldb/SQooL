@@ -18,7 +18,7 @@
   height: 42px;
   border: 0.5px solid #d9d9d9;
   border-radius: 7px;
-  background: url(../assets/images/main-fold-btn-arrow.png) no-repeat center;
+  background: url(../../assets/images/main-fold-btn-arrow.png) no-repeat center;
   background-size: 10px;
   cursor: pointer;
   box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.05);
@@ -71,8 +71,8 @@
   visibility: hidden;
   padding: 0 28px 0 12px;
   appearance: none;
-  background: url(../assets/images/select-arrow-drop-down.png) no-repeat right
-    9px center;
+  background: url(../../assets/images/select-arrow-drop-down.png) no-repeat
+    right 9px center;
   width: 176px;
   height: 33px;
   background-color: #efefef;
@@ -137,7 +137,7 @@
 }
 
 .database-download-btn {
-  background: url("../assets/images/sprites-nomal.png") -4px -6px;
+  background: url("../../assets/images/sprites-nomal.png") -4px -6px;
   background-size: 500px 78px;
   width: 20px;
   height: 13px;
@@ -166,8 +166,8 @@
 }
 
 .fold-btn-toggle {
-  background: url(../assets/images/main-unfold-btn-arrow.png) no-repeat center /
-    10px;
+  background: url(../../assets/images/main-unfold-btn-arrow.png) no-repeat
+    center / 10px;
 }
 
 /* 메인 모달 */
@@ -240,7 +240,7 @@
   width: 20px;
   height: 16px;
   background: center / contain no-repeat
-    url(../assets/images/main-modal-arrow.png);
+    url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: -23px;
   top: 66px;
@@ -256,7 +256,7 @@
   width: 20px;
   height: 16px;
   background: center / contain no-repeat
-    url(../assets/images/main-modal-arrow.png);
+    url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: 371px;
   top: 77px;
@@ -273,7 +273,7 @@
   width: 20px;
   height: 16px;
   background: center / contain no-repeat
-    url(../assets/images/main-modal-arrow.png);
+    url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: 165px;
   top: -21px;
@@ -326,7 +326,7 @@ main h3 {
 
 .btn-question {
   display: inline-block;
-  background: url("../assets/images/sprites-nomal.png") -261px -4.5px;
+  background: url("../../assets/images/sprites-nomal.png") -261px -4.5px;
   background-size: 611px 70px;
   width: 24px;
   height: 24px;
@@ -341,23 +341,23 @@ main h3 {
 }
 
 .btn-copy {
-  background: url("../assets/images/sprites-nomal.png") -80px -3px;
+  background: url("../../assets/images/sprites-nomal.png") -80px -3px;
   background-size: 611px 78px;
 }
 
 .btn-copy:hover {
-  background: url("../assets/images/sprites-nomal.png") -54px -3px;
+  background: url("../../assets/images/sprites-nomal.png") -54px -3px;
   background-size: 611px 78px;
 }
 
 .btn-delete {
-  background: url("../assets/images/sprites-nomal.png") -217.5px -7px;
+  background: url("../../assets/images/sprites-nomal.png") -217.5px -7px;
   background-size: 672px 88px;
   margin: 0 7px 0 25px;
 }
 
 .btn-delete:hover {
-  background: url("../assets/images/sprites-nomal.png") -184.5px -7px;
+  background: url("../../assets/images/sprites-nomal.png") -184.5px -7px;
   background-size: 672px 88px;
 }
 .state-area {
