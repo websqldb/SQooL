@@ -1,5 +1,5 @@
 const sqlBtns = document.querySelectorAll('.sql-btn');
-const codeLine = document.querySelector('.code-line');
+const codeLine = document.querySelector('.code > textarea');
 
 // pre 태그 줄바꿈 인식
 codeLine.style.whiteSpace = 'pre-wrap';
