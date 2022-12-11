@@ -68,6 +68,7 @@
 }
 
 #sqlSelect {
+  visibility: hidden;
   padding: 0 28px 0 12px;
   appearance: none;
   background: url(../assets/images/select-arrow-drop-down.png) no-repeat right
