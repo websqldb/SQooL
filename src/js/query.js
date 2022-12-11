@@ -111,7 +111,17 @@ const initSetting = async (tables) => {
   }
 };
 
-const arr = ['student', 'professor', 'subject', 'grade'];
+const arr = [
+  'student',
+  'subject',
+  'professor',
+  'major',
+  'grade',
+  'scholarship',
+  'tuition',
+  'mileage',
+  'invalid_data',
+];
 
 initSetting(arr);
 
