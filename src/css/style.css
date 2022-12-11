@@ -1,0 +1,10 @@
+/* assets, common */
+@import "../assets/fonts/fonts.css";
+@import "./common/reset.css";
+@import "./common/global.css";
+@import "./common/dark-mode.css";
+
+/* components */
+@import "./components/header.css";
+@import "./components/sidebar.css";
+@import "./components/footer.css";

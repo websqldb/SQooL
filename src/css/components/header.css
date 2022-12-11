@@ -1,0 +1,146 @@
+.global-header {
+  --point-color-primary: #5966ec;
+  --point-color-secondary: #ffd66c;
+  --main-text-color: #abaeb2;
+  --input-color: #f7f7f7;
+  --input-text-color: #000;
+  --input-placeholder-color: #abaeb2;
+
+  min-width: 1257px;
+  border-bottom: 0.5px solid #e8e7e7;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  font-family: "Pretendard";
+}
+
+.darkmode .global-header {
+  --point-color-primary: #ffbb56;
+  --point-color-secondary: #5966ec;
+  --main-text-color: #fff;
+  --input-color: #2d2d2d;
+  --input-text-color: #fff;
+  --input-placeholder-color: #b4b4b4;
+
+  border-bottom: 1px solid #333338;
+  background-color: #333338;
+}
+
+.darkmode .global-util-wrap .search .ipt-search::placeholder {
+  color: #b4b4b4;
+}
+
+.global-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.global-header input {
+  padding: 0;
+  border: none;
+  font-family: inherit;
+}
+
+.global-header button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.global-header .screen-out {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.global-header-inner {
+  display: flex;
+  align-items: center;
+  width: 1257px;
+  height: 80px;
+  margin: 0 auto;
+  padding-left: 33px;
+  box-sizing: border-box;
+}
+
+.global-header .logo a {
+  display: block;
+  color: var(--point-color-primary);
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.global-header .logo span {
+  color: var(--point-color-secondary);
+}
+
+.global-header .gnb {
+  display: flex;
+  margin-left: 221px;
+  gap: 46px;
+}
+
+.global-header .gnb a {
+  line-height: 23px;
+  color: var(--main-text-color);
+  font-size: 2rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.global-header .gnb a:hover,
+.global-header .gnb a:active {
+  color: var(--point-color-primary);
+}
+
+.global-header .gnb a.is-active {
+  color: var(--point-color-primary);
+  font-weight: 800;
+}
+
+.global-util-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 14px;
+}
+
+.global-util-wrap .search {
+  position: relative;
+}
+
+.global-util-wrap .search .ipt-search {
+  width: 252px;
+  height: 42px;
+  padding: 0 48px 0 17px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  color: var(--input-text-color);
+  background-color: var(--input-color);
+}
+
+.global-util-wrap .search .ipt-search::placeholder {
+  color: #abaeb2;
+}
+
+.global-util-wrap .search .btn-search {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate3d(0, -50%, 0);
+  width: 21px;
+  height: 21px;
+  background: url("../assets/images/sprites-nomal.png") no-repeat -221px -5px /
+    auto 76px;
+}
+
+.global-util-wrap .btn-darkmode {
+  width: 24px;
+  height: 24px;
+  background: url("../assets/images/sprites-nomal.png") no-repeat -97px -3px /
+    auto 74px;
+}
