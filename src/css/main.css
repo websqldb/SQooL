@@ -169,7 +169,7 @@
     10px;
 }
 
-/* 메인 모달 부분 */
+/* 메인 모달 */
 .modal-wrap * {
   box-sizing: border-box;
 }
@@ -182,7 +182,7 @@
   left: 0;
   background-color: rgba(232, 232, 232, 0.6);
   width: 100vw;
-  height: 100vh;
+  height: 180vh;
 }
 
 .modal-main {
@@ -232,8 +232,6 @@
 
 .hint1 {
   position: relative;
-  top: 178px;
-  left: 303px;
 }
 
 .hint1::before {
@@ -249,7 +247,6 @@
 
 .hint2 {
   position: relative;
-  top: 230px;
 }
 
 .hint2::before {
@@ -267,7 +264,6 @@
 
 .hint3 {
   position: relative;
-  top: 400px;
 }
 
 .hint3::before {
