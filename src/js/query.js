@@ -111,6 +111,31 @@ const initSetting = async (tables) => {
   }
 };
 
+createTable('product', [{ 일수꾼1: '김창현' }]).then(
+  insertData('product', [{ 일수꾼1: '김창현' }])
+);
+
+const deleteTable = (tableName) => {
+  if (!tableName) return '테이블 이름이 없습니다.';
+
+  return new Promise((resolve, reject) => {
+    database.transaction(
+      (tx) => {
+        tx.executeSql(`DROP TABLE IF EXISTS ${tableName}`);
+      },
+      [],
+      () => {
+        console.log('테이블 삭제 성공');
+      },
+      () => {
+        console.log('테이블 삭제 실패');
+      }
+    );
+  });
+};
+
+// deleteTable('grade');
+
 const arr = [
   'student',
   'subject',
@@ -138,7 +163,6 @@ $run_button.addEventListener('click', async (e) => {
 const handleWebSQL = (text) => {
   return new Promise((resolve, reject) => {
     database.transaction((tx) => {
-      console.log(text);
       tx.executeSql(
         text,
         [],
@@ -154,6 +178,9 @@ const handleWebSQL = (text) => {
     });
   });
 };
+
+if ('grade') {
+}
 
 const cleanTable = () => {
   while ($table.firstChild) {
@@ -171,9 +198,24 @@ const renderTable = (data) => {
   // 효율 및 안전성을 위해 createElement 사용
   // 테이블 헤더 데이터 추가
   const $tr = document.createElement('tr');
+  const obj = {
+    일학년일학기: '1학년1학기',
+    일학년이학기: '1학년2학기',
+    이학년일학기: '2학년1학기',
+    이학년이학기: '2학년2학기',
+    삼학년일학기: '3학년1학기',
+    삼학년이학기: '3학년2학기',
+    사학년일학기: '4학년1학기',
+    사학년이학기: '4학년2학기',
+  };
   for (let column in data[0]) {
     const $th = document.createElement('th');
-    $th.textContent = column;
+    if (column.includes('학기')) {
+      console.log('학기');
+      $th.textContent = obj[column];
+    } else {
+      $th.textContent = column;
+    }
     $tr.appendChild($th);
   }
   $tbody.appendChild($tr);
