@@ -27,12 +27,7 @@
         <article class="global-util-wrap">
           <div class="search">
             <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-            <input
-              class="ipt-search"
-              id="iptSearch"
-              type="text"
-              placeholder="Search"
-            />
+            <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
             <button class="btn-search">
               <span class="screen-out">검색하기</span>
             </button>
@@ -62,9 +57,7 @@
             <button class="sql-btn" data-sql="WHERE">WHERE</button>
             <button class="sql-btn" data-sql="DELETE">DELETE</button>
             <button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
-            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">
-              INSERT INTO SELECT
-            </button>
+            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">INSERT INTO SELECT</button>
           </section>
           <button class="more-btn">MORE</button>
           <!-- sql문 선택 박스 -->
@@ -239,6 +232,7 @@
                 <p>6</p>
               </div>
               <div class="code">
+                <textarea type="text"></textarea>
                 <pre class="code-line">
                   <!-- sqlBaseStatement.js에서 사이드 버튼 클릭 시 입력되도록 변경 -->
                   <!-- <span class="code-highlight">SELECT</span>
@@ -249,7 +243,7 @@
               </div>
             </div>
           </form>
-          <button class="btn-run">Run SQL</button>
+          <button class="btn-run" type="submit">Run SQL</button>
         </section>
         <!-- main 파트 result -->
         <section class="sec-result">
@@ -352,13 +346,14 @@
         <section class="footer-section-info">
           <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
           <p class="footer-content">
-            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
-            사용할 수있는 공공재입니다.
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이 사용할 수있는
+            공공재입니다.
           </p>
           <small class="copyright-text">© 2022, All Rights Reserved</small>
         </section>
         <a href="#" class="git-hub"></a>
       </div>
     </footer>
+    <script src="./src/js/query.js" type="module"></script>
   </body>
 </html>
