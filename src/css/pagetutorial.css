@@ -21,12 +21,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 65px;
-  margin-top: 105px;
+  padding-top: 105px;
   padding-bottom: 240px;
 }
 
 .tuto-sec + .tuto-sec {
-  border-bottom: 1px solid #eeedec;
+  border-top: 1px solid #eeedec;
 }
 
 .tuto-sec.home {
