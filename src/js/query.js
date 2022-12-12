@@ -77,10 +77,10 @@ const insertData = (tableName, tableData) => {
             )})`,
             values,
             (tx, result) => {
-              console.log(tx, result);
+              //              console.log(tx, result);
             },
             (tx, result) => {
-              console.error(tx, result);
+              //              console.error(tx, result);
             }
           );
         }
@@ -164,7 +164,35 @@ const $run_button = document.querySelector('.btn-run');
 
 $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
-  const data = await handleWebSQL($editor.value);
+
+  /**
+   * convertToValidKey()는 유효한 key값을 리턴합니다.
+   * 정규표현식으로 타겟을 체크합니다.
+   * (작성자: 이준근)
+   *
+   * @params {textarea.value}
+   * @return {string}
+   */
+  const convertToValidKey = () => {
+    let inputData = $editor.value;
+    const regex = /[1-4]학년[1-4]학기/gi;
+    if (!regex.test(inputData)) return inputData;
+    else {
+      const num = {
+        1: '일',
+        2: '이',
+        3: '삼',
+        4: '사',
+      };
+      for (let i = 1; i < 5; i++) {
+        const regex = new RegExp(`${i}학년${i}학기`, 'gi');
+        inputData = inputData.replaceAll(regex, `${num[i]}학년${num[i]}학기`);
+      }
+      return inputData;
+    }
+  };
+  const inputValue = convertToValidKey();
+  const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
 
@@ -219,7 +247,6 @@ const renderTable = (data) => {
   for (let column in data[0]) {
     const $th = document.createElement('th');
     if (column.includes('학기')) {
-      console.log('학기');
       $th.textContent = obj[column];
     } else {
       $th.textContent = column;
