@@ -124,8 +124,6 @@ const deleteTable = (tableName) => {
   });
 };
 
-// deleteTable('grade');
-
 const arr = [
   'student',
   'subject',
@@ -167,8 +165,12 @@ $run_button.addEventListener('click', async (e) => {
         4: '사',
       };
       for (let i = 1; i < 5; i++) {
-        const regex = new RegExp(`${i}학년${i}학기`, 'gi');
-        inputData = inputData.replaceAll(regex, `${num[i]}학년${num[i]}학기`);
+        const re = new RegExp(`${i}학년`, 'gi');
+        inputData = inputData.replaceAll(re, `${num[i]}학년`);
+      }
+      for (let i = 1; i < 3; i++) {
+        const re2 = new RegExp(`${i}학기`, 'gi');
+        inputData = inputData.replaceAll(re2, `${num[i]}학기`);
       }
       return inputData;
     }
