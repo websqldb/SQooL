@@ -32,11 +32,9 @@ const createTable = (tableName, tableData) => {
       },
       [],
       () => {
-        console.log('테이블 생성 성공');
         resolve();
       },
       () => {
-        console.log('테이블 생성 실패');
         reject();
       }
     );
@@ -65,33 +63,22 @@ const insertData = (tableName, tableData) => {
             values.push(row[column]);
             substitute.push('?');
           }
-          console.log(
-            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(
-              substitute
-            )})`
-          );
 
           tx.executeSql(
             `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(
               substitute
             )})`,
             values,
-            (tx, result) => {
-              //              console.log(tx, result);
-            },
-            (tx, result) => {
-              //              console.error(tx, result);
-            }
+            (tx, result) => {},
+            (tx, result) => {}
           );
         }
       },
       [],
       () => {
-        console.log('데이터 생성 성공');
         resolve();
       },
       () => {
-        console.log('데이터 생성 실패');
         reject();
       }
     );
@@ -109,7 +96,6 @@ const fetchJSON = async (table) => {
     return result;
   } catch (err) {
     alert(`네트워크 에러가 발생했습니다.`);
-    console.log(`네트워크 에러: ${err}`);
   }
 };
 
@@ -132,12 +118,8 @@ const deleteTable = (tableName) => {
         tx.executeSql(`DROP TABLE IF EXISTS ${tableName}`);
       },
       [],
-      () => {
-        console.log('테이블 삭제 성공');
-      },
-      () => {
-        console.log('테이블 삭제 실패');
-      }
+      () => {},
+      () => {}
     );
   });
 };
@@ -203,11 +185,9 @@ const handleWebSQL = (text) => {
         text,
         [],
         (tx, result) => {
-          console.log(tx, result);
           resolve(result.rows);
         },
         () => {
-          console.log('SQL 실패');
           reject();
         }
       );
