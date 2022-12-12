@@ -1,5 +1,10 @@
 // WebSQL 데이터베이스 생성
-const database = openDatabase('University', '1.0', 'chrome dabase test', 2 * 1024 * 1024);
+const database = openDatabase(
+  'University',
+  '1.0',
+  'chrome dabase test',
+  2 * 1024 * 1024
+);
 
 // WebSQL 테이블 생성
 const createTable = (tableName, tableData) => {
@@ -20,7 +25,10 @@ const createTable = (tableName, tableData) => {
     database.transaction(
       (tx) => {
         tx.executeSql(`DROP TABLE IF EXISTS ${tableName}`);
-        tx.executeSql(`CREATE TABLE IF NOT EXISTS ${tableName}(${String(columns)})`, []);
+        tx.executeSql(
+          `CREATE TABLE IF NOT EXISTS ${tableName}(${String(columns)})`,
+          []
+        );
       },
       [],
       () => {
@@ -58,11 +66,15 @@ const insertData = (tableName, tableData) => {
             substitute.push('?');
           }
           console.log(
-            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(substitute)})`
+            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(
+              substitute
+            )})`
           );
 
           tx.executeSql(
-            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(substitute)})`,
+            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(
+              substitute
+            )})`,
             values,
             (tx, result) => {
               console.log(tx, result);
@@ -110,10 +122,6 @@ const initSetting = async (tables) => {
     createTable(table, data).then(insertData(table, data));
   }
 };
-
-createTable('product', [{ 일수꾼1: '김창현' }]).then(
-  insertData('product', [{ 일수꾼1: '김창현' }])
-);
 
 const deleteTable = (tableName) => {
   if (!tableName) return '테이블 이름이 없습니다.';
