@@ -1,26 +1,41 @@
+const sqlBtnWrap = document.querySelector(".sql-btn-wrap");
+
 // 메인 sql more 버튼 클릭 로직
-const moreBtn = document.querySelector(".more-btn");
-const selectSql = document.querySelector("#sqlSelect");
-const sqlBtnMore = document.querySelectorAll(".sql-btn-more");
+const moreBtn = sqlBtnWrap.querySelector(".more-btn");
+const selectSql = sqlBtnWrap.querySelector("#sqlSelect");
+const sqlBtnMore = sqlBtnWrap.querySelectorAll(".sql-btn-more");
 
 moreBtn.addEventListener("click", () => {
   selectSql.style.visibility = "visible";
 });
 
 // 메인 sql select버튼 로직
-const allSqlBtn = document.querySelectorAll(".sql-btn");
-const domFrag = new DocumentFragment();
-const sqlSyntaxArray = [];
+const sqlBtnItemList = sqlBtnWrap.querySelector(".sql-btn-item");
+let sqlSyntaxArray = [];
 
-allSqlBtn.forEach((sqlBtn) => {
-  sqlSyntaxArray.push(sqlBtn.innerText.replaceAll(" ", "_"));
+selectSql.addEventListener("click", () => {
+  const selectedIndex = selectSql.options.selectedIndex;
+  const selectedSqlOptionValue = selectSql.options.item(selectedIndex).value;
+
+  if (
+    !sqlSyntaxArray.includes(selectedSqlOptionValue) &&
+    selectedSqlOptionValue !== ""
+  ) {
+    sqlSyntaxArray.unshift(selectedSqlOptionValue);
+    addSqlBtnToItemList(sqlSyntaxArray);
+  }
+
+  if (sqlSyntaxArray.length === 26) selectSql.disabled = true;
 });
 
-sqlSyntaxArray.forEach((sqlSyntax) => {
-  const sqlOption = document.createElement("option");
-  sqlOption.value = sqlSyntax;
-  sqlOption.innerText = sqlSyntax;
-  domFrag.appendChild(sqlOption);
-});
+function addSqlBtnToItemList(array) {
+  if (array.length !== 0) {
+    const sqlOptionValue = array[0];
+    const sqlBtn = document.createElement("button");
 
-selectSql.appendChild(domFrag);
+    sqlBtn.innerText = sqlOptionValue.replaceAll("_", " ");
+    sqlBtn.classList.add("sql-btn");
+    sqlBtn.setAttribute("data-sql", sqlOptionValue);
+    sqlBtnItemList.appendChild(sqlBtn);
+  }
+}
