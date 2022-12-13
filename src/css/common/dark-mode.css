@@ -9,19 +9,46 @@
 }
 
 /* 바디 */
-body.dark-mode,
+body.dark-mode, 
 .side-bar.dark-mode {
   background-color: var(--dark-bg-color);
-  color: var(--dark-accent-white);
+  /*color: var(--dark-accent-white);*/
 }
 
 /* 사이드바 */
 .side-bar.dark-mode {
   color: var(--dark-accent-white);
+  border-left-color: var(--dark-border-color);
+  border-right-color: var(--dark-border-color);
 }
 
 .side-bar.dark-mode:active {
   color: var(--dark-accent-yellow);
+}
+
+.side-bar.main-side-bar.dark-mode .fold-btn-modal {
+  background-color: var(--dark-bg-color);
+}
+
+.side-bar.main-side-bar.dark-mode .fold-btn {
+  border-color: var(--dark-border-color);
+}
+
+.side-bar.dark-mode .main-side-title, .side-bar.dark-mode .list-title {
+  color: #B2B2B2;
+  border-bottom-color: #999A99;
+}
+
+.sql-btn-wrap.dark-mode .sql-btn {
+  color: #4D4D55;
+  background-color: rgba(247, 247, 255, 0.6);
+  border: 1px solid #727272;
+}
+
+.sql-btn-wrap.dark-mode .more-btn {
+  color: #F7F7FF;
+  background-color: #4D4D55;
+  border: 1px solid #727272;
 }
 
 /* 헤더 */
@@ -52,8 +79,6 @@ body.dark-mode,
   background: url("../../assets/images/sprites-darkmode.png") no-repeat  0px -3px;
   background-size: auto 50px;
 }
-
-
 
 /* 튜토리얼 */
 main.dark-mode .tuto-title{
@@ -170,4 +195,3 @@ main.dark-mode .sec-result table th {
 main.dark-mode .sec-result table td {
   background-color: transparent;
 }
-
