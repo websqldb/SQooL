@@ -49,9 +49,8 @@ body.dark-mode,
   background-size: auto 50px;
 
 }
-/* //헤더 */
 
-
+/* 튜토리얼 */
 main.dark-mode .tuto-title{
   color: var(--dark-accent-white);
 }
@@ -101,10 +100,13 @@ main.dark-mode .tuto-sec-example-query-para span:not(.query-para-blue, .query-pa
 }
 
 main.dark-mode .tuto-sec-result .tuto-sec-result-table th,
-main.dark-mode .tuto-sec-result .tuto-sec-result-table td,
-main.dark-mode .tuto-sec-result-table {
+main.dark-mode .tuto-sec-result .tuto-sec-result-table td {
   color: #E0E0E0;
   border: 1px solid #44444B;
+}
+
+main.dark-mode .tuto-sec-result-table,
+main.dark-mode .sec-result table {
   box-shadow: 0 0 0 1px #44444B;
 }
 
@@ -125,3 +127,42 @@ main.dark-mode .tuto-title,
 main.dark-mode .tuto-sec {
   border-bottom : 1px solid #333338;
 }
+
+/* try it */
+main.dark-mode .sec-statement form, 
+main.dark-mode .sec-statement textarea {
+  background-color: var(--dark-border-color);
+  border: none;
+}
+
+main.dark-mode .sec-statement .state-area {
+  border-top: 1px solid #676767;
+}
+
+main.dark-mode .sec-statement .code-numbers p, 
+main.dark-mode .sec-statement .state-header-left h3,
+main.dark-mode .sec-statement textarea,
+main.dark-mode .sec-result h3 {
+  color: #B2B2B2;
+}
+
+main.dark-mode .sec-result {
+  background-color: var(--dark-box-color);
+  border: none;
+}
+
+main.dark-mode .sec-result table th,
+main.dark-mode .sec-result table td,
+main.dark-mode table {
+  color: #E0E0E0;
+  border: 1px solid #44444B;
+}
+
+main.dark-mode .sec-result table th {
+  background-color: #4B4B51;
+}
+
+main.dark-mode .sec-result table td {
+  background-color: transparent;
+}
+
