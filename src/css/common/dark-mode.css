@@ -25,6 +25,10 @@ body.dark-mode,
 }
 
 /* 헤더 */
+.global-header.dark-mode {
+  border-bottom-color: var(--dark-border-color);
+}
+
 .global-header.dark-mode .logo a{
   color: var( --dark-accent-orange);
 }
@@ -47,8 +51,9 @@ body.dark-mode,
   height: 24px;
   background: url("../../assets/images/sprites-darkmode.png") no-repeat  0px -3px;
   background-size: auto 50px;
-
 }
+
+
 
 /* 튜토리얼 */
 main.dark-mode .tuto-title{
