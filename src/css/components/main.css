@@ -174,14 +174,13 @@
 }
 
 .modal-wrap {
-  /* display: none; */
-  position: absolute;
+  position: fixed;
   font-family: 'Pretendard';
   top: 0;
   left: 0;
   background-color: rgba(232, 232, 232, 0.6);
   width: 100vw;
-  height: 180vh;
+  height: 100vh;
 }
 
 .modal-main {
