@@ -5,7 +5,7 @@ var AUTOCOMPLETE_TABLES = {
   window.onload = function() {
 
   window.editor = CodeMirror.fromTextArea(document.getElementById('codeeditor'), {
-    mode: 'text/x-mysql',
+    mode: 'text/x-sql',
     indentWithTabs: true,
     smartIndent: true,
     lineNumbers: true,
