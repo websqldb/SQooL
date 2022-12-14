@@ -1,373 +1,381 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SQooL</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/components/main.css" />
-    <script src="./src/js/dark-mode.js" defer></script>
-    <script src="./src/js/modal.js" defer></script>
-    <script src="./src/js/clipboard.js" defer></script>
-    <script src="./src/js/sqlBaseStatement.js" defer></script>
-    <script src="./src/js/sqlSideButton.js" defer></script>
-    <script src="./src/js/mainSideBar.js" defer></script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SQooL</title>
+		<link rel="stylesheet" href="./src/css/style.css" />
+		<link rel="stylesheet" href="./src/css/components/main.css" />
+		<script src="./src/js/dark-mode.js" defer></script>
+		<script src="./src/js/modal.js" defer></script>
+		<script src="./src/js/clipboard.js" defer></script>
+		<script src="./src/js/sqlBaseStatement.js" defer></script>
+		<script src="./src/js/sqlSideButton.js" defer></script>
+		<script src="./src/js/mainSideBar.js" defer></script>
+		<script src="./src/js/search.js" defer></script>
+	</head>
 
-  <body>
-    <header class="global-header">
-      <div class="global-header-inner">
-        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
-        <nav class="gnb">
-          <a class="is-active" href="/">Try it</a>
-          <a href="/pagecheatsheet">Cheatsheet</a>
-          <a href="/pagetutorial">Tutorial</a>
-        </nav>
-        <article class="global-util-wrap">
-          <div class="search">
-            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-            <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
-            <button class="btn-search">
-              <span class="screen-out">검색하기</span>
-            </button>
-          </div>
-          <button class="btn-darkmode">
-            <span class="screen-out">다크 모드</span>
-          </button>
-        </article>
-      </div>
-    </header>
-    <!-- 공통 에셋 사이드바 작성 중입니다. -->
-    <div class="la-wrap">
-      <aside class="side-bar main-side-bar">
-        <!-- 날개 접기 버튼 -->
-        <div class="fold-btn-modal">
-          <button class="fold-btn"></button>
-        </div>
-        <!-- sql문 선택 버튼 -->
-        <section class="sql-btn-wrap">
-          <h3 class="main-side-title">SQL</h3>
-          <section class="sql-btn-item">
-            <button class="sql-btn" data-sql="SELECT">SELECT</button>
-            <button class="sql-btn" data-sql="GROUP_BY">GROUP BY</button>
-            <button class="sql-btn" data-sql="ORDER_BY">ORDER BY</button>
-            <button class="sql-btn" data-sql="UPDATE">UPDATE</button>
-            <button class="sql-btn" data-sql="INSERT_INTO">INSERT INTO</button>
-            <button class="sql-btn" data-sql="WHERE">WHERE</button>
-            <button class="sql-btn" data-sql="DELETE">DELETE</button>
-            <button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
-            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">INSERT INTO SELECT</button>
-          </section>
-          <button class="more-btn">MORE</button>
-          <!-- sql문 선택 박스 -->
-          <select name="sql select" id="sqlSelect">
-            <option value="">--- SQL 문 선택 ---</option>
-            <option value="LIMIT">LIMIT</option>
-            <option value="AND">AND</option>
-            <option value="OR">OR</option>
-            <option value="NOT">NOT</option>
-            <option value="IS_NULL">IS NULL</option>
-            <option value="IS_NOT_NULL">IS NOT NULL</option>
-            <option value="IN">IN</option>
-            <option value="BETWEEN">BETWEEN</option>
-            <option value="COUNT">COUNT</option>
-            <option value="SUM">SUM</option>
-            <option value="MIN">MIN</option>
-            <option value="MAX">MAX</option>
-            <option value="AVG">AVG</option>
-            <option value="AS">AS</option>
-            <option value="HAVING">HAVING</option>
-            <option value="CASE">CASE</option>
-            <option value="DISTINCT">DISTINCT</option>
-            <option value="LEFT_JOIN">LEFT JOIN</option>
-            <option value="RIGHT_JOIN">RIGHT JOIN</option>
-            <option value="FULL_OUTER_JOIN">FULL OUTER JOIN</option>
-            <option value="UNION">UNION</option>
-            <option value="UNION_ALL">UNION ALL</option>
-            <option value="EXISTS">EXISTS</option>
-            <option value="ANY">ANY</option>
-            <option value="ALL">ALL</option>
-            <option value="SELECT_INTO">SELECT INTO</option>
-          </select>
-        </section>
-        <section class="database-download-wrap">
-          <h3 class="list-title">Database</h3>
-          <ul class="list-database-download-item">
-            <li>
-              student
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              subject
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              professor
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              major
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              grade
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              scholarship
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              tuition
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              mileage
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-            <li>
-              invalid_data
-              <button class="database-download-btn">
-                <!-- 리스트 형태 모달 -->
-                <ul class="download-modal">
-                  <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
-                  </li>
-                  <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
-                  </li>
-                </ul>
-              </button>
-            </li>
-          </ul>
-        </section>
-      </aside>
-      <main>
-        <section class="sec-statement">
-          <form>
-            <div class="state-header">
-              <div class="state-header-left">
-                <h3>SQL Statement</h3>
-                <button class="btn-question"></button>
-              </div>
-              <div class="state-header-right">
-                <button class="btn-copy"></button>
-                <button class="btn-delete"></button>
-              </div>
-            </div>
-            <div class="state-area">
-              <div class="code-numbers">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
-              </div>
-              <div class="code">
-                <textarea type="text"></textarea>
-                <pre class="code-line">
+	<body>
+		<header class="global-header">
+			<div class="global-header-inner">
+				<h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+				<nav class="gnb">
+					<a class="is-active" href="/">Try it</a>
+					<a href="/pagecheatsheet">Cheatsheet</a>
+					<a href="/pagetutorial">Tutorial</a>
+				</nav>
+				<article class="global-util-wrap">
+					<div class="search">
+						<label class="screen-out" for="iptSearch">페이지 내 검색</label>
+						<input
+							class="ipt-search"
+							id="iptSearch"
+							type="text"
+							placeholder="Search"
+						/>
+						<button class="btn-search">
+							<span class="screen-out">검색하기</span>
+						</button>
+					</div>
+					<button class="btn-darkmode">
+						<span class="screen-out">다크 모드</span>
+					</button>
+				</article>
+			</div>
+		</header>
+		<!-- 공통 에셋 사이드바 작성 중입니다. -->
+		<div class="la-wrap">
+			<aside class="side-bar main-side-bar">
+				<!-- 날개 접기 버튼 -->
+				<div class="fold-btn-modal">
+					<button class="fold-btn"></button>
+				</div>
+				<!-- sql문 선택 버튼 -->
+				<section class="sql-btn-wrap">
+					<h3 class="main-side-title">SQL</h3>
+					<section class="sql-btn-item">
+						<button class="sql-btn" data-sql="SELECT">SELECT</button>
+						<button class="sql-btn" data-sql="GROUP_BY">GROUP BY</button>
+						<button class="sql-btn" data-sql="ORDER_BY">ORDER BY</button>
+						<button class="sql-btn" data-sql="UPDATE">UPDATE</button>
+						<button class="sql-btn" data-sql="INSERT_INTO">INSERT INTO</button>
+						<button class="sql-btn" data-sql="WHERE">WHERE</button>
+						<button class="sql-btn" data-sql="DELETE">DELETE</button>
+						<button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
+						<button class="sql-btn" data-sql="INSERT_INTO_SELECT">
+							INSERT INTO SELECT
+						</button>
+					</section>
+					<button class="more-btn">MORE</button>
+					<!-- sql문 선택 박스 -->
+					<select name="sql select" id="sqlSelect">
+						<option value="">--- SQL 문 선택 ---</option>
+						<option value="LIMIT">LIMIT</option>
+						<option value="AND">AND</option>
+						<option value="OR">OR</option>
+						<option value="NOT">NOT</option>
+						<option value="IS_NULL">IS NULL</option>
+						<option value="IS_NOT_NULL">IS NOT NULL</option>
+						<option value="IN">IN</option>
+						<option value="BETWEEN">BETWEEN</option>
+						<option value="COUNT">COUNT</option>
+						<option value="SUM">SUM</option>
+						<option value="MIN">MIN</option>
+						<option value="MAX">MAX</option>
+						<option value="AVG">AVG</option>
+						<option value="AS">AS</option>
+						<option value="HAVING">HAVING</option>
+						<option value="CASE">CASE</option>
+						<option value="DISTINCT">DISTINCT</option>
+						<option value="LEFT_JOIN">LEFT JOIN</option>
+						<option value="RIGHT_JOIN">RIGHT JOIN</option>
+						<option value="FULL_OUTER_JOIN">FULL OUTER JOIN</option>
+						<option value="UNION">UNION</option>
+						<option value="UNION_ALL">UNION ALL</option>
+						<option value="EXISTS">EXISTS</option>
+						<option value="ANY">ANY</option>
+						<option value="ALL">ALL</option>
+						<option value="SELECT_INTO">SELECT INTO</option>
+					</select>
+				</section>
+				<section class="database-download-wrap">
+					<h3 class="list-title">Database</h3>
+					<ul class="list-database-download-item">
+						<li>
+							student
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							subject
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							professor
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							major
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							grade
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							scholarship
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							tuition
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							mileage
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+						<li>
+							invalid_data
+							<button class="database-download-btn">
+								<!-- 리스트 형태 모달 -->
+								<ul class="download-modal">
+									<li>
+										<a href="#" download="a.csv">.csv로 다운로드</a>
+									</li>
+									<li>
+										<a href="#" download="a.json">.json으로 다운로드</a>
+									</li>
+								</ul>
+							</button>
+						</li>
+					</ul>
+				</section>
+			</aside>
+			<main>
+				<section class="sec-statement">
+					<form>
+						<div class="state-header">
+							<div class="state-header-left">
+								<h3>SQL Statement</h3>
+								<button class="btn-question"></button>
+							</div>
+							<div class="state-header-right">
+								<button class="btn-copy"></button>
+								<button class="btn-delete"></button>
+							</div>
+						</div>
+						<div class="state-area">
+							<div class="code-numbers">
+								<p>1</p>
+								<p>2</p>
+								<p>3</p>
+								<p>4</p>
+								<p>5</p>
+								<p>6</p>
+							</div>
+							<div class="code">
+								<textarea type="text"></textarea>
+								<pre class="code-line">
                   <!-- sqlBaseStatement.js에서 사이드 버튼 클릭 시 입력되도록 변경 -->
                   <!-- <span class="code-highlight">SELECT</span>
                   <span>*</span>
                   <span class="code-highlight">FROM</span>
                   <span>employee</span> -->
                 </pre>
-              </div>
-            </div>
-          </form>
-          <button class="btn-run" type="submit">Run SQL</button>
-        </section>
-        <!-- main 파트 result -->
-        <section class="sec-result">
-          <h3>Result</h3>
-          <table>
-            <!-- col 태그를 사용하여 개별 너비 지정 -->
-            <colgroup>
-              <col class="table-cell" />
-              <col class="table-cell" />
-              <col class="table-cell" />
-              <col class="table-cell" />
-              <col class="table-cell" />
-              <col class="table-cell" />
-            </colgroup>
-            <tbody>
-              <tr>
-                <th>emp_no</th>
-                <th>birth_date</th>
-                <th>first_name</th>
-                <th>last_name</th>
-                <th>gender</th>
-                <th>hire_date</th>
-              </tr>
-              <tr>
-                <td>10001</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10002</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10003</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10004</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10005</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10006</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10007</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-              <tr>
-                <td>10008</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-    </div>
+							</div>
+						</div>
+					</form>
+					<button class="btn-run" type="submit">Run SQL</button>
+				</section>
+				<!-- main 파트 result -->
+				<section class="sec-result">
+					<h3>Result</h3>
+					<table>
+						<!-- col 태그를 사용하여 개별 너비 지정 -->
+						<colgroup>
+							<col class="table-cell" />
+							<col class="table-cell" />
+							<col class="table-cell" />
+							<col class="table-cell" />
+							<col class="table-cell" />
+							<col class="table-cell" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>emp_no</th>
+								<th>birth_date</th>
+								<th>first_name</th>
+								<th>last_name</th>
+								<th>gender</th>
+								<th>hire_date</th>
+							</tr>
+							<tr>
+								<td>10001</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10002</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10003</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10004</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10005</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10006</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10007</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+							<tr>
+								<td>10008</td>
+								<td>1953-09-02</td>
+								<td>Georgi</td>
+								<td>Facello</td>
+								<td>M</td>
+								<td>1986-06-26</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</main>
+		</div>
 
-    <footer class="sql-footer">
-      <div class="footer-wrap">
-        <a href="#" class="foot-logo-link">
-          <h2 class="footer-logo">SQooL</h2>
-        </a>
+		<footer class="sql-footer">
+			<div class="footer-wrap">
+				<a href="#" class="foot-logo-link">
+					<h2 class="footer-logo">SQooL</h2>
+				</a>
 
-        <section class="footer-section-info">
-          <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
-          <p class="footer-content">
-            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이 사용할 수있는
-            공공재입니다.
-          </p>
-          <small class="copyright-text">© 2022, All Rights Reserved</small>
-        </section>
-        <a href="#" class="git-hub"></a>
-      </div>
-    </footer>
-    <script src="./src/js/query.js" type="module"></script>
-  </body>
+				<section class="footer-section-info">
+					<h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
+					<p class="footer-content">
+						이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
+						사용할 수있는 공공재입니다.
+					</p>
+					<small class="copyright-text">© 2022, All Rights Reserved</small>
+				</section>
+				<a href="#" class="git-hub"></a>
+			</div>
+		</footer>
+		<script src="./src/js/query.js" type="module"></script>
+	</body>
 </html>
