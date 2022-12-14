@@ -1,19 +1,22 @@
-CodeMirror.commands.autocomplete = function (cm) {
-  CodeMirror.showHint(cm, CodeMirror.hint.html);
-};
-window.onload = function () {
-  editor = CodeMirror(document.getElementById("codeeditor"), {
-    mode: "sql",
-    theme: "default",
-    lineWrapping: true,
-    lineNumbers: true,
-    styleActiveLine: true,
-    matchBrackets: true,
+var AUTOCOMPLETE_TABLES = {
+  'hello': ['world', 'neighbor', 'there'],
+  'reply': ['rumble', 'hellodley', 'hi_there']
+  }
+  window.onload = function() {
 
-    extraKeys: {
-      "Ctrl-Space": "autocomplete",
-    },
-    // 기본값
-    value: "SELECT * FROM WORLD;",
+  window.editor = CodeMirror.fromTextArea(document.getElementById('codeeditor'), {
+    mode: 'text/x-mysql',
+    indentWithTabs: true,
+    smartIndent: true,
+    lineNumbers: true,
+    matchBrackets : true,
+    autofocus: true,
+    extraKeys: {"Enter": "autocomplete"}
   });
-};
+
+  CodeMirror.commands.autocomplete = function(cm) {
+    CodeMirror.showHint(cm, CodeMirror.hint.sql, {
+        tables: AUTOCOMPLETE_TABLES
+    });
+  }
+  };
