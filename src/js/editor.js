@@ -3,8 +3,8 @@ CodeMirror.commands.autocomplete = function (cm) {
 };
 window.onload = function () {
   editor = CodeMirror(document.getElementById("codeeditor"), {
-    mode: "text/html",
-    theme: "neonsyntax",
+    mode: "sql",
+    theme: "default",
     lineWrapping: true,
     lineNumbers: true,
     styleActiveLine: true,
