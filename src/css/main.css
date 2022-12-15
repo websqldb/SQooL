@@ -290,7 +290,7 @@ main * {
 }
 
 main {
-  padding-top: 58px;
+  padding-top: 25px;
   margin-left: 45px;
 }
 
@@ -307,6 +307,8 @@ main h3 {
   height: 289px;
   /* left right 1px씩 조정 */
   padding: 20px 19px 20px 19px;
+  /* overflow-wrap:scroll; */
+  
 }
 
 .sec-statement .state-header {
@@ -378,13 +380,15 @@ main h3 {
   width: 25px;
   text-align: left;
   margin-right: 6px;
+
+  overflow: scroll;
 }
 
 .code-numbers p {
   color: #7d7e7d;
 }
 
-.code {
+/* .code {
   cursor: text;
   flex-grow: 1;
 }
@@ -395,10 +399,11 @@ main h3 {
   font-weight: 400;
   color: #636363;
 }
+
 .code-highlight {
   color: #5966ec;
   font-weight: 700;
-}
+} */
 .btn-run {
   display: block;
   margin-top: 20px;

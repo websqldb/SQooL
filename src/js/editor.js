@@ -1,7 +1,10 @@
 var AUTOCOMPLETE_TABLES = {
   hello: ['world', 'neighbor', 'there'],
-  reply: ['rumble', 'hellodley', 'hi_there'],
+  reply: ['rumble', 'hellodley', 'hi_there', 'aggregate'],
 };
+
+
+
 window.onload = function () {
   window.editor = CodeMirror.fromTextArea(
     document.getElementById('codeeditor'),
