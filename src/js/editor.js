@@ -2,6 +2,8 @@ var AUTOCOMPLETE_TABLES = {
   hello: ['world', 'neighbor', 'there'],
   reply: ['rumble', 'hellodley', 'hi_there'],
 };
+let defaultValue = 'SELECT * FROM Student';
+
 window.onload = function () {
   window.editor = CodeMirror.fromTextArea(
     document.getElementById('codeeditor'),
@@ -15,7 +17,7 @@ window.onload = function () {
       extraKeys: { Tab: 'autocomplete' },
     }
   );
-
+window.editor.setValue(defaultValue);
 /*
   CodeMirror.commands.autocomplete = function (cm) {
     CodeMirror.showHint(cm, CodeMirror.hint.sql, {
