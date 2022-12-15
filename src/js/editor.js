@@ -39,14 +39,4 @@ window.onload = function () {
     });
   };
 */
-  // 탭 누르지 않고 바로 실행되도록 설정
-  window.editor.on("keyup", function (cm, event) {
-    if (
-      !cm.state.completionActive &&
-      event.keyCode != 13 &&
-      event.keyCode != 48
-    ) {
-      CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
-    }
-  });
 };
