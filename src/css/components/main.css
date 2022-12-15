@@ -429,6 +429,9 @@ main h3 {
   border-radius: 80px;
   cursor: pointer;
 }
+.btn-run:active {
+  opacity: 0.7;
+}
 
 /* main-result 파트 */
 .sec-result h3 {
