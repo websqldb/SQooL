@@ -1,26 +1,22 @@
 const $body = document.querySelector("body");
 const $switchBtn = $body.querySelector(".btn-darkmode");
-let editortoggle = true;
 
 function toggleMode() {
   const $sideBar = $body.querySelector(".side-bar");
   const $header = $body.querySelector(".global-header");
   const $main = $body.querySelector("main");
-  const $editor = $body.querySelector(".cm-keyword");
+   // 메인-에디터 팀에서 다크모드 적었습니다.
+   const $editor_1 = $body.querySelector(".cm-keyword");
+   const $editor_2 = $body.querySelector(".cm-s-default");
   
   $body.classList.toggle("dark-mode");
   $sideBar.classList.toggle("dark-mode");
   $header.classList.toggle("dark-mode");
   $switchBtn.classList.toggle("dark-mode");
   $main.classList.toggle("dark-mode");
-  // 에디터 하이라이터 다크모드 부분입니다!
-  if(editortoggle){
-    $editor.style.color = "#FFBB56";
-    editortoggle = false;
-  }else{
-    $editor.style.color = "#5966ec";
-    editortoggle = true;
-  }
+  // 메인-에디터 팀에서 다크모드 적었습니다.
+  $editor_1.classList.toggle("dark-mode");
+  $editor_2.classList.toggle("dark-mode");
 }
 $switchBtn.addEventListener("click", toggleMode);
 

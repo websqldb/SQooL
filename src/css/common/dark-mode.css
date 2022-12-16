@@ -125,3 +125,7 @@ main.dark-mode .tuto-title,
 main.dark-mode .tuto-sec {
   border-bottom : 1px solid #333338;
 }
+
+main .dark-mode .cm-keyword{
+  color: #FFD966;
+}

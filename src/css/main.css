@@ -380,7 +380,6 @@ main h3 {
   width: 25px;
   text-align: left;
   margin-right: 6px;
-
   overflow: scroll;
 }
 
@@ -388,7 +387,7 @@ main h3 {
   color: #7d7e7d;
 }
 
-/* .code {
+.code {
   cursor: text;
   flex-grow: 1;
 }
@@ -403,7 +402,8 @@ main h3 {
 .code-highlight {
   color: #5966ec;
   font-weight: 700;
-} */
+}
+
 .btn-run {
   display: block;
   margin-top: 20px;

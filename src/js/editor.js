@@ -1,11 +1,4 @@
 var AUTOCOMPLETE_TABLES = {
-<<<<<<< HEAD
-  hello: ['world', 'neighbor', 'there'],
-  reply: ['rumble', 'hellodley', 'hi_there', 'aggregate'],
-};
-
-
-=======
   department: ['학과번호', '학과이름', '학과담당자', '학과전화번호'],
   grade: ['학번', '학기', '평균학점'],
   mileage: ['연도', '금액(1마일리지)'],
@@ -42,7 +35,6 @@ var AUTOCOMPLETE_TABLES = {
   ],
 };
 let defaultValue = 'SELECT * FROM Student';
->>>>>>> 98e53458a70ce068f18b15ad8e40a07c9cfbda00
 
 window.onload = function () {
   window.editor = CodeMirror.fromTextArea(

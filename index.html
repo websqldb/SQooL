@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="./src/css/header.css" />
     <link rel="stylesheet" href="./src/css/footer.css" />
     <link rel="stylesheet" href="./src/css/common/global.css" />
-    <link rel="stylesheet" href="./src/css/common/dark-mode.css" />
-    <link rel="stylesheet" href="./src/css/editor.css" />
-
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"
@@ -51,7 +49,9 @@
       referrerpolicy="no-referrer">
     </script>
 
-<link rel="stylesheet" href="./src/css/editor.css" />
+    <link rel="stylesheet" href="./src/css/editor.css" />
+    <link rel="stylesheet" href="./src/css/common/dark-mode.css" />
+    <!-- 순서가 이대로 안하면 다크모드 적용이 되지 않습니다..! 유의해주세요 -->
     
     <!-- <link
       rel="stylesheet"
@@ -67,8 +67,8 @@
     <script src="./src/js/sqlSideButton.js" defer></script>
     <script src="./src/js/mainSideBar.js" defer></script>
     <script src="./src/js/editor.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/lib/codemirror.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/theme/3024-day.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/lib/codemirror.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/theme/3024-day.css"> -->
 
   </head>
 
@@ -221,31 +221,17 @@
               </div>
             </div>
             <!-- 에디터 -->
-            <!-- <div style="width: 100%; font-size: 18px; line-height: 180%">
-              
-            </div> -->
+           
+        
             <div class="state-area">
-              <div class="code-numbers" style="width: 100%; font-size: 18px; line-height: 180%">
-                <textarea
-              id="codeeditor"
-            ></textarea>
-<<<<<<< HEAD
-=======
-            </div>
-            <div class="state-area">
-              <div class="code-numbers">
+              <div style="width: 100%; font-size: 18px; line-height: 180%">
+                <!-- <div class="code-numbers" style="width: 100%; font-size: 18px; line-height: 180%"> -->
+                 <textarea
+               id="codeeditor"
+             ></textarea>
+             </div>
 
->>>>>>> 98e53458a70ce068f18b15ad8e40a07c9cfbda00
-              </div>
-              <div class="code">
-                <pre class="code-line">
-                  <!-- sqlBaseStatement.js에서 사이드 버튼 클릭 시 입력되도록 변경 -->
-                  <!-- <span class="code-highlight">SELECT</span>
-                  <span>*</span>
-                  <span class="code-highlight">FROM</span>
-                  <span>employee</span> -->
-                </pre>
-              </div>
+            
             </div>
           </form>
           <button class="btn-run">Run SQL</button>
@@ -361,3 +347,4 @@
     </footer>
   </body>
 </html>
+
