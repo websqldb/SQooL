@@ -1,0 +1,13 @@
+[
+    {
+      "title" : "테이블에서 출력하기"
+    } ,
+    {
+      "syntax":"SELECT (10 + 2) / 2;",
+      "desc":"사칙연산이 가능합니다."
+    } ,
+    {
+      "syntax":"SELECT 'hello', 'world';",
+      "desc":"column을 나눠 출력합니다."
+    } 
+]
