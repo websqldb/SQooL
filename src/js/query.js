@@ -1,10 +1,5 @@
 // WebSQL 데이터베이스 생성
-const database = openDatabase(
-  'University',
-  '1.0',
-  'chrome dabase test',
-  2 * 1024 * 1024
-);
+const database = openDatabase('University', '1.0', 'chrome dabase test', 2 * 1024 * 1024);
 
 // WebSQL 테이블 생성
 const createTable = (tableName, tableData) => {
@@ -25,10 +20,7 @@ const createTable = (tableName, tableData) => {
     database.transaction(
       (tx) => {
         tx.executeSql(`DROP TABLE IF EXISTS ${tableName}`);
-        tx.executeSql(
-          `CREATE TABLE IF NOT EXISTS ${tableName}(${String(columns)})`,
-          []
-        );
+        tx.executeSql(`CREATE TABLE IF NOT EXISTS ${tableName}(${String(columns)})`, []);
       },
       [],
       () => {
@@ -65,9 +57,7 @@ const insertData = (tableName, tableData) => {
           }
 
           tx.executeSql(
-            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(
-              substitute
-            )})`,
+            `INSERT INTO ${tableName}(${String(columns)}) VALUES (${String(substitute)})`,
             values,
             (tx, result) => {},
             (tx, result) => {}
@@ -124,7 +114,7 @@ const deleteTable = (tableName) => {
   });
 };
 
-const arr = [
+const TABLE_ARRAY = [
   'student',
   'subject',
   'professor',
@@ -136,7 +126,7 @@ const arr = [
   'invalid_data',
 ];
 
-initSetting(arr);
+initSetting(TABLE_ARRAY);
 
 const $editor = document.querySelector('.code > textarea');
 const $table = document.querySelector('.sec-result > table');
@@ -144,6 +134,7 @@ const $run_button = document.querySelector('.btn-run');
 
 $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
+  clickButtonAnimation(e);
 
   /**
    * convertToValidKey()는 유효한 key값을 리턴합니다.
@@ -153,10 +144,10 @@ $run_button.addEventListener('click', async (e) => {
    * @params {textarea.value}
    * @return {string}
    */
-  const convertToValidKey = () => {
-    let inputData = $editor.value;
+  const convertToValidKey = (value) => {
+    if (!value) return null;
     const regex = /[1-4]학년[1-4]학기/gi;
-    if (!regex.test(inputData)) return inputData;
+    if (!regex.test(value)) return value;
     else {
       const num = {
         1: '일',
@@ -166,21 +157,22 @@ $run_button.addEventListener('click', async (e) => {
       };
       for (let i = 1; i < 5; i++) {
         const re = new RegExp(`${i}학년`, 'gi');
-        inputData = inputData.replaceAll(re, `${num[i]}학년`);
+        value = value.replaceAll(re, `${num[i]}학년`);
       }
       for (let i = 1; i < 3; i++) {
         const re2 = new RegExp(`${i}학기`, 'gi');
-        inputData = inputData.replaceAll(re2, `${num[i]}학기`);
+        value = value.replaceAll(re2, `${num[i]}학기`);
       }
-      return inputData;
+      return value;
     }
   };
-  const inputValue = convertToValidKey();
+  const inputValue = convertToValidKey($editor.value);
   const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
 
 const handleWebSQL = (text) => {
+  if (!text) return null;
   return new Promise((resolve, reject) => {
     database.transaction((tx) => {
       tx.executeSql(
@@ -197,9 +189,6 @@ const handleWebSQL = (text) => {
   });
 };
 
-if ('grade') {
-}
-
 const cleanTable = () => {
   while ($table.firstChild) {
     $table.removeChild($table.firstChild);
@@ -207,6 +196,8 @@ const cleanTable = () => {
 };
 
 const renderTable = (data) => {
+  // 예외 처리
+  if (!data) return;
   // 테이블 자식 요소 제거
   cleanTable();
 
@@ -250,4 +241,65 @@ const renderTable = (data) => {
 
   // 테이블에 추가
   $table.appendChild($tbody);
+};
+
+// 버튼 클릭 시 애니메이션
+const clickButtonAnimation = (e) => {
+  const $btn = e.currentTarget;
+  const $parent = document.querySelector('.btn-contain');
+
+  const colors = ['#5866EC', '#FFD66B', '#E6E9FF'];
+  let group = [];
+  const num = Math.floor(Math.random() * 20) + 30;
+
+  for (let i = 0; i < num; i++) {
+    let randBG = Math.floor(Math.random() * colors.length);
+    let scale = (Math.random() / 5 + 0.05).toFixed(2);
+    let x = Math.floor(Math.random() * (150 + 100)) - 100;
+    let y = Math.floor(Math.random() * (150 + 100)) - 100;
+    let sec = Math.floor(Math.random() * 1700) + 1000;
+
+    let shape = document.createElement('div');
+    shape.classList.add('star-five');
+
+    shape.style.top = `${$btn.offsetTop - 60}px`;
+    shape.style.left = `${$btn.offsetLeft - 50}px`;
+    shape.style.transform = `scale(${scale})`;
+    shape.style.transition = `${sec}ms`;
+    shape.style.borderBottom = `70px solid ${colors[randBG]}`;
+
+    const before = document.createElement('div');
+    const after = document.createElement('div');
+
+    before.classList.add('star-five-before');
+    before.style.borderBottom = `80px solid ${colors[randBG]}`;
+
+    after.classList.add('star-five-after');
+    after.style.borderBottom = `70px solid ${colors[randBG]}`;
+
+    shape.appendChild(before);
+    shape.appendChild(after);
+
+    $parent.appendChild(shape);
+
+    group.push({ shape: shape, x: x, y: y });
+  }
+
+  for (let a = 0; a < group.length; a++) {
+    let shape = group[a].shape;
+    let x = group[a].x;
+    let y = group[a].y;
+
+    shape.style.top = `${x + 40}px`;
+    shape.style.left = `${y + 600}px`;
+    shape.style.transform = `scale(0)`;
+  }
+
+  setTimeout(function () {
+    for (var b = 0; b < group.length; b++) {
+      var shape = group[b].shape;
+      $parent.removeChild(shape);
+    }
+    group = [];
+  }, 2000);
 };

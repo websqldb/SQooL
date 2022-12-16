@@ -18,8 +18,7 @@
   height: 42px;
   border: 0.5px solid #d9d9d9;
   border-radius: 7px;
-  background: url("../../assets/images/main-fold-btn-arrow.png") no-repeat
-    center;
+  background: url('../../assets/images/main-fold-btn-arrow.png') no-repeat center;
   background-size: 10px;
   cursor: pointer;
   box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.05);
@@ -37,7 +36,7 @@
   padding: 6px 12px;
   color: #8085b0;
   background-color: #f7f7ff;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -60,7 +59,7 @@
   color: #999a99;
   background-color: #efefef;
   margin-bottom: 76px;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
@@ -72,8 +71,7 @@
   visibility: hidden;
   padding: 0 28px 0 12px;
   appearance: none;
-  background: url("../../assets/images/select-arrow-drop-down.png") no-repeat
-    right 9px center;
+  background: url('../../assets/images/select-arrow-drop-down.png') no-repeat right 9px center;
   width: 176px;
   height: 33px;
   background-color: #efefef;
@@ -138,7 +136,7 @@
 }
 
 .database-download-btn {
-  background: url("../../assets/images/sprites-nomal.png") -4px -6px;
+  background: url('../../assets/images/sprites-nomal.png') -4px -6px;
   background-size: 500px 78px;
   width: 20px;
   height: 13px;
@@ -167,8 +165,7 @@
 }
 
 .fold-btn-toggle {
-  background: url("../../assets/images/main-unfold-btn-arrow.png") no-repeat
-    center / 10px;
+  background: url('../../assets/images/main-unfold-btn-arrow.png') no-repeat center / 10px;
 }
 
 /* 메인 모달 */
@@ -179,7 +176,7 @@
 .modal-wrap {
   /* display: none; */
   position: absolute;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   top: 0;
   left: 0;
   background-color: rgba(232, 232, 232, 0.6);
@@ -237,11 +234,10 @@
 }
 
 .hint1::before {
-  content: "";
+  content: '';
   width: 20px;
   height: 16px;
-  background: center / contain no-repeat
-    url(../../assets/images/main-modal-arrow.png);
+  background: center / contain no-repeat url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: -23px;
   top: 66px;
@@ -252,12 +248,11 @@
 }
 
 .hint2::before {
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 16px;
-  background: center / contain no-repeat
-    url(../../assets/images/main-modal-arrow.png);
+  background: center / contain no-repeat url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: 371px;
   top: 77px;
@@ -269,12 +264,11 @@
 }
 
 .hint3::before {
-  content: "";
+  content: '';
   display: block;
   width: 20px;
   height: 16px;
-  background: center / contain no-repeat
-    url(../../assets/images/main-modal-arrow.png);
+  background: center / contain no-repeat url(../../assets/images/main-modal-arrow.png);
   position: absolute;
   left: 165px;
   top: -21px;
@@ -327,7 +321,7 @@ main h3 {
 
 .btn-question {
   display: inline-block;
-  background: url("../../assets/images/sprites-nomal.png") -261px -4.5px;
+  background: url('../../assets/images/sprites-nomal.png') -261px -4.5px;
   background-size: 611px 70px;
   width: 24px;
   height: 24px;
@@ -342,27 +336,27 @@ main h3 {
 }
 
 .btn-copy {
-  background: url("../../assets/images/sprites-nomal.png") -80px -3px;
+  background: url('../../assets/images/sprites-nomal.png') -80px -3px;
   background-size: 611px 78px;
 }
 
 .btn-copy:hover {
-  background: url("../../assets/images/sprites-nomal.png") -54px -3px;
+  background: url('../../assets/images/sprites-nomal.png') -54px -3px;
   background-size: 611px 78px;
 }
 
 .btn-delete {
-  background: url("../../assets/images/sprites-nomal.png") -217.5px -7px;
+  background: url('../../assets/images/sprites-nomal.png') -217.5px -7px;
   background-size: 672px 88px;
   margin: 0 7px 0 25px;
 }
 
 .btn-delete:hover {
-  background: url("../../assets/images/sprites-nomal.png") -184.5px -7px;
+  background: url('../../assets/images/sprites-nomal.png') -184.5px -7px;
   background-size: 672px 88px;
 }
 .state-area {
-  font-family: "D2Coding";
+  font-family: 'D2Coding';
   display: flex;
   overflow: scroll;
   height: 224px;
@@ -399,7 +393,7 @@ main h3 {
   border: none;
   background-color: #f9f9fa;
   font-size: 18px;
-  font-family: "D2Coding";
+  font-family: 'D2Coding';
   line-height: 32.4px;
   resize: none;
   outline: none;
@@ -428,6 +422,8 @@ main h3 {
   border: none;
   border-radius: 80px;
   cursor: pointer;
+  position: relative;
+  z-index: 20;
 }
 .btn-run:active {
   opacity: 0.7;
@@ -482,7 +478,7 @@ main h3 {
 }
 
 .sec-result th {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -492,10 +488,68 @@ main h3 {
 }
 
 .sec-result td {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17.6px;
   background: #ffffff;
+}
+
+/* 버튼 클릭 시 애니메이션 스타일 */
+
+.shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: scale(0.8);
+  z-index: 5;
+}
+
+.star-five {
+  margin: 50px 0;
+  position: absolute;
+  display: block;
+  color: red;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid blue;
+  border-left: 100px solid transparent;
+  transform: rotate(35deg);
+  z-index: 5;
+}
+.star-five-before {
+  border-bottom: 80px solid blue;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  display: block;
+  content: '';
+  transform: rotate(-35deg);
+  z-index: 5;
+}
+.star-five-after {
+  position: absolute;
+  display: block;
+  color: red;
+  top: 3px;
+  left: -108px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid blue;
+  border-left: 100px solid transparent;
+  transform: rotate(-70deg);
+  content: '';
+  z-index: 5;
+}
+
+.btn-contain {
+  position: relative;
+  z-index: 10;
 }
