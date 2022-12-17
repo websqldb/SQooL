@@ -286,7 +286,7 @@ main * {
 }
 
 main {
-  padding-top: 58px;
+  padding-top: 25px;
   margin-left: 45px;
 }
 
@@ -301,8 +301,7 @@ main h3 {
   border: 1px solid rgba(232, 232, 232, 0.5);
   border-radius: 16px;
   height: 289px;
-  /* left right 1px씩 조정 */
-  padding: 20px 19px 20px 19px;
+  padding: 20px 19px 20px 28px;
 }
 
 .sec-statement .state-header {
@@ -357,7 +356,6 @@ main h3 {
 }
 .state-area {
   font-family: 'D2Coding';
-  display: flex;
   overflow: scroll;
   height: 224px;
   border-top: 1px solid #e8e8e8;
@@ -374,6 +372,7 @@ main h3 {
   width: 25px;
   text-align: left;
   margin-right: 6px;
+  overflow: scroll;
 }
 
 .code-numbers p {
@@ -405,10 +404,12 @@ main h3 {
   font-weight: 400;
   color: #636363;
 }
+
 .code-highlight {
   color: #5966ec;
   font-weight: 700;
 }
+
 .btn-run {
   display: block;
   margin-top: 20px;

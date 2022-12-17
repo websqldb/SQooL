@@ -87,6 +87,10 @@
   padding-bottom: 10px;
 }
 
+.cheatsheet-pdf-list {
+  margin-top: 30px;
+}
+
 .cheatsheet-download {
   float: right;
   background: url("../../assets/images/sprites-nomal.png") -5px -5px;
