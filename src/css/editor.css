@@ -1,0 +1,48 @@
+@import url("../assets/fonts/fonts.css");
+
+.CodeMirror {
+  font-family: "D2Coding";
+  width: 100%;
+}
+
+.cm-s-default .cm-keyword {
+  color: #5966ec;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.CodeMirror-hints {
+  padding: 5px;
+  border-radius: 9px;
+  font-family: "D2Coding";
+  font-weight: 400;
+  font-size: 18px;
+  color: #6f6f6f;
+  background: #d9d9d9;
+  border: 0;
+  -webkit-box-shadow: 0px 0px 0px;
+  -moz-box-shadow: 0px 0px 0px;
+  box-shadow: 0px 0px 0px;
+}
+
+li.CodeMirror-hint-active {
+  background: #8993f5;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.CodeMirror-gutters {
+  border: 0;
+}
+
+.CodeMirror-scroll {
+  background-color: #f9f9fa;
+}
+.CodeMirror-linenumber {
+  text-align: left;
+  padding: 0 6px 0 0;
+}
+.CodeMirror-linenumbers {
+  background-color: #f9f9fa;
+}

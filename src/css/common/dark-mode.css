@@ -164,6 +164,9 @@ main.dark-mode .tuto-sec {
   border-bottom: 1px solid #333338;
 }
 
+main .dark-mode .cm-keyword {
+  color: #ffd966;
+}
 /* try it */
 main.dark-mode .sec-statement form,
 main.dark-mode .sec-statement textarea {

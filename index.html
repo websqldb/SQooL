@@ -5,14 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQooL</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/components/main.css" />
+
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./src/css/sidebar.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
+    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/common/global.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"
+      integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js" integrity="sha512-5Z07kVtu0rOCOkYY270NlHhvA571vw8qm8pbr23iiFMfuFEJv1S0QMU6RMx0E1JrR7GiAn+1/Pi05hbcY+eqsQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/sql/sql.min.js"
+      integrity="sha512-1g1Gew/RrxddgYBTrO+mJtdQlnag5DgUIITX2TSscWptww/ksl5cfm2KExwwP9rHS4nvier/SkH5KaPnSTeFQQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.js"
+      integrity="sha512-4+hfJ/4qrBFEm8Wdz+mXpoTr/weIrB6XjJZAcc4pE2Yg5B06aKS/YLMN5iIAMXFTe0f1eneuLE5sRmnSHQqFNg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.css"
+      integrity="sha512-W/cvA9Wiaq79wGy/VOkgMpOILyqxqIMU+rkneDUW2uqiUT53I6DKmrF4lmCbRG+/YrW0J69ecvanKCCyb+sIWA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/sql-hint.min.js"
+      integrity="sha512-98VZnqEF+AGeaEk5hpnZ1eXdJOlaFlRGJflwcfXpCqfoVveFA+mBSqeAYLI1T6JWMt/llQFNhsTRa6etXuZGDw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+
+    <link rel="stylesheet" href="./src/css/editor.css" />
+    <link rel="stylesheet" href="./src/css/common/dark-mode.css" />
+    <!-- 순서가 이대로 안하면 다크모드 적용이 되지 않습니다..! 유의해주세요 -->
+    
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/3024-day.min.css"
+      integrity="sha512-18oLgbbfP5aJEwUUaEBLD/e5HnJtTuPOmdevOgMWL8wdGn6zNVLY+yAgOupSfrbdT174IRJDdak3XeBqdYy7Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+
     <script src="./src/js/dark-mode.js" defer></script>
     <script src="./src/js/modal.js" defer></script>
     <script src="./src/js/clipboard.js" defer></script>
     <script src="./src/js/sqlBaseStatement.js" defer></script>
     <script src="./src/js/sqlSideButton.js" defer></script>
     <script src="./src/js/mainSideBar.js" defer></script>
+    <script src="./src/js/editor.js" defer></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/lib/codemirror.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/theme/3024-day.css"> -->
     <script src="./src/js/search.js" defer></script>
     <script src="./src/js/selectDatabase.js" defer></script>
   </head>
@@ -244,8 +302,17 @@
                 <button class="btn-delete"></button>
               </div>
             </div>
+            <!-- 에디터 -->
+
             <div class="state-area">
-              <div class="code-numbers">
+              <div style="width: 100%; font-size: 18px; line-height: 180%">
+                <!-- <div class="code-numbers" style="width: 100%; font-size: 18px; line-height: 180%"> -->
+                  <textarea
+                id="codeeditor"
+              ></textarea>
+              </div>
+          
+              <!-- <div class="code-numbers">
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>
@@ -256,14 +323,9 @@
               <div class="code">
                 <textarea type="text">select * from student</textarea>
                 <pre class="code-line">
-                  <!-- sqlBaseStatement.js에서 사이드 버튼 클릭 시 입력되도록 변경 -->
-                  <!-- <span class="code-highlight">SELECT</span>
-                  <span>*</span>
-                  <span class="code-highlight">FROM</span>
-                  <span>employee</span> -->
                 </pre>
               </div>
-            </div>
+            </div> -->
           </form>
           <div class="btn-contain">
             <button class="btn-run" type="submit">Run SQL</button>
@@ -1423,3 +1485,4 @@
     <script src="./src/js/query.js" type="module"></script>
   </body>
 </html>
+
