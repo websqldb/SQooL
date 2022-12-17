@@ -70,4 +70,35 @@ window.onload = function () {
       CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
     }
   });
+
+  // const $mainStatementClipboard = document.querySelector(".CodeMirror");
+const $mainStatementBtn = document.querySelector(".btn-copy");
+
+
+
+$mainStatementBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const $mainStatementCodeLine = document.querySelector(".CodeMirror-line");
+  const codeTxt = $mainStatementCodeLine.textContent;
+  window.navigator.clipboard
+    .writeText(codeTxt)
+    .then(() => {
+      // alert("복사완료");
+      toast();
+    });
+});
 };
+
+
+function toast() {
+  const $toastClipBoard = document.querySelector("#toastClipBoard");
+  $toastClipBoard.classList.contains("reveal")
+    ? (clearTimeout(removeToast),
+      (removeToast = setTimeout(function () {
+        $toastClipBoard.classList.remove("reveal");
+      }, 1000)))
+    : (removeToast = setTimeout(function () {
+        $toastClipBoard.classList.remove("reveal");
+      }, 1000));
+  $toastClipBoard.classList.add("reveal");
+}
