@@ -6,58 +6,90 @@
   --dark-accent-orange: #ffbb56;
   --dark-accent-blue: #5966ec;
   --dark-accent-yellow: #ffd66c;
+  --white: #e0e0e0;
+  --gray: #b2b2b2;
 }
 
 /* 바디 */
 body.dark-mode,
 .side-bar.dark-mode {
   background-color: var(--dark-bg-color);
-  color: var(--dark-accent-white);
+  /*color: var(--dark-accent-white);*/
 }
 
 /* 사이드바 */
 .side-bar.dark-mode {
   color: var(--dark-accent-white);
+  border-left-color: var(--dark-border-color);
+  border-right-color: var(--dark-border-color);
 }
 
 .side-bar.dark-mode:active {
   color: var(--dark-accent-yellow);
 }
 
+.side-bar.main-side-bar.dark-mode .fold-btn-modal {
+  background-color: var(--dark-bg-color);
+}
+
+.side-bar.main-side-bar.dark-mode .fold-btn {
+  border-color: var(--dark-border-color);
+}
+
+.side-bar.dark-mode .main-side-title,
+.side-bar.dark-mode .list-title {
+  color: #b2b2b2;
+  border-bottom-color: #999a99;
+}
+
+.sql-btn-wrap.dark-mode .sql-btn {
+  color: #4d4d55;
+  background-color: rgba(247, 247, 255, 0.6);
+  border: 1px solid #727272;
+}
+
+.sql-btn-wrap.dark-mode .more-btn {
+  color: #f7f7ff;
+  background-color: #4d4d55;
+  border: 1px solid #727272;
+}
+
 /* 헤더 */
-.global-header.dark-mode .logo a{
-  color: var( --dark-accent-orange);
+.global-header.dark-mode {
+  border-bottom-color: var(--dark-border-color);
+}
+
+.global-header.dark-mode .logo a {
+  color: var(--dark-accent-orange);
 }
 
 .global-header.dark-mode .logo span {
   color: var(--dark-accent-blue);
 }
 
-.global-header.dark-mode .gnb a.is-active  {
-  color: var( --dark-accent-orange);
+.global-header.dark-mode .gnb a.is-active {
+  color: var(--dark-accent-orange);
 }
 
 .global-header.dark-mode .global-util-wrap .search .ipt-search {
-  color: #B4B4B4;
-  background-color: #2D2D2D;
+  color: #b4b4b4;
+  background-color: #2d2d2d;
 }
 
 .global-header.dark-mode .global-util-wrap .btn-darkmode {
   width: 24px;
   height: 24px;
-  background: url("../../assets/images/sprites-darkmode.png") no-repeat  0px -3px;
+  background: url("../../assets/images/sprites-darkmode.png") no-repeat 0px -3px;
   background-size: auto 50px;
-
 }
-/* //헤더 */
 
-
-main.dark-mode .tuto-title{
+/* 튜토리얼 */
+main.dark-mode .tuto-title {
   color: var(--dark-accent-white);
 }
 
 main.dark-mode .tuto-sec-title {
- color: var(--dark-accent-yellow) 
+  color: var(--dark-accent-yellow);
 }
 
 main.dark-mode .tuto-sec-cont strong {
@@ -69,15 +101,16 @@ main.dark-mode .tuto-sec-cont {
   border: 1px solid var(--dark-border-color);
 }
 
-main.dark-mode .tuto-sec .tuto-sec-cont p, main.dark-mode .tuto-sec .tuto-sec-para {
-  color: #E0E0E0;
+main.dark-mode .tuto-sec .tuto-sec-cont p,
+main.dark-mode .tuto-sec .tuto-sec-para {
+  color: #e0e0e0;
 }
 
 main.dark-mode .tuto-sec .tuto-sec-subtitle {
   color: var(--dark-accent-white);
 }
 
-main.dark-mode .tuto-sec .tuto-sec-para p{
+main.dark-mode .tuto-sec .tuto-sec-para p {
   color: var(--dark-accent-white);
 }
 
@@ -96,36 +129,141 @@ main.dark-mode .tuto-sec-example-query {
   border: 1px var(--dark-border-color) solid;
 }
 
-main.dark-mode .tuto-sec-example-query-para span:not(.query-para-blue, .query-para-yellow) {
-  color: #7D7E7D;
+main.dark-mode
+  .tuto-sec-example-query-para
+  span:not(.query-para-blue, .query-para-yellow) {
+  color: #7d7e7d;
 }
 
 main.dark-mode .tuto-sec-result .tuto-sec-result-table th,
-main.dark-mode .tuto-sec-result .tuto-sec-result-table td,
-main.dark-mode .tuto-sec-result-table {
-  color: #E0E0E0;
-  border: 1px solid #44444B;
-  box-shadow: 0 0 0 1px #44444B;
+main.dark-mode .tuto-sec-result .tuto-sec-result-table td {
+  color: #e0e0e0;
+  border: 1px solid #44444b;
 }
 
-main.dark-mode .tuto-sec-result .tuto-sec-result-table thead{
-  background: #4B4B51;
+main.dark-mode .tuto-sec-result-table,
+main.dark-mode .sec-result table {
+  box-shadow: 0 0 0 1px #44444b;
+}
+
+main.dark-mode .tuto-sec-result .tuto-sec-result-table thead {
+  background: #4b4b51;
 }
 
 main.dark-mode .tuto-sec-result-para {
-  background-color: #2D2D2D;
-  color: #B4B4B4;
+  background-color: #2d2d2d;
+  color: #b4b4b4;
 }
 
 main.dark-mode .tuto-sec-result-para strong {
-  color: #FFD966;
+  color: #ffd966;
 }
 
 main.dark-mode .tuto-title,
 main.dark-mode .tuto-sec {
-  border-bottom : 1px solid #333338;
+  border-bottom: 1px solid #333338;
 }
 
-main .dark-mode .cm-keyword{
-  color: #FFD966;
+main .dark-mode .cm-keyword {
+  color: #ffd966;
 }
+/* try it */
+main.dark-mode .sec-statement form,
+main.dark-mode .sec-statement textarea {
+  background-color: var(--dark-border-color);
+  border: none;
+}
+
+main.dark-mode .sec-statement .state-area {
+  border-top: 1px solid #676767;
+}
+
+main.dark-mode .sec-statement .code-numbers p,
+main.dark-mode .sec-statement .state-header-left h3,
+main.dark-mode .sec-statement textarea,
+main.dark-mode .sec-result h3 {
+  color: #b2b2b2;
+}
+
+main.dark-mode .sec-result {
+  background-color: var(--dark-box-color);
+  border: none;
+}
+
+main.dark-mode .sec-result table th,
+main.dark-mode .sec-result table td,
+main.dark-mode table {
+  color: #e0e0e0;
+  border: 1px solid #44444b;
+}
+
+main.dark-mode .sec-result table th {
+  background-color: #4b4b51;
+}
+
+main.dark-mode .sec-result table td {
+  background-color: transparent;
+}
+
+main.dark-mode .cheatsheet-title-box h2 {
+  color: var(--dark-accent-yellow);
+}
+
+/* main */
+main.dark-mode .cheatsheet-wrapper h3 {
+  color: var(--white);
+}
+
+main.dark-mode .cheatsheet-wrapper h3::before {
+  background-color: var(--dark-accent-blue);
+}
+
+main.dark-mode .cheatsheet-wrapper .cheatsheet-list {
+  background-color: var(--dark-box-color);
+  border: 1px solid var(--dark-box-color);
+}
+
+main.dark-mode .cheatsheet-wrapper {
+  border-top: 1px solid var(--dark-border-color);
+}
+
+main.dark-mode .cheatsheet-sql strong.cheatsheet-sql-statement {
+  color: var(--dark-accent-orange);
+}
+
+main.dark-mode
+  .cheatsheet-list
+  p.cheatsheet-sql:not(strong.cheatsheet-sql-statement) {
+  color: var(--gray);
+}
+
+main.dark-mode .cheatsheet-list li {
+  background-color: var(--dark-bg-color);
+}
+
+main.dark-mode .cheatsheet-list .cheatsheet-sql-explanation {
+  color: var(--gray);
+}
+
+main.dark-mode .cheatsheet-list .cheatsheet-sql .cheatsheet-sql-sorted {
+  color: var(--dark-accent-blue);
+}
+
+/* sidebar */
+aside.side-bar.dark-mode .list-wrap-cheatsheet .list-item > li {
+  color: var(--white);
+}
+
+aside.side-bar.dark-mode .cheatsheet-pdf-list span {
+  color: var(--white);
+}
+
+aside.side-bar.dark-mode .cheatsheet-pdf .list-title {
+  color: var(--white);
+  border-bottom-color: var(--dark-border-color);
+}
+
+aside.side-bar.dark-mode .cheatsheet-pdf {
+  border-bottom-color: var(--dark-border-color);
+}
+/* footer */

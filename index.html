@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQooL</title>
+
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
     <link rel="stylesheet" href="./src/css/sidebar.css" />
@@ -60,6 +61,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     /> -->
+
     <script src="./src/js/dark-mode.js" defer></script>
     <script src="./src/js/modal.js" defer></script>
     <script src="./src/js/clipboard.js" defer></script>
@@ -69,7 +71,8 @@
     <script src="./src/js/editor.js" defer></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/lib/codemirror.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6.65.7/theme/3024-day.css"> -->
-
+    <script src="./src/js/search.js" defer></script>
+    <script src="./src/js/selectDatabase.js" defer></script>
   </head>
 
   <body>
@@ -84,12 +87,7 @@
         <article class="global-util-wrap">
           <div class="search">
             <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-            <input
-              class="ipt-search"
-              id="iptSearch"
-              type="text"
-              placeholder="Search"
-            />
+            <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
             <button class="btn-search">
               <span class="screen-out">검색하기</span>
             </button>
@@ -119,87 +117,171 @@
             <button class="sql-btn" data-sql="WHERE">WHERE</button>
             <button class="sql-btn" data-sql="DELETE">DELETE</button>
             <button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
-            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">
-              INSERT INTO SELECT</button
-            ><button class="sql-btn sql-btn-more sr-only" data-sql="SELECT">
-              SELECT
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="GROUP_BY">
-              GROUP BY
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="ORDER_BY">
-              ORDER BY
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="UPDATE">
-              UPDATE
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="INSERT_INTO">
-              INSERT INTO
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="WHERE">
-              WHERE
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="DELETE">
-              DELETE
-            </button>
-            <button class="sql-btn sql-btn-more sr-only" data-sql="INNER_JOIN">
-              INNER JOIN
-            </button>
-            <button
-              class="sql-btn sql-btn-more sr-only"
-              data-sql="INSERT_INTO_SELECT"
-            >
-              INSERT INTO SELECT
-            </button>
+            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">INSERT INTO SELECT</button>
           </section>
           <button class="more-btn">MORE</button>
           <!-- sql문 선택 박스 -->
           <select name="sql select" id="sqlSelect">
             <option value="">--- SQL 문 선택 ---</option>
+            <option value="LIMIT">LIMIT</option>
+            <option value="AND">AND</option>
+            <option value="OR">OR</option>
+            <option value="NOT">NOT</option>
+            <option value="IS_NULL">IS NULL</option>
+            <option value="IS_NOT_NULL">IS NOT NULL</option>
+            <option value="IN">IN</option>
+            <option value="BETWEEN">BETWEEN</option>
+            <option value="COUNT">COUNT</option>
+            <option value="SUM">SUM</option>
+            <option value="MIN">MIN</option>
+            <option value="MAX">MAX</option>
+            <option value="AVG">AVG</option>
+            <option value="AS">AS</option>
+            <option value="HAVING">HAVING</option>
+            <option value="CASE">CASE</option>
+            <option value="DISTINCT">DISTINCT</option>
+            <option value="LEFT_JOIN">LEFT JOIN</option>
+            <option value="RIGHT_JOIN">RIGHT JOIN</option>
+            <option value="FULL_OUTER_JOIN">FULL OUTER JOIN</option>
+            <option value="UNION">UNION</option>
+            <option value="UNION_ALL">UNION ALL</option>
+            <option value="EXISTS">EXISTS</option>
+            <option value="ANY">ANY</option>
+            <option value="ALL">ALL</option>
+            <option value="SELECT_INTO">SELECT INTO</option>
           </select>
         </section>
         <section class="database-download-wrap">
-          <!-- 메인 사이드바 수정 중입니다. -->
           <h3 class="list-title">Database</h3>
           <ul class="list-database-download-item">
             <li>
-              departsments
+              student
               <button class="database-download-btn">
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                    <a href="./data/student.csv" download="student.csv">.csv로 다운로드</a>
                   </li>
                   <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
+                    <a href="./data/student.json" download="student.json">.json으로 다운로드</a>
                   </li>
                 </ul>
               </button>
             </li>
             <li>
-              departsments
+              subject
               <button class="database-download-btn">
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                    <a href="./data/subject.csv" download="subject.csv">.csv로 다운로드</a>
                   </li>
                   <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
+                    <a href="./data/subject.json" download="subject.json">.json으로 다운로드</a>
                   </li>
                 </ul>
               </button>
             </li>
             <li>
-              departsments
+              professor
               <button class="database-download-btn">
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="#" download="a.csv">.csv로 다운로드</a>
+                    <a href="./data/professor.csv" download="professor.csv">.csv로 다운로드</a>
                   </li>
                   <li>
-                    <a href="#" download="a.json">.json으로 다운로드</a>
+                    <a href="./data/professor.json" download="professor.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              major
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/major.csv" download="major.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="./data/major.json" download="major.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              grade
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/grade.csv" download="grade.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="./data/grade.json" download="grade.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              scholarship
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/scholarship.csv" download="scholarship.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="./data/scholarship.json" download="scholarship.json"
+                      >.json으로 다운로드</a
+                    >
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              tuition
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/tuition.csv" download="tuition.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="./data/tuition.json" download="tuition.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              mileage
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/mileage.csv" download="mileage.csv">.csv로 다운로드</a>
+                  </li>
+                  <li>
+                    <a href="./data/mileage.json" download="mileage.json">.json으로 다운로드</a>
+                  </li>
+                </ul>
+              </button>
+            </li>
+            <li>
+              invalid_data
+              <button class="database-download-btn">
+                <!-- 리스트 형태 모달 -->
+                <ul class="download-modal">
+                  <li>
+                    <a href="./data/invalid_data.csv" download="invalid_data.csv"
+                      >.csv로 다운로드</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./data/invalid_data.json" download="invalid_data.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -221,20 +303,33 @@
               </div>
             </div>
             <!-- 에디터 -->
-           
-        
+
             <div class="state-area">
               <div style="width: 100%; font-size: 18px; line-height: 180%">
                 <!-- <div class="code-numbers" style="width: 100%; font-size: 18px; line-height: 180%"> -->
-                 <textarea
-               id="codeeditor"
-             ></textarea>
-             </div>
-
-            
-            </div>
+                  <textarea
+                id="codeeditor"
+              ></textarea>
+              </div>
+          
+              <!-- <div class="code-numbers">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+              </div>
+              <div class="code">
+                <textarea type="text">select * from student</textarea>
+                <pre class="code-line">
+                </pre>
+              </div>
+            </div> -->
           </form>
-          <button class="btn-run">Run SQL</button>
+          <div class="btn-contain">
+            <button class="btn-run" type="submit">Run SQL</button>
+          </div>
         </section>
         <!-- main 파트 result -->
         <section class="sec-result">
@@ -251,76 +346,1115 @@
             </colgroup>
             <tbody>
               <tr>
-                <th>emp_no</th>
-                <th>birth_date</th>
-                <th>first_name</th>
-                <th>last_name</th>
-                <th>gender</th>
-                <th>hire_date</th>
+                <th>학번</th>
+                <th>이름</th>
+                <th>학과</th>
+                <th>지도교수</th>
+                <th>학년</th>
+                <th>생년월일</th>
+                <th>연락처</th>
+                <th>주소</th>
+                <th>마일리지</th>
               </tr>
               <tr>
-                <td>10001</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>201900001</td>
+                <td>이재영</td>
+                <td>치의학과</td>
+                <td>임시연</td>
+                <td>4</td>
+                <td>1993-07-07</td>
+                <td>011-1234-5678</td>
+                <td>서울특별시 성북구</td>
+                <td>120</td>
               </tr>
               <tr>
-                <td>10002</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>202100002</td>
+                <td>서동현</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>2</td>
+                <td>1995-04-09</td>
+                <td>011-1212-4121</td>
+                <td>서울특별시 동대문구</td>
+                <td>200</td>
               </tr>
               <tr>
-                <td>10003</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>202000003</td>
+                <td>김세원</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-03-25</td>
+                <td>011-9999-9999</td>
+                <td>서울특별시 부끄북구</td>
+                <td>202</td>
               </tr>
               <tr>
-                <td>10004</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>201900004</td>
+                <td>신윤철</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>4</td>
+                <td>1993-12-25</td>
+                <td>011-1111-2222</td>
+                <td>경기도 성남시 수정구</td>
+                <td>31</td>
               </tr>
               <tr>
-                <td>10005</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>202200005</td>
+                <td>최유정</td>
+                <td>약학과</td>
+                <td>정재인</td>
+                <td>1</td>
+                <td>1996-12-15</td>
+                <td>011-5554-6777</td>
+                <td>서울특별시 호그와트구</td>
+                <td>56</td>
               </tr>
               <tr>
-                <td>10006</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>202100006</td>
+                <td>이지형</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>2</td>
+                <td>1995-03-29</td>
+                <td>011-4522-9098</td>
+                <td>경기도 수원시 초록구</td>
+                <td>102</td>
               </tr>
               <tr>
-                <td>10007</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>201900007</td>
+                <td>이시현</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-12-04</td>
+                <td>011-7979-8282</td>
+                <td>인천광역시 남동구</td>
+                <td>156</td>
               </tr>
               <tr>
-                <td>10008</td>
-                <td>1953-09-02</td>
-                <td>Georgi</td>
-                <td>Facello</td>
-                <td>M</td>
-                <td>1986-06-26</td>
+                <td>201900008</td>
+                <td>손수철</td>
+                <td>기계공학과</td>
+                <td>삼호준</td>
+                <td>4</td>
+                <td>1993-07-13</td>
+                <td>011- 7879-5923</td>
+                <td>서울특별시 강남구</td>
+                <td>166</td>
+              </tr>
+              <tr>
+                <td>202200009</td>
+                <td>김대엽</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>1</td>
+                <td>1996-07-14</td>
+                <td>011-8282-7979</td>
+                <td>충청남도 천안시 호두구</td>
+                <td>205</td>
+              </tr>
+              <tr>
+                <td>202000010</td>
+                <td>김도영</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>3</td>
+                <td>1994-12-18</td>
+                <td>011-6395-0397</td>
+                <td>인천광역시 연수구</td>
+                <td>140</td>
+              </tr>
+              <tr>
+                <td>202000011</td>
+                <td>박시우</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>3</td>
+                <td>1994-12-19</td>
+                <td>011-5416-2481</td>
+                <td>서울특별시 강남구</td>
+                <td>145</td>
+              </tr>
+              <tr>
+                <td>202000012</td>
+                <td>최수진</td>
+                <td>치의학과</td>
+                <td>임시연</td>
+                <td>3</td>
+                <td>1994-12-20</td>
+                <td>011-2219-4173</td>
+                <td>대구광역시 막창구</td>
+                <td>244</td>
+              </tr>
+              <tr>
+                <td>202000013</td>
+                <td>김창현</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-12-21</td>
+                <td>011-9944-7614</td>
+                <td>서울특별시 노원구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202100014</td>
+                <td>장희수</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>2</td>
+                <td>1995-03-03</td>
+                <td>011-6317-2417</td>
+                <td>서울특별시 자두구</td>
+                <td>106</td>
+              </tr>
+              <tr>
+                <td>202100015</td>
+                <td>이준근</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>2</td>
+                <td>1995-11-30</td>
+                <td>011-2482-8140</td>
+                <td>제주특별자치도 제주시 이쁘구</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>201900016</td>
+                <td>허재원</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-09-23</td>
+                <td>011-2306-9980</td>
+                <td>제주특별자치도 제주시 귤많구</td>
+                <td>92</td>
+              </tr>
+              <tr>
+                <td>202000017</td>
+                <td>김혜빈</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>3</td>
+                <td>1994-08-04</td>
+                <td>011-4039-3099</td>
+                <td>경기도 화성시 동탄구</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>202100018</td>
+                <td>이윤석</td>
+                <td>기계공학과</td>
+                <td>삼호준</td>
+                <td>2</td>
+                <td>1995-08-03</td>
+                <td>011-3441-1247</td>
+                <td>서울특별시 강북구</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>202100019</td>
+                <td>한유진</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>2</td>
+                <td>1995-04-29</td>
+                <td>011-2345-6778</td>
+                <td>서울특별시 뭉구</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>201900020</td>
+                <td>왕유린</td>
+                <td>수의예과</td>
+                <td>임시연</td>
+                <td>4</td>
+                <td>1993-12-24</td>
+                <td>011-4709-1524</td>
+                <td>서울특별시 강남구</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>202200021</td>
+                <td>이경린</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>1</td>
+                <td>1996-01-30</td>
+                <td>011-4541-7165</td>
+                <td>강원도 춘천시 닭갈비구</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>202100022</td>
+                <td>이광렬</td>
+                <td>치의학과</td>
+                <td>임시연</td>
+                <td>2</td>
+                <td>1995-05-05</td>
+                <td>011-1470-2238</td>
+                <td>서울특별시 동작구</td>
+                <td>143</td>
+              </tr>
+              <tr>
+                <td>202000023</td>
+                <td>서현주</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-10-18</td>
+                <td>011-2468-0864</td>
+                <td>경기도 용인시 처인구</td>
+                <td>150</td>
+              </tr>
+              <tr>
+                <td>201900024</td>
+                <td>지창언</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>4</td>
+                <td>1993-12-10</td>
+                <td>011-4392-1154</td>
+                <td>강원도 강릉시 바다구</td>
+                <td>616</td>
+              </tr>
+              <tr>
+                <td>202200025</td>
+                <td>우승미</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>1</td>
+                <td>1996-12-19</td>
+                <td>011-1357-2468</td>
+                <td>서울특별시 도봉구</td>
+                <td>93</td>
+              </tr>
+              <tr>
+                <td>201900026</td>
+                <td>은혜연</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>4</td>
+                <td>1993-05-05</td>
+                <td>011-3547-8654</td>
+                <td>충청남도 천안시 호두구</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>202200027</td>
+                <td>추경훈</td>
+                <td>방사선학과</td>
+                <td>최원범</td>
+                <td>1</td>
+                <td>1996-12-20</td>
+                <td>011-7260-5830</td>
+                <td>경기도 군포시 군밤구</td>
+                <td>88</td>
+              </tr>
+              <tr>
+                <td>202000028</td>
+                <td>이준엽</td>
+                <td>물리치료학과</td>
+                <td>강진</td>
+                <td>3</td>
+                <td>1994-10-20</td>
+                <td>011-3210-1470</td>
+                <td>서울특별시 강남구</td>
+                <td>72</td>
+              </tr>
+              <tr>
+                <td>202100029</td>
+                <td>임종서</td>
+                <td>통계학과</td>
+                <td>김혜원</td>
+                <td>2</td>
+                <td>1995-10-30</td>
+                <td>011-3116-5411</td>
+                <td>충청북도 청주시 상당구</td>
+                <td>117</td>
+              </tr>
+              <tr>
+                <td>202200030</td>
+                <td>이유진</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>1</td>
+                <td>1996-09-20</td>
+                <td>011-2235-5234</td>
+                <td>서울특별시 강남구</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>202000031</td>
+                <td>김설하</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>3</td>
+                <td>1994-02-17</td>
+                <td>011-7370-5665</td>
+                <td>충청북도 청주시 흥덕구</td>
+                <td>110</td>
+              </tr>
+              <tr>
+                <td>202200032</td>
+                <td>정수현</td>
+                <td>기계공학과</td>
+                <td>삼호준</td>
+                <td>1</td>
+                <td>1996-11-07</td>
+                <td>011-3948-5843</td>
+                <td>경기도 군포시 군밤구</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>202100033</td>
+                <td>이윤구</td>
+                <td>약학과</td>
+                <td>강혜진</td>
+                <td>2</td>
+                <td>1995-05-05</td>
+                <td>011-4235-3451</td>
+                <td>강원도 강릉시 이윤구</td>
+                <td>355</td>
+              </tr>
+              <tr>
+                <td>202000034</td>
+                <td>최영준</td>
+                <td>수학과</td>
+                <td>임시연</td>
+                <td>3</td>
+                <td>1994-04-27</td>
+                <td>011-0427-1204</td>
+                <td>경기도 화성시 밤바다구</td>
+                <td>73</td>
+              </tr>
+              <tr>
+                <td>202200035</td>
+                <td>방선아</td>
+                <td>약학과</td>
+                <td>강혜진</td>
+                <td>1</td>
+                <td>1996-03-21</td>
+                <td>011-0321-0321</td>
+                <td>서울특별시 광진구</td>
+                <td>300</td>
+              </tr>
+              <tr>
+                <td>202000036</td>
+                <td>김민승</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>3</td>
+                <td>1994-07-07</td>
+                <td>011-7709-7034</td>
+                <td>전라남도 여수시 밤바다구</td>
+                <td>157</td>
+              </tr>
+              <tr>
+                <td>202200037</td>
+                <td>양희지</td>
+                <td>의예과</td>
+                <td>김유진</td>
+                <td>1</td>
+                <td>1996-11-30</td>
+                <td>011-4429-6148</td>
+                <td>서울특별시 용산구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202000038</td>
+                <td>이철수</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-05-03</td>
+                <td>011-2709-7011</td>
+                <td>서울특별시 강남구</td>
+                <td>68</td>
+              </tr>
+              <tr>
+                <td>201900039</td>
+                <td>최진수</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>4</td>
+                <td>1993-04-17</td>
+                <td>011-7709-7037</td>
+                <td>인천광역시 미추홀구</td>
+                <td>60</td>
+              </tr>
+              <tr>
+                <td>202200040</td>
+                <td>박수현</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>1</td>
+                <td>1996-10-24</td>
+                <td>011-3269-1470</td>
+                <td>서울특별시 종로구</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>202200041</td>
+                <td>박다은</td>
+                <td>경영정보학과</td>
+                <td>일태진</td>
+                <td>1</td>
+                <td>1996-11-20</td>
+                <td>011-0203-3324</td>
+                <td>서울특별시 영등포구</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>202000042</td>
+                <td>김정렬</td>
+                <td>약학과</td>
+                <td>강혜진</td>
+                <td>3</td>
+                <td>1994-08-21</td>
+                <td>011-2343-7865</td>
+                <td>서울특별시 동작구</td>
+                <td>76</td>
+              </tr>
+              <tr>
+                <td>202000043</td>
+                <td>김태수</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>3</td>
+                <td>1994-11-23</td>
+                <td>011-3289-6537</td>
+                <td>강원도 춘천시 닭갈비구</td>
+                <td>33</td>
+              </tr>
+              <tr>
+                <td>201900044</td>
+                <td>이세영</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>4</td>
+                <td>1993-06-05</td>
+                <td>011-9778-2479</td>
+                <td>경기도 부천시 미로구</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>202200045</td>
+                <td>양다은</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>1</td>
+                <td>1996-06-04</td>
+                <td>011-9448-1480</td>
+                <td>경기도 성남시 수정구</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <td>202000046</td>
+                <td>주다빈</td>
+                <td>생물학화학융합학과</td>
+                <td>김혜원</td>
+                <td>3</td>
+                <td>1994-11-11</td>
+                <td>011-3378-2281</td>
+                <td>경기도 부천시</td>
+                <td>132</td>
+              </tr>
+              <tr>
+                <td>202000047</td>
+                <td>박성범</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>3</td>
+                <td>1994-10-11</td>
+                <td>011-9778-2482</td>
+                <td>경기도 수원시 팔달구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202200048</td>
+                <td>이석우</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>1</td>
+                <td>1996-05-28</td>
+                <td>011-5554-0528</td>
+                <td>인천광역시 서구</td>
+                <td>45</td>
+              </tr>
+              <tr>
+                <td>202200049</td>
+                <td>김민영</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>1</td>
+                <td>1996-10-20</td>
+                <td>011-4585-6713</td>
+                <td>서울특별시 관악구</td>
+                <td>66</td>
+              </tr>
+              <tr>
+                <td>202100050</td>
+                <td>장효순</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>2</td>
+                <td>1995-10-02</td>
+                <td>011-1234-7777</td>
+                <td>경상남도 창원시 마산합포구</td>
+                <td>45</td>
+              </tr>
+              <tr>
+                <td>202000051</td>
+                <td>김미리</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-01-23</td>
+                <td>011-5391-4660</td>
+                <td>서울특별시 도봉구</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>201900052</td>
+                <td>남위정</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-09-10</td>
+                <td>011-3721-0054</td>
+                <td>경기도 안산시 상록구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202200053</td>
+                <td>이예은</td>
+                <td>자동차공학과</td>
+                <td>사호준</td>
+                <td>1</td>
+                <td>1996-03-05</td>
+                <td>011-2425-1212</td>
+                <td>서울특별시 강남구</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>202100054</td>
+                <td>최수빈</td>
+                <td>통계학과</td>
+                <td>장희승</td>
+                <td>2</td>
+                <td>1995-06-01</td>
+                <td>011-4451-7560</td>
+                <td>대전광역시 유성구</td>
+                <td>64</td>
+              </tr>
+              <tr>
+                <td>202100055</td>
+                <td>임홍렬</td>
+                <td>방사선학과</td>
+                <td>최원범</td>
+                <td>2</td>
+                <td>1995-04-07</td>
+                <td>011-1122-3344</td>
+                <td>경기도 고양시 일산서구</td>
+                <td>75</td>
+              </tr>
+              <tr>
+                <td>201900056</td>
+                <td>우혜빈</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>4</td>
+                <td>1993-08-23</td>
+                <td>011-1235-1485</td>
+                <td>서울특별시 용산구</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>202200057</td>
+                <td>김도희</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>1</td>
+                <td>1996-02-21</td>
+                <td>011-2436-2431</td>
+                <td>대전광역시 서구</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>202100058</td>
+                <td>이상우</td>
+                <td>통계학과</td>
+                <td>장희승</td>
+                <td>2</td>
+                <td>1995-10-11</td>
+                <td>011-2357-2353</td>
+                <td>인천광역시 서구</td>
+                <td>39</td>
+              </tr>
+              <tr>
+                <td>201900059</td>
+                <td>김대운</td>
+                <td>자동차공학과</td>
+                <td>사호준</td>
+                <td>4</td>
+                <td>1993-12-25</td>
+                <td>011-0123-0123</td>
+                <td>제주특별자치도 서귀포시 감귤구</td>
+                <td>99</td>
+              </tr>
+              <tr>
+                <td>202200060</td>
+                <td>김민지</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>1</td>
+                <td>1996-10-23</td>
+                <td>011-1202-1234</td>
+                <td>서울특별시 동작구</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>202200061</td>
+                <td>유윤우</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>1</td>
+                <td>1996-07-07</td>
+                <td>011-3210-3210</td>
+                <td>대구광역시 달서구</td>
+                <td>45</td>
+              </tr>
+              <tr>
+                <td>202100062</td>
+                <td>유죠미</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>2</td>
+                <td>1995-12-15</td>
+                <td>011-0486-1215</td>
+                <td>서울특별시 싱가포르구</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <td>202200063</td>
+                <td>조민지</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>1</td>
+                <td>1996-12-25</td>
+                <td>011-5447-9987</td>
+                <td>대전광역시 유성구</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>202200064</td>
+                <td>김다정</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>1</td>
+                <td>1996-07-21</td>
+                <td>011-6871-1821</td>
+                <td>경기도 고양시 일산서구</td>
+                <td>35</td>
+              </tr>
+              <tr>
+                <td>202200065</td>
+                <td>김채령</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>1</td>
+                <td>1996-12-25</td>
+                <td>011-4332-1234</td>
+                <td>서울특별시 강서구</td>
+                <td>54</td>
+              </tr>
+              <tr>
+                <td>202000066</td>
+                <td>류재준</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>3</td>
+                <td>1994-04-28</td>
+                <td>011-4104-1224</td>
+                <td>경상북도 포항시 바다구</td>
+                <td>76</td>
+              </tr>
+              <tr>
+                <td>201900067</td>
+                <td>여소희</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>4</td>
+                <td>1993-09-27</td>
+                <td>011-2376-2314</td>
+                <td>경기도 고양시 일산서구</td>
+                <td>89</td>
+              </tr>
+              <tr>
+                <td>202200068</td>
+                <td>정상기</td>
+                <td>치의학과</td>
+                <td>임시연</td>
+                <td>1</td>
+                <td>1996-02-16</td>
+                <td>011-4345-2352</td>
+                <td>경기도 부천시 미로구</td>
+                <td>33</td>
+              </tr>
+              <tr>
+                <td>202100069</td>
+                <td>유지혜</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>2</td>
+                <td>1995-11-30</td>
+                <td>011-3253-8504</td>
+                <td>경기도 안산시 단원구</td>
+                <td>42</td>
+              </tr>
+              <tr>
+                <td>202000070</td>
+                <td>전예빈</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>3</td>
+                <td>1994-11-21</td>
+                <td>011-4354-2334</td>
+                <td>제주특별자치도 서귀포시 위니브구</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>202000071</td>
+                <td>최위빈</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>3</td>
+                <td>1994-09-13</td>
+                <td>011-3890-2352</td>
+                <td>제주특별자치도 서귀포시 감귤구</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>202200072</td>
+                <td>김혜나</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>1</td>
+                <td>1996-08-15</td>
+                <td>011-2351-6578</td>
+                <td>경기도 수원시 칠팔구</td>
+                <td>74</td>
+              </tr>
+              <tr>
+                <td>202000073</td>
+                <td>이혜은</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>3</td>
+                <td>1994-05-10</td>
+                <td>011-2586-9999</td>
+                <td>제주특별자치도 서귀포시 한라구</td>
+                <td>36</td>
+              </tr>
+              <tr>
+                <td>202200074</td>
+                <td>김우진</td>
+                <td>수의예과</td>
+                <td>정재인</td>
+                <td>1</td>
+                <td>1996-09-02</td>
+                <td>011-3682-3823</td>
+                <td>서울특별시 송파구</td>
+                <td>89</td>
+              </tr>
+              <tr>
+                <td>202100075</td>
+                <td>김소준</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>2</td>
+                <td>1995-11-30</td>
+                <td>011-1234-2532</td>
+                <td>충청북도 천안시 동남구</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>202100076</td>
+                <td>안정음</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>2</td>
+                <td>1995-05-12</td>
+                <td>011-5234-2563</td>
+                <td>경기도 수원시 팔달구</td>
+                <td>550</td>
+              </tr>
+              <tr>
+                <td>202090077</td>
+                <td>윤슬기</td>
+                <td>의예과</td>
+                <td>김태진</td>
+                <td>3</td>
+                <td>1994-04-14</td>
+                <td>011-1827-4850</td>
+                <td>인천광역시 연수구</td>
+                <td>63</td>
+              </tr>
+              <tr>
+                <td>202100078</td>
+                <td>류미희</td>
+                <td>물리학과</td>
+                <td>김영웅</td>
+                <td>2</td>
+                <td>1995-03-22</td>
+                <td>011-0005-1243</td>
+                <td>경기도 수원시 권선구</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>202000079</td>
+                <td>노지성</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>3</td>
+                <td>1994-05-21</td>
+                <td>011-4362-2351</td>
+                <td>경기도 수원시 팔달구</td>
+                <td>59</td>
+              </tr>
+              <tr>
+                <td>202100080</td>
+                <td>조해용</td>
+                <td>경영정보학과</td>
+                <td>일태진</td>
+                <td>2</td>
+                <td>1995-11-30</td>
+                <td>011-1232-4214</td>
+                <td>경기도 안양시 동안구</td>
+                <td>84</td>
+              </tr>
+              <tr>
+                <td>202000081</td>
+                <td>이정화</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>3</td>
+                <td>1994-12-25</td>
+                <td>011-5730-9213</td>
+                <td>대전광역시 동구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202200082</td>
+                <td>김강경</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>1</td>
+                <td>1996-05-05</td>
+                <td>011-0232-7192</td>
+                <td>경기도 안산시 상록구</td>
+                <td>39</td>
+              </tr>
+              <tr>
+                <td>202100083</td>
+                <td>박진수</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>2</td>
+                <td>1995-03-03</td>
+                <td>011-9620-2012</td>
+                <td>경기도 안양시 만안구</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>202200084</td>
+                <td>안예인</td>
+                <td>컴퓨터공학과</td>
+                <td>전유진</td>
+                <td>1</td>
+                <td>1996-07-18</td>
+                <td>011-7221-2818</td>
+                <td>부산광역시 사하구</td>
+                <td>94</td>
+              </tr>
+              <tr>
+                <td>201900085</td>
+                <td>박도현</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-11-11</td>
+                <td>011-2232-2341</td>
+                <td>서울특별시 서초구</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>202200086</td>
+                <td>양회찬</td>
+                <td>의예과</td>
+                <td>정재인</td>
+                <td>1</td>
+                <td>1996-03-02</td>
+                <td>011-2324-2323</td>
+                <td>서울특별시 송파구</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>202000087</td>
+                <td>정한일</td>
+                <td>화학과</td>
+                <td>둘재현</td>
+                <td>3</td>
+                <td>1994-08-16</td>
+                <td>011-4321-4321</td>
+                <td>서울특별시 성북구</td>
+                <td>78</td>
+              </tr>
+              <tr>
+                <td>201900088</td>
+                <td>고정찬</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-12-12</td>
+                <td>011-5326-8495</td>
+                <td>인천광역시 남동구</td>
+                <td>135</td>
+              </tr>
+              <tr>
+                <td>202000089</td>
+                <td>박지형</td>
+                <td>물리학과</td>
+                <td>김영웅</td>
+                <td>3</td>
+                <td>1994-04-23</td>
+                <td>011-3262-5689</td>
+                <td>경상북도 포항시 남구</td>
+                <td>205</td>
+              </tr>
+              <tr>
+                <td>201900090</td>
+                <td>정미경</td>
+                <td>전자공학과</td>
+                <td>일호준</td>
+                <td>4</td>
+                <td>1993-08-15</td>
+                <td>011-6790-1402</td>
+                <td>부산광역시 동래구</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>202000091</td>
+                <td>곽두원</td>
+                <td>간호학과</td>
+                <td>김유진</td>
+                <td>3</td>
+                <td>1994-03-25</td>
+                <td>011-3299-8786</td>
+                <td>서울특별시 송파구</td>
+                <td>205</td>
+              </tr>
+              <tr>
+                <td>202100092</td>
+                <td>이원범</td>
+                <td>치의학과</td>
+                <td>임시연</td>
+                <td>2</td>
+                <td>1995-05-20</td>
+                <td>011-4312-1132</td>
+                <td>서울특별시 성북구</td>
+                <td>21</td>
+              </tr>
+              <tr>
+                <td>201900093</td>
+                <td>조창식</td>
+                <td>식품영양학과</td>
+                <td>조용훈</td>
+                <td>4</td>
+                <td>1993-01-16</td>
+                <td>011-2221-9871</td>
+                <td>전라북도 전주시 완산구</td>
+                <td>215</td>
+              </tr>
+              <tr>
+                <td>202100094</td>
+                <td>이순창</td>
+                <td>통계학과</td>
+                <td>장희승</td>
+                <td>2</td>
+                <td>1995-10-12</td>
+                <td>011-3289-0973</td>
+                <td>부산광역시 북구</td>
+                <td>346</td>
+              </tr>
+              <tr>
+                <td>202200095</td>
+                <td>김소영</td>
+                <td>수학과</td>
+                <td>김진</td>
+                <td>1</td>
+                <td>1996-10-18</td>
+                <td>011-4528-1833</td>
+                <td>부산광역시 남구</td>
+                <td>362</td>
+              </tr>
+              <tr>
+                <td>202200096</td>
+                <td>김지현</td>
+                <td>로봇공학과</td>
+                <td>한재현</td>
+                <td>1</td>
+                <td>1996-11-14</td>
+                <td>011-3849-1387</td>
+                <td>서울특별시 양천구</td>
+                <td>104</td>
+              </tr>
+              <tr>
+                <td>202100097</td>
+                <td>장거한</td>
+                <td>생물학화학융합학과</td>
+                <td>김혜원</td>
+                <td>2</td>
+                <td>1995-12-07</td>
+                <td>011-0874-1943</td>
+                <td>경상북도 포항시 남구</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>202000098</td>
+                <td>박민희</td>
+                <td>로봇공학과</td>
+                <td>한재현</td>
+                <td>3</td>
+                <td>1994-12-14</td>
+                <td>011-3955-1267</td>
+                <td>부산광역시 수영구</td>
+                <td>43</td>
+              </tr>
+              <tr>
+                <td>202100099</td>
+                <td>송선영</td>
+                <td>식품영양학과</td>
+                <td>조용훈</td>
+                <td>2</td>
+                <td>1995-03-04</td>
+                <td>011-4732-3285</td>
+                <td>인천광역시 미추홀구</td>
+                <td>73</td>
+              </tr>
+              <tr>
+                <td>202200100</td>
+                <td>한혜지</td>
+                <td>생명공학과</td>
+                <td>이종찬</td>
+                <td>1</td>
+                <td>1996-05-04</td>
+                <td>011-1234-3479</td>
+                <td>011-1234-3479</td>
+                <td>97</td>
               </tr>
             </tbody>
           </table>
@@ -337,14 +1471,18 @@
         <section class="footer-section-info">
           <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
           <p class="footer-content">
-            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
-            사용할 수있는 공공재입니다.
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이 사용할 수있는
+            공공재입니다.
           </p>
           <small class="copyright-text">© 2022, All Rights Reserved</small>
         </section>
         <a href="#" class="git-hub"></a>
       </div>
     </footer>
+
+    <div id="toastClipBoard">복사 되었습니다.</div>
+    <button class="top-button"></button>
+    <script src="./src/js/query.js" type="module"></script>
   </body>
 </html>
 

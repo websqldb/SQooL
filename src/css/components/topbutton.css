@@ -1,0 +1,29 @@
+@media (min-width: 1470px) {
+    .top-button {
+        position: fixed;
+        bottom: 57px;
+        left: calc(50% + 656px);
+        width: 54px;
+        height: 54px;
+        background: url("../../assets/images/sprites-nomal.png") no-repeat -332px -10px;
+        background-size: 612px 78px;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 2px rgba(128, 133, 176, 0.2);
+        border-style: none;
+    }
+}
+
+@media (max-width: 1469px) {
+    .top-button {
+        position: fixed;
+        bottom: 57px;
+        right: 50px;
+        width: 54px;
+        height: 54px;
+        background: url("../../assets/images/sprites-nomal.png") no-repeat -332px -10px;
+        background-size: 612px 78px;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 2px rgba(128, 133, 176, 0.2);
+        border-style: none;
+    }
+}

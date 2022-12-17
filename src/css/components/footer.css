@@ -22,7 +22,7 @@
   text-decoration-line: none;
   margin-right: 193px;
 }
-.footer-section-info{
+.footer-section-info {
   min-width: 520px;
 }
 .footer-logo {
@@ -57,7 +57,7 @@
 .git-hub::before {
   display: block;
   content: "";
-  background: url(../assets/images/sprites-nomal.png) no-repeat -483px -5px;
+  background: url(../../assets/images/sprites-nomal.png) no-repeat -483px -5px;
   background-size: 612px 78px;
   width: 124px;
   height: 45px;

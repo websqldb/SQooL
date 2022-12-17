@@ -1,0 +1,24 @@
+#toastClipBoard {
+  font-family: "Pretendard";
+  position: fixed;
+  bottom: 15px;
+  left: 3%;
+  width: 250px;
+  padding: 16px 24px;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.5rem;
+  opacity: 0;
+  line-height: 20px;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+  background: #fff;
+  border: solid 2px #5966ec;
+  z-index: 10000;
+}
+
+#toastClipBoard.reveal {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -30%);
+}

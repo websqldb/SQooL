@@ -5,16 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQooL</title>
-    <link rel="stylesheet" href="../src/css/reset.css" />
-    <link rel="stylesheet" href="../src/assets/fonts/fonts.css" />
-    <link rel="stylesheet" href="../src/css/sidebar.css" />
-    <link rel="stylesheet" href="../src/css/header.css" />
-    <link rel="stylesheet" href="../src/css/footer.css" />
-    <link rel="stylesheet" href="../src/css/pagecheatsheet.css" />
-    <link rel="stylesheet" href="../src/css/common/dark-mode.css" />
-    <script src="../src/js/dark-mode.js" defer></script>
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/pages/pagecheatsheet.css" />
     <script src="../src/js/cheatsheetClipboard.js" defer></script>
     <script src="../src/js/sidebarScroll.js" defer></script>
+    <script src="../src/js/dark-mode.js" defer></script>
+    <script src="../src/js/search.js" defer></script>
   </head>
 
   <body>
@@ -114,11 +110,13 @@
                 />
               </button>
               <p class="cheatsheet-sql">
-                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2
                 <strong class="cheatsheet-sql-statement">FROM</strong>
                 t
                 <br />
-                <strong class="cheatsheet-sql-statement">ORDER BY</strong> c1
+                <strong class="cheatsheet-sql-statement">ORDER BY</strong>
+                c1
                 <strong class="cheatsheet-sql-sorted">ASC [DESC]</strong>;
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -133,11 +131,14 @@
                 />
               </button>
               <p class="cheatsheet-sql">
-                <strong class="cheatsheet-sql-statement">SELECT</strong> c1,
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1,
                 <strong class="cheatsheet-sql-aggregate">aggregate</strong>(c2)
                 <br />
-                <strong class="cheatsheet-sql-statement">FROM</strong> t <br />
-                <strong class="cheatsheet-sql-statement">GROUP BY</strong> c1;
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t <br />
+                <strong class="cheatsheet-sql-statement">GROUP BY</strong>
+                c1;
               </p>
               <p class="cheatsheet-sql-explanation">
                 Group rows using an aggregate function
@@ -289,10 +290,13 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
                 v(c1, c2) <br />
-                <strong class="cheatsheet-sql-statement">AS</strong> <br />
-                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <strong class="cheatsheet-sql-statement">AS</strong>
                 <br />
-                <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2
+                <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t; <br />
               </p>
               <p class="cheatsheet-sql-explanation">
                 Create a new view that consists of c1 and c2
@@ -308,10 +312,13 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE VIEW</strong>
                 v(c1, c2) <br />
-                <strong class="cheatsheet-sql-statement">AS</strong> <br />
-                <strong class="cheatsheet-sql-statement">SELECT</strong> c1, c2
+                <strong class="cheatsheet-sql-statement">AS</strong>
                 <br />
-                <strong class="cheatsheet-sql-statement">FROM</strong> t; <br />
+                <strong class="cheatsheet-sql-statement">SELECT</strong>
+                c1, c2
+                <br />
+                <strong class="cheatsheet-sql-statement">FROM</strong>
+                t; <br />
                 <strong class="cheatsheet-sql-statement">WITH [</strong>
                 <strong class="cheatsheet-sql-sorted"
                   >CASCADED &#124; LOCAL</strong
@@ -333,8 +340,10 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE</strong>
                 <strong class="cheatsheet-sql-sorted">RECURSIVE</strong>
-                <strong class="cheatsheet-sql-statement">VIEW</strong> v <br />
-                <strong class="cheatsheet-sql-statement">AS</strong> <br />
+                <strong class="cheatsheet-sql-statement">VIEW</strong>
+                v <br />
+                <strong class="cheatsheet-sql-statement">AS</strong>
+                <br />
                 <strong class="cheatsheet-sql-select-state"
                   >select-statement</strong
                 >
@@ -372,7 +381,8 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE INDEX</strong>
                 idx_name <br />
-                <strong class="cheatsheet-sql-statement">ON</strong> t(c1, c2);
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                t(c1, c2);
               </p>
               <p class="cheatsheet-sql-explanation">
                 Create an index on c1 and c2 of the table t
@@ -390,7 +400,8 @@
                   >CREATE UNIQUE INDEX</strong
                 >
                 idx_name <br />
-                <strong class="cheatsheet-sql-statement">ON</strong> t(c3, c4);
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                t(c3, c4);
               </p>
               <p class="cheatsheet-sql-explanation">
                 Create unique index on c3, c4 of the table t
@@ -507,8 +518,10 @@
                   >CREATE OR MODIFY TRIGGER</strong
                 >
                 trigger_name <br />
-                <strong class="cheatsheet-sql-sorted">WHEN EVENT</strong> <br />
-                <strong class="cheatsheet-sql-statement">ON</strong> table_name
+                <strong class="cheatsheet-sql-sorted">WHEN EVENT</strong>
+                <br />
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                table_name
                 <br />
                 <strong class="cheatsheet-sql-sorted">TRIGGER_TYPE</strong>
                 <br />
@@ -588,8 +601,8 @@
                 <strong class="cheatsheet-sql-statement">CREATE TRIGGER</strong>
                 before_insert_person<br />
                 <strong class="cheatsheet-sql-sorted">BEFORE INSERT</strong>
-                <strong class="cheatsheet-sql-statement">ON</strong> person
-                <br /><strong class="cheatsheet-sql-sorted"
+                <strong class="cheatsheet-sql-statement">ON</strong>
+                person <br /><strong class="cheatsheet-sql-sorted"
                   >FOR EACH ROW</strong
                 >
                 <strong class="cheatsheet-sql-statement">EXECUTE</strong>
@@ -632,12 +645,15 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE TABLE </strong>t
                 <strong class="cheatsheet-sql-statement">(</strong><br />
-                id <strong class="cheatsheet-sql-statement">INT</strong>
+                id
+                <strong class="cheatsheet-sql-statement">INT</strong>
                 <strong class="cheatsheet-sql-sorted">PRIMARY KEY,</strong
                 ><br />
-                name <strong class="cheatsheet-sql-statement">VARCHAR</strong>
+                name
+                <strong class="cheatsheet-sql-statement">VARCHAR</strong>
                 <strong class="cheatsheet-sql-sorted">NOT NULL,</strong><br />
-                price <strong class="cheatsheet-sql-statement">INT</strong>
+                price
+                <strong class="cheatsheet-sql-statement">INT</strong>
                 <strong class="cheatsheet-sql-sorted">DEFAULT 0 <br /> </strong>
                 <strong class="cheatsheet-sql-statement">);</strong>
                 <strong class=""></strong>
@@ -669,7 +685,8 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-                t <strong class="cheatsheet-sql-statement">ADD</strong>
+                t
+                <strong class="cheatsheet-sql-statement">ADD</strong>
                 columns;
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -685,7 +702,8 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-                t <strong class="cheatsheet-sql-statement">DROP COLUMN</strong>
+                t
+                <strong class="cheatsheet-sql-statement">DROP COLUMN</strong>
                 c;
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -701,7 +719,8 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
-                t <strong class="cheatsheet-sql-statement">ADD</strong>
+                t
+                <strong class="cheatsheet-sql-statement">ADD</strong>
                 constraint;
               </p>
               <p class="cheatsheet-sql-explanation">Add a constraint</p>
@@ -747,7 +766,8 @@
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">ALTER TABLE</strong>
                 t1
-                <strong class="cheatsheet-sql-statement">RENAME</strong> c1
+                <strong class="cheatsheet-sql-statement">RENAME</strong>
+                c1
                 <strong class="cheatsheet-sql-statement">TO </strong>c2;
               </p>
               <p class="cheatsheet-sql-explanation">Rename column c1 to c2</p>
@@ -808,8 +828,10 @@
                 <strong class="cheatsheet-sql-statement">INT </strong>
                 <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong
                 ><strong class="cheatsheet-sql-statement">,</strong><br />
-                c2 <strong class="cheatsheet-sql-statement">INT,</strong><br />
-                <strong class="cheatsheet-sql-sorted">FOREIGN KEY</strong> (c2)
+                c2
+                <strong class="cheatsheet-sql-statement">INT,</strong><br />
+                <strong class="cheatsheet-sql-sorted">FOREIGN KEY</strong>
+                (c2)
                 <strong class="cheatsheet-sql-sorted">REFERENCES</strong>
                 t2(c2)<br /><strong class="cheatsheet-sql-statement">);</strong>
               </p>
@@ -826,11 +848,16 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-                t<strong class="cheatsheet-sql-statement">(</strong> <br />
-                c1 <strong class="cheatsheet-sql-statement">INT, </strong> c1
-                <strong class="cheatsheet-sql-statement">INT, </strong> <br />
+                t<strong class="cheatsheet-sql-statement">(</strong>
+                <br />
+                c1
+                <strong class="cheatsheet-sql-statement">INT, </strong>
+                c1
+                <strong class="cheatsheet-sql-statement">INT, </strong>
+                <br />
                 <strong class="cheatsheet-sql-sorted">UNIQUE (</strong
-                >c2,c3<strong class="cheatsheet-sql-sorted">)</strong> <br />
+                >c2,c3<strong class="cheatsheet-sql-sorted">)</strong>
+                <br />
                 <strong class="cheatsheet-sql-statement">);</strong>
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -846,11 +873,16 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-                t<strong class="cheatsheet-sql-statement">(</strong> <br />
-                c1 <strong class="cheatsheet-sql-statement">INT, </strong> c2
-                <strong class="cheatsheet-sql-statement">INT, </strong> <br />
+                t<strong class="cheatsheet-sql-statement">(</strong>
+                <br />
+                c1
+                <strong class="cheatsheet-sql-statement">INT, </strong>
+                c2
+                <strong class="cheatsheet-sql-statement">INT, </strong>
+                <br />
                 <strong class="cheatsheet-sql-sorted">CHECK (</strong>c1 > 0 AND
-                c1 >= c2<strong class="cheatsheet-sql-sorted">)</strong> <br />
+                c1 >= c2<strong class="cheatsheet-sql-sorted">)</strong>
+                <br />
                 <strong class="cheatsheet-sql-statement">);</strong>
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -866,12 +898,17 @@
               </button>
               <p class="cheatsheet-sql">
                 <strong class="cheatsheet-sql-statement">CREATE TABLE</strong>
-                t<strong class="cheatsheet-sql-statement">(</strong> <br />
-                c1 <strong class="cheatsheet-sql-statement">INT </strong>
+                t<strong class="cheatsheet-sql-statement">(</strong>
+                <br />
+                c1
+                <strong class="cheatsheet-sql-statement">INT </strong>
                 <strong class="cheatsheet-sql-sorted">PRIMARY KEY</strong
-                ><strong class="cheatsheet-sql-statement">,</strong> <br />
-                c2 <strong class="cheatsheet-sql-statement">VARCHAR </strong>
-                <strong class="cheatsheet-sql-sorted">NOT NULL</strong> <br />
+                ><strong class="cheatsheet-sql-statement">,</strong>
+                <br />
+                c2
+                <strong class="cheatsheet-sql-statement">VARCHAR </strong>
+                <strong class="cheatsheet-sql-sorted">NOT NULL</strong>
+                <br />
                 <strong class="cheatsheet-sql-statement">);</strong>
               </p>
               <p class="cheatsheet-sql-explanation">
@@ -883,7 +920,6 @@
         <!-- // section-9 -->
       </main>
     </div>
-
     <footer class="sql-footer">
       <div class="footer-wrap">
         <a href="#" class="foot-logo-link">
@@ -899,7 +935,9 @@
           <small class="copyright-text">© 2022, All Rights Reserved</small>
         </section>
         <a href="#" class="git-hub"></a>
+        <div id="toastClipBoard">복사 되었습니다.</div>
       </div>
     </footer>
+    <button class="top-button"></button>
   </body>
 </html>
