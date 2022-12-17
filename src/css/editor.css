@@ -39,10 +39,12 @@ li.CodeMirror-hint-active {
 .CodeMirror-scroll {
   background-color: #f9f9fa;
 }
+
 .CodeMirror-linenumber {
   text-align: left;
   padding: 0 6px 0 0;
 }
+
 .CodeMirror-linenumbers {
   background-color: #f9f9fa;
 }
