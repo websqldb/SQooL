@@ -1,0 +1,25 @@
+[
+  {
+    "title": "테이블 관리하기"
+  },
+  {
+    "syntax": "CREATE TABLE 제품 (\n제품번호 INT PRIMARY KEY,\n제품이름 VARCHAR NOT NULL,\n가격 INT DEFAULT 0);",
+    "desc": "제품 테이블을 생성합니다."
+  },
+  {
+    "syntax": "INSERT INTO 제품 (제품번호, 제품이름, 가격)\nVALUES (1, '버그잡는 개리씨 키링', 12500);\n--SELECT * FROM 제품",
+    "desc": "생성한 테이블에 데이터를 넣습니다."
+  },
+  {
+    "syntax": "UPDATE 제품\nSET 제품이름='위니브 스티커 팩', 가격 = 3500\nWHERE 제품번호 = 1;\n--SELECT * FROM 제품",
+    "desc": "데이터를 수정합니다."
+  },
+  {
+    "syntax": "DELETE FROM 제품 WHERE 제품번호 = 1;",
+    "desc": "1번째 제품을 삭제합니다. (주의 : WHERE를 적지 않으면 전부 삭제됩니다.)"
+  },
+  {
+    "syntax": "DROP TABLE 제품;",
+    "desc": "테이블을 제거합니다."
+  }
+]
