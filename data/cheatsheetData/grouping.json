@@ -1,0 +1,13 @@
+[
+  {
+    "title": "그룹핑"
+  },
+  {
+    "syntax": "SELECT 학년, AVG(마일리지)\nFROM student\nGROUP BY 학년;",
+    "desc": "학년별 마일리지 평균을 출력합니다."
+  },
+  {
+    "syntax": "SELECT 학과, AVG(마일리지)\nFROM student\nGROUP BY 학과\nHAVING 학년 > 2;",
+    "desc": "학과별 마일리지 평균을 출력하는데 2학년 이상인 학생의 마일리지를 출력합니다."
+  }
+]
