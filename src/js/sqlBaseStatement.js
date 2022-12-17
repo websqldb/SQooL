@@ -1,4 +1,5 @@
-const sqlBtns = document.querySelectorAll(".sql-btn");
+const sqlBtnItems = document.querySelector(".sql-btn-item");
+const sqlSelect = document.querySelector("#sqlSelect");
 const codeLine = document.querySelector(".code > textarea");
 
 // pre 태그 줄바꿈 인식
@@ -195,14 +196,15 @@ WHERE condition;`;
   codeLine.innerHTML = statement;
 };
 
-// 사이드 버튼에 이벤트 추가
-sqlBtns.forEach((sqlBtn) => {
-  sqlBtn.addEventListener("click", () => addStatement(sqlBtn.dataset.sql));
+// 사이드 select option 선택 시 sql statement에 기본 구문 출력
+sqlSelect.addEventListener("change", (e) => {
+  addStatement(e.target.value);
 });
 
-// 사이드 select option 선택 시 sql statement에 기본 구문 출력
-const sqlSelect = document.querySelector("#sqlSelect");
-sqlSelect.addEventListener("change", (e) => {
-  // console.log(e.target.value);
-  addStatement(e.target.value);
+// 사이드 버튼 클릭 시 sql statement에 기본 구문 출력
+sqlBtnItems.addEventListener("click", (e) => {
+  if (e.target.classList.contains("sql-btn")) {
+    const sqlBtn = e.target;
+    addStatement(sqlBtn.dataset.sql);
+  }
 });
