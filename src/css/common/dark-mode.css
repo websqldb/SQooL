@@ -167,6 +167,15 @@ main.dark-mode .tuto-sec {
 main .dark-mode .cm-keyword {
   color: #ffd966;
 }
+
+main .dark-mode .cm-operator {
+  color : var(--gray);
+}
+
+main .dark-mode .CodeMirror-line > span {
+  color : var(--gray);
+}
+
 /* try it */
 main.dark-mode .sec-statement form,
 main.dark-mode .sec-statement textarea {
@@ -265,5 +274,13 @@ aside.side-bar.dark-mode .cheatsheet-pdf .list-title {
 
 aside.side-bar.dark-mode .cheatsheet-pdf {
   border-bottom-color: var(--dark-border-color);
+}
+
+main .dark-mode .CodeMirror-scroll {
+  background-color: var(--dark-border-color);
+}
+
+main .dark-mode .CodeMirror-linenumbers {
+  background-color: var(--dark-border-color);
 }
 /* footer */
