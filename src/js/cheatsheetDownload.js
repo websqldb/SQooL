@@ -15,15 +15,17 @@ const downloadBtn = document.querySelector('.cheatsheet-download');
 
 // createDownloadTag();
 
+// test
+// pdf 파일 제작완료 후 파일경로 변경 예정
 const downlodePdf = (filename, filepath) => {
-  const element = document.createElement("a");
-  element.setAttribute("href", "../../data/grade.json");
-  element.setAttribute("download", "test");
+  const element = document.createElement('a');
+  element.setAttribute('href', '../../data/grade.json');
+  element.setAttribute('download', 'test');
   document.body.appendChild(element);
   element.click();
   document.body.removeChild(element);
 };
 
-downloadBtn.addEventListener("click", (e) => {
+downloadBtn.addEventListener('click', (e) => {
   downlodePdf();
 });
