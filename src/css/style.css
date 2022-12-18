@@ -4,6 +4,7 @@
 @import "./common/global.css";
 @import "./common/dark-mode.css";
 @import "./common/toast.css";
+@import "./common/modal.css";
 
 /* components */
 @import "./components/header.css";

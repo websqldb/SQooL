@@ -1,0 +1,119 @@
+/* 모달 wrap : la-wrap */
+/* 모달 컨텐츠 : modal-main */
+
+/* 메인 모달 */
+
+.modal-wrap * {
+  box-sizing: border-box;
+}
+
+.modal-wrap {
+  position: fixed;
+  font-family: "Pretendard";
+  top: 0;
+  left: 0;
+  background-color: rgba(232, 232, 232, 0.6);
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-overlay {
+  position: relative;
+  width: 1257px;
+  margin: 0 auto;
+}
+
+.modal-main {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 24px 40px;
+  width: 372px;
+  border: 2px solid #5966ec;
+  border-radius: 10px;
+  text-align: left;
+}
+
+/* 다음버튼 + 1/3 (process) */
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-content span {
+  color: #c2c2c2;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.modal-content button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+
+  background: #5966ec;
+  font-size: 18px;
+  line-height: 32px;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.modal-main p {
+  display: block;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.hint1 {
+  position: relative;
+}
+
+.hint1::before {
+  content: "";
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat
+    url(../../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: -23px;
+  top: 66px;
+}
+
+.hint2 {
+  position: relative;
+}
+
+.hint2::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat
+    url(../../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: 371px;
+  top: 77px;
+  transform: rotate(180deg);
+}
+
+.hint3 {
+  position: relative;
+}
+
+.hint3::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 16px;
+  background: center / contain no-repeat
+    url(../../assets/images/main-modal-arrow.png);
+  position: absolute;
+  left: 165px;
+  top: -21px;
+  transform: rotate(90deg);
+}
