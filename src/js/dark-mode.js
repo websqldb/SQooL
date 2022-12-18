@@ -19,9 +19,9 @@ function toggleMode() {
   $switchBtn.classList.toggle("dark-mode");
   $main.classList.toggle("dark-mode");
   // 메인-에디터 팀에서 다크모드 적었습니다.
+  $footer.classList.toggle("dark-mode");
   $editor_1.classList.toggle("dark-mode");
   $editor_2.classList.toggle("dark-mode");
-  $footer.classList.toggle("dark-mode");
   $sqlBtnWrap.classList.toggle("dark-mode");
 }
 
