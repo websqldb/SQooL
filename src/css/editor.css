@@ -3,6 +3,7 @@
 .CodeMirror {
   font-family: "D2Coding";
   width: 100%;
+  background-color: transparent;
 }
 
 .cm-s-default .cm-keyword {
