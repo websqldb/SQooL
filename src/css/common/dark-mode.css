@@ -96,24 +96,20 @@ main.dark-mode .sec-statement .state-area {
 main.dark-mode .sec-statement .code-numbers p,
 main.dark-mode .sec-statement .state-header-left h3,
 main.dark-mode .sec-statement textarea,
-main.dark-mode .sec-result h3 {
-  color: #b2b2b2;
+main.dark-mode .sec-result h3,
+main.dark-mode .cm-operator,
+main.dark-mode .cm-punctuation,
+main.dark-mode .cm-variable-2,
+main.dark-mode .CodeMirror-line > span {
+  color: var(--gray);
 }
 
-main .dark-mode .cm-keyword {
+main.dark-mode .cm-keyword {
   color: #ffd966;
 }
 
-main .dark-mode .cm-operator {
-  color: var(--gray);
-}
-
-main .dark-mode .CodeMirror-line > span {
-  color: var(--gray);
-}
-
-main .dark-mode .CodeMirror-scroll,
-main .dark-mode .CodeMirror-linenumbers {
+main.dark-mode .CodeMirror-scroll,
+main.dark-mode .CodeMirror-linenumbers {
   background-color: var(--dark-border-color);
 }
 

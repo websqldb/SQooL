@@ -12,6 +12,11 @@
   font-weight: 700;
 }
 
+.cm-s-default .cm-variable-2 {
+  color: #444444;
+  font-size: 18px;
+}
+
 .CodeMirror-hints {
   padding: 5px;
   border-radius: 9px;
