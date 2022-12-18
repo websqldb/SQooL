@@ -128,7 +128,6 @@ const TABLE_ARRAY = [
 
 initSetting(TABLE_ARRAY);
 
-const $editor = document.querySelector('.code > textarea');
 const $table = document.querySelector('.sec-result > table');
 const $run_button = document.querySelector('.btn-run');
 
@@ -136,40 +135,44 @@ $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
   clickButtonAnimation(e);
 
-  /**
-   * convertToValidKey()는 유효한 key값을 리턴합니다.
-   * 정규표현식으로 타겟을 체크합니다.
-   * (작성자: 이준근)
-   *
-   * @params {textarea.value}
-   * @return {string}
-   */
-  const convertToValidKey = (value) => {
-    if (!value) return null;
-    const regex = /[1-4]학년[1-4]학기/gi;
-    if (!regex.test(value)) return value;
-    else {
-      const num = {
-        1: '일',
-        2: '이',
-        3: '삼',
-        4: '사',
-      };
-      for (let i = 1; i < 5; i++) {
-        const re = new RegExp(`${i}학년`, 'gi');
-        value = value.replaceAll(re, `${num[i]}학년`);
-      }
-      for (let i = 1; i < 3; i++) {
-        const re2 = new RegExp(`${i}학기`, 'gi');
-        value = value.replaceAll(re2, `${num[i]}학기`);
-      }
-      return value;
-    }
-  };
-  const inputValue = convertToValidKey($editor.value);
+  const $editor = document.querySelector('.CodeMirror-line > span');
+
+  const inputValue = convertToValidKey($editor.innerText);
   const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
+
+/**
+ * convertToValidKey()는 유효한 key값을 리턴합니다.
+ * 정규표현식으로 타겟을 체크합니다.
+ * (작성자: 이준근)
+ * 수정 #1(김창현) - 파라미터 생성 및 스코프 분리)
+ *
+ * @params {textarea.value}
+ * @return {string}
+ */
+const convertToValidKey = (value) => {
+  if (!value) return null;
+  const regex = /[1-4]학년[1-4]학기/gi;
+  if (!regex.test(value)) return value;
+  else {
+    const num = {
+      1: '일',
+      2: '이',
+      3: '삼',
+      4: '사',
+    };
+    for (let i = 1; i < 5; i++) {
+      const re = new RegExp(`${i}학년`, 'gi');
+      value = value.replaceAll(re, `${num[i]}학년`);
+    }
+    for (let i = 1; i < 3; i++) {
+      const re2 = new RegExp(`${i}학기`, 'gi');
+      value = value.replaceAll(re2, `${num[i]}학기`);
+    }
+    return value;
+  }
+};
 
 const handleWebSQL = (text) => {
   if (!text) return null;
