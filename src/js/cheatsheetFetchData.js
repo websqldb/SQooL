@@ -311,7 +311,7 @@ async function loadTotalData() {
             `;
           } else {
             const stringSplit = data[i].syntax.split("\n");
-            console.log(stringSplit);
+
             const syntaxReplace = data[i]?.syntax.replace(
               /(?:\r\n|\r|\n)/g,
               "<br>"
@@ -335,6 +335,23 @@ async function loadTotalData() {
           sectionUl.appendChild(sectionLi);
         }
         main.appendChild(section);
+      })
+      .then((data) => {
+        // 치트시트 사이드 바 메뉴 클릭 시 스크롤 이벤트 추가
+        const sidebarList = document.querySelectorAll(".list-item li");
+        const sectionList = document.querySelectorAll(".cheatsheet-list");
+
+        sidebarList.forEach((item, i) => {
+          item.addEventListener("click", () => {
+            const sectionTop = sectionList[i]?.offsetTop;
+
+            window.scrollTo({
+              top: sectionTop - 100,
+              left: 0,
+              behavior: "smooth",
+            });
+          });
+        });
       });
   }
 }
