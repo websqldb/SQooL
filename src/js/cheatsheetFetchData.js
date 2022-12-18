@@ -163,7 +163,120 @@ async function getDataMultipleTable() {
     });
 }
 
+// 5. 함수
+async function functionData() {
+  await fetch("../../data/cheatsheetData/function.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const section = document.createElement("section");
+      const sectionName = document.createElement("h3");
+      const sectionUl = document.createElement("ul");
+      // console.log(data);
+      section.classList.add("cheatsheet-wrapper");
+      sectionUl.classList.add("cheatsheet-list");
+      sectionName.innerHTML = data[0].title;
+      section.appendChild(sectionName);
+      section.appendChild(sectionUl);
+      for (let i = 1; i < data.length; i++) {
+        const sectionLi = document.createElement("li");
+        const syntaxReplace = data[i].syntax.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        sectionLi.innerHTML = `
+          <button class="cheatsheet-clipboard-btn">
+            <img
+              src="../src/assets/images/cheatsheet-clipboard-btn.png"
+              alt="clipboard-button"
+            />
+          </button>
+          <p class="cheatsheet-sql">
+            <strong class="cheatsheet-sql-statement">${syntaxReplace}</strong>
+          </p>
+          <p class="cheatsheet-sql-explanation">
+            ${data[i].desc}
+          </p>
+        `;
+        sectionUl.appendChild(sectionLi);
+      }
+      main.appendChild(section);
+    });
+}
+
+// 6. 그룹핑
+async function grouping() {
+  await fetch("../../data/cheatsheetData/grouping.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const section = document.createElement("section");
+      const sectionName = document.createElement("h3");
+      const sectionUl = document.createElement("ul");
+      // console.log(data);
+      section.classList.add("cheatsheet-wrapper");
+      sectionUl.classList.add("cheatsheet-list");
+      sectionName.innerHTML = data[0].title;
+      section.appendChild(sectionName);
+      section.appendChild(sectionUl);
+      for (let i = 1; i < data.length; i++) {
+        const sectionLi = document.createElement("li");
+        const syntaxReplace = data[i].syntax.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        sectionLi.innerHTML = `
+          <button class="cheatsheet-clipboard-btn">
+            <img
+              src="../src/assets/images/cheatsheet-clipboard-btn.png"
+              alt="clipboard-button"
+            />
+          </button>
+          <p class="cheatsheet-sql">
+            <strong class="cheatsheet-sql-statement">${syntaxReplace}</strong>
+          </p>
+          <p class="cheatsheet-sql-explanation">
+            ${data[i].desc}
+          </p>
+        `;
+        sectionUl.appendChild(sectionLi);
+      }
+      main.appendChild(section);
+    });
+}
+
+// 7. 테이블 관리하기
+async function manageTable() {
+  await fetch("../../data/cheatsheetData/manageTable.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const section = document.createElement("section");
+      const sectionName = document.createElement("h3");
+      const sectionUl = document.createElement("ul");
+      // console.log(data);
+      section.classList.add("cheatsheet-wrapper");
+      sectionUl.classList.add("cheatsheet-list");
+      sectionName.innerHTML = data[0].title;
+      section.appendChild(sectionName);
+      section.appendChild(sectionUl);
+      for (let i = 1; i < data.length; i++) {
+        const sectionLi = document.createElement("li");
+        const syntaxReplace = data[i].syntax.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        sectionLi.innerHTML = `
+          <button class="cheatsheet-clipboard-btn">
+            <img
+              src="../src/assets/images/cheatsheet-clipboard-btn.png"
+              alt="clipboard-button"
+            />
+          </button>
+          <p class="cheatsheet-sql">
+            <strong class="cheatsheet-sql-statement">${syntaxReplace}</strong>
+          </p>
+          <p class="cheatsheet-sql-explanation">
+            ${data[i].desc}
+          </p>
+        `;
+        sectionUl.appendChild(sectionLi);
+      }
+      main.appendChild(section);
+    });
+}
 tableOutPut();
 tablegetdata();
 getConditionData();
 getDataMultipleTable();
+functionData();
+grouping();
+manageTable();
