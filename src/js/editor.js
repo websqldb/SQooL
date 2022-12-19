@@ -1,3 +1,10 @@
+// editor clear 기능 구현
+const clearBtn = document.querySelector(".btn-delete");
+clearBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.editor.setValue("");
+})
+
 // 등록된 모든 사이드 sql 버튼에 대한 sql 기본 입력 구문 작성(sql 구문이 고정되면 추가 예정, 현재 기능만 )
 const addStatement = (sqlSyntax) => {
   const DEFAULT_SQL_VALUES = {
@@ -176,7 +183,7 @@ window.onload = function codemirroreditor() {
       CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
     }
   });
-
+  
   // const $mainStatementClipboard = document.querySelector(".CodeMirror");
   const $mainStatementBtn = document.querySelector(".btn-copy");
 
