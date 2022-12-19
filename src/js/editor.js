@@ -194,7 +194,7 @@ window.onload = function codemirroreditor() {
       document.querySelectorAll(".CodeMirror-line");
     let codeTxt = "";
     $mainStatementCodeLine.forEach((i) => (codeTxt += i.textContent + "\n"));
-    window.navigator.clipboard.writeText(codeTxt).then(() => {
+    window.navigator.clipboard.writeText(codeTxt.trim()).then(() => {
       // alert("복사완료");
       toast();
     });
