@@ -1,5 +1,10 @@
 @import url("../assets/fonts/fonts.css");
 
+.editor {
+  width: 100%;
+  font-size: 18px;
+  line-height: 180%
+}
 .CodeMirror {
   font-family: "D2Coding";
   width: 100%;
