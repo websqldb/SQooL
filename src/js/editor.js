@@ -2,22 +2,15 @@
 const addStatement = (sqlSyntax) => {
   const DEFAULT_SQL_VALUES = {
     SELECT: `SELECT * FROM table_name;`,
-    GROUP_BY: `SELECT column_name(s)
-      FROM table_name
-      GROUP BY column_name(s);`,
-    ORDER_BY: `SELECT * FROM table_name
-      ORDER BY column1, column2, ... ASC|DESC;`,
-    UPDATE: `UPDATE table_name
-      SET column1 = value1, column2 = value2, ...
-      WHERE condition;`,
+    GROUP_BY: `SELECT column_name(s)\nFROM table_name\nGROUP BY column_name(s);`,
+    ORDER_BY: `SELECT * FROM table_name\nORDER BY column1, column2, ... ASC|DESC;`,
+    UPDATE: `UPDATE table_name\nSET column1 = value1, column2 = value2, ...\nWHERE condition;`,
     INSERT_INTO: `INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);`,
     WHERE: `SELECT * FROM table_name
 WHERE condition;`,
     DELETE: `DELETE FROM table_name WHERE condition;`,
-    INNER_JOIN: `SELECT column_name(s) FROM table1
-INNER JOIN table2
-ON table1.column_name = table2.column_name;`,
+    INNER_JOIN: `SELECT column_name(s) FROM table1\nINNER JOIN table2\nON table1.column_name = table2.column_name;`,
     INSERT_INTO_SELECT: `INSERT INTO table2
 SELECT * FROM table1
 WHERE condition;`,
@@ -81,7 +74,7 @@ LEFT JOIN table2
 ON table1.column_name = table2.column_name;`,
     RIGHT_JOIN: `SELECT column_name(s)
 FROM table1
-RIGTH JOIN table2
+RIGHT JOIN table2
 ON table1.column_name = table2.column_name;`,
     FULL_OUTER_JOIN: `SELECT column_name(s)
 FROM table1
@@ -107,9 +100,7 @@ WHERE column_name operatoor ANY
     ALL: `SELECT ALL column_name(s)
 FROM table_name
 WHERE condition;`,
-    SELECT_INTO: `SELECT column1 INTO column2 
-FROM table_name 
-WHERE condition;`,
+    SELECT_INTO: `SELECT column1 INTO column2\nFROM table_name\nWHERE condition;`,
   };
   window.editor.setValue(DEFAULT_SQL_VALUES[sqlSyntax] || sqlSyntax);
 };
@@ -155,7 +146,7 @@ window.onload = function codemirroreditor() {
   window.editor = CodeMirror.fromTextArea(
     document.getElementById("codeeditor"),
     {
-      mode: "text/x-sql",
+      mode: "text/x-sqlite",
       indentWithTabs: true,
       smartIndent: true,
       lineNumbers: true,
