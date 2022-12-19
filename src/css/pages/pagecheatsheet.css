@@ -105,10 +105,12 @@ main .cheatsheet-title-box .cheatsheet-modal-btn img {
   padding: 0;
 }
 
-.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement {
+.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement .keyword{
   color: #5966ec;
 }
-
+.cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-statement .keywordB{
+  color: #0c5876;
+}
 .cheatsheet-list li .cheatsheet-sql .cheatsheet-sql-sorted {
   color: #ffbb56;
 }

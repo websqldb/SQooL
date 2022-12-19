@@ -5,6 +5,7 @@
   font-size: 18px;
   line-height: 180%
 }
+
 .CodeMirror {
   font-family: "D2Coding";
   width: 100%;
@@ -16,7 +17,6 @@
   font-size: 18px;
   font-weight: 700;
 }
-
 .cm-s-default .cm-variable-2 {
   color: #444444;
   font-size: 18px;
