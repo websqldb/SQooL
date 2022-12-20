@@ -1,4 +1,4 @@
-# SQooL
+# SQooL 🏫
 
 웹페이지에서 실행 가능한 교육 목적의 SQL 튜토리얼 사이트
 
@@ -9,13 +9,14 @@
 
 ## 콘텐츠
 
-- [웹 서비스](https://sqlschool.co.kr/)
+- [웹 서비스 바로가기](https://sqlschool.co.kr/)
 - Notion
+- [Figma 링크](https://www.figma.com/file/AwM5vZXHQmeRsAWfixZDdn/sqool-%EB%B0%B1%EC%97%85?node-id=0%3A1)
 
 ## 기여하기
 
 지금은 기여자를 받고 있지 않습니다.
-기여가 필요하다고 생각되신다면 자신이 기여하고 싶은 바를 기재하여 [바울랩 이메일](paul-lab@naver.com)로 보내주세요.
+기여가 필요하다고 생각되신다면 자신이 기여하고 싶은 바를 적어 [바울랩 이메일](paul-lab@naver.com)로 보내주세요.
 
 ## 기여자 (이름 내림차순)
 
