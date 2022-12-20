@@ -8,42 +8,45 @@
 
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/components/main.css" />
-    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"
       integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+      referrerpolicy="no-referrer"
+    />
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js" integrity="sha512-5Z07kVtu0rOCOkYY270NlHhvA571vw8qm8pbr23iiFMfuFEJv1S0QMU6RMx0E1JrR7GiAn+1/Pi05hbcY+eqsQ=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"
+      integrity="sha512-5Z07kVtu0rOCOkYY270NlHhvA571vw8qm8pbr23iiFMfuFEJv1S0QMU6RMx0E1JrR7GiAn+1/Pi05hbcY+eqsQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer">
-    </script>
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/sql/sql.min.js"
       integrity="sha512-1g1Gew/RrxddgYBTrO+mJtdQlnag5DgUIITX2TSscWptww/ksl5cfm2KExwwP9rHS4nvier/SkH5KaPnSTeFQQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer">
-    </script>
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.js"
       integrity="sha512-4+hfJ/4qrBFEm8Wdz+mXpoTr/weIrB6XjJZAcc4pE2Yg5B06aKS/YLMN5iIAMXFTe0f1eneuLE5sRmnSHQqFNg=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer">
-    </script>
+      referrerpolicy="no-referrer"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/show-hint.min.css"
       integrity="sha512-W/cvA9Wiaq79wGy/VOkgMpOILyqxqIMU+rkneDUW2uqiUT53I6DKmrF4lmCbRG+/YrW0J69ecvanKCCyb+sIWA=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+      referrerpolicy="no-referrer"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/addon/hint/sql-hint.min.js"
       integrity="sha512-98VZnqEF+AGeaEk5hpnZ1eXdJOlaFlRGJflwcfXpCqfoVveFA+mBSqeAYLI1T6JWMt/llQFNhsTRa6etXuZGDw=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer">
-    </script>
+      referrerpolicy="no-referrer"
+    ></script>
 
     <link rel="stylesheet" href="./src/css/editor.css" />
     <link rel="stylesheet" href="./src/css/common/dark-mode.css" />
@@ -72,7 +75,12 @@
         <article class="global-util-wrap">
           <div class="search">
             <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-            <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
             <button class="btn-search">
               <span class="screen-out">검색하기</span>
             </button>
@@ -102,7 +110,9 @@
             <button class="sql-btn" data-sql="WHERE">WHERE</button>
             <button class="sql-btn" data-sql="DELETE">DELETE</button>
             <button class="sql-btn" data-sql="INNER_JOIN">INNER JOIN</button>
-            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">INSERT INTO SELECT</button>
+            <button class="sql-btn" data-sql="INSERT_INTO_SELECT">
+              INSERT INTO SELECT
+            </button>
           </section>
           <button class="more-btn">MORE</button>
           <!-- sql문 선택 박스 -->
@@ -116,7 +126,8 @@
             <option value="IS_NOT_NULL">IS NOT NULL</option>
             <option value="IN">IN</option>
             <option value="BETWEEN">BETWEEN</option>
-            <option value="COUNT">COUNT</option>`
+            <option value="COUNT">COUNT</option>
+            `
             <option value="SUM">SUM</option>
             <option value="MIN">MIN</option>
             <option value="MAX">MAX</option>
@@ -145,10 +156,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/student.csv" download="student.csv">.csv로 다운로드</a>
+                    <a href="./data/student.csv" download="student.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/student.json" download="student.json">.json으로 다운로드</a>
+                    <a href="./data/student.json" download="student.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -159,10 +174,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/subject.csv" download="subject.csv">.csv로 다운로드</a>
+                    <a href="./data/subject.csv" download="subject.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/subject.json" download="subject.json">.json으로 다운로드</a>
+                    <a href="./data/subject.json" download="subject.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -173,10 +192,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/professor.csv" download="professor.csv">.csv로 다운로드</a>
+                    <a href="./data/professor.csv" download="professor.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/professor.json" download="professor.json">.json으로 다운로드</a>
+                    <a href="./data/professor.json" download="professor.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -187,10 +210,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/major.csv" download="major.csv">.csv로 다운로드</a>
+                    <a href="./data/major.csv" download="major.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/major.json" download="major.json">.json으로 다운로드</a>
+                    <a href="./data/major.json" download="major.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -201,10 +228,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/grade.csv" download="grade.csv">.csv로 다운로드</a>
+                    <a href="./data/grade.csv" download="grade.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/grade.json" download="grade.json">.json으로 다운로드</a>
+                    <a href="./data/grade.json" download="grade.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -215,10 +246,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/scholarship.csv" download="scholarship.csv">.csv로 다운로드</a>
+                    <a href="./data/scholarship.csv" download="scholarship.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/scholarship.json" download="scholarship.json"
+                    <a
+                      href="./data/scholarship.json"
+                      download="scholarship.json"
                       >.json으로 다운로드</a
                     >
                   </li>
@@ -231,10 +266,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/tuition.csv" download="tuition.csv">.csv로 다운로드</a>
+                    <a href="./data/tuition.csv" download="tuition.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/tuition.json" download="tuition.json">.json으로 다운로드</a>
+                    <a href="./data/tuition.json" download="tuition.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -245,10 +284,14 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/mileage.csv" download="mileage.csv">.csv로 다운로드</a>
+                    <a href="./data/mileage.csv" download="mileage.csv"
+                      >.csv로 다운로드</a
+                    >
                   </li>
                   <li>
-                    <a href="./data/mileage.json" download="mileage.json">.json으로 다운로드</a>
+                    <a href="./data/mileage.json" download="mileage.json"
+                      >.json으로 다운로드</a
+                    >
                   </li>
                 </ul>
               </button>
@@ -259,12 +302,16 @@
                 <!-- 리스트 형태 모달 -->
                 <ul class="download-modal">
                   <li>
-                    <a href="./data/invalid_data.csv" download="invalid_data.csv"
+                    <a
+                      href="./data/invalid_data.csv"
+                      download="invalid_data.csv"
                       >.csv로 다운로드</a
                     >
                   </li>
                   <li>
-                    <a href="./data/invalid_data.json" download="invalid_data.json"
+                    <a
+                      href="./data/invalid_data.json"
+                      download="invalid_data.json"
                       >.json으로 다운로드</a
                     >
                   </li>
@@ -291,11 +338,9 @@
             <div class="state-area">
               <div class="editor">
                 <!-- <div class="code-numbers" style="width: 100%; font-size: 18px; line-height: 180%"> -->
-                  <textarea
-                id="codeeditor"
-              ></textarea>
+                <textarea id="codeeditor"></textarea>
+              </div>
             </div>
-            
           </form>
         </section>
         <div class="btn-contain">
@@ -1434,25 +1479,27 @@
 
     <footer class="sql-footer">
       <div class="footer-wrap">
-        <a href="#" class="foot-logo-link">
+        <a href="https://sqlschool.co.kr/" class="foot-logo-link">
           <h2 class="footer-logo">SQooL</h2>
         </a>
 
         <section class="footer-section-info">
           <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
           <p class="footer-content">
-            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이 사용할 수있는
-            공공재입니다.
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
+            사용할 수 있는 공공재입니다.
           </p>
-          <small class="copyright-text">© 2022, All Rights Reserved</small>
+          <small class="copyright-text">© 2022, All Rights Reserved.</small>
         </section>
-        <a href="#" class="git-hub"></a>
+        <a
+          href="https://github.com/websqldb/SQooL"
+          target="_blank"
+          class="git-hub"
+        ></a>
       </div>
     </footer>
-
-    <div id="toastClipBoard">복사 되었습니다.</div>
+    <div id="toastClipBoard">클립보드에 구문이 복사되었습니다.</div>
     <button class="top-button"></button>
     <script src="./src/js/query.js" type="module"></script>
   </body>
 </html>
-

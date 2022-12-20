@@ -1,84 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQooL</title>
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/pages/pagecheatsheet.css" />
+    <script src="../src/js/cheatsheetClipboard.js" defer></script>
+    <script src="../src/js/dark-mode.js" defer></script>
+    <script src="../src/js/search.js" defer></script>
+    <script src="../src/js/modal.js" defer></script>
+    <script src="../src/js/topBtn.js" defer></script>
+    <script src="../src/js/cheatsheetFetchData.js" defer></script>
+    <script src="../src/js/cheatsheetDownload.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SQooL</title>
-  <link rel="stylesheet" href="../src/css/style.css" />
-  <link rel="stylesheet" href="../src/css/pages/pagecheatsheet.css" />
-  <script src="../src/js/cheatsheetClipboard.js" defer></script>
-  <script src="../src/js/dark-mode.js" defer></script>
-  <script src="../src/js/search.js" defer></script>
-  <script src="../src/js/modal.js" defer></script>
-  <script src="../src/js/topBtn.js" defer></script>
-  <script src="../src/js/cheatsheetFetchData.js" defer></script>
-  <script src="../src/js/cheatsheetDownload.js" defer></script>
-</head>
-
-<body>
-  <header class="global-header">
-    <div class="global-header-inner">
-      <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
-      <nav class="gnb">
-        <a href="/">Try it</a>
-        <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
-        <a href="/pagetutorial">Tutorial</a>
-      </nav>
-      <article class="global-util-wrap">
-        <div class="search">
-          <label class="screen-out" for="iptSearch">페이지 내 검색</label>
-          <input class="ipt-search" id="iptSearch" type="text" placeholder="Search" />
-          <button class="btn-search">
-            <span class="screen-out">검색하기</span>
+  <body>
+    <header class="global-header">
+      <div class="global-header-inner">
+        <h1 class="logo"><a href="/">SQ<span>oo</span>L</a></h1>
+        <nav class="gnb">
+          <a href="/">Try it</a>
+          <a class="is-active" href="/pagecheatsheet">Cheatsheet</a>
+          <a href="/pagetutorial">Tutorial</a>
+        </nav>
+        <article class="global-util-wrap">
+          <div class="search">
+            <label class="screen-out" for="iptSearch">페이지 내 검색</label>
+            <input
+              class="ipt-search"
+              id="iptSearch"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn-search">
+              <span class="screen-out">검색하기</span>
+            </button>
+          </div>
+          <button class="btn-darkmode">
+            <span class="screen-out">다크 모드</span>
+          </button>
+        </article>
+      </div>
+    </header>
+    <!-- 공통 에셋 사이드바 작성 중입니다. -->
+    <div class="la-wrap">
+      <aside class="side-bar side-bar-cheatsheet">
+        <!-- <ul class="list-wrap-cheatsheet"> -->
+        <div class="list-wrap-cheatsheet">
+          <h3 class="list-title">SQL CheatSheet</h3>
+          <ul class="list-item">
+            <li>테이블에서 출력하기</li>
+            <li>테이블에서 데이터 가져오기</li>
+            <li>테이블에서 조건에 맞는 데이터 가져오기</li>
+            <li>다중 테이블에서 데이터 가져오기</li>
+            <li>함수</li>
+            <li>그룹핑</li>
+            <li>테이블 관리하기</li>
+          </ul>
+        </div>
+        <div class="cheatsheet-pdf">
+          <h3 class="list-title">CheatSheet PDF</h3>
+          <ul class="cheatsheet-pdf-list">
+            <li>
+              <span>CheatSheet</span>
+              <button type="button" class="cheatsheet-download">
+                <!-- 다운로드 버튼-->
+              </button>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <!-- 각 페이지의 내용을 넣으세요 -->
+        <div class="cheatsheet-title-box">
+          <h2>SQL CheatSheet</h2>
+          <button class="cheatsheet-modal-btn">
+            <img
+              src="../src/assets/images/cheatsheet-modal-btn.png"
+              alt="modal-button"
+            />
           </button>
         </div>
-        <button class="btn-darkmode">
-          <span class="screen-out">다크 모드</span>
-        </button>
-      </article>
-    </div>
-  </header>
-  <!-- 공통 에셋 사이드바 작성 중입니다. -->
-  <div class="la-wrap">
-    <aside class="side-bar side-bar-cheatsheet">
-      <!-- <ul class="list-wrap-cheatsheet"> -->
-      <div class="list-wrap-cheatsheet">
-        <h3 class="list-title">SQL CheatSheet</h3>
-        <ul class="list-item">
-          <li>테이블에서 출력하기</li>
-          <li>테이블에서 데이터 가져오기</li>
-          <li>테이블에서 조건에 맞는 데이터 가져오기</li>
-          <li>다중 테이블에서 데이터 가져오기</li>
-          <li>함수</li>
-          <li>그룹핑</li>
-          <li>테이블 관리하기</li>
-        </ul>
-      </div>
-      <div class="cheatsheet-pdf">
-        <h3 class="list-title">CheatSheet PDF</h3>
-        <ul class="cheatsheet-pdf-list">
-          <li>
-            <span>CheatSheet</span>
-            <button type="button" class="cheatsheet-download">
-              <!-- 다운로드 버튼-->
-            </button>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <main>
-      <!-- 각 페이지의 내용을 넣으세요 -->
-      <div class="cheatsheet-title-box">
-        <h2>SQL CheatSheet</h2>
-        <button class="cheatsheet-modal-btn">
-          <img src="../src/assets/images/cheatsheet-modal-btn.png" alt="modal-button" />
-        </button>
-      </div>
 
-      <!-- section-1 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-1 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>테이블에서 데이터 가져오기</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -141,10 +148,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-1 -->
+        <!-- // section-1 -->
 
-      <!-- section-2 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-2 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>다중 테이블에서 데이터 가져오기</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -206,10 +213,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-2 -->
+        <!-- // section-2 -->
 
-      <!-- section-3 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-3 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>SQL 연산자 사용하기</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -269,10 +276,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-3 -->
+        <!-- // section-3 -->
 
-      <!-- section-4 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-4 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>보기 관리</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -360,10 +367,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-4 -->
+        <!-- // section-4 -->
 
-      <!-- section-5 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-5 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>인덱스 관리</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -417,10 +424,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-5 -->
+        <!-- // section-5 -->
 
-      <!-- section-6 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-6 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>SQL 집계 함수</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -495,10 +502,10 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-6 -->
+        <!-- // section-6 -->
 
-      <!-- section-7 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- section-7 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>트리거 관리</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -625,9 +632,9 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-7 -->
-      <!-- section-8 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- // section-7 -->
+        <!-- section-8 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>테이블 관리</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -784,9 +791,9 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section8 -->
-      <!-- section-9 -->
-      <!-- <section class="cheatsheet-wrapper">
+        <!-- // section8 -->
+        <!-- section-9 -->
+        <!-- <section class="cheatsheet-wrapper">
           <h3>SQL 제약 조건 사용</h3>
           <ul class="cheatsheet-list">
             <li>
@@ -912,28 +919,30 @@
             </li>
           </ul>
         </section> -->
-      <!-- // section-9 -->
-    </main>
-  </div>
-  <footer class="sql-footer">
-    <div class="footer-wrap">
-      <a href="#" class="foot-logo-link">
-        <h2 class="footer-logo">SQooL</h2>
-      </a>
-
-      <section class="footer-section-info">
-        <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
-        <p class="footer-content">
-          이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
-          사용할 수있는 공공재입니다.
-        </p>
-        <small class="copyright-text">© 2022, All Rights Reserved</small>
-      </section>
-      <a href="#" class="git-hub"></a>
-      <div id="toastClipBoard">복사 되었습니다.</div>
+        <!-- // section-9 -->
+      </main>
     </div>
-  </footer>
-  <button class="top-button"></button>
-</body>
+    <footer class="sql-footer">
+      <div class="footer-wrap">
+        <a href="https://sqlschool.co.kr/" class="foot-logo-link">
+          <h2 class="footer-logo">SQooL</h2>
+        </a>
 
+        <section class="footer-section-info">
+          <h2 class="footer-title">SQL 오픈소스 프로젝트입니다 :)</h2>
+          <p class="footer-content">
+            이 자료는 많은 개발자의 도움으로 만들어졌습니다. 누구나 허락없이
+            사용할 수 있는 공공재입니다.
+          </p>
+          <small class="copyright-text">© 2022, All Rights Reserved.</small>
+        </section>
+        <a
+          href="https://github.com/websqldb/SQooL"
+          target="_blank"
+          class="git-hub"
+        ></a>
+      </div>
+    </footer>
+    <button class="top-button"></button>
+  </body>
 </html>
