@@ -171,7 +171,7 @@ window.onload = function codemirroreditor() {
   };
 
   // 탭 누르지 않고 바로 실행되도록 설정
-  window.editor.on("keydown", function (cm, event) {
+  window.editor.on("keyup", function (cm, event) {
     // a ~ z
     // 1 ~ F12
     // delete ~ 9
