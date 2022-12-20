@@ -1,37 +1,37 @@
 [
-    {
-      "title" : "함수"
-    } ,
-    {
-      "syntax":"SELECT DATE();\n--SELECT DATE() + 10;\n--SELECT TIME() + 10;",
-      "desc":"현재 날짜와 시간을 출력합니다."
-    } ,
-    {
-      "syntax":"SELECT MAX(마일리지) FROM student;",
-      "desc":"마일리지 최댓값을 구합니다."
-    } ,
-    {
-      "syntax":"SELECT MIN(마일리지) FROM student;",
-      "desc":"마일리지 최솟값을 구합니다."
-    } ,
-    {
-      "syntax":"SELECT SUM(마일리지) FROM student;",
-      "desc":"마일리지 전체 합계를 구합니다."
-    } ,
-    {
-      "syntax":"SELECT AVG(마일리지) FROM student;",
-      "desc":"마일리지 평균을 구합니다."
-    } ,
-    {
-      "syntax":"SELECT COUNT(DISTINCT 학과번호) AS 학과갯수\nFROM subject;",
-      "desc":"subject 테이블에서 학과의 갯수를 구합니다."
-    } ,
-    {
-      "syntax":"SELECT 2023-SUBSTR(생년월일, 1, 4) AS 나이 FROM student;",
-      "desc":"생년월일에서 연도만 가지고와 2023에서 빼 나이를 계산합니다."
-    } ,
-    {
-      "syntax":"SELECT 이름,\nLENGTH(이름) AS 이름길이,\nREPLACE(이름, SUBSTR(이름, 2, 1), '*') AS 별표채운이름\nFROM student;",
-      "desc":"이름과 이름 길이, 이름에서 중간 이름만 *로 표시한 값들을 출력합니다."
-    }
+  {
+    "title": "함수"
+  },
+  {
+    "syntax": "SELECT DATE();\n--SELECT DATE() + 10;\n--SELECT TIME() + 10;",
+    "desc": "현재 날짜와 시간을 출력합니다."
+  },
+  {
+    "syntax": "SELECT MAX(마일리지) FROM student;",
+    "desc": "마일리지 최댓값을 구합니다."
+  },
+  {
+    "syntax": "SELECT MIN(마일리지) FROM student;",
+    "desc": "마일리지 최솟값을 구합니다."
+  },
+  {
+    "syntax": "SELECT SUM(마일리지) FROM student;",
+    "desc": "마일리지 전체 합계를 구합니다."
+  },
+  {
+    "syntax": "SELECT AVG(마일리지) FROM student;",
+    "desc": "마일리지 평균을 구합니다."
+  },
+  {
+    "syntax": "SELECT COUNT(DISTINCT 학과번호) AS 학과갯수\nFROM subject;",
+    "desc": "subject 테이블에서 학과의 갯수를 구합니다."
+  },
+  {
+    "syntax": "SELECT 2023-SUBSTR(생년월일, 1, 4) AS 나이 FROM student;",
+    "desc": "생년월일에서 연도만 가지고 와서 2023에서 뺀 나이를 계산합니다."
+  },
+  {
+    "syntax": "SELECT 이름,\nLENGTH(이름) AS 이름길이,\nREPLACE(이름, SUBSTR(이름, 2, 1), '*') AS 별표채운이름\nFROM student;",
+    "desc": "이름과 이름 길이, 이름에서 중간 이름만 *로 표시한 값들을 출력합니다."
+  }
 ]

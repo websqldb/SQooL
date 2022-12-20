@@ -16,7 +16,7 @@
   },
   {
     "syntax": "SELECT 학번, 학년, 이름\nFROM student\nORDER BY 학년 ASC;",
-    "desc": "udent 테이블에서 학번, 학년, 이름 column을 가져오는데, 학년순으로 오름차순하여 가져옵니다."
+    "desc": "student 테이블에서 학번, 학년, 이름 column을 가져오는데, 학년순으로 오름차순하여 가져옵니다."
   },
   {
     "syntax": "SELECT 학번, 이름 AS 성명, 연락처 AS 휴대폰번호\nFROM student;",
@@ -28,6 +28,6 @@
   },
   {
     "syntax": "SELECT 이름 AS 성명, 이름 || '의 지도교수는 ' || 지도교수 || '입니다. ' AS 지도교수\nFROM student;",
-    "desc": "student 테이블에서 이름을 가져오는데 성명으로 가져오고, column을 통해 새로운 문장을 만듭니다. 사칙연산도 들어갈 수 있습니다."
+    "desc": "student 테이블에서 이름을 가져오는데 성명으로 가져오고, column을 통해 새로운 문장을 만듭니다. \n사칙연산도 들어갈 수 있습니다."
   }
 ]
