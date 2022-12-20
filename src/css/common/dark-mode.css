@@ -41,7 +41,7 @@ body.dark-mode,
 .global-header.dark-mode .global-util-wrap .btn-darkmode {
   width: 24px;
   height: 24px;
-  background: url('../../assets/images/sprites-darkmode.png') no-repeat 0px -3px;
+  background: url("../../assets/images/sprites-darkmode.png") no-repeat 0px -3px;
   background-size: auto 50px;
 }
 
@@ -77,13 +77,13 @@ body.dark-mode,
 .sql-btn-wrap.dark-mode .sql-btn {
   color: #4d4d55;
   background-color: rgba(247, 247, 255, 0.6);
-  border: 1px solid #727272;
+  border: none;
 }
 
 .sql-btn-wrap.dark-mode .more-btn {
   color: #f7f7ff;
   background-color: #4d4d55;
-  border: 1px solid #727272;
+  border: none;
 }
 
 /* 메인 editor */
@@ -92,6 +92,10 @@ main.dark-mode .sec-statement textarea {
   background-color: var(--dark-border-color);
   border: none;
 }
+
+/* main.dark-mode textarea {
+  caret-color: var(--dark-accent-yellow);
+} */
 
 main.dark-mode .sec-statement .state-area {
   border-top: 1px solid #676767;
@@ -170,7 +174,7 @@ main.dark-mode .tuto-sec .tuto-sec-para p {
 }
 
 main.dark-mode .tuto-sec .tuto-sec-subtitle::before {
-  content: ' ';
+  content: " ";
   display: block;
   width: 5px;
   height: 29px;
@@ -184,7 +188,9 @@ main.dark-mode .tuto-sec-example-query {
   border: 1px var(--dark-border-color) solid;
 }
 
-main.dark-mode .tuto-sec-example-query-para span:not(.query-para-blue, .query-para-yellow) {
+main.dark-mode
+  .tuto-sec-example-query-para
+  span:not(.query-para-blue, .query-para-yellow) {
   color: #7d7e7d;
 }
 
@@ -243,7 +249,9 @@ main.dark-mode .cheatsheet-sql strong.cheatsheet-sql-statement {
   color: var(--dark-accent-orange);
 }
 
-main.dark-mode .cheatsheet-list p.cheatsheet-sql:not(strong.cheatsheet-sql-statement) {
+main.dark-mode
+  .cheatsheet-list
+  p.cheatsheet-sql:not(strong.cheatsheet-sql-statement) {
   color: var(--gray);
 }
 
@@ -283,7 +291,7 @@ footer.dark-mode .footer-wrap {
 
 footer.dark-mode .git-hub::before {
   display: block;
-  content: '';
+  content: "";
   background: url(../../assets/images/sprites-darkmode.png) no-repeat -62px -5px;
   background-size: 185px 55px;
   width: 124px;
