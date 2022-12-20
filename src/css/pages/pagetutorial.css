@@ -9,6 +9,10 @@ main {
   letter-spacing: -0.3px;
 }
 
+a:hover {
+  filter: brightness(1.2);
+}
+
 .tuto-title {
   padding-bottom: 15px;
   border-bottom: 1px solid #eeedec;
@@ -119,6 +123,7 @@ main {
   font-weight: 700;
   font-size: 18px;
   cursor: pointer;
+  text-decoration-line: none;
 }
 
 .tuto-sec-example-img {
@@ -143,7 +148,7 @@ main {
 
 .tuto-sec-example-query-para {
   font-family: "D2Coding";
-  font-size: 14px;
+  font-size: 18px;
   line-height: 180%;
 }
 
