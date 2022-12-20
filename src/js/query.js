@@ -135,9 +135,17 @@ $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
   clickButtonAnimation(e);
 
-  const $editor = document.querySelector('.CodeMirror-line > span');
+  const $editor = document.querySelectorAll('.CodeMirror-line > span');
 
-  const inputValue = convertToValidKey($editor.innerText);
+  let sql_query = '';
+
+  for (let span of $editor) {
+    sql_query += span.innerText + ' ';
+  }
+
+  console.log(sql_query);
+
+  const inputValue = convertToValidKey(sql_query);
   const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
