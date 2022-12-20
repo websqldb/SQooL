@@ -70,7 +70,7 @@ body.dark-mode,
   border-bottom-color: #999a99;
 }
 
-.list-database-download-item > li {
+.dark-mode .list-database-download-item > li {
   color: var(--dark-accent-white);
 }
 
