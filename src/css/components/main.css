@@ -1,5 +1,6 @@
 .main-side-bar {
   position: relative;
+  margin-left: 0;
   margin-right: 0;
   left: 0;
   transition: all 1s;
@@ -32,7 +33,7 @@
 }
 
 .sql-btn {
-  border: none;
+  border: 1px solid #e9ebfc;
   border-radius: 41px;
   padding: 6px 12px;
   color: #8085b0;
@@ -49,11 +50,12 @@
 .sql-btn:active {
   color: #f7f7ff;
   background-color: #8085b0;
+  border: 1px solid #a3a7cc;
 }
 
 .more-btn {
   left: 0;
-  border: none;
+  border: 1px solid #e1e1e1;
   border-radius: 41px;
   padding: 6px 12px;
   color: #999a99;
@@ -77,10 +79,9 @@
   height: 33px;
   background-color: #efefef;
   color: #999a99;
-  font-family: Pretendard;
   font-weight: 500;
   font-size: 16px;
-  border: none;
+  border: 1px solid #e1e1e1;
   border-radius: 40px;
   margin-bottom: 76px;
   cursor: pointer;
@@ -155,8 +156,6 @@
   display: flex;
   width: 150px;
   padding: 5px;
-  font-family: Pretendard;
-  font-weight: 300;
 }
 
 .download-modal a:hover {
@@ -166,8 +165,8 @@
 /* 사이드바 토글 */
 .foldActive {
   position: fixed;
-  left: -300px;
-  transition: all 1s;
+  margin-left: -313px;
+  border-right: none;
 }
 
 .foldActive-wrap {
@@ -190,8 +189,10 @@ main * {
 }
 
 main {
+  width: calc(100% - 360px);
   padding-top: 25px;
   margin-left: 45px;
+  transition: all 1s;
 }
 
 main h3 {
@@ -343,7 +344,7 @@ main h3 {
 }
 
 .sec-result {
-  width: 889px;
+  width: 100%;
   margin-top: 100px;
   margin-bottom: 241px;
   background: #f9f9fa;
