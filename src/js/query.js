@@ -135,6 +135,13 @@ $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
   clickButtonAnimation(e);
 
+  /*
+   * 작성자: 김창현
+   * 외부 라이브러리 사용으로 인하여 전역에 엘리먼트를 연결할 경우 라이브러리 보다 먼저 연결을 시도하여 잡히지 않습니다.
+   * 따라서, Run SQL 버튼 클릭 시 마다 잡도록 해두었습니다.
+   *
+   * 개행 시 CodeMiroor-line div가 하나씩 추가 되어 개행이 발생할 경우 쿼리문을 하나로 합쳤습니다.
+   */
   const $editor = document.querySelectorAll('.CodeMirror-line > span');
 
   let sql_query = '';
