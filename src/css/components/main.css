@@ -153,6 +153,12 @@
 
 .database-download-btn:hover .download-modal {
   display: flex;
+  width: 150px;
+  padding: 5px;
+}
+
+.download-modal a:hover {
+  font-weight: 600;
 }
 
 /* 사이드바 토글 */
