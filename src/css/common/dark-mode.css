@@ -284,8 +284,8 @@ footer.dark-mode .footer-wrap {
 footer.dark-mode .git-hub::before {
   display: block;
   content: '';
-  background: url(../../assets/images/sprites-darkmode.png) no-repeat -80px -10px;
-  background-size: 248px 90px;
-  width: 248px;
-  height: 90px;
+  background: url(../../assets/images/sprites-darkmode.png) no-repeat -62px -5px;
+  background-size: 185px 55px;
+  width: 124px;
+  height: 45px;
 }
