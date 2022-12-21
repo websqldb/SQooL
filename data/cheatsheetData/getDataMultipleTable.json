@@ -1,22 +1,17 @@
 [
-    {
-      "title" : "다중 테이블에서 데이터 가져오기"
-    } ,
-    {
-      "img" : "https://raw.githubusercontent.com/websqldb/SQooL/main/data/cheatsheetData/JOINS.png", 
-      "cap": "출처 : 위니브"
-    },
-    {
-      "syntax":
-        "SELECT\nstudent.학번,\nstudent.이름 AS 학생이름,\nprofessor.이름 AS 교수이름,\nprofessor.이메일 AS 교수이메일\nFROM student\nINNER JOIN professor\n--RIGHT JOIN professor\n--LEFT JOIN professor\n--FULL JOIN professor\nON student.지도교수 = professor.이름;",
-      "desc":
-        "student 테이블과 professor를 교수이름으로 합친 다음, 학번, 학생이름, 교수이름, 교수이메일을 출력합니다.\nstudent 테이블에는 교수이메일이 없습니다.\n비어 있는 값이 있을 경우, 어느 테이블을 기준으로 값을 채울지 RIGHT, LEFT, FULL로 설정할 수 있습니다."
-    } ,
-    {
-    "syntax":
-      "SELECT\nstudent.학번,\nstudent.이름 AS 학생이름,\nprofessor.이름 AS 교수이름,\nprofessor.이메일 AS 교수이메일,\nscholarship.국가장학금\nFROM student\nINNER JOIN professor\nON student.지도교수 = professor.이름\nINNER JOIN scholarship\nON student.학번=scholarship.학번;", 
-    "desc":
-      "student, professor, scholarship 테이블에서 먼저 student 테이블과 professor 테이블을 교수이름으로 합치고, student 테이블과 scholarship 테이블을 학번 기준으로 합칩니다.\n학번, 학생이름, 교수이름, 교수이메일, 국가장학금을 출력합니다."
-  } 
+  {
+    "title": "다중 테이블에서 데이터 가져오기"
+  },
+  {
+    "img": "https://raw.githubusercontent.com/websqldb/SQooL/main/data/cheatsheetData/JOINS.png",
+    "cap": "출처: 위니브"
+  },
+  {
+    "syntax": "SELECT\nstudent.학번,\nstudent.이름 AS 학생이름,\nprofessor.이름 AS 교수이름,\nprofessor.이메일 AS 교수이메일\nFROM student\nINNER JOIN professor\n--RIGHT JOIN professor\n--LEFT JOIN professor\n--FULL JOIN professor\nON student.지도교수 = professor.이름;",
+    "desc": "student 테이블과 professor를 교수이름으로 합친 다음, 학번, 학생이름, 교수이름, 교수이메일을 출력합니다.\nstudent 테이블에는 교수이메일이 없습니다.\n비어 있는 값이 있을 경우, 어느 테이블을 기준으로 값을 채울지 RIGHT, LEFT, FULL로 설정할 수 있습니다."
+  },
+  {
+    "syntax": "SELECT\nstudent.학번,\nstudent.이름 AS 학생이름,\nprofessor.이름 AS 교수이름,\nprofessor.이메일 AS 교수이메일,\nscholarship.국가장학금\nFROM student\nINNER JOIN professor\nON student.지도교수 = professor.이름\nINNER JOIN scholarship\nON student.학번=scholarship.학번;",
+    "desc": "student, professor, scholarship 테이블에서 먼저 student 테이블과 professor 테이블을 교수이름으로 합치고, student 테이블과 scholarship 테이블을 학번 기준으로 합칩니다.\n학번, 학생이름, 교수이름, 교수이메일, 국가장학금을 출력합니다."
+  }
 ]
-

@@ -52,7 +52,11 @@ const insertData = (tableName, tableData) => {
             } else {
               columns.push(column.split(' ').join(''));
             }
-            values.push(row[column]);
+            if (row[column] === '') {
+              values.push(null);
+            } else {
+              values.push(row[column]);
+            }
             substitute.push('?');
           }
 
@@ -135,9 +139,24 @@ $run_button.addEventListener('click', async (e) => {
   e.preventDefault();
   clickButtonAnimation(e);
 
-  const $editor = document.querySelector('.CodeMirror-line > span');
+  /*
+   * 작성자: 김창현
+   * 외부 라이브러리 사용으로 인하여 전역에 엘리먼트를 연결할 경우 라이브러리 보다 먼저 연결을 시도하여 잡히지 않습니다.
+   * 따라서, Run SQL 버튼 클릭 시 마다 잡도록 해두었습니다.
+   *
+   * 개행 시 CodeMiroor-line div가 하나씩 추가 되어 개행이 발생할 경우 쿼리문을 하나로 합쳤습니다.
+   */
+  const $editor = document.querySelectorAll('.CodeMirror-line > span');
 
-  const inputValue = convertToValidKey($editor.innerText);
+  let sql_query = '';
+
+  for (let span of $editor) {
+    sql_query += span.innerText + ' ';
+  }
+
+  console.log(sql_query);
+
+  const inputValue = numToChar(sql_query);
   const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
@@ -151,7 +170,7 @@ $run_button.addEventListener('click', async (e) => {
  * @params {textarea.value}
  * @return {string}
  */
-const convertToValidKey = (value) => {
+const numToChar = (value) => {
   if (!value) return null;
   const regex = /[1-4]학년[1-4]학기/gi;
   if (!regex.test(value)) return value;
@@ -172,6 +191,23 @@ const convertToValidKey = (value) => {
     }
     return value;
   }
+};
+
+const charToNumber = (data) => {
+  const regex = /[(일|이|삼|사)]학년[(일|이|삼|사)]학기/gi;
+  if (!regex.test(data)) return data;
+
+  const char = ['일', '이', '삼', '사'];
+  console.log('실행');
+  for (let i = 0; i < 4; i++) {
+    const re = new RegExp(`${char[i]}학년`, 'gi');
+    data = data.replaceAll(re, `${i + 1}학년`);
+  }
+  for (let i = 0; i < 4; i++) {
+    const re2 = new RegExp(`${char[i]}학기`, 'gi');
+    data = data.replaceAll(re2, `${i + 1}학기`);
+  }
+  return data;
 };
 
 const handleWebSQL = (text) => {
@@ -220,11 +256,14 @@ const renderTable = (data) => {
     사학년일학기: '4학년1학기',
     사학년이학기: '4학년2학기',
   };
+  console.log(data);
   for (let column in data[0]) {
     const $th = document.createElement('th');
     if (column.includes('학기')) {
+      console.log('is 학기');
       $th.textContent = obj[column];
     } else {
+      console.log('is not 학기');
       $th.textContent = column;
     }
     $tr.appendChild($th);

@@ -39,8 +39,9 @@ const clickModalNextBtn = () => {
       `;
       $modalMain.classList.remove("hint2");
       $modalMain.classList.add("hint3");
-      $modalMain.style.top = "700px";
-      $modalMain.style.left = "70px";
+      $modalWrap.style.zIndex = 10;
+      $modalMain.style.top = "500px";
+      $modalMain.style.left = "91px";
       $modalIndex.innerText = `3/3`;
       $modalBtn.innerText = `튜토리얼 끝내기`;
       window.scrollTo(0, 400);
@@ -97,6 +98,7 @@ const showMainModal = (e) => {
 
   $modalMain.style.top = "233px";
   $modalMain.style.left = "300px";
+  $modalBtn.focus();
 };
 
 const showCheatModal = (e) => {

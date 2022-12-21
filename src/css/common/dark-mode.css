@@ -70,16 +70,20 @@ body.dark-mode,
   border-bottom-color: #999a99;
 }
 
+.dark-mode .list-database-download-item > li {
+  color: var(--dark-accent-white);
+}
+
 .sql-btn-wrap.dark-mode .sql-btn {
   color: #4d4d55;
   background-color: rgba(247, 247, 255, 0.6);
-  border: 1px solid #727272;
+  border: none;
 }
 
 .sql-btn-wrap.dark-mode .more-btn {
   color: #f7f7ff;
   background-color: #4d4d55;
-  border: 1px solid #727272;
+  border: none;
 }
 
 /* 메인 editor */
@@ -88,6 +92,10 @@ main.dark-mode .sec-statement textarea {
   background-color: var(--dark-border-color);
   border: none;
 }
+
+/* main.dark-mode textarea {
+  caret-color: var(--dark-accent-yellow);
+} */
 
 main.dark-mode .sec-statement .state-area {
   border-top: 1px solid #676767;
@@ -284,8 +292,8 @@ footer.dark-mode .footer-wrap {
 footer.dark-mode .git-hub::before {
   display: block;
   content: "";
-  background: url(../../assets/images/sprites-darkmode.png) no-repeat -80px -10px;
-  background-size: 248px 90px;
-  width: 248px;
-  height: 90px;
+  background: url(../../assets/images/sprites-darkmode.png) no-repeat -62px -5px;
+  background-size: 185px 55px;
+  width: 124px;
+  height: 45px;
 }

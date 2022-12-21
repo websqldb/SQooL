@@ -6,6 +6,8 @@
 
 :root {
   font-size: 62.5%;
+  font-family: Pretendard;
+  font-weight: 300;
 }
 .la-wrap {
   display: flex;
