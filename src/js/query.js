@@ -52,7 +52,11 @@ const insertData = (tableName, tableData) => {
             } else {
               columns.push(column.split(' ').join(''));
             }
-            values.push(row[column]);
+            if (row[column] === '') {
+              values.push(null);
+            } else {
+              values.push(row[column]);
+            }
             substitute.push('?');
           }
 
