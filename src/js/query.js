@@ -152,7 +152,7 @@ $run_button.addEventListener('click', async (e) => {
 
   console.log(sql_query);
 
-  const inputValue = convertToValidKey(sql_query);
+  const inputValue = numToChar(sql_query);
   const data = await handleWebSQL(inputValue);
   renderTable(data);
 });
@@ -166,7 +166,7 @@ $run_button.addEventListener('click', async (e) => {
  * @params {textarea.value}
  * @return {string}
  */
-const convertToValidKey = (value) => {
+const numToChar = (value) => {
   if (!value) return null;
   const regex = /[1-4]학년[1-4]학기/gi;
   if (!regex.test(value)) return value;
@@ -187,6 +187,23 @@ const convertToValidKey = (value) => {
     }
     return value;
   }
+};
+
+const charToNumber = (data) => {
+  const regex = /[(일|이|삼|사)]학년[(일|이|삼|사)]학기/gi;
+  if (!regex.test(data)) return data;
+
+  const char = ['일', '이', '삼', '사'];
+  console.log('실행');
+  for (let i = 0; i < 4; i++) {
+    const re = new RegExp(`${char[i]}학년`, 'gi');
+    data = data.replaceAll(re, `${i + 1}학년`);
+  }
+  for (let i = 0; i < 4; i++) {
+    const re2 = new RegExp(`${char[i]}학기`, 'gi');
+    data = data.replaceAll(re2, `${i + 1}학기`);
+  }
+  return data;
 };
 
 const handleWebSQL = (text) => {
@@ -235,11 +252,14 @@ const renderTable = (data) => {
     사학년일학기: '4학년1학기',
     사학년이학기: '4학년2학기',
   };
+  console.log(data);
   for (let column in data[0]) {
     const $th = document.createElement('th');
     if (column.includes('학기')) {
+      console.log('is 학기');
       $th.textContent = obj[column];
     } else {
+      console.log('is not 학기');
       $th.textContent = column;
     }
     $tr.appendChild($th);
