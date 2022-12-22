@@ -118,3 +118,466 @@ SELECT * FROM student;
     - Read
     - Update
     - Delete
+
+# 2. 기본 구문 실습
+
+## 2.1 실습 방법
+
+Try it 탭을 하나 더 여시고 코드를 복사하여 Run SQL 버튼을 눌러주세요.
+
+![Untitled](/pagetutorial/img//Untitled%202.png)
+
+실습에 들어가기 전 데이터의 구조를 파악해보세요. 각각 database를 클릭하면 `Result` 창에서 table 형태로 볼 수 있습니다.
+
+ 
+
+![Untitled](/pagetutorial/img//Untitled%203.png)
+
+## 2.2 SELECT Statement
+
+select는 데이터를 조회하거나 산술식, 함수 등을 실행할 때 사용합니다. SQL은 대소문자를 가리지 않지만, 구문에 해당되는 것은 대문자로만 적도록 하겠습니다.
+
+`*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다. 
+
+```sql
+SELECT * FROM Student;
+```
+
+여기서 원하는 컬럼만 출력하고 싶을 때에는 아래와 같이 사용합니다.
+
+```sql
+SELECT 이름, 학과 FROM student;
+```
+
+아래와 같이 대괄호로 묶어줄 수도 있지만, 여기서는 묶어주지 않고 사용하도록 하겠습니다.
+
+```sql
+SELECT [이름], [학과] FROM student;
+```
+
+아래 보이시는 것처럼 일반 수식을 출력할 때에도 Select 구문을 사용합니다. 함수도 사용할 수 있지만 아직 함수를 배우지 않았으므로 뒤에게서 해보도록 하겠습니다.
+
+```sql
+SELECT 1+1;
+SELECT (10 + 2) / 2;
+```
+
+## 2.3 SELECT DISTINCT Statement
+
+DISTINCT는 중복값을 제거합니다. 여기서 학과번호는 학과이름입니다. 2.5 AS 챕터에서 학과번호를 학과이름으로 바꿔주도록 하겠습니다.
+
+```sql
+SELECT DISTINCT 학과번호
+FROM subject;
+```
+
+## 2.4 ORDER BY
+
+출력 결과 정렬합니다. 아래처럼 개행을 하여도 괜찮습니다. 마지막에 세미콜론 잊지마세요.
+
+- 오름차순 : ASC(기본, 작은 수에서 큰 수로, Ascending)
+- 내림차순 : DESC(큰 수에서 작은 수로, Descending)
+
+```sql
+SELECT 학번, 학년, 이름
+FROM student
+ORDER BY 학년 DESC;
+```
+
+```sql
+SELECT 학번, 학년, 이름
+FROM student
+ORDER BY 학년 ASC;
+```
+
+## 2.5 AS
+
+별칭을 정합니다. 기존 Table의 값은 변하지 않습니다.
+
+```sql
+SELECT DISTINCT 학과번호 AS 학과이름
+FROM subject;
+```
+
+```sql
+SELECT 학번, 이름 AS 성명, 연락처 AS 휴대폰번호
+FROM student;
+```
+
+AS 없이도 사용이 가능합니다.
+
+```sql
+SELECT 학번, 이름 성명, 연락처 휴대폰번호
+FROM student;
+```
+
+## 2.6 산술연산
+
+더하고 빼고 나누고 곱하는 것이 가능합니다.
+
+```sql
+SELECT (학번 / 3) + 5 FROM student;
+```
+
+```sql
+SELECT (학번 / 3) % 2 FROM student;
+```
+
+각각 컬럼끼리 연산도 가능합니다.
+
+```sql
+SELECT 학번 + 학번 FROM student;
+```
+
+해당 값은 0, 나누기를 하면 null로 반환합니다. 이어붙이려면 아래 있는 연결 연산자를 사용해야 합니다.
+
+```sql
+SELECT CustomerName + CustomerName FROM CustomersSELECT 학년 || ' ' || 학과 || ' ' || 학년 AS Student_Info FROM student
+```
+
+```sql
+SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가 
+FROM Products
+```
+
+## 2.7 연결 연산자
+
+Oracle에서는 ||, MsSQL은 +, MySQL은 공백으로 연결 가능. CONCAT함수는 공통으로 사용 가능합니다. 하지만 초급자 단계에서 이런 것들을 구분지어 기억하는 것은 크게 의미있지 않으니, 문법이 조금 상이하다 정도로 기억해주세요.
+
+```sql
+SELECT 학년 || ' ' || 학과 || ' ' || 학년 AS Student_Info FROM student;
+```
+
+```sql
+SELECT 과목명 || ' 과목은 ' || 학과번호 || '에서 ' || 이수구분 || '과목으로 분류되어 있습니다.' FROM subject;
+```
+
+다양한 쿼리를 만들어 다른 table에서도 여러분 만에 문장을 만들어보세요.
+
+## 2.8 논리 연산
+
+우선순위는 NOT, AND, OR입니다. True는 1로, False는 0으로, and는 곱으로, or는 덧셈으로 이해하시면 계산이 쉽습니다. 뒤에서 나올 비교 연산자, `WHERE 조건 절`을 미리 사용하였습니다. 비교 연산자는 같다(`=`), 다르다(`!=`), 크다(`>`), 작다(`<`)를 표현하는 연산자입니다.
+
+- 기본실습
+    
+    ```sql
+    SELECT 1 AND 0;
+    ```
+    
+    ```sql
+    SELECT 1 OR 0;
+    ```
+    
+    ```sql
+    SELECT NOT 0;
+    ```
+    
+- AND
+    
+    ```sql
+    SELECT *
+    FROM student
+    WHERE 학번 LIKE '2019%'
+    AND 마일리지 >= 100;
+    ```
+    
+- OR
+    
+    ```sql
+    SELECT *
+    FROM student
+    WHERE 마일리지 >= 100
+    AND 학번 LIKE '2019%' OR 학번 LIKE '2020%';
+    ```
+    
+    ```sql
+    SELECT *
+    FROM student
+    WHERE 마일리지 >= 100
+    AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
+    ```
+    
+- NOT
+    
+    ```sql
+    SELECT *
+    FROM student
+    WHERE 마일리지 >= 100
+    AND NOT (학번 LIKE '2019%' OR 학번 LIKE '2020%');
+    ```
+    
+- `<>`같지 않다.(IOS 표준, SQooL에서는 돌아가지 않는 코드입니다.)
+    
+    ```sql
+    SELECT *
+    FROM student
+    WHERE 학과 <> 컴퓨터공학과;
+    ```
+    
+
+## 2.9 BETWEEN 연산
+
+A AND B : A와 B를 포함한 사이의 값
+
+```sql
+SELECT 학번, 일학년일학기
+FROM grade
+WHERE 일학년일학기 BETWEEN 3.0 AND 4.0;
+```
+
+```sql
+SELECT 학번, 일학년일학기, 일학년이학기
+FROM grade
+WHERE 일학년일학기 >= 4.0 AND 일학년이학기 < 4.0;
+```
+
+## 2.10 IN 연산
+
+IN A : A안에 값과 일치하는 값을 조회 
+
+```sql
+SELECT 학번, 이름, 학과
+FROM student
+WHERE 학과 IN ('물리학과', '화학과');
+```
+
+## 2.11 LIKE 연산
+
+- LIKE '비교문자'
+    1. 비교 문자와 형태가 일치(%(모든 문자), _(한 글자) 사용)
+    2. 대소문자를 안가림
+    3. `%`는 와일드카드
+    
+    ```sql
+    SELECT 학년, 이름, 지도교수
+    FROM student
+    WHERE 지도교수 LIKE '%호준';
+    ```
+    
+    만약 데이터가 일호준, 이호준, 삼호준이 있다면 모두 검색
+    
+    ```sql
+    SELECT 학년, 이름, 연락처, 지도교수
+    FROM student
+    WHERE 지도교수 LIKE '이__';
+    ```
+    
+    만약 언더바가 2개라면 위 데이터 중 이호준만 출력합니다. 이런 문자열들은 와일드카드라고 부르며 다양한 예제가 있습니다.
+    
+
+- 자주 쓰는 예제
+    
+    ‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
+    
+    ```sql
+    SELECT 학번, 이름, 학과, 생년월일
+    FROM student
+    WHERE 생년월일 LIKE '%-04-%';
+    ```
+    
+    아래 코드를 실습해보세요.
+    
+    ```sql
+    SELECT 학과번호, 과목명, 이수구분
+    FROM subject
+    WHERE 이수구분 LIKE '%양';
+    ```
+    
+
+## 2.12 IS NULL
+
+- NULL 값을 갖는 값(0은 값이 있는 것입니다.)
+
+```sql
+SELECT 학번, 성적장학금, 근로장학금, 국가장학금
+FROM scholarship
+WHERE 성적장학금 IS NULL
+```
+
+## 2.13 bit 단위 논리연산자
+
+차례대로 AND, OR, XOR입니다.
+
+```sql
+SELECT 1 & 0;
+```
+
+```sql
+SELECT 1 | 0;
+```
+
+```sql
+SELECT 1 ^ 0;
+```
+
+## 2.14 WHERE
+
+- 조회하려는 데이터에 조건 부여
+- 여러 연산자를 결합하여 사용 가능
+- 결합 가능한 연산자의 종류 : 비교연산자(=, <, >, !=, >=, <=), SQL연산자(BETWEEN), 논리 연산자(AND, OR) 등
+
+```sql
+SELECT 학년, 이름, 연락처
+FROM student
+WHERE 학년 >= 3;
+```
+
+```sql
+SELECT 학번, 성적장학금, 근로장학금, 국가장학금
+FROM scholarship
+WHERE (성적장학금 IS NOT NULL) AND (근로장학금 IS NOT NULL) AND (국가장학금 IS NOT NULL)
+```
+
+```sql
+SELECT 학번, 성적장학금, 근로장학금, 국가장학금
+FROM scholarship
+WHERE 국가장학금 > 100000
+```
+
+```sql
+SELECT 교원번호, 이름, 학과, 연구실
+FROM professor
+WHERE 교원번호 IN ('A001', 'A002', 'A003')
+```
+
+## 2.15 INSERT
+
+아래 코드를 사용한 후 다시 한 번 전체 컬럼을 조회해보세요. 나머지 값은 `null`로 들어가게 됩니다. 클릭을 3번 하면 3개의 데이터가 들어가게 됩니다.
+
+```sql
+INSERT INTO professor (이름, 학과, 이메일)
+VALUES ('김물리', '물리학과', 'asdf123@sqool.ac.kr');
+```
+
+```sql
+SELECT * FROM professor;
+```
+
+- 문제  1번
+    
+    4학년이면서, 주소에 울릉도에 살고 있는 학생을 구해주세요. 기본 데이터에 해당 데이터가 없다면, 위에 코드(INSERT)를 실행시켜 풀어주세요.
+    
+    ```sql
+    SELECT * FROM student 
+    WHERE 학년=4 AND 주소 LIKE '%울릉군%';
+    ```
+    
+- 문제 2번
+    
+    2학년1학기 성적이 null 값인 학생을 구해주세요.
+    
+    ```sql
+    /* SELECT * FROM student WHERE 2학년1학기=''; */
+    SELECT * FROM student WHERE 2학년1학기 IS NULL;
+    ```
+    
+    비어있는 문자열과 NULL값은 다른 값입니다.
+    
+
+## 2.16 Null Values 찾아내기
+
+위 실습에서 일부러 몇 개의 값을 입력하지 않고 null값을 찾아보세요. 위에서 데이터를 삽입한 것 중 명시하지 않은 것들은 null 값으로 들어갔기 때문에 ContactName에 조회가 가능합니다.
+
+```sql
+SELECT *
+FROM scholarship
+WHERE 성적장학금 IS NULL;
+```
+
+is not 구문도 가능하답니다.
+
+```sql
+SELECT *
+FROM scholarship
+WHERE 성적장학금 IS NOT NULL;
+```
+
+## 2.17 UPDATE
+
+값을 바꿉니다. 이 행위는 되돌릴 수 없습니다. where로 여러개를 select하여 바꿀 수 있습니다.
+
+```sql
+UPDATE student
+SET 이름='이호준', 학과='컴퓨터공학과'
+WHERE 학번=201900001;
+```
+
+```sql
+SELECT * FROM student;
+```
+
+## 2.18 DELETE
+
+주의하세요. WHERE 안적으면 다 삭제 됩니다. 이런일이 실무에서도 종종 발생됩니다.
+
+```sql
+DELETE FROM student WHERE 이름='이호준';
+```
+
+```sql
+SELECT * FROM student;
+```
+
+## 2.19 TOP과 LIMIT
+
+최 상단 3개의 행(row)을 보는 방법입니다. TOP 명령어는 SQooL에서 작동되진 않습니다. LIMIT 명령어는 사용가능하니 LIMIT 명령어를 사용해주세요.
+
+- 사용 가능 명령어
+    
+    ```sql
+    SELECT * FROM student
+    LIMIT 3;
+    ```
+    
+- 사용 불가능 명령어
+    
+    ```sql
+    SELECT TOP 3 * FROM student;
+    ```
+    
+    ```sql
+    SELECT TOP 10 PERCENT * FROM student;
+    ```
+    
+
+## 2.20 CREATE, INSERT, UPDATE, DELETE, DROP 한 번에 사용해보기
+
+테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
+
+```sql
+CREATE TABLE 제품 (
+제품번호 INT PRIMARY KEY,
+제품이름 VARCHAR NOT NULL,
+가격 INT DEFAULT 0);
+```
+
+```sql
+INSERT INTO 제품 (제품번호, 제품이름, 가격)
+VALUES (1, '버그잡는 개리씨 키링', 12500);
+--SELECT * FROM 제품
+```
+
+```sql
+UPDATE 제품
+SET 제품이름='위니브 스티커 팩', 가격 = 3500
+WHERE 제품번호 = 1;
+--SELECT * FROM 제품
+```
+
+```sql
+DELETE FROM 제품 WHERE 제품번호 = 1;
+```
+
+```sql
+DROP TABLE 제품;
+```
+
+## 2.21 SHOW, DESC
+
+SQooL에서 동작하지 않는 명령어입니다. 실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 데이터베이스 목록을 출력하고 테이블을 이름순으로 출력하는 명령어입니다.
+
+```sql
+mysql> SHOW databases;
+mysql> SHOW tables;
+mysql> DESC table_name;
+```
