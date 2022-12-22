@@ -24,12 +24,12 @@
 
   const unorderedListItem = {
     regex: /^\s*-\s(.+)/,
-    replace: '<li>$1',
+    replace: '<li class="test2">$1',
   };
 
   const orderedListItem = {
     regex: /^\s*(\d+\.\s.+)/,
-    replace: '<li>$1',
+    replace: '<li class="test3">$1',
   };
 
   const tableRow = {
@@ -180,7 +180,7 @@
             const tagName = rule === unorderedListItem ? 'ul' : 'ol';
             const depth = listDepth(token);
             if (depth > curListDepth) {
-              tokens[i] = `<${tagName}>` + tokens[i];
+              tokens[i] = `<${tagName} class='test1'>` + tokens[i];
               listStack.push(`</${tagName}>`);
             } else if (depth < curListDepth) {
               let depthDiff = (curListDepth - depth) / 2;
