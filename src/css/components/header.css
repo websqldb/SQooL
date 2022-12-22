@@ -59,6 +59,7 @@
 .global-header-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 1257px;
   height: 80px;
   margin: 0 auto;
@@ -66,15 +67,16 @@
   box-sizing: border-box;
 }
 
-.global-header .logo a {
-  display: block;
-  color: var(--point-color-primary);
-  font-size: 3.6rem;
-  font-weight: 700;
+.global-header .logo {
+  width: 112px;
+  height: 31px;
 }
 
-.global-header .logo span {
-  color: var(--point-color-secondary);
+.global-header .logo .logo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('https://raw.githubusercontent.com/websqldb/SQooL/6c61db68913b917d5e5e6eadaff7734c4486ec28/src/assets/images/logo_light.svg') no-repeat center / contain;
 }
 
 .global-header .gnb {

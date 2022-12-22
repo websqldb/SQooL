@@ -11,7 +11,7 @@
   opacity: 0;
   line-height: 20px;
   visibility: hidden;
-  transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
   background: #fff;
   border: solid 2px #5966ec;
   z-index: 10000;

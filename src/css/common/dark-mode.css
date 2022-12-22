@@ -21,12 +21,8 @@ body.dark-mode,
   border-bottom-color: var(--dark-border-color);
 }
 
-.global-header.dark-mode .logo a {
-  color: var(--dark-accent-orange);
-}
-
-.global-header.dark-mode .logo span {
-  color: var(--dark-accent-blue);
+.global-header.dark-mode .logo .logo-img {
+  background-image: url('https://raw.githubusercontent.com/websqldb/SQooL/6c61db68913b917d5e5e6eadaff7734c4486ec28/src/assets/images/logo_dark.svg');
 }
 
 .global-header.dark-mode .gnb a.is-active {

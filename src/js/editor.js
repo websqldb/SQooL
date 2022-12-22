@@ -167,10 +167,11 @@ window.onload = function codemirroreditor() {
   CodeMirror.commands.autocomplete = function (cm) {
     CodeMirror.showHint(cm, CodeMirror.hint.sql, {
       tables: AUTOCOMPLETE_TABLES,
+      completeSingle: false, // 자동으로 텍스트 완성 해제
     });
   };
 
-  // 탭 누르지 않고 바로 실행되도록 설정
+  // 탭 누르지 않고 바로 힌트를 보여주도록 설정
   window.editor.on("keyup", function (cm, event) {
     // a ~ z
     // 1 ~ F12
@@ -183,6 +184,7 @@ window.onload = function codemirroreditor() {
       CodeMirror.commands.autocomplete(cm, null, { completeSingle: false });
     }
   });
+
   
   // const $mainStatementClipboard = document.querySelector(".CodeMirror");
   const $mainStatementBtn = document.querySelector(".btn-copy");
