@@ -110,7 +110,7 @@ SELECT * FROM student;
 
 ## 1.9. CRUD란?
 
-- 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.
+- 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.li>
     
     [CRUD](https://ko.wikipedia.org/wiki/CRUD)
     
@@ -125,13 +125,13 @@ SELECT * FROM student;
 
 Try it 탭을 하나 더 여시고 코드를 복사하여 Run SQL 버튼을 눌러주세요.
 
-![Untitled](/pagetutorial/img//Untitled%202.png)
+![](../Untitled%202.png)
 
 실습에 들어가기 전 데이터의 구조를 파악해보세요. 각각 database를 클릭하면 `Result` 창에서 table 형태로 볼 수 있습니다.
 
  
 
-![Untitled](/pagetutorial/img//Untitled%203.png)
+![](../Untitled%203.png)
 
 ## 2.2 SELECT Statement
 
@@ -258,61 +258,61 @@ SELECT 과목명 || ' 과목은 ' || 학과번호 || '에서 ' || 이수구분 |
 
 우선순위는 NOT, AND, OR입니다. True는 1로, False는 0으로, and는 곱으로, or는 덧셈으로 이해하시면 계산이 쉽습니다. 뒤에서 나올 비교 연산자, `WHERE 조건 절`을 미리 사용하였습니다. 비교 연산자는 같다(`=`), 다르다(`!=`), 크다(`>`), 작다(`<`)를 표현하는 연산자입니다.
 
-- 기본실습
+### 2.8.1 기본실습
     
-    ```sql
-    SELECT 1 AND 0;
-    ```
+```sql
+SELECT 1 AND 0;
+```
+
+```sql
+SELECT 1 OR 0;
+```
+
+```sql
+SELECT NOT 0;
+```
     
-    ```sql
-    SELECT 1 OR 0;
-    ```
+### 2.8.2 AND
     
-    ```sql
-    SELECT NOT 0;
-    ```
+```sql
+SELECT *
+FROM student
+WHERE 학번 LIKE '2019%'
+AND 마일리지 >= 100;
+```
     
-- AND
+### 2.8.3 OR
     
-    ```sql
-    SELECT *
-    FROM student
-    WHERE 학번 LIKE '2019%'
-    AND 마일리지 >= 100;
-    ```
+```sql
+SELECT *
+FROM student
+WHERE 마일리지 >= 100
+AND 학번 LIKE '2019%' OR 학번 LIKE '2020%';
+```
+
+```sql
+SELECT *
+FROM student
+WHERE 마일리지 >= 100
+AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
+```
     
-- OR
+### 2.8.3 NOT
     
-    ```sql
-    SELECT *
-    FROM student
-    WHERE 마일리지 >= 100
-    AND 학번 LIKE '2019%' OR 학번 LIKE '2020%';
-    ```
+```sql
+SELECT *
+FROM student
+WHERE 마일리지 >= 100
+AND NOT (학번 LIKE '2019%' OR 학번 LIKE '2020%');
+```
     
-    ```sql
-    SELECT *
-    FROM student
-    WHERE 마일리지 >= 100
-    AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
-    ```
+`<>`같지 않다.(IOS 표준, SQooL에서는 돌아가지 않는 코드입니다.)
     
-- NOT
-    
-    ```sql
-    SELECT *
-    FROM student
-    WHERE 마일리지 >= 100
-    AND NOT (학번 LIKE '2019%' OR 학번 LIKE '2020%');
-    ```
-    
-- `<>`같지 않다.(IOS 표준, SQooL에서는 돌아가지 않는 코드입니다.)
-    
-    ```sql
-    SELECT *
-    FROM student
-    WHERE 학과 <> 컴퓨터공학과;
-    ```
+```sql
+SELECT *
+FROM student
+WHERE 학과 <> 컴퓨터공학과;
+```
     
 
 ## 2.9 BETWEEN 연산
@@ -453,7 +453,9 @@ VALUES ('김물리', '물리학과', 'asdf123@sqool.ac.kr');
 SELECT * FROM professor;
 ```
 
-- 문제  1번
+## 연습문제
+
+### 문제  1번
     
     4학년이면서, 주소에 울릉도에 살고 있는 학생을 구해주세요. 기본 데이터에 해당 데이터가 없다면, 위에 코드(INSERT)를 실행시켜 풀어주세요.
     
@@ -462,7 +464,7 @@ SELECT * FROM professor;
     WHERE 학년=4 AND 주소 LIKE '%울릉군%';
     ```
     
-- 문제 2번
+### 문제 2번
     
     2학년1학기 성적이 null 값인 학생을 구해주세요.
     
