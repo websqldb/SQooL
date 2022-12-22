@@ -1,7 +1,7 @@
 @import url("../assets/fonts/fonts.css");
 
 main {
-  padding-top: 110px;
+  /* padding-top: 110px; */
   color: #444444;
   font-family: "Pretendard";
   font-size: 16px;
@@ -9,10 +9,43 @@ main {
   letter-spacing: -0.3px;
 }
 
+main p {
+  /* padding-top: 25px; */
+  /* font-weight: 400; */
+  line-height: 27px;
+  text-align: justify;
+  letter-spacing: -0.2px;
+  opacity: 0.7;
+  /* margin-bottom: 10px; */
+}
+
+img {
+  width: 100%;
+}
+
 a:hover {
+  -webkit-filter: brightness(1.2);
   filter: brightness(1.2);
 }
 
+strong {
+  font-weight: bold;
+}
+
+ol {
+  padding-left: 0px;
+}
+
+ul {
+  padding-left: 15px;
+  list-style: disc;
+}
+
+li {
+  line-height: 27px;
+}
+
+/* h2 */
 .tuto-title {
   padding-bottom: 15px;
   border-bottom: 1px solid #eeedec;
@@ -21,55 +54,37 @@ a:hover {
   line-height: 30px;
 }
 
+/* article 구분선 */
 .tuto-sec {
   display: flex;
   flex-direction: column;
-  gap: 65px;
+  /* gap: 65px; */
   padding-top: 105px;
-  padding-bottom: 240px;
+  padding-bottom: 20px;
 }
 
-.tuto-sec + .tuto-sec {
+.tuto-sec+.tuto-sec {
   border-top: 1px solid #eeedec;
 }
 
-.tuto-sec.home {
+/* .tuto-sec.home {
   margin-top: 0;
   padding-top: 40px;
-}
+} */
 
+/* h3 */
 .tuto-sec-title {
-  margin-bottom: -40px;
+  margin-top: 25px;
+  margin-bottom: 15px;
   color: #5966ec;
   font-weight: 600;
   font-size: 28px;
   line-height: 30px;
 }
 
-.tuto-sec-cont {
-  padding: 34px;
-  border: 1px solid #d9d9d9;
-  border-radius: 15px;
-  background: #efeeee;
-}
-
-.tuto-sec-cont > strong {
-  padding-top: 34px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-}
-
-.tuto-sec-cont > p {
-  padding-top: 25px;
-  font-weight: 400;
-  line-height: 27px;
-  text-align: justify;
-  letter-spacing: -0.2px;
-  opacity: 0.7;
-}
-
+/* h4 */
 .tuto-sec-subtitle {
+  margin-top: 20px;
   padding-bottom: 15px;
   font-weight: 500;
   font-size: 20px;
@@ -87,50 +102,7 @@ a:hover {
   content: "";
 }
 
-.tuto-sec-para > p {
-  font-weight: 400;
-  line-height: 27px;
-  text-align: justify;
-  letter-spacing: -0.2px;
-  opacity: 0.7;
-}
-
-.tuto-sec-para > p code {
-  display: inline-block;
-  padding: 2px 5px;
-  background: #efefef;
-  border-radius: 3px;
-  color: #5966ec;
-  line-height: 1;
-}
-
-.tuto-sec-example-query-para {
-  color: #5966ec;
-  font-family: "D2Coding";
-  font-size: 14px;
-  line-height: 180%;
-}
-
-.btn-go {
-  float: right;
-  margin-top: 15px;
-  padding: 8px 16px;
-  border-radius: 80px;
-  background: #5966ec;
-  color: #ffffff;
-  line-height: 1.3;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  font-weight: 700;
-  font-size: 18px;
-  cursor: pointer;
-  text-decoration-line: none;
-}
-
-.tuto-sec-example-img {
-  display: block;
-  margin: 22px auto;
-}
-
+/* 쿼리문 */
 .tuto-sec-example-query {
   margin-top: 20px;
   padding: 20px 18px;
@@ -163,6 +135,81 @@ a:hover {
 .query-para-yellow {
   color: #ffbb56;
 }
+
+
+/* 
+
+.tuto-sec-cont {
+  padding: 34px;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  background: #efeeee;
+}
+
+.tuto-sec-cont>strong {
+  padding-top: 34px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.tuto-sec-cont>p {
+  padding-top: 25px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+  letter-spacing: -0.2px;
+  opacity: 0.7;
+}
+
+
+
+.tuto-sec-para>p {
+  font-weight: 400;
+  line-height: 27px;
+  text-align: justify;
+  letter-spacing: -0.2px;
+  opacity: 0.7;
+}
+
+.tuto-sec-para>p code {
+  display: inline-block;
+  padding: 2px 5px;
+  background: #efefef;
+  border-radius: 3px;
+  color: #5966ec;
+  line-height: 1;
+}
+
+.tuto-sec-example-query-para {
+  color: #5966ec;
+  font-family: "D2Coding";
+  font-size: 14px;
+  line-height: 180%;
+}
+
+.btn-go {
+  float: right;
+  margin-top: 15px;
+  padding: 8px 16px;
+  border-radius: 80px;
+  background: #5966ec;
+  color: #ffffff;
+  line-height: 1.3;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.tuto-sec-example-img {
+  display: block;
+  margin: 22px auto;
+}
+
+
 
 .tuto-sec-result .tuto-sec-subtitle {
   margin-bottom: 15px;
@@ -211,9 +258,9 @@ a:hover {
   line-height: 30px;
 }
 
-.tuto-sec-result-para > strong {
+.tuto-sec-result-para>strong {
   margin-right: 27px;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-}
+} */
