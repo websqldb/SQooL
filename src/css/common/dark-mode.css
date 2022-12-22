@@ -67,19 +67,26 @@ body.dark-mode,
 }
 
 .dark-mode .list-database-download-item > li {
-  color: var(--dark-accent-white);
+  color: var(--white);
+  border-top: none;
+  border-bottom: 1px solid #2D2D2D;
+}
+
+.dark-mode .list-database-download-item > li:hover {
+  color: var(--white);
+  background-color: #4b4b51;
 }
 
 .sql-btn-wrap.dark-mode .sql-btn {
   color: #4d4d55;
   background-color: rgba(247, 247, 255, 0.6);
-  border: none;
+  border: 1px solid #727272;
 }
 
 .sql-btn-wrap.dark-mode .more-btn {
   color: #f7f7ff;
   background-color: #4d4d55;
-  border: none;
+  border: 1px solid #727272;
 }
 
 /* 메인 editor */
@@ -269,12 +276,16 @@ aside.side-bar.dark-mode .list-wrap-cheatsheet .list-item > li {
   border-bottom-color: var(--dark-border-color);
 }
 
+aside.side-bar.dark-mode .list-wrap-cheatsheet .list-item > li:hover {
+  color: #FFD66C;
+}
+
 aside.side-bar.dark-mode .cheatsheet-pdf-list span {
   color: var(--white);
 }
 
 aside.side-bar.dark-mode .cheatsheet-pdf .list-title {
-  color: var(--white);
+  color: #b2b2b2;
 }
 
 aside.side-bar.dark-mode .cheatsheet-pdf {
