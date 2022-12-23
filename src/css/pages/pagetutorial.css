@@ -1,22 +1,19 @@
-@import url("../assets/fonts/fonts.css");
+@import url('../assets/fonts/fonts.css');
 
 main {
-  /* padding-top: 110px; */
   color: #444444;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.3px;
+  width: 100%;
+  margin-left: 27px;
 }
 
 main p {
-  /* padding-top: 25px; */
-  /* font-weight: 400; */
-  line-height: 27px;
-  text-align: justify;
-  letter-spacing: -0.2px;
-  opacity: 0.7;
-  /* margin-bottom: 10px; */
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 25px;
 }
 
 img {
@@ -32,38 +29,65 @@ strong {
   font-weight: bold;
 }
 
-ol {
-  padding-left: 0px;
-}
-
 ul {
-  padding-left: 15px;
   list-style: disc;
 }
 
-li {
+.tuto-list {
+  padding-left: 12px;
+}
+
+.tuto-ordered-list-item,
+.tuto-unordered-list-item {
   line-height: 27px;
+  margin-top: 16px;
+  font-size: 18px;
+}
+
+.tuto-unordered-list-item {
+  list-style-position: inside;
+}
+
+.tuto-ordered-list-item:first-child,
+.tuto-unordered-list-item:first-child {
+  margin-top: 0;
 }
 
 /* h2 */
-.tuto-title {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eeedec;
+.tuto-title-box h2 {
   font-weight: 600;
   font-size: 40px;
-  line-height: 30px;
+  line-height: 1.2;
+  display: inline-block;
+  color: #6d79ee;
+  width: 100%;
+  border-bottom: 1px solid #eeedec;
+}
+
+.tuto-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2;
+  display: inline-block;
+  color: #6d79ee;
 }
 
 /* article 구분선 */
+.tuto-title-box {
+  position: relative;
+  margin-top: 104px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eeedec;
+}
+
 .tuto-sec {
   display: flex;
   flex-direction: column;
-  /* gap: 65px; */
-  padding-top: 105px;
-  padding-bottom: 20px;
+  /* temp */
+  padding: 72px 0 119px 0;
 }
 
-.tuto-sec+.tuto-sec {
+.tuto-sec + .tuto-sec {
   border-top: 1px solid #eeedec;
 }
 
@@ -74,12 +98,13 @@ li {
 
 /* h3 */
 .tuto-sec-title {
-  margin-top: 25px;
-  margin-bottom: 15px;
   color: #5966ec;
   font-weight: 600;
-  font-size: 28px;
-  line-height: 30px;
+  font-size: 24px;
+  line-height: 1.2;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 /* h4 */
@@ -99,7 +124,7 @@ li {
   width: 5px;
   height: 29px;
   background: #ffd66c;
-  content: "";
+  content: '';
 }
 
 /* 쿼리문 */
@@ -109,6 +134,7 @@ li {
   background: #f9f9fa;
   border: 1px solid #b4b4b4;
   border-radius: 16px;
+  box-shadow: 1px 1px 5px rgb(0 0 0 / 15%);
 }
 
 .tuto-sec-example-query a {
@@ -119,7 +145,7 @@ li {
 }
 
 .tuto-sec-example-query-para {
-  font-family: "D2Coding";
+  font-family: 'D2Coding';
   font-size: 18px;
   line-height: 180%;
 }
@@ -136,7 +162,17 @@ li {
   color: #ffbb56;
 }
 
-
+.language-sql {
+  font-family: 'D2Coding';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 35px;
+  line-break: auto;
+  /* temp */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
 /* 
 
 .tuto-sec-cont {

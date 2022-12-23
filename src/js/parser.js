@@ -14,7 +14,8 @@
 
   const codeBlockStart = {
     regex: /^\s*`{3}(.+)/,
-    replace: '<pre class="tuto-sec-example-query"><code>$1',
+    replace:
+      '<pre class="tuto-sec-example-query"><code class="language-sql">$1',
   };
 
   const codeBlockEnd = {
@@ -24,12 +25,12 @@
 
   const unorderedListItem = {
     regex: /^\s*-\s(.+)/,
-    replace: '<li class="test2">$1',
+    replace: '<li class="tuto-unordered-list-item">$1',
   };
 
   const orderedListItem = {
     regex: /^\s*(\d+\.\s.+)/,
-    replace: '<li class="test3">$1',
+    replace: '<li class="tuto-ordered-list-item">$1',
   };
 
   const tableRow = {
@@ -80,9 +81,11 @@
     regex: /^\s*!\[(.*)\]\((.+)\)/,
     replace: (_, g1, g2) => {
       const width = g2.match(/_{2}(\d+)\..+$/)?.[1];
-      return `<figure><img src="${window.location.origin
-        }/pagetutorial/img/${PAGE_NAME}/${g2}"${width ? ` style="width: ${width}px;"` : ''
-        }>${g1 ? `<figcaption>${g1}</figcaption>` : ''}</figure>`;
+      return `<figure><img src="${
+        window.location.origin
+      }/pagetutorial/img/${PAGE_NAME}/${g2}"${
+        width ? ` style="width: ${width}px;"` : ''
+      }>${g1 ? `<figcaption>${g1}</figcaption>` : ''}</figure>`;
     },
   };
 
@@ -180,7 +183,7 @@
             const tagName = rule === unorderedListItem ? 'ul' : 'ol';
             const depth = listDepth(token);
             if (depth > curListDepth) {
-              tokens[i] = `<${tagName} class='test1'>` + tokens[i];
+              tokens[i] = `<${tagName} class='tuto-list'>` + tokens[i];
               listStack.push(`</${tagName}>`);
             } else if (depth < curListDepth) {
               let depthDiff = (curListDepth - depth) / 2;
@@ -308,12 +311,12 @@
   const renderContent = (html) => {
     const div = document.querySelector(`main`);
     const innerHTML = [...html];
-    console.log(html)
+    console.log(html);
     let isFirst = true;
     innerHTML.forEach((token, index) => {
       if (/^<h\d+/.test(token) && token.match(/^<h(\d+)/)[1] === '2') {
         if (isFirst) {
-          innerHTML[index] = '<article class="tuto-sec">' + token;
+          innerHTML[index] = '<article class="tuto-title-box">' + token;
           isFirst = false;
         } else {
           innerHTML[index - 1] += '</article>';
