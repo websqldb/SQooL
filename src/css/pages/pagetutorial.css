@@ -20,16 +20,20 @@ img {
   width: 100%;
 }
 
-a:hover {
+a {
+  text-decoration: none;
+}
+
+/* a:hover {
   -webkit-filter: brightness(1.2);
   filter: brightness(1.2);
-}
+} */
 
 strong {
   font-weight: bold;
 }
 
-ul {
+main ul {
   list-style: disc;
 }
 
@@ -87,7 +91,7 @@ ul {
   padding: 72px 0 119px 0;
 }
 
-.tuto-sec + .tuto-sec {
+.tuto-sec+.tuto-sec {
   border-top: 1px solid #eeedec;
 }
 
@@ -162,7 +166,7 @@ ul {
   color: #ffbb56;
 }
 
-.language-sql {
+code {
   font-family: 'D2Coding';
   font-weight: 700;
   font-size: 26px;
@@ -173,6 +177,7 @@ ul {
   white-space: pre-wrap;
   word-break: normal;
 }
+
 /* 
 
 .tuto-sec-cont {
@@ -300,3 +305,29 @@ ul {
   font-size: 20px;
   line-height: 30px;
 } */
+
+/* 활성화 하면 고정, 단, 스크롤 이벤트 발생시켜야 함 : 끝에 있는 메뉴가 보이지 않음 */
+/* .side-bar {
+  position: sticky;
+  top: -70px;
+  left: 0px;
+  align-self: flex-start;
+} */
+
+/* 메뉴 */
+.subtit-drawer-menu {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.subtit-drawer-menu>li {
+  margin-top: 10px;
+}
+
+.list-item>li:hover {
+  font-weight: 400;
+}
+
+.list-item a:hover {
+  font-weight: 700;
+}

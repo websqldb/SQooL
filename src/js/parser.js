@@ -15,7 +15,7 @@
   const codeBlockStart = {
     regex: /^\s*`{3}(.+)/,
     replace:
-      '<pre class="tuto-sec-example-query"><code class="language-sql">$1',
+      '<pre class="tuto-sec-example-query"><code>$1',
   };
 
   const codeBlockEnd = {
@@ -81,11 +81,9 @@
     regex: /^\s*!\[(.*)\]\((.+)\)/,
     replace: (_, g1, g2) => {
       const width = g2.match(/_{2}(\d+)\..+$/)?.[1];
-      return `<figure><img src="${
-        window.location.origin
-      }/pagetutorial/img/${PAGE_NAME}/${g2}"${
-        width ? ` style="width: ${width}px;"` : ''
-      }>${g1 ? `<figcaption>${g1}</figcaption>` : ''}</figure>`;
+      return `<figure><img src="${window.location.origin
+        }/pagetutorial/img/${PAGE_NAME}/${g2}"${width ? ` style="width: ${width}px;"` : ''
+        }>${g1 ? `<figcaption>${g1}</figcaption>` : ''}</figure>`;
     },
   };
 
@@ -267,19 +265,22 @@
   };
 
   const renderMenu = (html) => {
+    // console.log(html);
     const menuTitles = html
-      .filter((v) => /^<h\d+\sid=/.test(v))
+      .filter((v) => /<h\d.+>/.test(v))
       .map((heading) => {
         const title = heading
-          .replace(/^<h(\d+)\sid="(.+)">(.+)<\/h\d>$/, '$1 $2')
+          .replace(/^<h(\d).+>(.+)<\/h\d>$/, '$1 $2')
           .split(' ');
         return [Number(title[0]), title.slice(1).join(' ')];
       });
 
+    console.log(menuTitles);
+
     let subMenu = null;
 
     const mainList = document.createElement('ol');
-    mainList.setAttribute('class', 'list-drawer-menu');
+    mainList.setAttribute('class', 'list-item');
 
     menuTitles.forEach(([depth, title]) => {
       if (depth === 2) {
@@ -304,14 +305,14 @@
       }
     });
 
-    const button = document.querySelector(`.btn-${PAGE_NAME}`);
+    const button = document.querySelector(`.list-wrap > li`);
     button.appendChild(mainList);
   };
 
   const renderContent = (html) => {
     const div = document.querySelector(`main`);
     const innerHTML = [...html];
-    console.log(html);
+    // console.log(html);
     let isFirst = true;
     innerHTML.forEach((token, index) => {
       if (/^<h\d+/.test(token) && token.match(/^<h(\d+)/)[1] === '2') {
@@ -360,7 +361,7 @@
   const render = async () => {
     const markdown = await fetchMarkdown();
     const html = parseMarkdown(markdown);
-    // renderMenu(html);
+    renderMenu(html);
     renderContent(html);
     modifyStyle();
     window.dispatchEvent(new Event('markdownParsed'));
