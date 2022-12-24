@@ -548,20 +548,14 @@ mysql> DESC table_name;
 
 미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
 
----
-
-데이터 타입 함수
-
+### 데이터 타입 함수
 - 문자 : CHAR(값) : 문자 타입 지정 2000바이트 @
 - 문자 : VARCHAR2(값) : 문자 타입 지정 4000바이트
 - 숫자 : Oracle에서는 NUMBER(정수 자릿수, 소수 자릿수), MySQL은 INT사용
 - 날짜 : DATE()
 - 시간 : TIME()
 
----
-
-문자열 처리
-
+### 문자열 처리
 - CONCAT('abc', 'def') → 'abcdef' : 문자열을 연결합니다.
 - LOWER('ABC') → 'abc'
 - UPPER('abc') → 'ABC'
@@ -572,10 +566,45 @@ mysql> DESC table_name;
 - COUNT : 행의 개수를 출력합니다.
 - INSTR('ABCDEF', 'B') → 2 : 문자열의 위치를 구합니다. 여기서 INDEX는 1부터 시작합니다. 프로그래밍 언어는 0부터 시작하니, 이 차이를 꼭 기억해두세요.
 
----
-
+### 숫자 처리
 - ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림, 0이 소숫점 첫째자리
 - TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭, 0이 소숫점 첫째자리
 - MOD(수, 나누는 값) : 나머지
 - POWER(수, 승수) : 제곱 출력
 - SQRT : 제곱근 출력
+
+## 3.1 SQL 함수
+
+대문자와 소문자로 바꾸어 보았어요.
+
+```sql
+SELECT LOWER('ABC')
+SELECT UPPER('abc')
+```
+
+## 3.2 SUBSTR(컬럼, START, LENTH) : 슬라이싱
+
+```sql
+SELECT SUBSTR('hello world', 1, 5);
+```
+
+## 3.3 연습문제
+
+1. 이름의 문자열의 길이를 출력해주세요.
+2. 이름의 앞 5자리를 *로 처리해주세요.
+
+```sql
+SELECT CustomerID, CustomerName,
+       LENGTH(CustomerName) AS 이름길이,
+       SUBSTR(CustomerName, 6) AS 자른이름,
+       REPLACE(CustomerName, SUBSTR(CustomerName, 0, 6), '******') AS 별표채운이름
+FROM Customers;
+```
+
+여기서 사용한 SUBSTR 같은 경우
+
+- Oracle은 SUBSTR, SUBSTRB
+- MsSQL은 SUBSTRING
+- MySQL은 SUBSTRING, SUBSTR, MID
+
+을 사용합니다.
