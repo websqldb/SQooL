@@ -543,3 +543,39 @@ mysql> SHOW databases;
 mysql> SHOW tables;
 mysql> DESC table_name;
 ```
+
+# 3. 기본 구문 실습
+
+미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
+
+---
+
+데이터 타입 함수
+
+- 문자 : CHAR(값) : 문자 타입 지정 2000바이트 @
+- 문자 : VARCHAR2(값) : 문자 타입 지정 4000바이트
+- 숫자 : Oracle에서는 NUMBER(정수 자릿수, 소수 자릿수), MySQL은 INT사용
+- 날짜 : DATE()
+- 시간 : TIME()
+
+---
+
+문자열 처리
+
+- CONCAT('abc', 'def') → 'abcdef' : 문자열을 연결합니다.
+- LOWER('ABC') → 'abc'
+- UPPER('abc') → 'ABC'
+- INITCAP('abc') → 'Abc' : 앞문자만 대문자
+- SUBSTR('hello world', 1, 5) → 'hello' : 문자열을 자를 때 많이 사용합니다. 숫자는 시작위치, 자를 문자열의 길이를 나타냅니다.
+- REPLACE('hello world', 'world', 'SQL') → 'hello SQL' : 바꾸고 싶은 값으로 대상 값을 교체합니다.
+- LENGTH('hello') → 5 : 문자열의 길이를 출력합니다. COUNT와 비교해서 기억해주세요.
+- COUNT : 행의 개수를 출력합니다.
+- INSTR('ABCDEF', 'B') → 2 : 문자열의 위치를 구합니다. 여기서 INDEX는 1부터 시작합니다. 프로그래밍 언어는 0부터 시작하니, 이 차이를 꼭 기억해두세요.
+
+---
+
+- ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림, 0이 소숫점 첫째자리
+- TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭, 0이 소숫점 첫째자리
+- MOD(수, 나누는 값) : 나머지
+- POWER(수, 승수) : 제곱 출력
+- SQRT : 제곱근 출력
