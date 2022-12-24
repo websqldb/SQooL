@@ -130,39 +130,15 @@
   };
 
   const encodeCodeEntity = (token) => {
+    let keyword = ['SELECT', 'FROM', 'DISTINCT', 'WHERE', 'AND', 'ORDER BY', 'LIKE', 'INNER', 'INTO', 'INSERT', 'HAVING', 'JOIN', 'RIGHT', 'LEFT', 'FULL', 'GROUP BY', 'PRIMARY', 'CREATE', 'UPDATE', 'DELETE', 'DROP', 'NULL', 'NOT', 'OR', 'IS', 'SET', 'IN', 'ON', 'AS', 'LOWER', 'UPPER', 'SUBSTR', 'LENGTH', 'REPLACE', 'DATE', 'TIME', 'STRFTIME', 'DATETIME', 'MAX', 'MIN', 'SUM', 'COUNT', 'AVG', 'CHAR', 'CONCAT', 'ASCII'];
+
+    keyword.sort(function (a, b) {
+      return b.length - a.length;
+    });
+
+    keyword.forEach(key => token = token.replaceAll(key, `<span style="color:#5966ec";>${key}</span>`));
+
     return token
-      .replaceAll('SELECT', '<span style="color:#5966ec";>SELECT</span>')
-      .replaceAll('FROM', '<span style="color:#5966ec";>FROM</span>')
-      .replaceAll('DISTINCT', '<span style="color:#5966ec";>DISTINCT</span>')
-      .replaceAll('WHERE', '<span style="color:#5966ec";>WHERE</span>')
-      .replaceAll('AND', '<span style="color:#5966ec";>AND</span>')
-      .replaceAll('ORDER BY', '<span style="color:#5966ec";>ORDER BY</span>')
-      .replaceAll('LIKE', '<span style="color:#5966ec";>LIKE</span>')
-      .replaceAll('INNER', '<span style="color:#5966ec";>INNER</span>')
-      .replaceAll('INTO', '<span style="color:#5966ec";>INTO</span>')
-      .replaceAll('INSERT', '<span style="color:#5966ec";>INSERT</span>')
-      .replaceAll('HAVING', '<span style="color:#5966ec";>HAVING</span>')
-      .replaceAll('JOIN', '<span style="color:#5966ec";>JOIN</span>')
-      .replaceAll('RIGHT', '<span style="color:#5966ec";>RIGHT</span>')
-      .replaceAll('LEFT', '<span style="color:#5966ec";>LEFT</span>')
-      .replaceAll('FULL', '<span style="color:#5966ec";>FULL</span>')
-      .replaceAll('GROUP BY', '<span style="color:#5966ec";>GROUP BY</span>')
-      .replaceAll('PRIMARY', '<span style="color:#5966ec";>PRIMARY</span>')
-      .replaceAll('CREATE', '<span style="color:#5966ec";>CREATE</span>')
-      .replaceAll('UPDATE', '<span style="color:#5966ec";>UPDATE</span>')
-      .replaceAll('DELETE', '<span style="color:#5966ec";>DELETE</span>')
-      .replaceAll('DROP', '<span style="color:#5966ec";>DROP</span>')
-      .replaceAll('NULL', '<span style="color:#5966ec";>NULL</span>')
-      .replaceAll('NOT', '<span style="color:#5966ec";>NOT</span>')
-      .replaceAll('OR', '<span style="color:#5966ec";>OR</span>')
-      .replaceAll('IS', '<span style="color:#5966ec";>IS</span>')
-      .replaceAll('SET', '<span style="color:#5966ec";>SET</span>')
-      .replaceAll('IN', '<span style="color:#5966ec";>IN</span>')
-      .replaceAll('ON', '<span style="color:#5966ec";>ON</span>')
-      .replaceAll('AS', '<span style="color:#5966ec";>AS</span>')
-    // .replaceAll('<', '&#60;')
-    // .replaceAll('>', '&#62;')
-    // .replaceAll(' ', '&nbsp;');
   };
 
   const blockRules = [

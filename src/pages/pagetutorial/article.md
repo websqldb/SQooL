@@ -1,6 +1,10 @@
 # Tutorial
 
-해당 강의자료는 제주코딩베이스캠프의 허락을 구하고 **생애 첫 SQL With 제코베의 강의자료**를 수정한 것입니다.
+해당 강의자료는 제주코딩베이스캠프의 허락을 구하고 [생애 첫 SQL With 제코베의 강의자료](https://inf.run/gR5i)를 수정한 것입니다.
+
+해당 Tutorial은 Web SQL(`SQLite`) 기준으로 작성되었습니다. 더 알고 싶은 문법이 있을 경우 `SQLite`로 검색하여 공부하세요. 해당 자료로 기초를 익히시기에는 충분하지만 MySQL이나 MSSQL과는 다른 문법도 있으니 이점에 유념해주세요.
+
+해당 웹페이지를 만든 기술인 Web SQL은 추후 [작동하지 않을 수](https://developer.chrome.com/blog/deprecating-web-sql/) 있습니다. 작동하지 않게 되면 `paul-lab@naver.com`으로 제보해주세요. 대체 기술을 사용하여 다시 만들도록 하겠습니다.
 
 # 1. 데이터베이스란?
 
@@ -542,4 +546,139 @@ SQooL에서 동작하지 않는 명령어입니다. 실습은 안하지만 콘�
 mysql> SHOW databases;
 mysql> SHOW tables;
 mysql> DESC table_name;
+```
+
+# 3. 함수
+미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
+
+### 데이터 타입 함수
+- 문자 : CHAR(값) : 문자 타입 지정 2000바이트
+- 문자 : VARCHAR2(값) : 문자 타입 지정 4000바이트
+- 숫자 : Oracle에서는 NUMBER(정수 자릿수, 소수 자릿수), MySQL은 INT사용
+- 날짜 : DATE()
+- 시간 : TIME()
+
+### 문자열 처리
+- CONCAT('abc', 'def') → 'abcdef' : 문자열 연결
+- LOWER('ABC') → 'abc'
+- UPPER('abc') → 'ABC'
+- INITCAP('abc') → 'Abc' : 앞문자만 대문자
+- SUBSTR('hello world', 1, 5) → 'hello' : 문자열을 자를 때 많이 사용합니다. 숫자는 시작위치, 자를 문자열의 길이를 나타냅니다.
+- REPLACE('hello world', 'world', 'SQL') → 'hello SQL' : 바꾸고 싶은 값으로 대상 값을 교체합니다.
+- LENGTH('hello') → 5 : 문자열의 길이를 출력합니다. COUNT와 비교해서 기억해주세요.
+- COUNT : 행의 개수를 출력합니다.
+- INSTR('ABCDEF', 'B') → 2 : 문자열의 위치를 구합니다. 여기서 INDEX는 1부터 시작합니다. 프로그래밍 언어는 0부터 시작하니, 이 차이를 꼭 기억해두세요.
+
+### 수학함수
+- ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림, 0이 소숫점 첫째자리
+- TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭, 0이 소숫점 첫째자리
+- MOD(수, 나누는 값) : 나머지
+- POWER(수, 승수) : 제곱 출력
+- SQRT : 제곱근 출력
+
+## 3.1 SQL 함수
+대문자를 소문자로, 소문자를 대문자로 바꿀 수 있습니다.
+
+```sql
+SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자로 바꾸기 
+SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바꾸기
+```
+
+## 3.2 SUBSTR(컬럼, START, LENTH)
+시작 주소부터 길이만큼 잘라내어 보여줍니다.
+```sql
+SELECT SUBSTR(주소,1,2) AS 주소 FROM student;
+```
+
+## 3.3 연습문제
+1. 이름의 문자열의 길이를 출력해주세요.
+2. 성을 제외하고 이름만 출력해주세요.
+3. 이름의 뒤 2자리를 *로 처리해주세요.
+
+```sql
+SELECT 교원번호, 이름,
+    LENGTH(이름) AS 이름길이,
+    SUBSTR(이름, 2, 3) AS 자른이름,
+    REPLACE(이름, SUBSTR(이름, 2, 3), '**') AS 별표채운이름
+FROM professor;
+```
+
+여기서 사용한 SUBSTR 같은 경우
+
+- Oracle은 SUBSTR, SUBSTRB
+- MsSQL은 SUBSTRING
+- MySQL은 SUBSTRING, SUBSTR, MID
+
+을 사용합니다.
+
+## 3.4 날짜
+- DATE, TIME, DATETIME
+- DIFF
+- ADD, SUB
+
+날짜와 시간이 어떻게 더해지는지 확인해보세요.
+
+```sql
+SELECT DATE();
+-- SELECT DATE('now')와 같습니다.
+-- SELECT STRFTIME('%Y-%m-%d', 'now');
+```
+
+```sql
+SELECT DATE() + 10;
+```
+
+```sql
+SELECT TIME();
+-- SELECT TIME('now')와 같습니다.
+-- SELECT STRFTIME('%H:%M:%f', 'now');
+```
+
+```sql
+SELECT TIME() + 10;
+```
+
+```sql
+SELECT DATETIME();
+-- SELECT DATETIME('now')와 같습니다.
+-- SELECT STRFTIME('%Y-%m-%d // %H:%M:%f', 'now')
+```
+
+```sql
+SELECT DATETIME() + 10;
+```
+
+## 3.5 통계
+통계관련된 함수를 실습해봅니다. 하나씩 사용해보세요. 보통은 분산과 표준편차 함수도 제공합니다. W3School에서는 분산과 표준편차가 작동하지 않습니다. 
+
+```sql
+SELECT 학번, MAX(일학년일학기) AS '1학년 1등' FROM grade;
+SELECT MIN(성적장학금) AS '성적장학금 최소 수령액' FROM scholarship;
+SELECT SUM(성적장학금) AS '성적장학금 총액' FROM scholarship;
+SELECT COUNT(과목명) AS '과목 갯수' FROM subject;
+SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
+```
+
+## 3.6 문자열 변환
+해당 코드는 SQooL에서 작동하지 않아 실습은 안하지만 해당함수는 간혹 SQL Injection 공격에 사용되곤하니, 혹시 정보보안을 공부하는 학생이라면 기억해주시기 바랍니다.
+
+```sql
+SELECT CHAR(65) || CHAR(65));
+SELECT CONCAT(CHAR(65), CHAR(65));
+SELECT ASCII('A');
+```
+
+## 3.7 문제 풀이
+```sql
+SELECT * FROM student;
+```
+
+1. 전체 학생 수를 구해주세요.
+```sql
+SELECT COUNT(학번) FROM student;
+```
+
+2. 전체 학생들의 학년 평균을 구해주세요.(함수를 사용해주세요.)
+```sql
+SELECT AVG(학년) FROM student;
 ```
