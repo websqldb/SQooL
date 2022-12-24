@@ -10,6 +10,18 @@ main {
   margin-left: 27px;
 }
 
+main a {
+  color: #5966ec;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main a:hover {
+  color: #a7aef5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 main p {
   margin-top: 9px;
   margin-bottom: 9px;
