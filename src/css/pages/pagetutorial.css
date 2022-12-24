@@ -11,9 +11,16 @@ main {
 }
 
 main p {
+  margin-top: 9px;
+  margin-bottom: 9px;
   font-size: 18px;
   line-height: 30px;
-  margin-top: 25px;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 img {
@@ -38,6 +45,7 @@ main ul {
 }
 
 .tuto-list {
+  margin-bottom: 18px;
   padding-left: 12px;
 }
 
@@ -133,7 +141,8 @@ main ul {
 
 /* 쿼리문 */
 .tuto-sec-example-query {
-  margin-top: 20px;
+  margin-top: 9px;
+  margin-bottom: 9px;
   padding: 20px 18px;
   background: #f9f9fa;
   border: 1px solid #b4b4b4;
@@ -180,8 +189,8 @@ pre>code {
   padding: 0;
   font-family: 'D2Coding';
   font-weight: 700;
-  font-size: 26px;
-  line-height: 35px;
+  font-size: 20px;
+  line-height: 30px;
   line-break: auto;
   /* temp */
   word-wrap: break-word;
