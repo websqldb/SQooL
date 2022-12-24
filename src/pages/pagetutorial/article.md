@@ -609,8 +609,8 @@ mysql> DESC table_name;
 대문자와 소문자로 바꾸어 보았어요.
 
 ```sql
-SELECT LOWER(교원번호) AS 교원번호 FROM professor
-SELECT UPPER(이메일) AS 이메일 FROM PROFESSOR
+SELECT LOWER(교원번호) AS 교원번호 FROM PROFESSOR  -- LOWER: 소문자로 바꾸기
+SELECT UPPER(이메일) AS 이메일 FROM PROFESSOR   -- UPPER: 대문자로 바꾸기
 ```
 
 ## 3.2 SUBSTR(컬럼, START, LENTH) : 슬라이싱
