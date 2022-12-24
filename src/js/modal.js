@@ -115,14 +115,10 @@ const showCheatModal = (e) => {
   $modalTitle.innerText = `SQL CheatSheet 사용 방법`;
   const $modalDesc = document.createElement("p");
   $modalDesc.innerText = `사용 빈도가 높은 명령이나 기능들을
-  찾기 쉽게 정리한 페이지입니다.
-
-  t - 데이터 표 테이블을 의미합니다. 
-  c1 - 테이블의 첫번째 칼럼을 의미합니다. 
-  c2 - 테이블의 두번째 칼럼을 의미합니다.`;
+  찾기 쉽게 정리한 페이지입니다.`;
   $modalMain.style.width = "411px";
   $modalDesc.style.margin = "0px";
-  $modalMain.style.top = "134px";
+  $modalMain.style.top = "154px";
   $modalMain.style.left = "788px";
   document.body.style.overflow = "hidden";
   $modalMain.append($modalTitle, $modalDesc);
