@@ -302,6 +302,7 @@
         item.appendChild(list);
         mainList.appendChild(item);
         subMenu = list;
+      } else if (depth === 4) {
       } else {
         const item = document.createElement('li');
         const link = document.createElement('a');
