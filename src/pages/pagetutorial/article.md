@@ -97,14 +97,14 @@ SELECT * FROM student;
 - 비정형 데이터(unstructured data, unstructured information, 비정형 정보), 비구조화 데이터, 비구조적 데이터는 미리 정의된 데이터 모델이 없거나 미리 정의된 방식으로 정리되지 않은 정보를 말한다.(출처 : WIKI)
 
 ## 1.9. CRUD란?
-- 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.li>
-    
-    [CRUD](https://ko.wikipedia.org/wiki/CRUD)
-    
-    - Create
-    - Read
-    - Update
-    - Delete
+- 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.
+
+[CRUD](https://ko.wikipedia.org/wiki/CRUD)
+
+- Create
+- Read
+- Update
+- Delete
 
 # 2. 기본 구문 실습
 
@@ -249,16 +249,16 @@ SELECT 1 OR 0;
 ```sql
 SELECT NOT 0;
 ```
-    
+
 ### 2.8.2 AND
-    
+
 ```sql
 SELECT *
 FROM student
 WHERE 학번 LIKE '2019%'
 AND 마일리지 >= 100;
 ```
-    
+
 ### 2.8.3 OR
 ```sql
 SELECT *
@@ -273,7 +273,7 @@ FROM student
 WHERE 마일리지 >= 100
 AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
 ```
-    
+
 ### 2.8.3 NOT
 ```sql
 SELECT *
@@ -281,9 +281,9 @@ FROM student
 WHERE 마일리지 >= 100
 AND NOT (학번 LIKE '2019%' OR 학번 LIKE '2020%');
 ```
-    
+
 `<>`같지 않다.(IOS 표준, SQooL에서는 돌아가지 않는 코드입니다.)
-    
+
 ```sql
 SELECT *
 FROM student
@@ -336,7 +336,7 @@ WHERE 지도교수 LIKE '이__';
 ```
 
 만약 언더바가 2개라면 위 데이터 중 이호준만 출력합니다. 이런 문자열들은 와일드카드라고 부르며 다양한 예제가 있습니다.
-    
+
 
 - 자주 쓰는 예제
 ‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
@@ -430,7 +430,7 @@ SELECT * FROM professor;
 SELECT * FROM student 
 WHERE 학년=4 AND 주소 LIKE '%울릉군%';
 ```
-    
+
 ### 문제 2번
 2학년1학기 성적이 null 값인 학생을 구해주세요.
 
@@ -440,7 +440,7 @@ SELECT * FROM student WHERE 2학년1학기 IS NULL;
 ```
 
 비어있는 문자열과 NULL값은 다른 값입니다.
-    
+
 
 ## 2.16 Null Values 찾아내기
 위 실습에서 일부러 몇 개의 값을 입력하지 않고 null값을 찾아보세요. 위에서 데이터를 삽입한 것 중 명시하지 않은 것들은 null 값으로 들어갔기 때문에 ContactName에 조회가 가능합니다.
@@ -487,7 +487,7 @@ SELECT * FROM student;
 최 상단 3개의 행(row)을 보는 방법입니다. TOP 명령어는 SQooL에서 작동되진 않습니다. LIMIT 명령어는 사용가능하니 LIMIT 명령어를 사용해주세요.
 
 - 사용 가능 명령어
-    
+
 ```sql
 SELECT * FROM student
 LIMIT 3;
@@ -505,7 +505,7 @@ SELECT TOP 10 PERCENT * FROM student;
 
 
 ## 2.20 CREATE, INSERT, UPDATE, DELETE, DROP 한 번에 사용해보기
-테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
+테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령sql어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
 
 ```sql
 CREATE TABLE 제품 (

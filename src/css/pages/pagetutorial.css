@@ -167,6 +167,17 @@ main ul {
 }
 
 code {
+  padding: 1px 5px;
+  border-radius: 3px;
+  background-color: #efefef;
+  color: #f6866a;
+}
+
+pre>code {
+  background-color: inherit;
+  color: inherit;
+  border-radius: 0;
+  padding: 0;
   font-family: 'D2Coding';
   font-weight: 700;
   font-size: 26px;
@@ -177,6 +188,8 @@ code {
   white-space: pre-wrap;
   word-break: normal;
 }
+
+
 
 /* 
 
