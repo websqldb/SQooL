@@ -5,6 +5,7 @@
 # 1. 데이터베이스란?
 
 ## 1.1. 공부하시는 방법
+
 `Try it`과 `Tutorial` 2개의 페이지를 각각 창에 띄어놓으시고 코드를 복사 붙여넣기 하면서 보세요. 가능하면 이 챕터(이론)를 건너뛰시고, 나중에 궁금하실 경우에 보세요.
 
 복잡한 구문은 아래와 같이 주석을 달아주세요. 그리고 가능하다면 손으로 3~4번 반복해서 써보시길 권해드립니다.
@@ -28,18 +29,21 @@ SELECT * FROM student;
 ```
 
 ## 1.2. DB
+
 데이터베이스(영어: database, DB)는 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합이다. 작성된 목록으로써 여러 응용 시스템들의 통합된 정보들을 저장하여 운영할 수 있는 공용 데이터들의 묶음이다. - Wikidipia
 
 이렇게 기억해주세요! **"데이터를 저장하는 공간!"**
 
 ## 1.3. DB, RDB, DBMS, RDBMS
+
 - DB → DBMS
 - RDB → RDBMS
 
-RDBMS(stands for Relational Database Management System)는 DB를 관리하는 시스템입니다. TOP3 오픈소스 RDBMS는 MySQL, PostgreSQL, SQLite입니다. 오픈소스가 아닌 것에서는 Oracle이 독보적입니다. 
+RDBMS(stands for Relational Database Management System)는 DB를 관리하는 시스템입니다. TOP3 오픈소스 RDBMS는 MySQL, PostgreSQL, SQLite입니다. 오픈소스가 아닌 것에서는 Oracle이 독보적입니다.
 
 ## 1.4. 관계형 데이터베이스의 구성 요소
-여기서부터는 전문 용어가 들어갑니다. 혹시 실습을 안하고 오셨다면 꼭 실습을 하고 이 챕터를 보시기 바랍니다. 
+
+여기서부터는 전문 용어가 들어갑니다. 혹시 실습을 안하고 오셨다면 꼭 실습을 하고 이 챕터를 보시기 바랍니다.
 
 - TABLE(행, 열), VIEW(데이터를 선택하여 만든 가상의 부분 집합), INDEX(주소), SEQUENCE(시퀀스, 고유번호 자동생성), SYNONYM(시노임, 객체의 별칭) 등의 객체로 구성
 - ENTITY, RELATIONE들의 집합
@@ -53,17 +57,20 @@ RDBMS(stands for Relational Database Management System)는 DB를 관리하는 �
 - 기수(Cardinality)는 튜플의 개수입니다. 위에서는 어트리뷰트를 제외하고 총 5개의 튜플이 존재합니다.
 
 ### 1.4.1. 키의 개념 및 종류
+
 - 기본키는 메인으로 사용할 키를 말합니다. 고유한(유일한) 주민등록번호나, 계좌번호, 전화번호 등을 기본키로 사용할 수 있습니다. 기본키는 NULL을 사용할 수 없습니다.
 - 후보키는 기본키를 제외하고 고유한 키들을 말합니다.
 - 외래키는 관계되어 있는 테이블에서 참고하고 있는 키를 얘기합니다. 여기서 학생 릴레이션과 수강신청 과목 릴레이션은 서로 학번으로 연결되어 있죠.
 
 ### 1.4.2. 데이터베이스의 종류
+
 - 계층형 데이터베이스(1:N)
 - 망형 데이터베이스(N:M)
 - 관계형 데이터베이스(단순한 표 형태의 상호 관계, 1:1, 1:N, N:M관계 표현)
 - 객체 지향형 데이터베이스
 
 ## 1.5. SQL(Structured Query Language)
+
 SQL은 스토리지 언어의 표준입니다. 여러분이 만약 MySQL, MsSQL, Oracle, Postgres 등의 DB를 사용하여 어떤 프로젝트를 한다면 SQL을 다루실 수 있어야 합니다.
 
 하지만 대부분의 강좌들이 '설치'부터 SQL 강의를 시작하는데, 설치하다가 지치시는 분들이 많으십니다. 이 수업은 본질에 집중합니다. SQL만 배워봅시다. 그렇다고 이론을 전혀 안하는 것은 아니고, 가장 마지막 챕터에서 다뤄보도록 하겠습니다.
@@ -73,6 +80,7 @@ SELECT * FROM student;
 ```
 
 ## 1.6. SQL 명령어의 분류
+
 중요한 것은 굵은 글씨로 해두었으니, 충분히 숙련되도록 연습해보세요.
 
 1. 데이터 조작어(DML) :**SELECT**, **INSERT**, **UPDATE**, **DELETE**
@@ -80,8 +88,8 @@ SELECT * FROM student;
 3. 데이터 제어어(DCL) : GRANT(권한 부여), REVOKE(권한 제거)
 4. 트랜젝션 제어어(TCL) : COMMIT, ROLLBACK, SAVEPOINT
 
-
 ## 1.7. Data 분석 과정
+
 ![출처 : 제주코딩베이스캠프 데이터분석 강좌](../data.png)
 
 - 사전에 데이터 분석 기획을 합니다.
@@ -91,38 +99,38 @@ SELECT * FROM student;
 - 데이터 수집부터, 가공하는 것까지 SQL을 사용할 수 있습니다. 물론 분석에도 쓸 수 있지만 분석에는 더 좋은 도구들이 많죠. R, Python 등의 언어가 있고, Tableau와 같은 시각화 솔루션이 있습니다.
 
 ## 1.8. 정형 데이터와 비정형 데이터
+
 ![출처 : 제주코딩베이스캠프 SQL 강좌](../Untitled%201.png)
 
 - 정형데이터는 RDBMS에서 사용하는 테이블 안에 들어가 있는 형식이 잡혀 있는 데이터를 말합니다.
 - 비정형 데이터(unstructured data, unstructured information, 비정형 정보), 비구조화 데이터, 비구조적 데이터는 미리 정의된 데이터 모델이 없거나 미리 정의된 방식으로 정리되지 않은 정보를 말한다.(출처 : WIKI)
 
 ## 1.9. CRUD란?
+
 - 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.li>
-    
-    [CRUD](https://ko.wikipedia.org/wiki/CRUD)
-    
-    - Create
-    - Read
-    - Update
-    - Delete
+  [CRUD](https://ko.wikipedia.org/wiki/CRUD)
+  - Create
+  - Read
+  - Update
+  - Delete
 
 # 2. 기본 구문 실습
 
 ## 2.1 실습 방법
+
 Try it 탭을 하나 더 여시고 코드를 복사하여 Run SQL 버튼을 눌러주세요.
 
 ![](../Untitled%202.png)
 
 실습에 들어가기 전 데이터의 구조를 파악해보세요. 각각 database를 클릭하면 `Result` 창에서 table 형태로 볼 수 있습니다.
 
- 
-
 ![](../Untitled%203.png)
 
 ## 2.2 SELECT Statement
+
 select는 데이터를 조회하거나 산술식, 함수 등을 실행할 때 사용합니다. SQL은 대소문자를 가리지 않지만, 구문에 해당되는 것은 대문자로만 적도록 하겠습니다.
 
-`*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다. 
+`*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다.
 
 ```sql
 SELECT * FROM Student;
@@ -148,6 +156,7 @@ SELECT (10 + 2) / 2;
 ```
 
 ## 2.3 SELECT DISTINCT Statement
+
 DISTINCT는 중복값을 제거합니다. 여기서 학과번호는 학과이름입니다. 2.5 AS 챕터에서 학과번호를 학과이름으로 바꿔주도록 하겠습니다.
 
 ```sql
@@ -156,6 +165,7 @@ FROM subject;
 ```
 
 ## 2.4 ORDER BY
+
 출력 결과 정렬합니다. 아래처럼 개행을 하여도 괜찮습니다. 마지막에 세미콜론 잊지마세요.
 
 - 오름차순 : ASC(기본, 작은 수에서 큰 수로, Ascending)
@@ -174,6 +184,7 @@ ORDER BY 학년 ASC;
 ```
 
 ## 2.5 AS
+
 별칭을 정합니다. 기존 Table의 값은 변하지 않습니다.
 
 ```sql
@@ -194,6 +205,7 @@ FROM student;
 ```
 
 ## 2.6 산술연산
+
 더하고 빼고 나누고 곱하는 것이 가능합니다.
 
 ```sql
@@ -217,11 +229,12 @@ SELECT CustomerName + CustomerName FROM CustomersSELECT 학년 || ' ' || 학과 
 ```
 
 ```sql
-SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가 
+SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가
 FROM Products
 ```
 
 ## 2.7 연결 연산자
+
 Oracle에서는 ||, MsSQL은 +, MySQL은 공백으로 연결 가능. CONCAT함수는 공통으로 사용 가능합니다. 하지만 초급자 단계에서 이런 것들을 구분지어 기억하는 것은 크게 의미있지 않으니, 문법이 조금 상이하다 정도로 기억해주세요.
 
 ```sql
@@ -235,9 +248,11 @@ SELECT 과목명 || ' 과목은 ' || 학과번호 || '에서 ' || 이수구분 |
 다양한 쿼리를 만들어 다른 table에서도 여러분 만에 문장을 만들어보세요.
 
 ## 2.8 논리 연산
+
 우선순위는 NOT, AND, OR입니다. True는 1로, False는 0으로, and는 곱으로, or는 덧셈으로 이해하시면 계산이 쉽습니다. 뒤에서 나올 비교 연산자, `WHERE 조건 절`을 미리 사용하였습니다. 비교 연산자는 같다(`=`), 다르다(`!=`), 크다(`>`), 작다(`<`)를 표현하는 연산자입니다.
 
 ### 2.8.1 기본실습
+
 ```sql
 SELECT 1 AND 0;
 ```
@@ -249,17 +264,18 @@ SELECT 1 OR 0;
 ```sql
 SELECT NOT 0;
 ```
-    
+
 ### 2.8.2 AND
-    
+
 ```sql
 SELECT *
 FROM student
 WHERE 학번 LIKE '2019%'
 AND 마일리지 >= 100;
 ```
-    
+
 ### 2.8.3 OR
+
 ```sql
 SELECT *
 FROM student
@@ -273,17 +289,18 @@ FROM student
 WHERE 마일리지 >= 100
 AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
 ```
-    
+
 ### 2.8.3 NOT
+
 ```sql
 SELECT *
 FROM student
 WHERE 마일리지 >= 100
 AND NOT (학번 LIKE '2019%' OR 학번 LIKE '2020%');
 ```
-    
+
 `<>`같지 않다.(IOS 표준, SQooL에서는 돌아가지 않는 코드입니다.)
-    
+
 ```sql
 SELECT *
 FROM student
@@ -291,6 +308,7 @@ WHERE 학과 <> 컴퓨터공학과;
 ```
 
 ## 2.9 BETWEEN 연산
+
 A AND B : A와 B를 포함한 사이의 값
 
 ```sql
@@ -306,7 +324,8 @@ WHERE 일학년일학기 >= 4.0 AND 일학년이학기 < 4.0;
 ```
 
 ## 2.10 IN 연산
-IN A : A안에 값과 일치하는 값을 조회 
+
+IN A : A안에 값과 일치하는 값을 조회
 
 ```sql
 SELECT 학번, 이름, 학과
@@ -315,9 +334,10 @@ WHERE 학과 IN ('물리학과', '화학과');
 ```
 
 ## 2.11 LIKE 연산
+
 - LIKE '비교문자'
 
-1. 비교 문자와 형태가 일치(%(모든 문자), _(한 글자) 사용)
+1. 비교 문자와 형태가 일치(%(모든 문자), \_(한 글자) 사용)
 2. 대소문자를 안가림
 3. `%`는 와일드카드
 
@@ -336,10 +356,9 @@ WHERE 지도교수 LIKE '이__';
 ```
 
 만약 언더바가 2개라면 위 데이터 중 이호준만 출력합니다. 이런 문자열들은 와일드카드라고 부르며 다양한 예제가 있습니다.
-    
 
 - 자주 쓰는 예제
-‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
+  ‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
 
 ```sql
 SELECT 학번, 이름, 학과, 생년월일
@@ -355,8 +374,8 @@ FROM subject
 WHERE 이수구분 LIKE '%양';
 ```
 
-
 ## 2.12 IS NULL
+
 - NULL 값을 갖는 값(0은 값이 있는 것입니다.)
 
 ```sql
@@ -366,6 +385,7 @@ WHERE 성적장학금 IS NULL
 ```
 
 ## 2.13 bit 단위 논리연산자
+
 차례대로 AND, OR, XOR입니다.
 
 ```sql
@@ -381,6 +401,7 @@ SELECT 1 ^ 0;
 ```
 
 ## 2.14 WHERE
+
 - 조회하려는 데이터에 조건 부여
 - 여러 연산자를 결합하여 사용 가능
 - 결합 가능한 연산자의 종류 : 비교연산자(=, <, >, !=, >=, <=), SQL연산자(BETWEEN), 논리 연산자(AND, OR) 등
@@ -410,6 +431,7 @@ WHERE 교원번호 IN ('A001', 'A002', 'A003')
 ```
 
 ## 2.15 INSERT
+
 아래 코드를 사용한 후 다시 한 번 전체 컬럼을 조회해보세요. 나머지 값은 `null`로 들어가게 됩니다. 클릭을 3번 하면 3개의 데이터가 들어가게 됩니다.
 
 ```sql
@@ -423,15 +445,17 @@ SELECT * FROM professor;
 
 ## 연습문제
 
-### 문제  1번
+### 문제 1번
+
 4학년이면서, 주소에 울릉도에 살고 있는 학생을 구해주세요. 기본 데이터에 해당 데이터가 없다면, 위에 코드(INSERT)를 실행시켜 풀어주세요.
 
 ```sql
-SELECT * FROM student 
+SELECT * FROM student
 WHERE 학년=4 AND 주소 LIKE '%울릉군%';
 ```
-    
+
 ### 문제 2번
+
 2학년1학기 성적이 null 값인 학생을 구해주세요.
 
 ```sql
@@ -440,9 +464,9 @@ SELECT * FROM student WHERE 2학년1학기 IS NULL;
 ```
 
 비어있는 문자열과 NULL값은 다른 값입니다.
-    
 
 ## 2.16 Null Values 찾아내기
+
 위 실습에서 일부러 몇 개의 값을 입력하지 않고 null값을 찾아보세요. 위에서 데이터를 삽입한 것 중 명시하지 않은 것들은 null 값으로 들어갔기 때문에 ContactName에 조회가 가능합니다.
 
 ```sql
@@ -460,6 +484,7 @@ WHERE 성적장학금 IS NOT NULL;
 ```
 
 ## 2.17 UPDATE
+
 값을 바꿉니다. 이 행위는 되돌릴 수 없습니다. where로 여러개를 select하여 바꿀 수 있습니다.
 
 ```sql
@@ -473,6 +498,7 @@ SELECT * FROM student;
 ```
 
 ## 2.18 DELETE
+
 주의하세요. WHERE 안적으면 다 삭제 됩니다. 이런일이 실무에서도 종종 발생됩니다.
 
 ```sql
@@ -484,17 +510,18 @@ SELECT * FROM student;
 ```
 
 ## 2.19 TOP과 LIMIT
+
 최 상단 3개의 행(row)을 보는 방법입니다. TOP 명령어는 SQooL에서 작동되진 않습니다. LIMIT 명령어는 사용가능하니 LIMIT 명령어를 사용해주세요.
 
 - 사용 가능 명령어
-    
+
 ```sql
 SELECT * FROM student
 LIMIT 3;
 ```
-    
+
 - 사용 불가능 명령어
-    
+
 ```sql
 SELECT TOP 3 * FROM student;
 ```
@@ -502,9 +529,9 @@ SELECT TOP 3 * FROM student;
 ```sql
 SELECT TOP 10 PERCENT * FROM student;
 ```
-    
 
 ## 2.20 CREATE, INSERT, UPDATE, DELETE, DROP 한 번에 사용해보기
+
 테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
 
 ```sql
@@ -536,6 +563,7 @@ DROP TABLE 제품;
 ```
 
 ## 2.21 SHOW, DESC
+
 SQooL에서 동작하지 않는 명령어입니다. 실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 데이터베이스 목록을 출력하고 테이블을 이름순으로 출력하는 명령어입니다.
 
 ```sql
@@ -543,3 +571,71 @@ mysql> SHOW databases;
 mysql> SHOW tables;
 mysql> DESC table_name;
 ```
+
+# 3. 기본 구문 실습
+
+미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
+
+### 데이터 타입 함수
+
+- 문자 : CHAR(값) : 문자 타입 지정 2000바이트 @
+- 문자 : VARCHAR2(값) : 문자 타입 지정 4000바이트
+- 숫자 : Oracle에서는 NUMBER(정수 자릿수, 소수 자릿수), MySQL은 INT사용
+- 날짜 : DATE()
+- 시간 : TIME()
+
+### 문자열 처리
+
+- CONCAT('abc', 'def') → 'abcdef' : 문자열을 연결합니다.
+- LOWER('ABC') → 'abc'
+- UPPER('abc') → 'ABC'
+- INITCAP('abc') → 'Abc' : 앞문자만 대문자
+- SUBSTR('hello world', 1, 5) → 'hello' : 문자열을 자를 때 많이 사용합니다. 숫자는 시작위치, 자를 문자열의 길이를 나타냅니다.
+- REPLACE('hello world', 'world', 'SQL') → 'hello SQL' : 바꾸고 싶은 값으로 대상 값을 교체합니다.
+- LENGTH('hello') → 5 : 문자열의 길이를 출력합니다. COUNT와 비교해서 기억해주세요.
+- COUNT : 행의 개수를 출력합니다.
+- INSTR('ABCDEF', 'B') → 2 : 문자열의 위치를 구합니다. 여기서 INDEX는 1부터 시작합니다. 프로그래밍 언어는 0부터 시작하니, 이 차이를 꼭 기억해두세요.
+
+### 숫자 처리
+
+- ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림, 0이 소숫점 첫째자리
+- TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭, 0이 소숫점 첫째자리
+- MOD(수, 나누는 값) : 나머지
+- POWER(수, 승수) : 제곱 출력
+- SQRT : 제곱근 출력
+
+## 3.1 SQL 함수
+
+대문자와 소문자로 바꾸어 보았어요.
+
+```sql
+SELECT LOWER(교원번호) AS 교원번호 FROM PROFESSOR  -- LOWER: 소문자로 바꾸기
+SELECT UPPER(이메일) AS 이메일 FROM PROFESSOR   -- UPPER: 대문자로 바꾸기
+```
+
+## 3.2 SUBSTR(컬럼, START, LENTH) : 슬라이싱
+
+```sql
+SELECT SUBSTR(주소,1,2) AS 주소 FROM STUDENT
+```
+
+## 3.3 연습문제
+
+1. 이름의 문자열의 길이를 출력해주세요.
+2. 이름의 앞 5자리를 \*로 처리해주세요.
+
+```sql
+SELECT 교원번호, 이름,
+       LENGTH(이름) AS 이름길이,
+       SUBSTR(이름, 6) AS 자른이름,
+       REPLACE(이름, SUBSTR(이름, 0, 6), '******') AS 별표채운이름
+FROM PROFESSOR;
+```
+
+여기서 사용한 SUBSTR 같은 경우
+
+- Oracle은 SUBSTR, SUBSTRB
+- MsSQL은 SUBSTRING
+- MySQL은 SUBSTRING, SUBSTR, MID
+
+을 사용합니다.
