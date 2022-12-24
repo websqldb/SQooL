@@ -625,11 +625,11 @@ SELECT SUBSTR('hello world', 1, 5);
 2. 이름의 앞 5자리를 \*로 처리해주세요.
 
 ```sql
-SELECT CustomerID, CustomerName,
-       LENGTH(CustomerName) AS 이름길이,
-       SUBSTR(CustomerName, 6) AS 자른이름,
-       REPLACE(CustomerName, SUBSTR(CustomerName, 0, 6), '******') AS 별표채운이름
-FROM Customers;
+SELECT 교원번호, 이름,
+       LENGTH(이름) AS 이름길이,
+       SUBSTR(이름, 6) AS 자른이름,
+       REPLACE(이름, SUBSTR(이름, 0, 6), '******') AS 별표채운이름
+FROM PROFESSOR;
 ```
 
 여기서 사용한 SUBSTR 같은 경우
