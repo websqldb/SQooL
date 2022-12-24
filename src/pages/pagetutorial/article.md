@@ -616,7 +616,7 @@ SELECT UPPER(이메일) AS 이메일 FROM PROFESSOR
 ## 3.2 SUBSTR(컬럼, START, LENTH) : 슬라이싱
 
 ```sql
-SELECT SUBSTR('hello world', 1, 5);
+SELECT SUBSTR(주소,1,2) AS 주소 FROM STUDENT
 ```
 
 ## 3.3 연습문제
