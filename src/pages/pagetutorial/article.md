@@ -8,7 +8,7 @@
 
 # 1. 데이터베이스란?
 
-## 1.1. 공부하시는 방법
+## 1.1 공부하시는 방법
 `Try it`과 `Tutorial` 2개의 페이지를 각각 창에 띄어놓으시고 코드를 복사 붙여넣기 하면서 보세요. 가능하면 이 챕터(이론)를 건너뛰시고, 나중에 궁금하실 경우에 보세요.
 
 복잡한 구문은 아래와 같이 주석을 달아주세요. 그리고 가능하다면 손으로 3~4번 반복해서 써보시길 권해드립니다.
@@ -31,19 +31,19 @@ SELECT 학번 FROM student;
 SELECT * FROM student;
 ```
 
-## 1.2. DB
+## 1.2 DB
 데이터베이스(영어: database, DB)는 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합이다. 작성된 목록으로써 여러 응용 시스템들의 통합된 정보들을 저장하여 운영할 수 있는 공용 데이터들의 묶음이다. - Wikidipia
 
 이렇게 기억해주세요! **"데이터를 저장하는 공간!"**
 
-## 1.3. DB, RDB, DBMS, RDBMS
+## 1.3 DB, RDB, DBMS, RDBMS
 - DB → DBMS
 - RDB → RDBMS
 
 RDBMS(stands for Relational Database Management System)는 DB를 관리하는 시스템입니다. TOP3 오픈소스 RDBMS는 MySQL, PostgreSQL, SQLite입니다. 오픈소스가 아닌 것에서는 Oracle이 독보적입니다. 
 
-## 1.4. 관계형 데이터베이스의 구성 요소
-여기서부터는 전문 용어가 들어갑니다. 혹시 실습을 안하고 오셨다면 꼭 실습을 하고 이 챕터를 보시기 바랍니다. 
+## 1.4 관계형 데이터베이스 구성 요소
+이번 챕터부터는 `2. 기본 구문 실습`을 먼저 해보고 보시기를 권해드립니다.
 
 - TABLE(행, 열), VIEW(데이터를 선택하여 만든 가상의 부분 집합), INDEX(주소), SEQUENCE(시퀀스, 고유번호 자동생성), SYNONYM(시노임, 객체의 별칭) 등의 객체로 구성
 - ENTITY, RELATIONE들의 집합
@@ -56,19 +56,19 @@ RDBMS(stands for Relational Database Management System)는 DB를 관리하는 �
 - 차수(Degree)는 속성의 개수입니다. 학생 릴레이션에서는 학번, 이름, 주소, 전화번호이니 총 4개가 될 것입니다.
 - 기수(Cardinality)는 튜플의 개수입니다. 위에서는 어트리뷰트를 제외하고 총 5개의 튜플이 존재합니다.
 
-### 1.4.1. 키의 개념 및 종류
+### 1.4.1 키의 개념 및 종류
 - 기본키는 메인으로 사용할 키를 말합니다. 고유한(유일한) 주민등록번호나, 계좌번호, 전화번호 등을 기본키로 사용할 수 있습니다. 기본키는 NULL을 사용할 수 없습니다.
 - 후보키는 기본키를 제외하고 고유한 키들을 말합니다.
 - 외래키는 관계되어 있는 테이블에서 참고하고 있는 키를 얘기합니다. 여기서 학생 릴레이션과 수강신청 과목 릴레이션은 서로 학번으로 연결되어 있죠.
 
-### 1.4.2. 데이터베이스의 종류
+### 1.4.2 데이터베이스의 종류
 - 계층형 데이터베이스(1:N)
 - 망형 데이터베이스(N:M)
 - 관계형 데이터베이스(단순한 표 형태의 상호 관계, 1:1, 1:N, N:M관계 표현)
 - 객체 지향형 데이터베이스
 
-## 1.5. SQL(Structured Query Language)
-SQL은 스토리지 언어의 표준입니다. 여러분이 만약 MySQL, MsSQL, Oracle, Postgres 등의 DB를 사용하여 어떤 프로젝트를 한다면 SQL을 다루실 수 있어야 합니다.
+## 1.5 SQL
+SQL(Structured Query Language)은 스토리지 언어의 표준입니다. 여러분이 만약 MySQL, MsSQL, Oracle, Postgres 등의 DB를 사용하여 어떤 프로젝트를 한다면 SQL을 다루실 수 있어야 합니다.
 
 하지만 대부분의 강좌들이 '설치'부터 SQL 강의를 시작하는데, 설치하다가 지치시는 분들이 많으십니다. 이 수업은 본질에 집중합니다. SQL만 배워봅시다. 그렇다고 이론을 전혀 안하는 것은 아니고, 가장 마지막 챕터에서 다뤄보도록 하겠습니다.
 
@@ -76,7 +76,7 @@ SQL은 스토리지 언어의 표준입니다. 여러분이 만약 MySQL, MsSQL,
 SELECT * FROM student;
 ```
 
-## 1.6. SQL 명령어의 분류
+## 1.6 SQL 명령어의 분류
 중요한 것은 굵은 글씨로 해두었으니, 충분히 숙련되도록 연습해보세요.
 
 1. 데이터 조작어(DML) :**SELECT**, **INSERT**, **UPDATE**, **DELETE**
@@ -85,7 +85,7 @@ SELECT * FROM student;
 4. 트랜젝션 제어어(TCL) : COMMIT, ROLLBACK, SAVEPOINT
 
 
-## 1.7. Data 분석 과정
+## 1.7 Data 분석 과정
 ![출처 : 제주코딩베이스캠프 데이터분석 강좌](../data.png)
 
 - 사전에 데이터 분석 기획을 합니다.
@@ -94,13 +94,13 @@ SELECT * FROM student;
 - 기업에 들어가도 데이터가 없거나 쓸 수 없는 경우도 있습니다. 또는 의미없는 데이터이거나 추가 데이터가 필요할 수도 있습니다. 이 경우에는 공공데이터 포털이나 다른 기관의 데이터를 참고하여 데이터를 만들어야 합니다.
 - 데이터 수집부터, 가공하는 것까지 SQL을 사용할 수 있습니다. 물론 분석에도 쓸 수 있지만 분석에는 더 좋은 도구들이 많죠. R, Python 등의 언어가 있고, Tableau와 같은 시각화 솔루션이 있습니다.
 
-## 1.8. 정형 데이터와 비정형 데이터
+## 1.8 정형 데이터와 비정형 데이터
 ![출처 : 제주코딩베이스캠프 SQL 강좌](../Untitled%201.png)
 
 - 정형데이터는 RDBMS에서 사용하는 테이블 안에 들어가 있는 형식이 잡혀 있는 데이터를 말합니다.
 - 비정형 데이터(unstructured data, unstructured information, 비정형 정보), 비구조화 데이터, 비구조적 데이터는 미리 정의된 데이터 모델이 없거나 미리 정의된 방식으로 정리되지 않은 정보를 말한다.(출처 : WIKI)
 
-## 1.9. CRUD란?
+## 1.9 CRUD란?
 - 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.
 
 [CRUD](https://ko.wikipedia.org/wiki/CRUD)
@@ -123,7 +123,7 @@ Try it 탭을 하나 더 여시고 코드를 복사하여 Run SQL 버튼을 눌�
 
 ![](../Untitled%203.png)
 
-## 2.2 SELECT Statement
+## 2.2 SELECT
 select는 데이터를 조회하거나 산술식, 함수 등을 실행할 때 사용합니다. SQL은 대소문자를 가리지 않지만, 구문에 해당되는 것은 대문자로만 적도록 하겠습니다.
 
 `*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다. 
@@ -151,7 +151,7 @@ SELECT 1+1;
 SELECT (10 + 2) / 2;
 ```
 
-## 2.3 SELECT DISTINCT Statement
+## 2.3 DISTINCT
 DISTINCT는 중복값을 제거합니다. 여기서 학과번호는 학과이름입니다. 2.5 AS 챕터에서 학과번호를 학과이름으로 바꿔주도록 하겠습니다.
 
 ```sql
@@ -425,7 +425,7 @@ VALUES ('김물리', '물리학과', 'asdf123@sqool.ac.kr');
 SELECT * FROM professor;
 ```
 
-## 연습문제
+## 2.16 연습문제
 
 ### 문제  1번
 4학년이면서, 주소에 울릉도에 살고 있는 학생을 구해주세요. 기본 데이터에 해당 데이터가 없다면, 위에 코드(INSERT)를 실행시켜 풀어주세요.
@@ -446,7 +446,7 @@ SELECT * FROM student WHERE 2학년1학기 IS NULL;
 비어있는 문자열과 NULL값은 다른 값입니다.
 
 
-## 2.16 Null Values 찾아내기
+## 2.17 Null Values 찾아내기
 위 실습에서 일부러 몇 개의 값을 입력하지 않고 null값을 찾아보세요. 위에서 데이터를 삽입한 것 중 명시하지 않은 것들은 null 값으로 들어갔기 때문에 ContactName에 조회가 가능합니다.
 
 ```sql
@@ -463,7 +463,7 @@ FROM scholarship
 WHERE 성적장학금 IS NOT NULL;
 ```
 
-## 2.17 UPDATE
+## 2.18 UPDATE
 값을 바꿉니다. 이 행위는 되돌릴 수 없습니다. where로 여러개를 select하여 바꿀 수 있습니다.
 
 ```sql
@@ -476,7 +476,7 @@ WHERE 학번=201900001;
 SELECT * FROM student;
 ```
 
-## 2.18 DELETE
+## 2.19 DELETE
 주의하세요. WHERE 안적으면 다 삭제 됩니다. 이런일이 실무에서도 종종 발생됩니다.
 
 ```sql
@@ -487,7 +487,7 @@ DELETE FROM student WHERE 이름='이호준';
 SELECT * FROM student;
 ```
 
-## 2.19 TOP과 LIMIT
+## 2.20 TOP과 LIMIT
 최 상단 3개의 행(row)을 보는 방법입니다. TOP 명령어는 SQooL에서 작동되진 않습니다. LIMIT 명령어는 사용가능하니 LIMIT 명령어를 사용해주세요.
 
 - 사용 가능 명령어
@@ -508,8 +508,9 @@ SELECT TOP 10 PERCENT * FROM student;
 ```
 
 
-## 2.20 CREATE, INSERT, UPDATE, DELETE, DROP 한 번에 사용해보기
-테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령sql어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
+## 2.21 CRUD 한 번에 사용해보기
+- CREATE, INSERT, UPDATE, DELETE, DROP
+- 테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령sql어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
 
 ```sql
 CREATE TABLE 제품 (
@@ -539,7 +540,7 @@ DELETE FROM 제품 WHERE 제품번호 = 1;
 DROP TABLE 제품;
 ```
 
-## 2.21 SHOW, DESC
+## 2.22 SHOW, DESC
 SQooL에서 동작하지 않는 명령어입니다. 실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 데이터베이스 목록을 출력하고 테이블을 이름순으로 출력하는 명령어입니다.
 
 ```sql
@@ -584,8 +585,8 @@ SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자�
 SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바꾸기
 ```
 
-## 3.2 SUBSTR(컬럼, START, LENTH)
-시작 주소부터 길이만큼 잘라내어 보여줍니다.
+## 3.2 SUBSTR
+`SUBSTR(컬럼, START, LENTH)`구조로 시작 주소부터 길이만큼 잘라내어 보여줍니다.
 ```sql
 SELECT SUBSTR(주소,1,2) AS 주소 FROM student;
 ```
@@ -668,7 +669,7 @@ SELECT CONCAT(CHAR(65), CHAR(65));
 SELECT ASCII('A');
 ```
 
-## 3.7 문제 풀이
+## 3.7 연습문제
 ```sql
 SELECT * FROM student;
 ```
@@ -681,4 +682,137 @@ SELECT COUNT(학번) FROM student;
 2. 전체 학생들의 학년 평균을 구해주세요.(함수를 사용해주세요.)
 ```sql
 SELECT AVG(학년) FROM student;
+```
+
+# 4. 조건
+
+## 4.1 조건문
+- Oracle의 경우에는 DECODE, CASE WHEN
+- MsSQL의 경우에는 CASE WHEN
+- MySQL의 경우에는 IF, CASE WHEN
+- CASE WHEN 조건 THEN 참일경우_실행구문 ELSE 거짓일경우_실행구문 END
+
+```sql
+SELECT CASE WHEN '조건'='조건' THEN 'hello' ELSE 'world' END;
+```
+
+```sql
+SELECT CASE WHEN '조건'!='조건' THEN 'hello' ELSE 'world' END;
+```
+
+좀 더 어려운 구문을 해보도록 하겠습니다. 아래 구문을 실행해보세요.
+
+```sql
+SELECT 이름, 학년,
+CASE WHEN 학년 >= 3 THEN '3학년 이상' ELSE '3학년 미만' END AS 학년
+FROM student;
+```
+
+```sql
+SELECT 이름, 학년, 주소,
+CASE
+  WHEN SUBSTR(주소, 1, 2)='서울' THEN '서울 거주'
+	WHEN SUBSTR(주소, 1, 2)='경기' THEN '경기 거주'
+	WHEN SUBSTR(주소, 1, 2)='제주' THEN '제주 거주'
+  ELSE '그 외 지역'
+END AS '거주지역'
+FROM student;
+```
+
+## 4.2 JOIN
+기준을 가지고 데이터를 합칩니다. 여기서는 `INNER JOIN`만 사용해보도록 하겠습니다.
+
+```sql
+SELECT
+student.학번,
+student.이름 AS 학생이름,
+professor.이름 AS 교수이름,
+professor.이메일 AS 교수이메일
+FROM student
+INNER JOIN professor
+--RIGHT JOIN professor
+--LEFT JOIN professor
+--FULL JOIN professor
+ON student.지도교수 = professor.이름;
+```
+
+```sql
+SELECT
+student.학번,
+student.이름 AS 학생이름,
+professor.이름 AS 교수이름,
+professor.이메일 AS 교수이메일,
+scholarship.국가장학금
+FROM student
+INNER JOIN professor
+ON student.지도교수 = professor.이름
+INNER JOIN scholarship
+ON student.학번=scholarship.학번;
+```
+
+![출처 : 위니브](../JOINS.png)
+
+## 4.3 UNION
+데이터를 결합합니다.
+
+```sql
+SELECT 학번, 이름 FROM student
+UNION
+SELECT 교원번호, 이름 FROM professor;
+```
+
+## 4.4 GROUP BY
+특정 열을 기준으로 그룹화 하여 다른 특정 열에 붙일 때 사용합니다. 아래 코드에서 GROUP BY 코드를 삭제하면 작동하지 않습니다. 그 이유는 SELECT 절에서 이미 그룹 함수와 기준열이 쓰였기 때문입니다.
+
+```sql
+SELECT 학년, COUNT(학년) AS "학년별 학생 수" 
+FROM Student
+GROUP BY 학년
+```
+
+```sql
+SELECT 학년, AVG(마일리지)
+FROM student
+GROUP BY 학년;
+```
+
+## 4.5 HAVING
+그룹화된 데이터에 조건을 부여합니다.
+
+```sql
+SELECT 학년, COUNT(학년) AS "학년별 학생 수" 
+FROM Student
+GROUP BY 학년
+HAVING "학년별 학생 수" < 25
+```
+
+```sql
+SELECT 학과, AVG(마일리지)
+FROM student
+GROUP BY 학과
+HAVING 학년 > 2;
+```
+
+## 4.6 EXIST
+서브 쿼리가 참일 경우 참을, 거짓일 경우 거짓을 반환합니다.
+
+```sql
+SELECT 이름
+FROM student
+WHERE EXISTS (SELECT 학번 FROM scholarship WHERE student.학번 = scholarship.학번 AND 학년 < 3);
+```
+
+## 4.7 ALL, ANY
+SQooL에서는 돌아가지 않는 코드입니다. `ALL`은서브 쿼리가 모두 참이어야 참을 반환합니다. `ANY` 서브 쿼리가 하나라도 참이라면 참을 반환합니다. 대체 가능한 문법도 함께 명시합니다.
+
+```sql
+SELECT 이름 
+FROM student
+WHERE 학번 IN (SELECT 학번 FROM grade WHERE 1학년1학기 > 4);
+```
+
+```sql
+SELECT 학번, 이름
+FROM student
+WHERE 학번 = ANY(SELECT 학번 FROM grade WHERE 1학년1학기 > 4);
 ```
