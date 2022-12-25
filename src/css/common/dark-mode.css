@@ -25,6 +25,7 @@ body.dark-mode,
   background-image: url('https://raw.githubusercontent.com/websqldb/SQooL/6c61db68913b917d5e5e6eadaff7734c4486ec28/src/assets/images/logo_dark.svg');
 }
 
+.global-header.dark-mode .gnb a:hover,
 .global-header.dark-mode .gnb a.is-active {
   color: var(--dark-accent-orange);
 }
@@ -148,6 +149,19 @@ main.dark-mode .sec-result table td {
 /* 튜토리얼 */
 main.dark-mode .tuto-title {
   color: var(--dark-accent-white);
+  border-bottom-color: var(--dark-border-color);
+}
+
+main.dark-mode .tuto-title-box {
+  border-bottom-color: var(--dark-border-color);
+}
+
+main.dark-mode *:not(code) {
+  color: #D9D9D9;
+}
+
+main.dark-mode code:not(pre > code) {
+  background-color: #585858;
 }
 
 main.dark-mode .tuto-sec-title {
@@ -221,7 +235,6 @@ main.dark-mode .tuto-sec-result-para strong {
   color: #ffd966;
 }
 
-main.dark-mode .tuto-title,
 main.dark-mode .tuto-sec {
   border-bottom: 1px solid #333338;
 }
@@ -291,6 +304,18 @@ aside.side-bar.dark-mode .cheatsheet-pdf .list-title {
 aside.side-bar.dark-mode .cheatsheet-pdf {
   border-bottom-color: var(--dark-border-color);
 }
+
+/* 튜토리얼 사이드바 */
+aside.side-bar.dark-mode .list-wrap .list-item > li a {
+  color: var(--white);
+}
+
+aside.side-bar.dark-mode .list-wrap .list-item > li {
+  border-bottom-color: var(--dark-border-color);
+}
+
+
+
 /* footer */
 footer.dark-mode .footer-wrap {
   background-color: var(--dark-border-color);

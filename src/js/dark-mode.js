@@ -2,6 +2,7 @@ const $body = document.querySelector('body');
 const $switchBtn = $body.querySelector('.btn-darkmode');
 
 let darkMode = localStorage.getItem('darkMode');
+
 function toggleON() {
   const $sideBar = $body.querySelector('.side-bar');
   const $header = $body.querySelector('.global-header');
