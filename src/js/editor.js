@@ -25,7 +25,6 @@ const addStatement = (sqlSyntax) => {
     IS_NOT_NULL: `SELECT * FROM scholarship WHERE 성적장학금 IS NOT NULL;`,
     IN: `SELECT * FROM student WHERE 지도교수 IN ("일호준", "이호준", "삼호준");`,
     LIKE: `SELECT 학번, 학년, 이름, 지도교수 FROM student\nWHERE 지도교수 LIKE '%호준';`,
-    LIMIT: `SELECT * FROM student LIMIT 5;`,
     BETWEEN: `SELECT * FROM student WHERE 마일리지 BETWEEN 100 AND 200;`,
     COUNT: `SELECT COUNT(*) AS '3학년인원' FROM student WHERE 학년 = 3;`,
     SUM: `SELECT SUM(마일리지) AS '마일리지 총합' FROM student WHERE 마일리지 > 0;`,
