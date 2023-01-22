@@ -12,7 +12,7 @@
 .la-wrap {
   display: flex;
   width: 1257px;
-  margin: 0 auto;
+  margin: 0 auto 0;
 }
 .side-bar {
   flex-basis: 313px;
@@ -34,7 +34,7 @@
 .main-side-title {
   font-family: "Pretendard";
   /* 튜토리얼, 치트시트에선 여백이 더 큽니다 */
-  margin-top: 70px;
+  margin-top: 100px;
   margin-bottom: 16px;
   font-weight: 600;
   font-size: 2.2rem;
