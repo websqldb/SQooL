@@ -130,7 +130,7 @@
   };
 
   const encodeCodeEntity = (token) => {
-    let keyword = ['SELECT', 'FROM', 'DISTINCT', 'WHERE', 'AND', 'ORDER BY', 'LIKE', 'INNER', 'INTO', 'INSERT', 'HAVING', 'JOIN', 'RIGHT', 'LEFT', 'FULL', 'GROUP BY', 'PRIMARY', 'CREATE', 'UPDATE', 'DELETE', 'DROP', 'NULL', 'NOT', 'OR', 'IS', 'SET', 'IN', 'ON', 'AS', 'LOWER', 'UPPER', 'SUBSTR', 'LENGTH', 'REPLACE', 'DATE', 'TIME', 'STRFTIME', 'DATETIME', 'MAX', 'MIN', 'SUM', 'COUNT', 'AVG', 'CHAR', 'CONCAT', 'ASCII', 'EXISTS', 'CASE', 'WHEN', 'END'];
+    let keyword = ['SELECT', 'FROM', 'DISTINCT', 'WHERE', 'AND', 'ORDER BY', 'LIKE', 'INNER', 'INTO', 'INSERT', 'HAVING', 'JOIN', 'RIGHT', 'LEFT', 'FULL', 'GROUP BY', 'PRIMARY', 'CREATE', 'UPDATE', 'DELETE', 'DROP', 'NULL', 'NOT', 'OR', 'IS', 'SET', 'IN', 'ON', 'AS', 'LOWER', 'UPPER', 'SUBSTR', 'LENGTH', 'REPLACE', 'DATE', 'TIME', 'STRFTIME', 'DATETIME', 'MAX', 'MIN', 'SUM', 'COUNT', 'AVG', 'CHAR', 'CONCAT', 'ASCII', 'EXISTS', 'CASE', 'WHEN', 'END', 'DESC', 'ASC', 'BETWEEN', 'VALUES', 'LIMIT', 'TOP', 'INT', 'KEY', 'VARCHAR', 'DEFAULT', 'TABLE', 'SHOW', 'DESC', 'THEN', 'ELSE', 'UNION', 'ANY'];
 
     keyword.sort(function (a, b) {
       return b.length - a.length;
