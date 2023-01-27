@@ -439,8 +439,8 @@ WHERE 학년=4 AND 주소 LIKE '%울릉군%';
 2학년1학기 성적이 null 값인 학생을 구해주세요.
 
 ```sql
-/* SELECT * FROM student WHERE 2학년1학기=''; */
-SELECT * FROM student WHERE 2학년1학기 IS NULL;
+/* SELECT * FROM grade WHERE 2학년1학기=''; */
+SELECT * FROM grade WHERE 2학년1학기 IS NULL;
 ```
 
 비어있는 문자열과 NULL값은 다른 값입니다.
