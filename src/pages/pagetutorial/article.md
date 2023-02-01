@@ -687,10 +687,19 @@ SELECT AVG(학년) FROM student;
 # 4. 조건
 
 ## 4.1 조건문
-- Oracle의 경우에는 DECODE, CASE WHEN
-- MsSQL의 경우에는 CASE WHEN
-- MySQL의 경우에는 IF, CASE WHEN
-- CASE WHEN 조건 THEN 참일경우_실행구문 ELSE 거짓일경우_실행구문 END
+- Oracle의 경우에는 `DECODE`, `CASE WHEN`
+- MsSQL의 경우에는 `CASE WHEN`
+- MySQL의 경우에는 `IF`, `CASE WHEN`
+- 기본 꼴
+```sql
+SELECT [컬럼명]
+CASE
+    WHEN [조건1] THEN [결과1]
+    WHEN [조건2] THEN [결과2]
+    ELSE [결과3]
+END [결과를 타나낼 컬럼명]
+FROM [테이블명]
+```
 
 ```sql
 SELECT CASE WHEN '조건'='조건' THEN 'hello' ELSE 'world' END;
@@ -711,10 +720,10 @@ FROM student;
 ```sql
 SELECT 이름, 학년, 주소,
 CASE
-  WHEN SUBSTR(주소, 1, 2)='서울' THEN '서울 거주'
-	WHEN SUBSTR(주소, 1, 2)='경기' THEN '경기 거주'
-	WHEN SUBSTR(주소, 1, 2)='제주' THEN '제주 거주'
-  ELSE '그 외 지역'
+      WHEN SUBSTR(주소, 1, 2)='서울' THEN '서울 거주'
+      WHEN SUBSTR(주소, 1, 2)='경기' THEN '경기 거주'
+      WHEN SUBSTR(주소, 1, 2)='제주' THEN '제주 거주'
+      ELSE '그 외 지역'
 END AS '거주지역'
 FROM student;
 ```
