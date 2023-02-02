@@ -387,8 +387,7 @@ SELECT 1 | 0;
 ```
 
 - **XOR (^)**
-대응되는 비트가 서로 다를 때 1을 반환합니다.
-XOR 연산은 SQooL에서는 동작하지 않습니다.
+대응되는 비트가 서로 다를 때 1을 반환합니다. XOR 연산은 SQooL에서는 동작하지 않습니다.
 ```sql
 SELECT 1 ^ 0;
 ```
@@ -465,8 +464,6 @@ FROM grade
 WHERE 2학년1학기 IS NULL;
 ```
 
-비어있는 문자열과 NULL값은 다른 값입니다.
-
 ### 문제 3번
 컴퓨터공학과의 전필 과목을 구하는 쿼리문을 작성해주세요.
 
@@ -491,17 +488,16 @@ WHERE 생년월일 LIKE '%-11-%';
 ```sql
 SELECT *
 FROM student
-WHERE 학년 = 2 ORDER BY 마일리지 DESC;
+WHERE 학년=2 ORDER BY 마일리지 DESC;
 ```
 
 ## 2.17 UPDATE
-데이터를 수정할 수 있습니다. 
-이 행위는 되돌릴 수 없습니다. WHERE 절이 탐색 조건을 충족시키는 모든 행에 대해 값을 변경합니다.
+데이터를 수정할 수 있습니다. 이 행위는 되돌릴 수 없습니다. WHERE 절이 탐색 조건을 충족시키는 모든 행에 대해 값을 변경합니다.
 기본 형태는 다음과 같습니다.
 
 ```sql
 UPDATE [테이블] 
-SET [열] = '변경할값', [열] = '변경할값', ...
+SET [열]='변경할값', [열]='변경할값', ...
 WHERE [조건];
 ```
 
@@ -531,14 +527,25 @@ DELETE FROM student WHERE 학년=4;
 SELECT * FROM student;
 ```
 
-## 2.20 TOP과 LIMIT
-최 상단 3개의 행(row)을 보는 방법입니다. TOP 명령어는 SQooL에서 작동되진 않습니다. LIMIT 명령어는 사용가능하니 LIMIT 명령어를 사용해주세요.
+## 2.19 TOP과 LIMIT
+많은 데이터 중에서 특정 개수만 출력할 수 있습니다. 방대한 데이터를 다룰 때 유용하게 사용됩니다.
+`TOP`과 `LIMIT` 명령어는 동일한 기능을 하지만 DBMS마다 명령어의 지원 여부가 상이하기 때문에 알맞은 명령어를 선택해 사용하시길 바랍니다.
+- MS-SQL : `TOP`
+- MY-SQL : `LIMIT`
+- ORACLE : `ROWNUM`
+SQooL에서는 LIMIT 명령어를 사용가능하니 LIMIT 명령어를 사용해주세요.
 
 - 사용 가능 명령어
 
 ```sql
 SELECT * FROM student
 LIMIT 3;
+```
+
+```sql
+SELECT * FROM student
+ORDER BY 마일리지 DESC
+LIMIT 10;
 ```
 
 - 사용 불가능 명령어
@@ -552,9 +559,22 @@ SELECT TOP 10 PERCENT * FROM student;
 ```
 
 
-## 2.21 CRUD 한 번에 사용해보기
-- CREATE, INSERT, UPDATE, DELETE, DROP
-- 테이블을 생성하고(CREATE), 데이터를 삽입하고(INSERT), 업데이트하고(UPDATE), 삭제하고(DELETE), 테이블을 삭제(DROP)하는 명령sql어입니다. 순서대로 해보면서 `SELECT * FROM 제품`명령어를 사용하여 테이블이 어떻게 바뀌는지 확인해보세요.
+## 2.20 CRUD 한 번에 사용해보기
+CRUD란 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능인 **Create(생성)**, **Read(읽기)**, **Update(갱신)**, **Delete(삭제)**를 뜻하는 용어입니다.
+
+### Create (생성)
+CREATE 문을 사용하여 테이블을 새로 생성할 수 있습니다. 기본 구문은 다음과 같습니다.
+
+```sql
+CREATE TABLE 테이블이름(
+컬럼명 데이터타입 조건
+컬럼명 데이터타입 조건
+...
+컬럼명 데이터타입 조건);
+```
+- 데이터 타입
+- 조건
+
 
 ```sql
 CREATE TABLE 제품 (
@@ -566,31 +586,96 @@ CREATE TABLE 제품 (
 ```sql
 INSERT INTO 제품 (제품번호, 제품이름, 가격)
 VALUES (1, '버그잡는 개리씨 키링', 12500);
---SELECT * FROM 제품
 ```
 
+```sql
+INSERT INTO 제품 (제품번호, 제품이름, 가격)
+VALUES (2, '딥러닝 개발자 무릎 담요', 17500);
+```
+
+```sql
+INSERT INTO 제품 (제품번호, 제품이름, 가격)
+VALUES (3, '개발자 노트북 파우치', 36000);
+```
+
+### Read (읽기)
+```sql
+SELECT * FROM 제품;
+```
+
+
+### Update (갱신)
 ```sql
 UPDATE 제품
-SET 제품이름='위니브 스티커 팩', 가격 = 3500
+SET 제품이름='위니브 스티커 팩', 가격=3500
 WHERE 제품번호 = 1;
---SELECT * FROM 제품
+--SELECT * FROM 제품;
 ```
 
+### Delete (삭제)
+- 레코드 삭제
 ```sql
-DELETE FROM 제품 WHERE 제품번호 = 1;
+DELETE FROM 제품 WHERE 제품번호=1;
 ```
 
+- 테이블 삭제
 ```sql
 DROP TABLE 제품;
 ```
 
-## 2.22 SHOW, DESC
-SQooL에서 동작하지 않는 명령어입니다. 실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 데이터베이스 목록을 출력하고 테이블을 이름순으로 출력하는 명령어입니다.
+## 2.21 SHOW, DESC
+SHOW 명령어와 DESC 명령어는 모두 SQooL에서는 동작하지 않는 명령어입니다. 
+실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 
 
+- **SHOW**
+데이터 베이스나 테이블의 목록을 출력하는 명령어입니다.
 ```sql
 mysql> SHOW databases;
+```
+```sql
 mysql> SHOW tables;
+```
+
+```
++-----------------+
+| Tables_in_sqool |
++-----------------+
+| grade           |
+| invalid_data    |
+| major           |
+| mileage         |
+| professor       |
+| scholarship     |
+| student         |
+| subject         |
+| tuition         |
++-----------------+
+```
+
+- **DESC**
+DESCRIBE의 약자로 테이블의 구조를 조회하는 명령어입니다.
+```sql
 mysql> DESC table_name;
+```
+
+```sql
+mysql> DESC student;
+```
+
+```
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| 학번         | int  | YES  |     | NULL    |       |
+| 이름         | text | YES  |     | NULL    |       |
+| 학과         | text | YES  |     | NULL    |       |
+| 지도교수     | text | YES  |     | NULL    |       |
+| 학년         | int  | YES  |     | NULL    |       |
+| 생년월일     | text | YES  |     | NULL    |       |
+| 연락처       | text | YES  |     | NULL    |       |
+| 주소         | text | YES  |     | NULL    |       |
+| 마일리지     | int  | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
 ```
 
 # 3. 함수
