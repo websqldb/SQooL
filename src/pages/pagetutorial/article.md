@@ -373,21 +373,20 @@ WHERE 성적장학금 IS NULL
 
 ## 2.13 bit 단위 논리연산자
 논리 연산을 비트 단위로 합니다.
-차례대로 AND, OR, XOR입니다.
 
-- AND (&)
+- **AND (&)**
 대응되는 비트가 모두 1이어야 1을 반환합니다.
 ```sql
 SELECT 1 & 0;
 ```
 
-- OR (|)
+- **OR (|)**
 대응되는 비트 중에서 하나라도 1이면 1을 반환합니다.
 ```sql
 SELECT 1 | 0;
 ```
 
-- XOR (^)
+- **XOR (^)**
 대응되는 비트가 서로 다를 때 1을 반환합니다.
 XOR 연산은 SQooL에서는 동작하지 않습니다.
 ```sql
@@ -447,12 +446,13 @@ SELECT * FROM professor;
 
 ## 2.16 연습문제
 
-### 문제  1번
-4학년이면서, 주소에 울릉도에 살고 있는 학생을 구해주세요. 기본 데이터에 해당 데이터가 없다면, 위에 코드(INSERT)를 실행시켜 풀어주세요.
+### 문제 1번
+서울에 살면서 4학년인 학생들을 구하는 쿼리문을 작성해주세요.
 
 ```sql
-SELECT * FROM student 
-WHERE 학년=4 AND 주소 LIKE '%울릉군%';
+SELECT *
+FROM student
+WHERE 학년=4 AND 주소 LIKE '서울특별시%';
 ```
 
 ### 문제 2번
@@ -460,31 +460,50 @@ WHERE 학년=4 AND 주소 LIKE '%울릉군%';
 
 ```sql
 /* SELECT * FROM grade WHERE 2학년1학기=''; */
-SELECT * FROM grade WHERE 2학년1학기 IS NULL;
+SELECT *
+FROM grade
+WHERE 2학년1학기 IS NULL;
 ```
 
 비어있는 문자열과 NULL값은 다른 값입니다.
 
-
-## 2.17 Null Values 찾아내기
-위 실습에서 일부러 몇 개의 값을 입력하지 않고 null값을 찾아보세요. 위에서 데이터를 삽입한 것 중 명시하지 않은 것들은 null 값으로 들어갔기 때문에 ContactName에 조회가 가능합니다.
-
-```sql
-SELECT *
-FROM scholarship
-WHERE 성적장학금 IS NULL;
-```
-
-is not 구문도 가능하답니다.
+### 문제 3번
+컴퓨터공학과의 전필 과목을 구하는 쿼리문을 작성해주세요.
 
 ```sql
 SELECT *
-FROM scholarship
-WHERE 성적장학금 IS NOT NULL;
+FROM subject
+WHERE 학과번호='컴퓨터공학과' AND 이수구분='전필';
 ```
 
-## 2.18 UPDATE
-값을 바꿉니다. 이 행위는 되돌릴 수 없습니다. where로 여러개를 select하여 바꿀 수 있습니다.
+### 문제 4번
+생일이 11월인 학생을 구하는 쿼리문을 작성해주세요.
+
+```sql
+SELECT *
+FROM student
+WHERE 생년월일 LIKE '%-11-%';
+```
+
+### 문제 5번
+모든 2학년 학생들을 조회하되 마일리지가 큰 순으로 정렬하는 쿼리문을 작성해주세요.
+
+```sql
+SELECT *
+FROM student
+WHERE 학년 = 2 ORDER BY 마일리지 DESC;
+```
+
+## 2.17 UPDATE
+데이터를 수정할 수 있습니다. 
+이 행위는 되돌릴 수 없습니다. WHERE 절이 탐색 조건을 충족시키는 모든 행에 대해 값을 변경합니다.
+기본 형태는 다음과 같습니다.
+
+```sql
+UPDATE [테이블] 
+SET [열] = '변경할값', [열] = '변경할값', ...
+WHERE [조건];
+```
 
 ```sql
 UPDATE student
@@ -496,11 +515,16 @@ WHERE 학번=201900001;
 SELECT * FROM student;
 ```
 
-## 2.19 DELETE
-주의하세요. WHERE 안적으면 다 삭제 됩니다. 이런일이 실무에서도 종종 발생됩니다.
+## 2.18 DELETE
+DELETE 문을 사용하면 테이블에서 행을 제거할 수 있습니다.
+주의하세요. WHERE 절을 통해 조건을 주지 않으면 테이블의 모든 행이 제거됩니다. 이런일이 실무에서도 종종 발생됩니다.
 
 ```sql
-DELETE FROM student WHERE 이름='이호준';
+DELETE FROM student WHERE 학번=201900001;
+```
+
+```sql
+DELETE FROM student WHERE 학년=4;
 ```
 
 ```sql
