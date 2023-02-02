@@ -573,8 +573,9 @@ CREATE TABLE 테이블이름(
 컬럼명 데이터타입 조건);
 ```
 - 데이터 타입
+![](../2.20-data-type.png)
 - 조건
-
+![](../2.20-data-option.png)
 
 ```sql
 CREATE TABLE 제품 (
@@ -636,7 +637,7 @@ mysql> SHOW databases;
 mysql> SHOW tables;
 ```
 
-```
+```sql
 +-----------------+
 | Tables_in_sqool |
 +-----------------+
@@ -662,7 +663,7 @@ mysql> DESC table_name;
 mysql> DESC student;
 ```
 
-```
+```sql
 +--------------+------+------+-----+---------+-------+
 | Field        | Type | Null | Key | Default | Extra |
 +--------------+------+------+-----+---------+-------+
