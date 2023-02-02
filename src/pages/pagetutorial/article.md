@@ -635,22 +635,19 @@ mysql> SHOW databases;
 ```
 ```sql
 mysql> SHOW tables;
-```
-
-```sql
-+-----------------+
-| Tables_in_sqool |
-+-----------------+
-| grade           |
-| invalid_data    |
-| major           |
-| mileage         |
-| professor       |
-| scholarship     |
-| student         |
-| subject         |
-| tuition         |
-+-----------------+
+    +-----------------+
+    | Tables_in_sqool |
+    +-----------------+
+    | grade           |
+    | invalid_data    |
+    | major           |
+    | mileage         |
+    | professor       |
+    | scholarship     |
+    | student         |
+    | subject         |
+    | tuition         |
+    +-----------------+
 ```
 
 - **DESC**
@@ -661,23 +658,21 @@ mysql> DESC table_name;
 
 ```sql
 mysql> DESC student;
+    +--------------+------+------+-----+---------+-------+
+    | Field        | Type | Null | Key | Default | Extra |
+    +--------------+------+------+-----+---------+-------+
+    | 학번         | int  | YES  |     | NULL    |       |
+    | 이름         | text | YES  |     | NULL    |       |
+    | 학과         | text | YES  |     | NULL    |       |
+    | 지도교수     | text | YES  |     | NULL    |       |
+    | 학년         | int  | YES  |     | NULL    |       |
+    | 생년월일     | text | YES  |     | NULL    |       |
+    | 연락처       | text | YES  |     | NULL    |       |
+    | 주소         | text | YES  |     | NULL    |       |
+    | 마일리지     | int  | YES  |     | NULL    |       |
+    +--------------+------+------+-----+---------+-------+
 ```
 
-```sql
-+--------------+------+------+-----+---------+-------+
-| Field        | Type | Null | Key | Default | Extra |
-+--------------+------+------+-----+---------+-------+
-| 학번         | int  | YES  |     | NULL    |       |
-| 이름         | text | YES  |     | NULL    |       |
-| 학과         | text | YES  |     | NULL    |       |
-| 지도교수     | text | YES  |     | NULL    |       |
-| 학년         | int  | YES  |     | NULL    |       |
-| 생년월일     | text | YES  |     | NULL    |       |
-| 연락처       | text | YES  |     | NULL    |       |
-| 주소         | text | YES  |     | NULL    |       |
-| 마일리지     | int  | YES  |     | NULL    |       |
-+--------------+------+------+-----+---------+-------+
-```
 
 # 3. 함수
 미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
