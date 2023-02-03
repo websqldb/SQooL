@@ -693,53 +693,132 @@ mysql> DESC student;
     +--------------+------+------+-----+---------+-------+
 ```
 
+# 3. SQL 함수
+- 미리 정의된 기능의 모음입니다.
+- 함수의 종류에는 데이터베이스에 저장된 자료 한 줄 한 줄을 대상으로 하는 단일 행 함수와, 테이블 전체 행을 대상으로 하는 그룹 함수, 즉 복수 행 함수가 있습니다. 
+- 본 사이트의 Try it 섹션은 SQLite 기반으로 만들어진 codemirror 라이브러리로 만들어져 있습니다. 따라서 SQLite에서 지원하지 않는 함수라면 Try it 섹션에서도 작동하지 않을 수 있으며, SQLite 버전에 따라서도 달라질 수 있습니다. 
+버전은 `SELECT SQLITE_VERSION()` 구문으로 확인 가능합니다. 
+- 본 튜토리얼에서는 SQLite를 기준으로 문자 자료형을 처리하는 문자열 함수, 숫자 자료형을 처리하는 수학 함수를 소개합니다. 
 
-# 3. 함수
-미리 정의된 기능 모음, 단일 행 함수와 그룹 함수가 있습니다. 모든 함수를 나열한 것은 아니지만, 전체적으로 어떤 기능들이 구현되어 있는지 보기에는 수월할 것입니다.
-
-### 데이터 타입 함수
-- 문자 : CHAR(값) : 문자 타입 지정 2000바이트
-- 문자 : VARCHAR2(값) : 문자 타입 지정 4000바이트
-- 숫자 : Oracle에서는 NUMBER(정수 자릿수, 소수 자릿수), MySQL은 INT사용
-- 날짜 : DATE()
-- 시간 : TIME()
-
-### 문자열 처리
+### 문자열 
+SQLite에서는 `CONCAT`, `INITCAP`, `INSTR` 는 동작하지 않습니다. 
+- 날짜 및 시간 함수 → DATE(), TIME(), DATETIME(), STRFTIME()
 - CONCAT('abc', 'def') → 'abcdef' : 문자열 연결
 - LOWER('ABC') → 'abc'
 - UPPER('abc') → 'ABC'
-- INITCAP('abc') → 'Abc' : 앞문자만 대문자
-- SUBSTR('hello world', 1, 5) → 'hello' : 문자열을 자를 때 많이 사용합니다. 숫자는 시작위치, 자를 문자열의 길이를 나타냅니다.
-- REPLACE('hello world', 'world', 'SQL') → 'hello SQL' : 바꾸고 싶은 값으로 대상 값을 교체합니다.
-- LENGTH('hello') → 5 : 문자열의 길이를 출력합니다. COUNT와 비교해서 기억해주세요.
-- COUNT : 행의 개수를 출력합니다.
-- INSTR('ABCDEF', 'B') → 2 : 문자열의 위치를 구합니다. 여기서 INDEX는 1부터 시작합니다. 프로그래밍 언어는 0부터 시작하니, 이 차이를 꼭 기억해두세요.
+- INITCAP('abc') → 'Abc' : 문자열 중 가장 앞글자만 대문자
+- INSTR('ABCDEF', 'B') → 2 : 대소문자를 구분하여 문자열의 위치를 구함 (`INDEX` 는 1부터 시작합니다.)
+- SUBSTR('hello world', 1, 5) → 'hello' : 원하는 문자를 잘라내어 추출하거나, 문자열의 일부가 필요한 경우 사용
+- REPLACE('hello world', 'world', 'SQL') → 'hello SQL' : 바꾸고 싶은 값으로 대상 값을 교체
+- LENGTH('hello') → 5 : 문자열의 길이를 출력
+- COUNT : 전체 컬럼, 혹은 특정 컬럼의 행의 개수를 출력
 
-### 수학함수
-- ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림, 0이 소숫점 첫째자리
-- TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭, 0이 소숫점 첫째자리
-- MOD(수, 나누는 값) : 나머지
-- POWER(수, 승수) : 제곱 출력
-- SQRT : 제곱근 출력
+### 수학 함수
+SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다. 
+- ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림하여 출력, 0이 소숫점 첫째자리
+- TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭하여 출력, 0이 소숫점 첫째자리
+- MOD(피제수, 제수) : 피제수를 제수로 나눈 나머지를 출력
+- POWER(밑, 지수) : 밑을 지수만큼 제곱한 값을 출력
+- SQRT(수) : 인자로 넣은 수의 제곱근 출력
+- 통계 함수 : MAX(), MIN(), SUM(), AVG()
 
-## 3.1 SQL 함수
-대문자를 소문자로, 소문자를 대문자로 바꿀 수 있습니다.
+## 3.1 문자열 함수
+### 날짜 및 시간 함수
+SQLite에서는 날짜와 시간 데이터를 `TEXT` 로 취급합니다.  
+날짜 및 시간 함수는 다양한 `한정자`(Modifiers)를 지정하여 사용자가 원하는 대로 데이터를 변화시킬 수 있습니다.  
 
 ```sql
+SELECT DATE();
+SELECT TIME();
+SELECT DATETIME();
+
+-- 한정자 활용하기: 현지시간 기준으로 현재 달의 마지막 날짜
+SELECT date('now', 'start of month', '+1 month', '-1 day', 'localtime');
+
+-- strftime : 포맷 지정 (format, timestring, modifier)
+-- DATE, TIME 값을 포맷에 맞추어 반환합니다.
+SELECT strftime('%Y-%m-%d %H:%M:%S', 'now');
+```
+
+### CONCAT
+- 문자열 또는 컬럼을 연결합니다. SQLite에서는 연결 연산자인 `||` 로 연결합니다. 
+```SQL
+SELECT 학번 || 이름 || 학과 FROM student;
+```
+
+### LOWER, UPPER
+- 모든 대문자를 소문자로, 모든 소문자를 대문자로 치환합니다.
+
+```SQL
 SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자로 바꾸기 
 SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바꾸기
 ```
 
-## 3.2 SUBSTR
-`SUBSTR(컬럼, START, LENTH)`구조로 시작 주소부터 길이만큼 잘라내어 보여줍니다.
+### SUBSTR
+- 원하는 문자를 잘라내어 추출하거나, 문자열의 일부가 필요한 경우 사용합니다.
+
 ```sql
-SELECT SUBSTR(주소,1,2) AS 주소 FROM student;
+SELECT SUBSTR(주소, 1, 2) AS 주소 FROM student;
+```
+
+### REPLACE
+- 바꾸고 싶은 값으로 대상 값을 교체합니다.
+
+```sql
+SELECT REPLACE('Hello world', 'world', 'SQL');
+```
+
+### LENGTH
+- 문자열의 길이를 출력합니다.
+
+```sql
+SELECT 이름, LENGTH(이름) AS 이름길이 FROM student;
+```
+
+### COUNT
+- 전체 컬럼, 혹은 특정 컬럼의 행의 개수를 출력합니다.
+
+```sql
+SELECT COUNT(이름) FROM student;
+```
+
+## 3.2 수학 함수
+### ROUND
+- 숫자를 반올림하여 지정한 자릿수만큼 표시합니다.
+
+```sql
+SELECT ROUND(1학년1학기, 1) AS 반올림성적 FROM grade;
+```
+
+### MOD
+- 피제수를 제수로 나눈 나머지를 출력합니다. SQLite에서는 지원하지 않으나, `%` 를 사용하면 출력할 수 있습니다.
+
+```sql
+SELECT 12 % 5;
+```
+
+### 통계 함수
+- 컬럼의 최댓값, 최솟값, 합계, 평균을 출력하는 함수입니다. 
+
+```sql
+-- 최댓값 구하기
+SELECT 학번, MAX(일학년일학기) AS '1학년 1등' FROM grade;
+
+-- 최솟값 구하기
+SELECT MIN(성적장학금) AS '성적장학금 최소 수령액' FROM scholarship;
+
+-- 숫자 컬럼에 대하여 합계 내기
+SELECT SUM(성적장학금) AS '성적장학금 총액' FROM scholarship;
+
+-- 평균값 구하기
+SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
 ```
 
 ## 3.3 연습문제
-1. 이름의 문자열의 길이를 출력해주세요.
-2. 성을 제외하고 이름만 출력해주세요.
-3. 이름의 뒤 2자리를 *로 처리해주세요.
+### 문자열 함수
+1. 이름 컬럼의 문자열 길이를 출력하세요.
+2. 이름 컬럼의 문자열에서 성을 제외하고 이름만 출력하세요.
+3. 이름 컬럼의 문자열 뒤 2자리를 *로 처리하세요.
 
 ```sql
 SELECT 교원번호, 이름,
@@ -749,85 +828,13 @@ SELECT 교원번호, 이름,
 FROM professor;
 ```
 
-여기서 사용한 SUBSTR 같은 경우
+### 수학 함수
+1. 전체 학생들의 학년 평균을 구하세요.
 
-- Oracle은 SUBSTR, SUBSTRB
-- MsSQL은 SUBSTRING
-- MySQL은 SUBSTRING, SUBSTR, MID
-
-을 사용합니다.
-
-## 3.4 날짜
-- DATE, TIME, DATETIME
-- DIFF
-- ADD, SUB
-
-날짜와 시간이 어떻게 더해지는지 확인해보세요.
-
-```sql
-SELECT DATE();
--- SELECT DATE('now')와 같습니다.
--- SELECT STRFTIME('%Y-%m-%d', 'now');
-```
-
-```sql
-SELECT DATE() + 10;
-```
-
-```sql
-SELECT TIME();
--- SELECT TIME('now')와 같습니다.
--- SELECT STRFTIME('%H:%M:%f', 'now');
-```
-
-```sql
-SELECT TIME() + 10;
-```
-
-```sql
-SELECT DATETIME();
--- SELECT DATETIME('now')와 같습니다.
--- SELECT STRFTIME('%Y-%m-%d // %H:%M:%f', 'now')
-```
-
-```sql
-SELECT DATETIME() + 10;
-```
-
-## 3.5 통계
-통계관련된 함수를 실습해봅니다. 하나씩 사용해보세요. 보통은 분산과 표준편차 함수도 제공합니다. W3School에서는 분산과 표준편차가 작동하지 않습니다. 
-
-```sql
-SELECT 학번, MAX(일학년일학기) AS '1학년 1등' FROM grade;
-SELECT MIN(성적장학금) AS '성적장학금 최소 수령액' FROM scholarship;
-SELECT SUM(성적장학금) AS '성적장학금 총액' FROM scholarship;
-SELECT COUNT(과목명) AS '과목 갯수' FROM subject;
-SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
-```
-
-## 3.6 문자열 변환
-해당 코드는 SQooL에서 작동하지 않아 실습은 안하지만 해당함수는 간혹 SQL Injection 공격에 사용되곤하니, 혹시 정보보안을 공부하는 학생이라면 기억해주시기 바랍니다.
-
-```sql
-SELECT CHAR(65) || CHAR(65));
-SELECT CONCAT(CHAR(65), CHAR(65));
-SELECT ASCII('A');
-```
-
-## 3.7 연습문제
-```sql
-SELECT * FROM student;
-```
-
-1. 전체 학생 수를 구해주세요.
-```sql
-SELECT COUNT(학번) FROM student;
-```
-
-2. 전체 학생들의 학년 평균을 구해주세요.(함수를 사용해주세요.)
 ```sql
 SELECT AVG(학년) FROM student;
 ```
+
 
 # 4. 조건
 
