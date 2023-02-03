@@ -369,3 +369,34 @@ html {
 .list-item a:hover {
   font-weight: 700;
 }
+
+/* 테이블 */
+table {
+  border: 1px solid #000;
+  font-size: 18px;
+  line-height: 30px;
+  border-collapse: collapse;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border-bottom: 1px solid #000;
+  text-align: center;
+  padding: 8px 20px;
+}
+
+th {
+  background-color: #6d79ee;
+  color: #ffffff;
+}
+tbody tr:nth-child(2n) {
+  /* background-color: #ffbb56; */
+}
+tbody tr:nth-child(2n+1) {
+  background-color: #e3f2fd;
+}
+
+tr td:nth-child(1), tr th:nth-child(1) {
+  border-right: 1px solid #000;
+}
