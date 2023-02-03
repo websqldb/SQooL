@@ -832,10 +832,18 @@ SELECT AVG(학년) FROM student;
 # 4. 조건
 
 ## 4.1 조건문
+
 - Oracle의 경우에는 `DECODE`, `CASE WHEN`
 - MsSQL의 경우에는 `CASE WHEN`
 - MySQL의 경우에는 `IF`, `CASE WHEN`
-- 기본 꼴
+- SQLite의 경우에는 `CASE WHEN`
+
+### CASE WHEN
+
+조건에 맞는 데이터를 가져오고 싶을 때 사용하는 구문
+
+- 기본 형태
+
 ```sql
 SELECT [컬럼명]
 CASE
@@ -846,20 +854,37 @@ END [결과를 타나낼 컬럼명]
 FROM [테이블명]
 ```
 
+- 예제
+
 ```sql
-SELECT CASE WHEN '조건'='조건' THEN 'hello' ELSE 'world' END;
+SELECT 학과번호, 과목명, 이수구분,
+CASE 
+    WHEN 이수구분 = '전필' THEN '전공 필수과목'
+END AS '전공 필수 및 선택 구분'
+FROM SUBJECT;
 ```
 
 ```sql
-SELECT CASE WHEN '조건'!='조건' THEN 'hello' ELSE 'world' END;
+SELECT 학과번호, 과목명, 이수구분,
+CASE 
+    WHEN 이수구분 = '전필' THEN '전공 필수과목'
+    ELSE '전공 선택과목'
+END AS '전공 필수 및 선택 구분'
+FROM SUBJECT;
 ```
 
 좀 더 어려운 구문을 해보도록 하겠습니다. 아래 구문을 실행해보세요.
 
 ```sql
-SELECT 이름, 학년,
-CASE WHEN 학년 >= 3 THEN '3학년 이상' ELSE '3학년 미만' END AS 학년
-FROM student;
+SELECT 학번, 1학년2학기,
+    CASE 
+        WHEN 1학년2학기 = 4.5 THEN '신'
+        WHEN 1학년2학기 BETWEEN 4.0 AND 4.49 THEN '교수님의 사랑'
+        WHEN 1학년2학기 BETWEEN 3.5 AND 3.99 THEN '교수님의 귀염둥이'
+        WHEN 1학년2학기 BETWEEN 3.0 AND 3.49 THEN '일반인'
+    ELSE '오락문화의 선구자' 
+END AS '학점별 분류'
+FROM GRADE;
 ```
 
 ```sql
