@@ -696,11 +696,12 @@ mysql> DESC student;
 # 3. SQL 함수
 - 미리 정의된 기능의 모음입니다.
 - 함수의 종류에는 데이터베이스에 저장된 자료 한 줄 한 줄을 대상으로 하는 단일 행 함수와, 테이블 전체 행을 대상으로 하는 그룹 함수, 즉 복수 행 함수가 있습니다. 
-- 본 사이트의 Try it 섹션은 SQLite 기반으로 만들어진 codemirror 라이브러리로 만들어져 있습니다. 따라서 SQLite에서 지원하지 않는 함수라면 Try it 섹션에서도 작동하지 않을 수 있으며, SQLite 버전에 따라서도 달라질 수 있습니다. 
-버전은 `SELECT SQLITE_VERSION()` 구문으로 확인 가능합니다. 
+- 본 사이트의 Try it 섹션은 SQLite 기반으로 만들어진 codemirror 라이브러리로 만들어져 있습니다.  
+따라서 SQLite에서 지원하지 않는 함수라면 Try it 섹션에서도 작동하지 않을 수 있으며, SQLite 버전에 따라서도 달라질 수 있습니다.  
+버전은 `SELECT SQLITE_VERSION()` 구문으로 확인 가능합니다.  
 - 본 튜토리얼에서는 SQLite를 기준으로 문자 자료형을 처리하는 문자열 함수, 숫자 자료형을 처리하는 수학 함수를 소개합니다. 
 
-### 문자열 
+### 문자열 함수
 SQLite에서는 `CONCAT`, `INITCAP`, `INSTR` 는 동작하지 않습니다. 
 - 날짜 및 시간 함수 → DATE(), TIME(), DATETIME(), STRFTIME()
 - CONCAT('abc', 'def') → 'abcdef' : 문자열 연결
@@ -742,6 +743,7 @@ SELECT strftime('%Y-%m-%d %H:%M:%S', 'now');
 
 ### CONCAT
 - 문자열 또는 컬럼을 연결합니다. SQLite에서는 연결 연산자인 `||` 로 연결합니다. 
+
 ```SQL
 SELECT 학번 || 이름 || 학과 FROM student;
 ```
