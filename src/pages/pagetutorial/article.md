@@ -877,11 +877,11 @@ FROM SUBJECT;
 
 ```sql
 SELECT 학번, 1학년2학기,
-    CASE 
-        WHEN 1학년2학기 = 4.5 THEN '신'
-        WHEN 1학년2학기 BETWEEN 4.0 AND 4.49 THEN '교수님의 사랑'
-        WHEN 1학년2학기 BETWEEN 3.5 AND 3.99 THEN '교수님의 귀염둥이'
-        WHEN 1학년2학기 BETWEEN 3.0 AND 3.49 THEN '일반인'
+CASE 
+    WHEN 1학년2학기 = 4.5 THEN '신'
+    WHEN 1학년2학기 BETWEEN 4.0 AND 4.49 THEN '교수님의 사랑'
+    WHEN 1학년2학기 BETWEEN 3.5 AND 3.99 THEN '교수님의 귀염둥이'
+    WHEN 1학년2학기 BETWEEN 3.0 AND 3.49 THEN '일반인'
     ELSE '오락문화의 선구자' 
 END AS '학점별 분류'
 FROM GRADE;
@@ -890,44 +890,63 @@ FROM GRADE;
 ```sql
 SELECT 이름, 학년, 주소,
 CASE
-      WHEN SUBSTR(주소, 1, 2)='서울' THEN '서울 거주'
-      WHEN SUBSTR(주소, 1, 2)='경기' THEN '경기 거주'
-      WHEN SUBSTR(주소, 1, 2)='제주' THEN '제주 거주'
-      ELSE '그 외 지역'
+    WHEN SUBSTR(주소, 1, 2)='서울' THEN '서울 거주'
+    WHEN SUBSTR(주소, 1, 2)='경기' THEN '경기 거주'
+    WHEN SUBSTR(주소, 1, 2)='제주' THEN '제주 거주'
+    ELSE '그 외 지역'
 END AS '거주지역'
 FROM student;
 ```
 
 ## 4.2 JOIN
-기준을 가지고 데이터를 합칩니다. 여기서는 `INNER JOIN`만 사용해보도록 하겠습니다.
+
+JOIN은 관계형 데이터베이스 시스템상에서 기준을 가지고 데이터를 합치는 것을 뜻합니다.
+데이터를 조합하는 방식인 JOIN에는 JOIN에는 INNER JOIN, LEFT JOIN, RIGHT JOIN, OUTER JOIN등이 존재합니다.
+
+- [JOIN 실습사이트](https://sql-joins.leopard.in.ua/)
+
+### INNER JOIN
+
+- 기본 형태
 
 ```sql
-SELECT
-student.학번,
-student.이름 AS 학생이름,
-professor.이름 AS 교수이름,
-professor.이메일 AS 교수이메일
-FROM student
-INNER JOIN professor
---RIGHT JOIN professor
---LEFT JOIN professor
---FULL JOIN professor
-ON student.지도교수 = professor.이름;
+SELECT [컬럼명1], [컬럼명2], ...
+FROM [테이블명1]
+    INNER JOIN [테이블명2] 
+    ON [JOIN 조건]
+```
+
+
+
+- 예제
+
+```sql
+SELECT 
+    STUDENT.이름,
+    STUDENT.학과,
+    STUDENT.지도교수,
+    PROFESSOR.연구실
+FROM STUDENT
+    JOIN PROFESSOR
+    ON STUDENT.학과 = PROFESSOR.학과;
 ```
 
 ```sql
 SELECT
-student.학번,
-student.이름 AS 학생이름,
-professor.이름 AS 교수이름,
-professor.이메일 AS 교수이메일,
-scholarship.국가장학금
-FROM student
-INNER JOIN professor
-ON student.지도교수 = professor.이름
-INNER JOIN scholarship
-ON student.학번=scholarship.학번;
+    STUDENT.학번,
+    STUDENT.이름 AS 학생이름,
+    PROFESSOR.이름 AS 교수이름,
+    PROFESSOR.이메일 AS 교수이메일,
+    SCHOLARSHIP.국가장학금
+FROM STUDENT
+    INNER JOIN PROFESSOR
+    ON STUDENT.지도교수 = PROFESSOR.이름
+    INNER JOIN SCHOLARSHIP
+    ON STUDENT.학번 = SCHOLARSHIP.학번;
 ```
+
+
+
 
 ![출처 : 위니브](../JOINS.png)
 
