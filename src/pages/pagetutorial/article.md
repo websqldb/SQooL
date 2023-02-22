@@ -751,14 +751,15 @@ SELECT DATETIME();
 ```sql
 -- strftime : 포맷 지정 (format, timestring, modifier)
 -- DATE, TIME 값을 포맷에 맞추어 반환합니다.
-SELECT strftime('%Y-%m-%d %H:%M:%S', 'now');
+SELECT STAFTIME('%Y-%m-%d %H:%M:%S', 'now');
+SELECT STAFTIME('%Y#%m#%d %H@%M@%S', 'now');
 ```
 
 - 한정자 활용하기
 
 ```sql
 -- 현지시간 기준으로 현재 달의 마지막 날짜
-SELECT date('now', 'start of month', '+1 month', '-1 day', 'localtime');
+SELECT DATE('now', 'start of month', '+1 month', '-1 day', 'localtime');
 ```
 
 ### CONCAT
@@ -773,6 +774,9 @@ SELECT 학번 || 이름 || 학과 FROM student;
 
 ```SQL
 SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자로 바꾸기 
+```
+
+```sql
 SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바꾸기
 ```
 
@@ -780,6 +784,7 @@ SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바�
 - 원하는 문자를 잘라내어 추출하거나, 문자열의 일부가 필요한 경우 사용합니다.
 
 ```sql
+-- SUBSTR(STRING, START, LENGTH)
 SELECT SUBSTR(주소, 1, 2) AS 주소 FROM student;
 ```
 
@@ -787,6 +792,7 @@ SELECT SUBSTR(주소, 1, 2) AS 주소 FROM student;
 - 바꾸고 싶은 값으로 대상 값을 교체합니다.
 
 ```sql
+-- REPLACE(string,find_string,replacement)
 SELECT REPLACE('Hello world', 'world', 'SQL');
 ```
 
@@ -825,13 +831,19 @@ SELECT 12 % 5;
 ```sql
 -- 최댓값 구하기
 SELECT 학번, MAX(일학년일학기) AS '1학년 1등' FROM grade;
+```
 
+```sql
 -- 최솟값 구하기
 SELECT MIN(성적장학금) AS '성적장학금 최소 수령액' FROM scholarship;
+```
 
+```sql
 -- 숫자 컬럼에 대하여 합계 내기
 SELECT SUM(성적장학금) AS '성적장학금 총액' FROM scholarship;
+```
 
+```sql
 -- 평균값 구하기
 SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
 ```
@@ -842,7 +854,11 @@ SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
 2. 이름 컬럼의 문자열에서 성을 제외하고 이름만 출력하세요.
 3. 이름 컬럼의 문자열 뒤 2자리를 *로 처리하세요.
 
+### 수학 함수
+1. 전체 학생들의 학년 평균을 구하세요.
+
 ```sql
+-- 문자열 함수 모범답안
 SELECT 교원번호, 이름,
     LENGTH(이름) AS 이름길이,
     SUBSTR(이름, 2, 3) AS 자른이름,
@@ -850,10 +866,8 @@ SELECT 교원번호, 이름,
 FROM professor;
 ```
 
-### 수학 함수
-1. 전체 학생들의 학년 평균을 구하세요.
-
 ```sql
+-- 수학 함수 모범답안
 SELECT AVG(학년) FROM student;
 ```
 
