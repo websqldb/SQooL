@@ -727,25 +727,25 @@ SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다.
 ### 날짜 및 시간 함수
 SQLite에서는 날짜와 시간 데이터를 `TEXT` 로 취급합니다.  
 날짜 및 시간 함수는 다양한 `한정자`(Modifiers)를 지정하여 사용자가 원하는 대로 데이터를 변화시킬 수 있습니다.  
-
+<br/>
 - 현재 날짜를 나타냅니다.
 
 ```sql
 SELECT DATE();
 ```
-
+<br/>
 - 사용자의 현재 시간을 나타냅니다.
 
 ```sql
 SELECT TIME();
 ```
-
+<br/>
 - 현재의 날짜와 시간을 한꺼번에 나타냅니다.
 
 ```sql
 SELECT DATETIME();
 ```
-
+<br/>
 - (날짜 및 시간 함수 등)DATE, TIME 값을 포맷에 맞춰서 반환합니다.
 
 ```sql
@@ -754,14 +754,14 @@ SELECT DATETIME();
 SELECT STAFTIME('%Y-%m-%d %H:%M:%S', 'now');
 SELECT STAFTIME('%Y#%m#%d %H@%M@%S', 'now');
 ```
-
+<br/>
 - 한정자 활용하기
 
 ```sql
 -- 현지시간 기준으로 현재 달의 마지막 날짜
 SELECT DATE('now', 'start of month', '+1 month', '-1 day', 'localtime');
 ```
-
+<br/>
 ### CONCAT
 - 문자열 또는 컬럼을 연결합니다. SQLite에서는 연결 연산자인 `||` 로 연결합니다. 
 
