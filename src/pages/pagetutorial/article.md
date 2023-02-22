@@ -728,17 +728,37 @@ SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다.
 SQLite에서는 날짜와 시간 데이터를 `TEXT` 로 취급합니다.  
 날짜 및 시간 함수는 다양한 `한정자`(Modifiers)를 지정하여 사용자가 원하는 대로 데이터를 변화시킬 수 있습니다.  
 
+- 현재 날짜를 나타냅니다.
+
 ```sql
 SELECT DATE();
+```
+
+- 사용자의 현재 시간을 나타냅니다.
+
+```sql
 SELECT TIME();
+```
+
+- 현재의 날짜와 시간을 한꺼번에 나타냅니다.
+
+```sql
 SELECT DATETIME();
+```
 
--- 한정자 활용하기: 현지시간 기준으로 현재 달의 마지막 날짜
-SELECT date('now', 'start of month', '+1 month', '-1 day', 'localtime');
+- (날짜 및 시간 함수 등)DATE, TIME 값을 포맷에 맞춰서 반환합니다.
 
+```sql
 -- strftime : 포맷 지정 (format, timestring, modifier)
 -- DATE, TIME 값을 포맷에 맞추어 반환합니다.
 SELECT strftime('%Y-%m-%d %H:%M:%S', 'now');
+```
+
+- 한정자 활용하기
+
+```sql
+-- 현지시간 기준으로 현재 달의 마지막 날짜
+SELECT date('now', 'start of month', '+1 month', '-1 day', 'localtime');
 ```
 
 ### CONCAT
