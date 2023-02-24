@@ -423,8 +423,9 @@ WHERE 교원번호 IN ('A001', 'A002', 'A003');
 ```
 
 ```sql
-SELECT * FROM student
-WHERE 학과='컴퓨터공학과' OR WHERE 학과='전자공학과';
+SELECT *
+FROM student
+WHERE 학과='컴퓨터공학과' OR 학과='전자공학과';
 ```
 
 ```sql
