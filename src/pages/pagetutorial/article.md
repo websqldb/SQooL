@@ -413,13 +413,30 @@ WHERE (성적장학금 IS NOT NULL) AND (근로장학금 IS NOT NULL) AND (국�
 ```sql
 SELECT 학번, 성적장학금, 근로장학금, 국가장학금
 FROM scholarship
-WHERE 국가장학금 > 1000000;
+WHERE 국가장학금 >= 1000000;
 ```
 
 ```sql
 SELECT 교원번호, 이름, 학과, 연구실
 FROM professor
 WHERE 교원번호 IN ('A001', 'A002', 'A003');
+```
+
+```sql
+SELECT * FROM student
+WHERE 학과='컴퓨터공학과' OR WHERE 학과='전자공학과';
+```
+
+```sql
+SELECT *
+FROM student
+WHERE 학과 = '컴퓨터공학과' AND 학년 = 1;
+```
+
+```sql
+SELECT 학번, 이름, 학과
+FROM student
+WHERE 학번 % 2 = 1;
 ```
 
 ## 2.15 INSERT
