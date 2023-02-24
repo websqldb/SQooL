@@ -9,6 +9,7 @@
 # 1. 데이터베이스란?
 
 ## 1.1 공부하시는 방법
+
 `Try it`과 `Tutorial` 2개의 페이지를 각각 창에 띄어놓으시고 코드를 복사 붙여넣기 하면서 보세요. 가능하면 이 챕터(이론)를 건너뛰시고, 나중에 궁금하실 경우에 보세요.
 
 복잡한 구문은 아래와 같이 주석을 달아주세요. 그리고 가능하다면 손으로 3~4번 반복해서 써보시길 권해드립니다.
@@ -32,17 +33,20 @@ SELECT * FROM student;
 ```
 
 ## 1.2 DB
+
 데이터베이스(영어: database, DB)는 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합이다. 작성된 목록으로써 여러 응용 시스템들의 통합된 정보들을 저장하여 운영할 수 있는 공용 데이터들의 묶음이다. - Wikidipia
 
 이렇게 기억해주세요! **"데이터를 저장하는 공간!"**
 
 ## 1.3 DB, RDB, DBMS, RDBMS
+
 - DB → DBMS
 - RDB → RDBMS
 
-RDBMS(stands for Relational Database Management System)는 DB를 관리하는 시스템입니다. TOP3 오픈소스 RDBMS는 MySQL, PostgreSQL, SQLite입니다. 오픈소스가 아닌 것에서는 Oracle이 독보적입니다. 
+RDBMS(stands for Relational Database Management System)는 DB를 관리하는 시스템입니다. TOP3 오픈소스 RDBMS는 MySQL, PostgreSQL, SQLite입니다. 오픈소스가 아닌 것에서는 Oracle이 독보적입니다.
 
 ## 1.4 관계형 데이터베이스 구성 요소
+
 이번 챕터부터는 `2. 기본 구문 실습`을 먼저 해보고 보시기를 권해드립니다.
 
 - TABLE(행, 열), VIEW(데이터를 선택하여 만든 가상의 부분 집합), INDEX(주소), SEQUENCE(시퀀스, 고유번호 자동생성), SYNONYM(시노임, 객체의 별칭) 등의 객체로 구성
@@ -57,17 +61,20 @@ RDBMS(stands for Relational Database Management System)는 DB를 관리하는 �
 - 기수(Cardinality)는 튜플의 개수입니다. 위에서는 어트리뷰트를 제외하고 총 5개의 튜플이 존재합니다.
 
 ### 1.4.1 키의 개념 및 종류
+
 - 기본키는 메인으로 사용할 키를 말합니다. 고유한(유일한) 주민등록번호나, 계좌번호, 전화번호 등을 기본키로 사용할 수 있습니다. 기본키는 NULL을 사용할 수 없습니다.
 - 후보키는 기본키를 제외하고 고유한 키들을 말합니다.
 - 외래키는 관계되어 있는 테이블에서 참고하고 있는 키를 얘기합니다. 여기서 학생 릴레이션과 수강신청 과목 릴레이션은 서로 학번으로 연결되어 있죠.
 
 ### 1.4.2 데이터베이스의 종류
+
 - 계층형 데이터베이스(1:N)
 - 망형 데이터베이스(N:M)
 - 관계형 데이터베이스(단순한 표 형태의 상호 관계, 1:1, 1:N, N:M관계 표현)
 - 객체 지향형 데이터베이스
 
 ## 1.5 SQL
+
 SQL(Structured Query Language)은 스토리지 언어의 표준입니다. 여러분이 만약 MySQL, MsSQL, Oracle, Postgres 등의 DB를 사용하여 어떤 프로젝트를 한다면 SQL을 다루실 수 있어야 합니다.
 
 하지만 대부분의 강좌들이 '설치'부터 SQL 강의를 시작하는데, 설치하다가 지치시는 분들이 많으십니다. 이 수업은 본질에 집중합니다. SQL만 배워봅시다. 그렇다고 이론을 전혀 안하는 것은 아니고, 가장 마지막 챕터에서 다뤄보도록 하겠습니다.
@@ -77,6 +84,7 @@ SELECT * FROM student;
 ```
 
 ## 1.6 SQL 명령어의 분류
+
 중요한 것은 굵은 글씨로 해두었으니, 충분히 숙련되도록 연습해보세요.
 
 1. 데이터 조작어(DML) :**SELECT**, **INSERT**, **UPDATE**, **DELETE**
@@ -84,8 +92,8 @@ SELECT * FROM student;
 3. 데이터 제어어(DCL) : GRANT(권한 부여), REVOKE(권한 제거)
 4. 트랜젝션 제어어(TCL) : COMMIT, ROLLBACK, SAVEPOINT
 
-
 ## 1.7 Data 분석 과정
+
 ![출처 : 제주코딩베이스캠프 데이터분석 강좌](../data.png)
 
 - 사전에 데이터 분석 기획을 합니다.
@@ -95,12 +103,14 @@ SELECT * FROM student;
 - 데이터 수집부터, 가공하는 것까지 SQL을 사용할 수 있습니다. 물론 분석에도 쓸 수 있지만 분석에는 더 좋은 도구들이 많죠. R, Python 등의 언어가 있고, Tableau와 같은 시각화 솔루션이 있습니다.
 
 ## 1.8 정형 데이터와 비정형 데이터
+
 ![출처 : 제주코딩베이스캠프 SQL 강좌](../Untitled%201.png)
 
 - 정형데이터는 RDBMS에서 사용하는 테이블 안에 들어가 있는 형식이 잡혀 있는 데이터를 말합니다.
 - 비정형 데이터(unstructured data, unstructured information, 비정형 정보), 비구조화 데이터, 비구조적 데이터는 미리 정의된 데이터 모델이 없거나 미리 정의된 방식으로 정리되지 않은 정보를 말한다.(출처 : WIKI)
 
 ## 1.9 CRUD란?
+
 - 데이터베이스에서 자주 등장하는 용어이니 기억해주세요. 생성과 읽기, 갱신과 삭제를 묶어 일컫는 말입니다.
 
 [CRUD](https://ko.wikipedia.org/wiki/CRUD)
@@ -113,20 +123,20 @@ SELECT * FROM student;
 # 2. 기본 구문 실습
 
 ## 2.1 실습 방법
+
 Try it 탭을 하나 더 여시고 코드를 복사하여 Run SQL 버튼을 눌러주세요.
 
 ![](../Untitled%202.png)
 
 실습에 들어가기 전 데이터의 구조를 파악해보세요. 각각 database를 클릭하면 `Result` 창에서 table 형태로 볼 수 있습니다.
 
- 
-
 ![](../Untitled%203.png)
 
 ## 2.2 SELECT
+
 select는 데이터를 조회하거나 산술식, 함수 등을 실행할 때 사용합니다. SQL은 대소문자를 가리지 않지만, 구문에 해당되는 것은 대문자로만 적도록 하겠습니다.
 
-`*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다. 
+`*(에스터리스크, 별표)`는 모든 항목을 다 출력할 때 사용합니다.
 
 ```sql
 SELECT * FROM Student;
@@ -152,6 +162,7 @@ SELECT (10 + 2) / 2;
 ```
 
 ## 2.3 DISTINCT
+
 DISTINCT는 중복값을 제거합니다. 여기서 학과번호는 학과이름입니다. 2.5 AS 챕터에서 학과번호를 학과이름으로 바꿔주도록 하겠습니다.
 
 ```sql
@@ -160,6 +171,7 @@ FROM subject;
 ```
 
 ## 2.4 ORDER BY
+
 출력 결과 정렬합니다. 아래처럼 개행을 하여도 괜찮습니다. 마지막에 세미콜론 잊지마세요.
 
 - 오름차순 : ASC(기본, 작은 수에서 큰 수로, Ascending)
@@ -178,6 +190,7 @@ ORDER BY 학년 ASC;
 ```
 
 ## 2.5 AS
+
 별칭을 정합니다. 기존 Table의 값은 변하지 않습니다.
 
 ```sql
@@ -198,6 +211,7 @@ FROM student;
 ```
 
 ## 2.6 산술연산
+
 더하고 빼고 나누고 곱하는 것이 가능합니다.
 
 ```sql
@@ -221,11 +235,12 @@ SELECT CustomerName + CustomerName FROM CustomersSELECT 학년 || ' ' || 학과 
 ```
 
 ```sql
-SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가 
+SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가
 FROM Products
 ```
 
 ## 2.7 연결 연산자
+
 Oracle에서는 ||, MsSQL은 +, MySQL은 공백으로 연결 가능. CONCAT함수는 공통으로 사용 가능합니다. 하지만 초급자 단계에서 이런 것들을 구분지어 기억하는 것은 크게 의미있지 않으니, 문법이 조금 상이하다 정도로 기억해주세요.
 
 ```sql
@@ -239,9 +254,11 @@ SELECT 과목명 || ' 과목은 ' || 학과번호 || '에서 ' || 이수구분 |
 다양한 쿼리를 만들어 다른 table에서도 여러분 만에 문장을 만들어보세요.
 
 ## 2.8 논리 연산
+
 우선순위는 NOT, AND, OR입니다. True는 1로, False는 0으로, and는 곱으로, or는 덧셈으로 이해하시면 계산이 쉽습니다. 뒤에서 나올 비교 연산자, `WHERE 조건 절`을 미리 사용하였습니다. 비교 연산자는 같다(`=`), 다르다(`!=`), 크다(`>`), 작다(`<`)를 표현하는 연산자입니다.
 
 ### 2.8.1 기본실습
+
 ```sql
 SELECT 1 AND 0;
 ```
@@ -264,6 +281,7 @@ AND 마일리지 >= 100;
 ```
 
 ### 2.8.3 OR
+
 ```sql
 SELECT *
 FROM student
@@ -279,6 +297,7 @@ AND (학번 LIKE '2019%' OR 학번 LIKE '2020%');
 ```
 
 ### 2.8.3 NOT
+
 ```sql
 SELECT *
 FROM student
@@ -295,6 +314,7 @@ WHERE 학과 <> 컴퓨터공학과;
 ```
 
 ## 2.9 BETWEEN 연산
+
 A AND B : A와 B를 포함한 사이의 값
 
 ```sql
@@ -310,7 +330,8 @@ WHERE 일학년일학기 >= 4.0 AND 일학년이학기 < 4.0;
 ```
 
 ## 2.10 IN 연산
-IN A : A안에 값과 일치하는 값을 조회 
+
+IN A : A안에 값과 일치하는 값을 조회
 
 ```sql
 SELECT 학번, 이름, 학과
@@ -319,9 +340,10 @@ WHERE 학과 IN ('물리학과', '화학과');
 ```
 
 ## 2.11 LIKE 연산
+
 - LIKE '비교문자'
 
-1. 비교 문자와 형태가 일치(%(모든 문자), _(한 글자) 사용)
+1. 비교 문자와 형태가 일치(%(모든 문자), \_(한 글자) 사용)
 2. 대소문자를 안가림
 3. `%`는 와일드카드
 
@@ -341,9 +363,8 @@ WHERE 지도교수 LIKE '이__';
 
 만약 언더바가 2개라면 위 데이터 중 이호준만 출력합니다. 이런 문자열들은 와일드카드라고 부르며 다양한 예제가 있습니다.
 
-
 - 자주 쓰는 예제
-‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
+  ‘-04-’이 들어가는 모든 값 (생년월일이 4월인 학생들의 데이터가 출력)
 
 ```sql
 SELECT 학번, 이름, 학과, 생년월일
@@ -359,11 +380,12 @@ FROM subject
 WHERE 이수구분 LIKE '%양';
 ```
 
-
 ## 2.12 IS NULL
+
 필드의 값이 NULL인 경우를 조회하고자 할 때 사용
+
 - NULL은 아예 값이 없어 알 수 없는(unknown) 값 (0이나 공백은 NULL이 아닙니다.)
-- NULL이 아닌 값을 조회하고자 한다면 NOT 연산자와 함께 `IS NOT NULL` 연산자를 사용합니다. 
+- NULL이 아닌 값을 조회하고자 한다면 NOT 연산자와 함께 `IS NOT NULL` 연산자를 사용합니다.
 
 ```sql
 SELECT *
@@ -372,29 +394,34 @@ WHERE 성적장학금 IS NULL;
 ```
 
 ## 2.13 bit 단위 논리연산자
+
 논리 연산을 비트 단위로 합니다.
 
 - **AND (&)**
-대응되는 비트가 모두 1이어야 1을 반환합니다.
+  대응되는 비트가 모두 1이어야 1을 반환합니다.
+
 ```sql
 SELECT 1 & 0;
 ```
 
 - **OR (|)**
-대응되는 비트 중에서 하나라도 1이면 1을 반환합니다.
+  대응되는 비트 중에서 하나라도 1이면 1을 반환합니다.
+
 ```sql
 SELECT 1 | 0;
 ```
 
 - **XOR (^)**
-대응되는 비트가 서로 다를 때 1을 반환합니다. XOR 연산은 SQooL에서는 동작하지 않습니다.
+  대응되는 비트가 서로 다를 때 1을 반환합니다. XOR 연산은 SQooL에서는 동작하지 않습니다.
+
 ```sql
 SELECT 1 ^ 0;
 ```
 
-
 ## 2.14 WHERE
+
 데이터를 검색, 갱신, 삭제할 때 특정 데이터에 대한 조건을 설정할 때 사용하는 구문
+
 - 여러 연산자를 결합하여 사용 가능
 - 결합 가능한 연산자의 종류 : 비교연산자(=, <, >, !=, >=, <=), SQL연산자(BETWEEN), 논리 연산자(AND, OR) 등
 
@@ -441,6 +468,7 @@ WHERE 학번 % 2 = 1;
 ```
 
 ## 2.15 INSERT
+
 기존 테이블에 행을 삽입할 때 사용하는 구문
 
 ```sql
@@ -449,7 +477,7 @@ VALUES ([값1, 값2, ...]);
 ```
 
 - 입력할 컬럼과 값은 개수와 데이터 형식이 일치해야 합니다.
-- 삽입 시 지정해주지 않은 컬럼은 `null`로 들어가게 됩니다. 
+- 삽입 시 지정해주지 않은 컬럼은 `null`로 들어가게 됩니다.
 
 아래 코드를 사용한 후 다시 한 번 전체 컬럼을 조회해보세요. 나머지 값은 `null`로 들어가게 됩니다. 클릭을 3번 하면 3개의 데이터가 들어가게 됩니다.
 
@@ -465,6 +493,7 @@ SELECT * FROM professor;
 ## 2.16 연습문제
 
 ### 문제 1번
+
 서울에 살면서 4학년인 학생들을 구하는 쿼리문을 작성해주세요.
 
 ```sql
@@ -474,7 +503,8 @@ WHERE 학년=4 AND 주소 LIKE '서울특별시%';
 ```
 
 ### 문제 2번
-2학년1학기 성적이 null 값인 학생을 구해주세요. 
+
+2학년1학기 성적이 null 값인 학생을 구해주세요.
 비어있는 문자열과 NULL값은 다른 값입니다. 아래 주석은 오답입니다.
 
 ```sql
@@ -485,6 +515,7 @@ WHERE 2학년1학기 IS NULL;
 ```
 
 ### 문제 3번
+
 컴퓨터공학과의 전필 과목을 구하는 쿼리문을 작성해주세요.
 
 ```sql
@@ -494,6 +525,7 @@ WHERE 학과번호='컴퓨터공학과' AND 이수구분='전필';
 ```
 
 ### 문제 4번
+
 생일이 11월인 학생을 구하는 쿼리문을 작성해주세요.
 
 ```sql
@@ -503,6 +535,7 @@ WHERE 생년월일 LIKE '%-11-%';
 ```
 
 ### 문제 5번
+
 모든 2학년 학생들을 조회하되 마일리지가 큰 순으로 정렬하는 쿼리문을 작성해주세요.
 
 ```sql
@@ -512,11 +545,12 @@ WHERE 학년=2 ORDER BY 마일리지 DESC;
 ```
 
 ## 2.17 UPDATE
+
 데이터를 수정할 수 있습니다. 이 행위는 되돌릴 수 없습니다. WHERE 절이 탐색 조건을 충족시키는 모든 행에 대해 값을 변경합니다.
 기본 형태는 다음과 같습니다.
 
 ```sql
-UPDATE [테이블명] 
+UPDATE [테이블명]
 SET [컬럼='변경할값'], [컬럼='변경할값'], ...
 WHERE [조건];
 ```
@@ -532,6 +566,7 @@ SELECT * FROM student;
 ```
 
 ## 2.18 DELETE
+
 DELETE 문을 사용하면 테이블에서 행을 제거할 수 있습니다.
 주의하세요. WHERE 절을 통해 조건을 주지 않으면 테이블의 모든 행이 제거됩니다. 이런일이 실무에서도 종종 발생됩니다.
 
@@ -548,12 +583,14 @@ SELECT * FROM student;
 ```
 
 ## 2.19 TOP과 LIMIT
+
 많은 데이터 중에서 특정 개수만 출력할 수 있습니다. 방대한 데이터를 다룰 때 유용하게 사용됩니다.
 `TOP`과 `LIMIT` 명령어는 동일한 기능을 하지만 DBMS마다 명령어의 지원 여부가 상이하기 때문에 알맞은 명령어를 선택해 사용하시길 바랍니다.
+
 - MS-SQL : `TOP`
 - MY-SQL : `LIMIT`
 - ORACLE : `ROWNUM`
-SQooL에서는 LIMIT 명령어를 사용가능하니 LIMIT 명령어를 사용해주세요.
+  SQooL에서는 LIMIT 명령어를 사용가능하니 LIMIT 명령어를 사용해주세요.
 
 - 사용 가능 명령어
 
@@ -578,11 +615,12 @@ SELECT TOP 3 * FROM student;
 SELECT TOP 10 PERCENT * FROM student;
 ```
 
-
 ## 2.20 CRUD 한 번에 사용해보기
+
 CRUD란 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능인 **Create(생성)**, **Read(읽기)**, **Update(갱신)**, **Delete(삭제)**를 뜻하는 용어입니다.
 
 ### Create (생성)
+
 CREATE 문을 사용하여 테이블을 새로 생성할 수 있습니다. 기본 구문은 다음과 같습니다.
 
 ```sql
@@ -592,28 +630,28 @@ CREATE TABLE [테이블명](
 ...
 [컬럼명] [데이터타입] [조건]);
 ```
+
 - 데이터 타입
 
-|데이터 타입|의미|
-|-|-|
-|CHAR|특정 문자열 개수를 지정 (5자리 문자열 -> CHAR(5)|
-|VARCHAR|가변 길이의 문자열|
-|NUMBER|숫자에 사용되는 데이터 타입 (MYSQL은 INT 사용)|
-|DEMICAL|숫자에 사용되는 데이터 타입|
-|DATE|날짜에 사용되는 데이터 타입|
+| 데이터 타입 | 의미                                             |
+| ----------- | ------------------------------------------------ |
+| CHAR        | 특정 문자열 개수를 지정 (5자리 문자열 -> CHAR(5) |
+| VARCHAR     | 가변 길이의 문자열                               |
+| NUMBER      | 숫자에 사용되는 데이터 타입 (MYSQL은 INT 사용)   |
+| DEMICAL     | 숫자에 사용되는 데이터 타입                      |
+| DATE        | 날짜에 사용되는 데이터 타입                      |
 
 - 조건
 
-|제약조건|의미|
-|-|-|
-|NOT NULL|값이 꼭 입력되어야 할 때 사용|
-|UNIQUE|해당 컬럼에 중복된 값을 허용하지 않고자 할 때 사용|
-|PRIMARY KEY|해당 컬럼을 기본키로 지정할 때 사용|
-|FOREIGN KEY|해당 컬럼을 외래키로 지정할 때 사용|
-|CHECK|컬럼에 입력되는 데이터를 체크해 특정 조건에 맞는 데이터만 입력받고자 할 때 사용|
-|DEFAULT|값이 입력되지 않으면 기본값으로 지정한 값으로 입력됨|
-|INDEX|인덱스를 지정할 때 사용|
-
+| 제약조건    | 의미                                                                            |
+| ----------- | ------------------------------------------------------------------------------- |
+| NOT NULL    | 값이 꼭 입력되어야 할 때 사용                                                   |
+| UNIQUE      | 해당 컬럼에 중복된 값을 허용하지 않고자 할 때 사용                              |
+| PRIMARY KEY | 해당 컬럼을 기본키로 지정할 때 사용                                             |
+| FOREIGN KEY | 해당 컬럼을 외래키로 지정할 때 사용                                             |
+| CHECK       | 컬럼에 입력되는 데이터를 체크해 특정 조건에 맞는 데이터만 입력받고자 할 때 사용 |
+| DEFAULT     | 값이 입력되지 않으면 기본값으로 지정한 값으로 입력됨                            |
+| INDEX       | 인덱스를 지정할 때 사용                                                         |
 
 ```sql
 CREATE TABLE 제품 (
@@ -638,12 +676,13 @@ VALUES (3, '개발자 노트북 파우치', 36000);
 ```
 
 ### Read (읽기)
+
 ```sql
 SELECT * FROM 제품;
 ```
 
-
 ### Update (갱신)
+
 ```sql
 UPDATE 제품
 SET 제품이름='위니브 스티커 팩', 가격=3500
@@ -652,25 +691,31 @@ WHERE 제품번호 = 1;
 ```
 
 ### Delete (삭제)
+
 - 레코드 삭제
+
 ```sql
 DELETE FROM 제품 WHERE 제품번호=1;
 ```
 
 - 테이블 삭제
+
 ```sql
 DROP TABLE 제품;
 ```
 
 ## 2.21 SHOW, DESC
-SHOW 명령어와 DESC 명령어는 모두 SQooL에서는 동작하지 않는 명령어입니다. 
-실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다. 
+
+SHOW 명령어와 DESC 명령어는 모두 SQooL에서는 동작하지 않는 명령어입니다.
+실습은 안하지만 콘솔에서 자주 쓰는 명령어입니다.
 
 - **SHOW**
-데이터 베이스나 테이블의 목록을 출력하는 명령어입니다.
+  데이터 베이스나 테이블의 목록을 출력하는 명령어입니다.
+
 ```sql
 mysql> SHOW databases;
 ```
+
 ```sql
 mysql> SHOW tables;
     +-----------------+
@@ -689,7 +734,8 @@ mysql> SHOW tables;
 ```
 
 - **DESC**
-DESCRIBE의 약자로 테이블의 구조를 조회하는 명령어입니다.
+  DESCRIBE의 약자로 테이블의 구조를 조회하는 명령어입니다.
+
 ```sql
 mysql> DESC table_name;
 ```
@@ -712,15 +758,18 @@ mysql> DESC student;
 ```
 
 # 3. SQL 함수
+
 - 미리 정의된 기능의 모음입니다.
-- 함수의 종류에는 데이터베이스에 저장된 자료 한 줄 한 줄을 대상으로 하는 단일 행 함수와, 테이블 전체 행을 대상으로 하는 그룹 함수, 즉 복수 행 함수가 있습니다. 
+- 함수의 종류에는 데이터베이스에 저장된 자료 한 줄 한 줄을 대상으로 하는 단일 행 함수와, 테이블 전체 행을 대상으로 하는 그룹 함수, 즉 복수 행 함수가 있습니다.
 - 본 사이트의 Try it 섹션은 SQLite 기반으로 만들어진 codemirror 라이브러리로 만들어져 있습니다.  
-따라서 SQLite에서 지원하지 않는 함수라면 Try it 섹션에서도 작동하지 않을 수 있으며, SQLite 버전에 따라서도 달라질 수 있습니다.  
-버전은 `SELECT SQLITE_VERSION()` 구문으로 확인 가능합니다.  
-- 본 튜토리얼에서는 SQLite를 기준으로 문자 자료형을 처리하는 문자열 함수, 숫자 자료형을 처리하는 수학 함수를 소개합니다. 
+  따라서 SQLite에서 지원하지 않는 함수라면 Try it 섹션에서도 작동하지 않을 수 있으며, SQLite 버전에 따라서도 달라질 수 있습니다.  
+  버전은 `SELECT SQLITE_VERSION()` 구문으로 확인 가능합니다.
+- 본 튜토리얼에서는 SQLite를 기준으로 문자 자료형을 처리하는 문자열 함수, 숫자 자료형을 처리하는 수학 함수를 소개합니다.
 
 ### 문자열 함수
-SQLite에서는 `CONCAT`, `INITCAP`, `INSTR` 는 동작하지 않습니다. 
+
+SQLite에서는 `CONCAT`, `INITCAP`, `INSTR` 는 동작하지 않습니다.
+
 - 날짜 및 시간 함수 → DATE(), TIME(), DATETIME(), STRFTIME()
 - CONCAT('abc', 'def') → 'abcdef' : 문자열 연결
 - LOWER('ABC') → 'abc'
@@ -733,7 +782,9 @@ SQLite에서는 `CONCAT`, `INITCAP`, `INSTR` 는 동작하지 않습니다.
 - COUNT : 전체 컬럼, 혹은 특정 컬럼의 행의 개수를 출력
 
 ### 수학 함수
-SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다. 
+
+SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다.
+
 - ROUND(반올림할 숫자, 자릿수) : 숫자를 반올림하여 출력, 0이 소숫점 첫째자리
 - TRUNC(절삭할 숫자, 자릿수) : 숫자를 절삭하여 출력, 0이 소숫점 첫째자리
 - MOD(피제수, 제수) : 피제수를 제수로 나눈 나머지를 출력
@@ -742,27 +793,33 @@ SQLite에서는 `TRUNC`, `MOD`, `POWER`, `SQRT` 는 동작하지 않습니다.
 - 통계 함수 : MAX(), MIN(), SUM(), AVG()
 
 ## 3.1 문자열 함수
+
 ### 날짜 및 시간 함수
+
 SQLite에서는 날짜와 시간 데이터를 `TEXT` 로 취급합니다.  
 날짜 및 시간 함수는 다양한 `한정자`(Modifiers)를 지정하여 사용자가 원하는 대로 데이터를 변화시킬 수 있습니다.  
 <br/>
+
 - 현재 날짜를 나타냅니다.
 
 ```sql
 SELECT DATE();
 ```
+
 <br/>
 - 사용자의 현재 시간을 나타냅니다.
 
 ```sql
 SELECT TIME();
 ```
+
 <br/>
 - 현재의 날짜와 시간을 한꺼번에 나타냅니다.
 
 ```sql
 SELECT DATETIME();
 ```
+
 <br/>
 - (날짜 및 시간 함수 등)DATE, TIME 값을 포맷에 맞춰서 반환합니다.
 
@@ -772,6 +829,7 @@ SELECT DATETIME();
 SELECT STAFTIME('%Y-%m-%d %H:%M:%S', 'now');
 SELECT STAFTIME('%Y#%m#%d %H@%M@%S', 'now');
 ```
+
 <br/>
 - 한정자 활용하기
 
@@ -779,19 +837,21 @@ SELECT STAFTIME('%Y#%m#%d %H@%M@%S', 'now');
 -- 현지시간 기준으로 현재 달의 마지막 날짜
 SELECT DATE('now', 'start of month', '+1 month', '-1 day', 'localtime');
 ```
+
 <br/>
 ### CONCAT
-- 문자열 또는 컬럼을 연결합니다. SQLite에서는 연결 연산자인 `||` 로 연결합니다. 
+- 문자열 또는 컬럼을 연결합니다. SQLite에서는 연결 연산자인 `||` 로 연결합니다.
 
 ```SQL
 SELECT 학번 || 이름 || 학과 FROM student;
 ```
 
 ### LOWER, UPPER
+
 - 모든 대문자를 소문자로, 모든 소문자를 대문자로 치환합니다.
 
 ```SQL
-SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자로 바꾸기 
+SELECT LOWER(교원번호) AS 교원번호 FROM professor; -- LOWER: 소문자로 바꾸기
 ```
 
 ```sql
@@ -799,6 +859,7 @@ SELECT UPPER(이메일) AS 이메일 FROM professor; -- UPPER: 대문자로 바�
 ```
 
 ### SUBSTR
+
 - 원하는 문자를 잘라내어 추출하거나, 문자열의 일부가 필요한 경우 사용합니다.
 
 ```sql
@@ -807,6 +868,7 @@ SELECT SUBSTR(주소, 1, 2) AS 주소 FROM student;
 ```
 
 ### REPLACE
+
 - 바꾸고 싶은 값으로 대상 값을 교체합니다.
 
 ```sql
@@ -815,6 +877,7 @@ SELECT REPLACE('Hello world', 'world', 'SQL');
 ```
 
 ### LENGTH
+
 - 문자열의 길이를 출력합니다.
 
 ```sql
@@ -822,6 +885,7 @@ SELECT 이름, LENGTH(이름) AS 이름길이 FROM student;
 ```
 
 ### COUNT
+
 - 전체 컬럼, 혹은 특정 컬럼의 행의 개수를 출력합니다.
 
 ```sql
@@ -829,7 +893,9 @@ SELECT COUNT(이름) FROM student;
 ```
 
 ## 3.2 수학 함수
+
 ### ROUND
+
 - 숫자를 반올림하여 지정한 자릿수만큼 표시합니다.
 
 ```sql
@@ -837,6 +903,7 @@ SELECT ROUND(1학년1학기, 1) AS 반올림성적 FROM grade;
 ```
 
 ### MOD
+
 - 피제수를 제수로 나눈 나머지를 출력합니다. SQLite에서는 지원하지 않으나, `%` 를 사용하면 출력할 수 있습니다.
 
 ```sql
@@ -844,7 +911,8 @@ SELECT 12 % 5;
 ```
 
 ### 통계 함수
-- 컬럼의 최댓값, 최솟값, 합계, 평균을 출력하는 함수입니다. 
+
+- 컬럼의 최댓값, 최솟값, 합계, 평균을 출력하는 함수입니다.
 
 ```sql
 -- 최댓값 구하기
@@ -867,12 +935,15 @@ SELECT AVG(1학년1학기) AS '평균 성적' FROM grade;
 ```
 
 ## 3.3 연습문제
+
 ### 문자열 함수
+
 1. 이름 컬럼의 문자열 길이를 출력하세요.
 2. 이름 컬럼의 문자열에서 성을 제외하고 이름만 출력하세요.
-3. 이름 컬럼의 문자열 뒤 2자리를 *로 처리하세요.
+3. 이름 컬럼의 문자열 뒤 2자리를 \*로 처리하세요.
 
 ### 수학 함수
+
 1. 전체 학생들의 학년 평균을 구하세요.
 
 ```sql
@@ -888,7 +959,6 @@ FROM professor;
 -- 수학 함수 모범답안
 SELECT AVG(학년) FROM student;
 ```
-
 
 # 4. 조건
 
@@ -919,7 +989,7 @@ FROM [테이블명]
 
 ```sql
 SELECT 학과번호, 과목명, 이수구분,
-CASE 
+CASE
     WHEN 이수구분 = '전필' THEN '전공 필수과목'
 END AS '전공 필수 및 선택 구분'
 FROM SUBJECT;
@@ -927,7 +997,7 @@ FROM SUBJECT;
 
 ```sql
 SELECT 학과번호, 과목명, 이수구분,
-CASE 
+CASE
     WHEN 이수구분 = '전필' THEN '전공 필수과목'
     ELSE '전공 선택과목'
 END AS '전공 필수 및 선택 구분'
@@ -938,12 +1008,12 @@ FROM SUBJECT;
 
 ```sql
 SELECT 학번, 1학년2학기,
-CASE 
+CASE
     WHEN 1학년2학기 = 4.5 THEN '신'
     WHEN 1학년2학기 BETWEEN 4.0 AND 4.49 THEN '교수님의 사랑'
     WHEN 1학년2학기 BETWEEN 3.5 AND 3.99 THEN '교수님의 귀염둥이'
     WHEN 1학년2학기 BETWEEN 3.0 AND 3.49 THEN '일반인'
-    ELSE '오락문화의 선구자' 
+    ELSE '오락문화의 선구자'
 END AS '학점별 분류'
 FROM GRADE;
 ```
@@ -973,45 +1043,37 @@ JOIN은 관계형 데이터베이스 시스템상에서 기준을 가지고 데�
 ```sql
 SELECT [컬럼명1], [컬럼명2], ...
 FROM [테이블명1]
-    INNER JOIN [테이블명2] 
-    ON [JOIN 조건]
+INNER JOIN [테이블명2] ON [JOIN 조건]
 ```
-
-
 
 - 예제
 
 ```sql
-SELECT 
-    STUDENT.이름,
-    STUDENT.학과,
-    STUDENT.지도교수,
-    PROFESSOR.연구실
-FROM STUDENT
-    JOIN PROFESSOR
-    ON STUDENT.학과 = PROFESSOR.학과;
+SELECT
+    student.이름,
+    student.학과,
+    student.지도교수,
+    professor.연구실
+FROM student
+JOIN professor ON student.학과 = professor.학과;
 ```
 
 ```sql
 SELECT
-    STUDENT.학번,
-    STUDENT.이름 AS 학생이름,
-    PROFESSOR.이름 AS 교수이름,
-    PROFESSOR.이메일 AS 교수이메일,
-    SCHOLARSHIP.국가장학금
-FROM STUDENT
-    INNER JOIN PROFESSOR
-    ON STUDENT.지도교수 = PROFESSOR.이름
-    INNER JOIN SCHOLARSHIP
-    ON STUDENT.학번 = SCHOLARSHIP.학번;
+    student.학번,
+    student.이름 AS 학생이름,
+    professor.이름 AS 교수이름,
+    professor.이메일 AS 교수이메일,
+    scholarship.국가장학금
+FROM student
+INNER JOIN professor ON student.지도교수 = professor.이름
+INNER JOIN scholarship ON student.학번 = scholarship.학번;
 ```
-
-
-
 
 ![출처 : 위니브](../JOINS.png)
 
 ## 4.3 UNION
+
 데이터를 결합합니다.
 
 ```sql
@@ -1021,10 +1083,11 @@ SELECT 교원번호, 이름 FROM professor;
 ```
 
 ## 4.4 GROUP BY
+
 특정 열을 기준으로 그룹화 하여 다른 특정 열에 붙일 때 사용합니다. 아래 코드에서 GROUP BY 코드를 삭제하면 작동하지 않습니다. 그 이유는 SELECT 절에서 이미 그룹 함수와 기준열이 쓰였기 때문입니다.
 
 ```sql
-SELECT 학년, COUNT(학년) AS "학년별 학생 수" 
+SELECT 학년, COUNT(학년) AS "학년별 학생 수"
 FROM Student
 GROUP BY 학년
 ```
@@ -1036,10 +1099,11 @@ GROUP BY 학년;
 ```
 
 ## 4.5 HAVING
+
 그룹화된 데이터에 조건을 부여합니다.
 
 ```sql
-SELECT 학년, COUNT(학년) AS "학년별 학생 수" 
+SELECT 학년, COUNT(학년) AS "학년별 학생 수"
 FROM Student
 GROUP BY 학년
 HAVING "학년별 학생 수" < 25
@@ -1053,6 +1117,7 @@ HAVING 학년 > 2;
 ```
 
 ## 4.6 EXIST
+
 서브 쿼리가 참일 경우 참을, 거짓일 경우 거짓을 반환합니다.
 
 ```sql
@@ -1062,10 +1127,11 @@ WHERE EXISTS (SELECT 학번 FROM scholarship WHERE student.학번 = scholarship.
 ```
 
 ## 4.7 ALL, ANY
+
 SQooL에서는 돌아가지 않는 코드입니다. `ALL`은서브 쿼리가 모두 참이어야 참을 반환합니다. `ANY` 서브 쿼리가 하나라도 참이라면 참을 반환합니다. 대체 가능한 문법도 함께 명시합니다.
 
 ```sql
-SELECT 이름 
+SELECT 이름
 FROM student
 WHERE 학번 IN (SELECT 학번 FROM grade WHERE 1학년1학기 > 4);
 ```
