@@ -1083,9 +1083,9 @@ INNER JOIN professor ON student.지도교수 = professor.이름
 INNER JOIN scholarship ON student.학번 = scholarship.학번;
 ```
 
-### OUTER JOIN
 
-#### LEFT OUTER JOIN
+
+### LEFT OUTER JOIN
 
 일치하는 항목이 있는 경우 왼쪽 테이블의 해당 내용을 출력합니다.
 
@@ -1097,7 +1097,8 @@ FROM [테이블명1]
 LEFT OUTER JOIN [테이블명2] ON [조인 조건]
 ```
 
-#### RIGHT OUTER JOIN
+
+### RIGHT OUTER JOIN
 
 일치하는 항목이 있는 경우 오른쪽 테이블의 해당 내용을 출력합니다.
 
@@ -1109,7 +1110,8 @@ FROM [테이블명1]
 RIGHT OUTER JOIN [테이블명2] ON [조인 조건]
 ```
 
-#### FULL OUTER JOIN
+
+### FULL OUTER JOIN
 
 왼쪽 테이블 또는 오른쪽 테이블에 일치하는 항목이 있을 경우 해당 내용 모두를 출력합니다.
 
@@ -1122,6 +1124,7 @@ FULL OUTER JOIN [테이블명2] ON [조인 조건]
 ```
 
 ![출처 : 위니브](../JOINS.png)
+
 
 ## 4.3 UNION
 
