@@ -1145,10 +1145,10 @@ FROM [테이블명]
 
 ```sql
 SELECT 이름
-FROM STUDENT
+FROM student
 UNION
 SELECT 이름
-FROM PROFESSOR;
+FROM professor;
 ```
 
 ### UNION ALL
@@ -1157,10 +1157,10 @@ FROM PROFESSOR;
 
 ```sql
 SELECT 학과
-FROM STUDENT
+FROM student
 UNION ALL
 SELECT 학과
-FROM PROFESSOR;
+FROM professor;
 ```
 
 
