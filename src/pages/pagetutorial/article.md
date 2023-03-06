@@ -1130,11 +1130,40 @@ FULL OUTER JOIN [테이블명2] ON [조인 조건]
 
 데이터를 결합합니다.
 
+- 기본 형태
+
 ```sql
-SELECT 학번, 이름 FROM student
+SELECT [컬럼명]
+FROM [테이블명]
 UNION
-SELECT 교원번호, 이름 FROM professor;
+SELECT [컬럼명]
+FROM [테이블명]
 ```
+
+
+- 예제
+
+```sql
+SELECT 이름
+FROM STUDENT
+UNION
+SELECT 이름
+FROM PROFESSOR;
+```
+
+### UNION ALL
+
+데이터 결합시 중복을 허용
+
+```sql
+SELECT 학과
+FROM STUDENT
+UNION ALL
+SELECT 학과
+FROM PROFESSOR;
+```
+
+
 
 ## 4.4 GROUP BY
 
