@@ -971,16 +971,16 @@ SELECT AVG(학년) FROM student;
 
 ## 4.1 조건문
 
--   Oracle의 경우에는 `DECODE`, `CASE WHEN`
--   MsSQL의 경우에는 `CASE WHEN`
--   MySQL의 경우에는 `IF`, `CASE WHEN`
--   SQLite의 경우에는 `CASE WHEN`
+- Oracle의 경우에는 `DECODE`, `CASE WHEN`
+- MsSQL의 경우에는 `CASE WHEN`
+- MySQL의 경우에는 `IF`, `CASE WHEN`
+- SQLite의 경우에는 `CASE WHEN`
 
 ### CASE WHEN
 
 조건에 맞는 데이터를 가져오고 싶을 때 사용하는 구문
 
--   기본 형태
+- 기본 형태
 
 ```sql
 SELECT [컬럼명]
@@ -992,7 +992,7 @@ END [결과를 타나낼 컬럼명]
 FROM [테이블명]
 ```
 
--   예제
+- 예제
 
 ```sql
 SELECT 학과번호, 과목명, 이수구분,
@@ -1041,11 +1041,11 @@ FROM student;
 JOIN은 관계형 데이터베이스 시스템상에서 기준을 가지고 데이터를 합치는 것을 뜻합니다.
 데이터를 조합하는 방식인 JOIN에는 JOIN에는 INNER JOIN, LEFT JOIN, RIGHT JOIN, OUTER JOIN등이 존재합니다.
 
--   [JOIN 실습사이트](https://sql-joins.leopard.in.ua/)
+- [JOIN 실습사이트](https://sql-joins.leopard.in.ua/)
 
 ### INNER JOIN
 
--   기본 형태
+- 기본 형태
 
 ```sql
 SELECT [컬럼명1], [컬럼명2], ...
@@ -1053,7 +1053,13 @@ FROM [테이블명1]
 INNER JOIN [테이블명2] ON [JOIN 조건]
 ```
 
--   예제
+- 예제
+
+```sql
+SELECT *
+FROM student
+INNER JOIN major ON student.학과 = major.학과이름;
+```
 
 ```sql
 SELECT
@@ -1075,6 +1081,44 @@ SELECT
 FROM student
 INNER JOIN professor ON student.지도교수 = professor.이름
 INNER JOIN scholarship ON student.학번 = scholarship.학번;
+```
+
+### OUTER JOIN
+
+#### LEFT OUTER JOIN
+
+일치하는 항목이 있는 경우 왼쪽 테이블의 해당 내용을 출력합니다.
+
+- 기본 형태
+
+```sql
+SELECT [컬럼명]
+FROM [테이블명1]
+LEFT OUTER JOIN [테이블명2] ON [조인 조건]
+```
+
+#### RIGHT OUTER JOIN
+
+일치하는 항목이 있는 경우 오른쪽 테이블의 해당 내용을 출력합니다.
+
+- 기본 형태
+
+```sql
+SELECT [컬럼명]
+FROM [테이블명1]
+RIGHT OUTER JOIN [테이블명2] ON [조인 조건]
+```
+
+#### FULL OUTER JOIN
+
+왼쪽 테이블 또는 오른쪽 테이블에 일치하는 항목이 있을 경우 해당 내용 모두를 출력합니다.
+
+- 기본 형태
+
+```sql
+SELECT [컬럼명]
+FROM [테이블명1]
+FULL OUTER JOIN [테이블명2] ON [조인 조건]
 ```
 
 ![출처 : 위니브](../JOINS.png)
