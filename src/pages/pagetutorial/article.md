@@ -161,6 +161,8 @@ SELECT 1+1;
 SELECT (10 + 2) / 2;
 ```
 
+
+
 ## 2.3 DISTINCT
 
 DISTINCT는 중복값을 제거합니다. 여기서 학과번호는 학과이름입니다. 2.5 AS 챕터에서 학과번호를 학과이름으로 바꿔주도록 하겠습니다.
@@ -215,11 +217,11 @@ FROM student;
 더하고 빼고 나누고 곱하는 것이 가능합니다.
 
 ```sql
-SELECT (학번 / 3) + 5 FROM student;
+SELECT 연도, 금액 + 500000 FROM tuition;
 ```
 
 ```sql
-SELECT (학번 / 3) % 2 FROM student;
+SELECT 연도, (금액 / 2) * 3 FROM tuition;
 ```
 
 각각 컬럼끼리 연산도 가능합니다.
@@ -228,15 +230,20 @@ SELECT (학번 / 3) % 2 FROM student;
 SELECT 학번 + 학번 FROM student;
 ```
 
-해당 값은 0, 나누기를 하면 null로 반환합니다. 이어붙이려면 아래 있는 연결 연산자를 사용해야 합니다.
+해당 값은 0, 나누기를 하면 null로 반환합니다.
 
 ```sql
-SELECT CustomerName + CustomerName FROM CustomersSELECT 학년 || ' ' || 학과 || ' ' || 학년 AS Student_Info FROM student
+SELECT 이름 + 학과 FROM student;
 ```
 
 ```sql
-SELECT ProductName AS 제품이름, Price AS 기존가, Price*0.2 AS 할인된가격, Price*0.8 AS 최종가
-FROM Products
+SELECT 이름 / 학과 FROM student;
+```
+
+이어붙이려면 아래 있는 연결 연산자를 사용해야 합니다.
+
+```sql
+SELECT 이름 || '' || 학과 FROM student;
 ```
 
 ## 2.7 연결 연산자
