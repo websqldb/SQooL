@@ -1183,7 +1183,7 @@ GROUP BY 학년
 ```
 
 ```sql
-SELECT 학년, AVG(마일리지)
+SELECT 학년, AVG(마일리지) AS "학년별 마일리지 평균"
 FROM student
 GROUP BY 학년;
 ```
